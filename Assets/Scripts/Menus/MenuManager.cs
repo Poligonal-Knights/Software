@@ -21,6 +21,10 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+    public void OpenOptionP()
+    {
+        SceneManager.LoadScene("OpcionesP");
+    }
 
     public void ExitGame()
     {
