@@ -9,7 +9,7 @@ public class Block : Entity
 
     void Start()
     {
-        
+        //Debug.Log("I'm a block");
     }
 
     void Update()
@@ -17,7 +17,7 @@ public class Block : Entity
         
     }
 
-    public bool isWalkable()
+    public bool IsWalkable()
     {
         return walkable;
     }

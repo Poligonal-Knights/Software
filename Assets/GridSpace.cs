@@ -4,34 +4,32 @@ using UnityEngine;
 
 public class GridSpace
 {
-    public int x, y, z;
-    public Entity entity;
+    Entity entity;
 
-    // Start is called before the first frame update
-    void Start()
+    public GridSpace()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public bool hasGround()
+    public bool HasGround()
     {
         //mirar si el espacio de abajo tiene un bloque walkable
         return false;
     }
 
-    public bool isEmpty()
+    public bool IsEmpty()
     {
-        return true;
+        if (entity == null) return true;
+        else return false;
     }
 
-    public void getAdyacentsSpaces()
+    public void GetAdyacentsSpaces()
     {
 
+    }
+
+    public void SetEntity(Entity e)
+    {
+        entity = e;
     }
 }
