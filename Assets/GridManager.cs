@@ -17,6 +17,7 @@ public class GridManager : MonoBehaviour
         GetBounds();
         ShowBounds();
         CreateGridSpaces();
+        LinkGridSpaces();
     }
 
     void GetBounds()
@@ -50,14 +51,31 @@ public class GridManager : MonoBehaviour
         for (int i = 0; i < range.x; i++)
             for(int j = 0; j < range.y; j++)
                 for(int k = 0; k < range.z; k++)
-                    spaces[i, j, k] = new GridSpace();
+                    spaces[i, j, k] = new GridSpace(this, new Vector3Int(i,j,k));
     }
 
-    public GridSpace GetGridSpaceAt(Vector3Int worldCoords)
+    void LinkGridSpaces()
+    {
+        foreach(var space in spaces)
+        {
+            space.Link();
+        }
+    }
+
+    public GridSpace GetGridSpace(Vector3Int coords)
+    {
+        if (coords.x < 0 || coords.y < 0 || coords.z < 0 ||
+            coords.x > spaces.GetUpperBound(0) || coords.y > spaces.GetUpperBound(1) || coords.z > spaces.GetUpperBound(2))
+            return null;
+        return spaces[coords.x, coords.y, coords.z];
+    }
+
+    public GridSpace GetGridSpaceWorldCoords(Vector3Int worldCoords)
     {
         var gridCoords = worldCoords - minBounds;
         return spaces[gridCoords.x, gridCoords.y, gridCoords.z];
     }
+
 }
 
 

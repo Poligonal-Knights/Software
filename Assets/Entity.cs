@@ -27,7 +27,7 @@ public class Entity : MonoBehaviour
     {
         GridManager gm = FindObjectOfType<GridManager>();
         Vector3Int pos = Vector3Int.RoundToInt(transform.position);
-        space = gm.GetGridSpaceAt(pos);
+        space = gm.GetGridSpaceWorldCoords(pos);
         space.SetEntity(this);
     }
 }
