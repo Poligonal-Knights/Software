@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO.MemoryMappedFiles;
 using UnityEngine;
 
 public class GridSpace
@@ -10,15 +12,18 @@ public class GridSpace
     //Trap trap;
 
     public GridSpace rightSpace, leftSpace, forwardSpace, backSpace, upSpace, downSpace;
+    public Dictionary<string, GridSpace> neighbors;// = new Dictionary<string, GridSpace>();
+    public Dictionary<string, GridSpace> moves;// = new Dictionary<string, GridSpace>();
     public GridSpace rightMove, leftMove, forwardMove, backMove;// upMove, downMove;
 
     bool passable;
+    public bool visited;
 
     public GridSpace(GridManager gManager, Vector3Int gPosition)
     {
         gridManager = gManager;
         gridPosition = gPosition;
-        //GetAdyacentsSpaces();
+        visited = false;
     }
 
     public bool IsEmpty()
@@ -39,32 +44,41 @@ public class GridSpace
 
     public void GetAdyacentsSpaces()
     {
-        rightSpace = gridManager.GetGridSpace(gridPosition + Vector3Int.right);
-        leftSpace = gridManager.GetGridSpace(gridPosition + Vector3Int.left);
-        forwardSpace = gridManager.GetGridSpace(gridPosition + Vector3Int.forward);
-        backSpace = gridManager.GetGridSpace(gridPosition + Vector3Int.back);
-        upSpace = gridManager.GetGridSpace(gridPosition + Vector3Int.up);
-        downSpace = gridManager.GetGridSpace(gridPosition + Vector3Int.down);
+        neighbors["right"] = gridManager.GetGridSpace(gridPosition + Vector3Int.right);
+        neighbors["left"] = gridManager.GetGridSpace(gridPosition + Vector3Int.left);
+        neighbors["forward"] = gridManager.GetGridSpace(gridPosition + Vector3Int.forward);
+        neighbors["back"] = gridManager.GetGridSpace(gridPosition + Vector3Int.back);
+        neighbors["up"] = gridManager.GetGridSpace(gridPosition + Vector3Int.up);
+        neighbors["down"] = gridManager.GetGridSpace(gridPosition + Vector3Int.down);
     }
 
     public void Link()
     {
-        Debug.Log(this.gridPosition);
-        if (rightSpace.IsPassable()) rightMove = rightSpace;
-        else if (rightSpace.upSpace.IsPassable()) rightMove = rightSpace.upSpace;
-        else if (rightSpace.downSpace.IsPassable()) rightMove = rightSpace.downSpace;
+        if (neighbors["right"].IsPassable()) rightMove = neighbors["right"];
+        else if (neighbors["right"].neighbors["up"].IsPassable()) rightMove = neighbors["right"].neighbors["up"];
+        else if (neighbors["right"].neighbors["down"].IsPassable()) rightMove = neighbors["right"].neighbors["down"];
 
-        if (leftSpace.IsPassable()) leftMove = leftSpace;
-        else if (leftSpace.upSpace.IsPassable()) leftMove = leftSpace.upSpace;
-        else if (leftSpace.downSpace.IsPassable()) leftMove = leftSpace.downSpace;
+        if (neighbors["left"].IsPassable()) leftMove = neighbors["left"];
+        else if (neighbors["left"].neighbors["up"].IsPassable()) leftMove = neighbors["left"].neighbors["up"];
+        else if (neighbors["left"].neighbors["down"].IsPassable()) leftMove = neighbors["left"].neighbors["down"];
 
-        if (forwardSpace.IsPassable()) forwardMove = forwardSpace;
-        else if (forwardSpace.upSpace.IsPassable()) forwardMove = forwardSpace.upSpace;
-        else if (forwardSpace.downSpace.IsPassable()) forwardMove = forwardSpace.downSpace;
+        if (neighbors["forward"].IsPassable()) forwardMove = neighbors["forward"];
+        else if (neighbors["forward"].neighbors["up"].IsPassable()) forwardMove = neighbors["forward"].neighbors["up"];
+        else if (neighbors["forward"].neighbors["down"].IsPassable()) forwardMove = neighbors["forward"].neighbors["down"];
 
-        if (backSpace.IsPassable()) backMove = backSpace;
-        else if (backSpace.upSpace.IsPassable()) backMove = backSpace.upSpace;
-        else if (backSpace.downSpace.IsPassable()) backMove = backSpace.downSpace;
+        if (neighbors["back"].IsPassable()) backMove = neighbors["back"];
+        else if (neighbors["back"].neighbors["up"].IsPassable()) backMove = neighbors["back"].neighbors["up"];
+        else if (neighbors["back"].neighbors["down"].IsPassable()) backMove = neighbors["back"].neighbors["down"];
+    }
+
+    void changeWalked()
+    {
+        visited = !visited;
+    }
+
+    void setWalked(bool w)
+    {
+        visited = w;
     }
 
     public void SetEntity(Entity e)

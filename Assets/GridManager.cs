@@ -89,7 +89,6 @@ public class GridManager : MonoBehaviour
         var gridCoords = worldCoords - minBounds;
         return spaces[gridCoords.x, gridCoords.y, gridCoords.z];
     }
-
 }
 
 

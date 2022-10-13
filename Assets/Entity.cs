@@ -5,10 +5,14 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     protected GridSpace space;
-    // Start is called before the first frame update
-    void Start()
-    {
+    protected GameManager gameManager;
+    protected GridManager gridManager;
 
+    // Start is called before the first frame update
+    public virtual void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+        gridManager = gameManager.grid;
     }
 
     public virtual void Init()
