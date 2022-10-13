@@ -5,22 +5,20 @@ using UnityEngine;
 public class GridSpace
 {
     GridManager gridManager;
-    Vector3Int gridPosition;
+    public Vector3Int gridPosition;
     Entity entity;
     //Trap trap;
 
-    GridSpace right, left, forward, back, up, down;
+    public GridSpace rightSpace, leftSpace, forwardSpace, backSpace, upSpace, downSpace;
+    public GridSpace rightMove, leftMove, forwardMove, backMove;// upMove, downMove;
 
-    public GridSpace(GridManager grManager, Vector3Int gPosition)
+    bool passable;
+
+    public GridSpace(GridManager gManager, Vector3Int gPosition)
     {
-        gridManager = grManager;
+        gridManager = gManager;
         gridPosition = gPosition;
-    }
-
-    public bool HasGround()
-    {
-        //mirar si el espacio de abajo tiene un bloque walkable
-        return false;
+        //GetAdyacentsSpaces();
     }
 
     public bool IsEmpty()
@@ -29,19 +27,44 @@ public class GridSpace
         else return false;
     }
 
-    public void Link()
+    public bool IsPassable()
     {
-        right = gridManager.GetGridSpace(gridPosition + Vector3Int.right);
-        left = gridManager.GetGridSpace(gridPosition + Vector3Int.left);
-        forward = gridManager.GetGridSpace(gridPosition + Vector3Int.forward);
-        back = gridManager.GetGridSpace(gridPosition + Vector3Int.back);
-        up = gridManager.GetGridSpace(gridPosition + Vector3Int.up);
-        down = gridManager.GetGridSpace(gridPosition + Vector3Int.down);
+        return passable;
+    }
+
+    public void SetPassable(bool p)
+    {
+        passable = p;
     }
 
     public void GetAdyacentsSpaces()
     {
+        rightSpace = gridManager.GetGridSpace(gridPosition + Vector3Int.right);
+        leftSpace = gridManager.GetGridSpace(gridPosition + Vector3Int.left);
+        forwardSpace = gridManager.GetGridSpace(gridPosition + Vector3Int.forward);
+        backSpace = gridManager.GetGridSpace(gridPosition + Vector3Int.back);
+        upSpace = gridManager.GetGridSpace(gridPosition + Vector3Int.up);
+        downSpace = gridManager.GetGridSpace(gridPosition + Vector3Int.down);
+    }
 
+    public void Link()
+    {
+        Debug.Log(this.gridPosition);
+        if (rightSpace.IsPassable()) rightMove = rightSpace;
+        else if (rightSpace.upSpace.IsPassable()) rightMove = rightSpace.upSpace;
+        else if (rightSpace.downSpace.IsPassable()) rightMove = rightSpace.downSpace;
+
+        if (leftSpace.IsPassable()) leftMove = leftSpace;
+        else if (leftSpace.upSpace.IsPassable()) leftMove = leftSpace.upSpace;
+        else if (leftSpace.downSpace.IsPassable()) leftMove = leftSpace.downSpace;
+
+        if (forwardSpace.IsPassable()) forwardMove = forwardSpace;
+        else if (forwardSpace.upSpace.IsPassable()) forwardMove = forwardSpace.upSpace;
+        else if (forwardSpace.downSpace.IsPassable()) forwardMove = forwardSpace.downSpace;
+
+        if (backSpace.IsPassable()) backMove = backSpace;
+        else if (backSpace.upSpace.IsPassable()) backMove = backSpace.upSpace;
+        else if (backSpace.downSpace.IsPassable()) backMove = backSpace.downSpace;
     }
 
     public void SetEntity(Entity e)

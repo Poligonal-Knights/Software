@@ -5,10 +5,9 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
-    public GameObject scenary;
-    public GameObject NPCS;
-    public GridSpace[,,] spaces;
-
+    public GameManager gameManager;
+    
+    GridSpace[,,] spaces;
     Vector3Int minBounds;
     Vector3Int maxBounds;
 
@@ -17,6 +16,7 @@ public class GridManager : MonoBehaviour
         GetBounds();
         ShowBounds();
         CreateGridSpaces();
+        LoadEntities();
         LinkGridSpaces();
     }
 
@@ -45,20 +45,34 @@ public class GridManager : MonoBehaviour
 
     void CreateGridSpaces()
     {
-        var range = maxBounds - minBounds;
+        var range = maxBounds - minBounds + new Vector3Int(1, 2, 1);
         spaces = new GridSpace[range.x, range.y, range.z];
-        
+
         for (int i = 0; i < range.x; i++)
-            for(int j = 0; j < range.y; j++)
-                for(int k = 0; k < range.z; k++)
-                    spaces[i, j, k] = new GridSpace(this, new Vector3Int(i,j,k));
+            for (int j = 0; j < range.y; j++)
+                for (int k = 0; k < range.z; k++)
+                    spaces[i, j, k] = new GridSpace(this, new Vector3Int(i, j, k));
+    }
+
+    void LoadEntities()
+    {
+        foreach (var s in spaces)
+            s.GetAdyacentsSpaces();
+
+        foreach(var e in FindObjectsOfType<Entity>())
+        {
+            e.Init();
+        }
     }
 
     void LinkGridSpaces()
     {
-        foreach(var space in spaces)
+        foreach (var space in spaces)
         {
-            space.Link();
+            if (space.IsPassable())
+            {
+                space.Link();
+            }
         }
     }
 

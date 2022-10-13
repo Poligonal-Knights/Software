@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    GridSpace space;
+    protected GridSpace space;
     // Start is called before the first frame update
     void Start()
     {
 
     }
 
-    public void Init()
+    public virtual void Init()
     {
         UpdateGridSpace();
         
