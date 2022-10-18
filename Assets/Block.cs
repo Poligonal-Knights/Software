@@ -7,11 +7,6 @@ public class Block : Entity
     public bool walkable;
     public Material material;
 
-    void Start()
-    {
-        //Debug.Log("I'm a block");
-    }
-
     public override void Init()
     {
         UpdateGridSpace();
@@ -25,7 +20,7 @@ public class Block : Entity
 
     void UpdateUpperSpace()
     {
-        if (walkable && space.upSpace.IsEmpty()) space.upSpace.SetPassable(true);
+        if (walkable && space.neighbors["up"].IsEmpty()) space.neighbors["up"].SetPassable(true);
     }
 
     public bool IsWalkable()

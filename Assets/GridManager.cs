@@ -14,7 +14,7 @@ public class GridManager : MonoBehaviour
     public void Init()
     {
         GetBounds();
-        ShowBounds();
+        //ShowBounds();
         CreateGridSpaces();
         LoadEntities();
         LinkGridSpaces();
@@ -88,6 +88,11 @@ public class GridManager : MonoBehaviour
     {
         var gridCoords = worldCoords - minBounds;
         return spaces[gridCoords.x, gridCoords.y, gridCoords.z];
+    }
+
+    public Vector3 getOrigin()
+    {
+        return minBounds;
     }
 }
 

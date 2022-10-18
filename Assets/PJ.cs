@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PJ : Entity
@@ -8,33 +9,63 @@ public class PJ : Entity
     // Start is called before the first frame update
     //void Start()
     //{
-        
+
     //}
+
+    public override void Init()
+    {
+        UpdateGridSpace();
+        speed = 3;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void FindPath(Vector3Int goal)
     {
-        
-    }
-
-    void Backtracking()
-    {
-        //comprobar meta
-        //comprobar condiciones limite
-        //expandir, factible
-        //repetir por nodo expandido, cambiar walked
-        //guardar mejor
-        //deshacer
+        BFS();
     }
 
     void BFS()
     {
-
+        space.visited = true;
+        Queue<BFS_Node> nodes = new Queue<BFS_Node>();
+        foreach (var move in space.moves.Values)
+        {
+            Debug.Log("alalala");
+            if (!move.visited)
+            {
+                move.visited = true;
+                GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                Instantiate(sphere, move.getWorldPosition(), Quaternion.identity);
+                Instantiate(sphere, move.getWorldPosition(), Quaternion.identity);
+                sphere.SetActive(false);
+                nodes.Enqueue(new BFS_Node(move, null, 1));
+            }
+        }
+        while (nodes.Any())
+        {
+            var actualNode = nodes.Dequeue();
+            if (actualNode.distance < speed)
+            {
+                foreach (var move in actualNode.space.moves.Values)
+                {
+                    if (!move.visited)
+                    {
+                        move.visited = true;
+                        //Aqui posiblemente iniciar animacion, mirar espacio de abajo de move, el bloque de ese espacio inicia animacion
+                        GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                        Instantiate(sphere, move.getWorldPosition(), Quaternion.identity);
+                        Instantiate(sphere, move.getWorldPosition(), Quaternion.identity);
+                        sphere.SetActive(false);
+                        nodes.Enqueue(new BFS_Node(move, actualNode, actualNode.distance + 1));
+                    }
+                }
+            }
+        }
     }
 
     public virtual void getCandidates()

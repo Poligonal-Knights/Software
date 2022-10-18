@@ -11,19 +11,20 @@ public class GridSpace
     Entity entity;
     //Trap trap;
 
-    public GridSpace rightSpace, leftSpace, forwardSpace, backSpace, upSpace, downSpace;
-    public Dictionary<string, GridSpace> neighbors;// = new Dictionary<string, GridSpace>();
-    public Dictionary<string, GridSpace> moves;// = new Dictionary<string, GridSpace>();
-    public GridSpace rightMove, leftMove, forwardMove, backMove;// upMove, downMove;
+    public Dictionary<string, GridSpace> neighbors = new Dictionary<string, GridSpace>(6);
+    public Dictionary<string, GridSpace> moves = new Dictionary<string, GridSpace>(4);
 
     bool passable;
     public bool visited;
+
+    public BFS_Node node;
 
     public GridSpace(GridManager gManager, Vector3Int gPosition)
     {
         gridManager = gManager;
         gridPosition = gPosition;
         visited = false;
+        passable = false;
     }
 
     public bool IsEmpty()
@@ -54,21 +55,14 @@ public class GridSpace
 
     public void Link()
     {
-        if (neighbors["right"].IsPassable()) rightMove = neighbors["right"];
-        else if (neighbors["right"].neighbors["up"].IsPassable()) rightMove = neighbors["right"].neighbors["up"];
-        else if (neighbors["right"].neighbors["down"].IsPassable()) rightMove = neighbors["right"].neighbors["down"];
+        var directions = new[] { "left", "right", "forward", "back"};
 
-        if (neighbors["left"].IsPassable()) leftMove = neighbors["left"];
-        else if (neighbors["left"].neighbors["up"].IsPassable()) leftMove = neighbors["left"].neighbors["up"];
-        else if (neighbors["left"].neighbors["down"].IsPassable()) leftMove = neighbors["left"].neighbors["down"];
-
-        if (neighbors["forward"].IsPassable()) forwardMove = neighbors["forward"];
-        else if (neighbors["forward"].neighbors["up"].IsPassable()) forwardMove = neighbors["forward"].neighbors["up"];
-        else if (neighbors["forward"].neighbors["down"].IsPassable()) forwardMove = neighbors["forward"].neighbors["down"];
-
-        if (neighbors["back"].IsPassable()) backMove = neighbors["back"];
-        else if (neighbors["back"].neighbors["up"].IsPassable()) backMove = neighbors["back"].neighbors["up"];
-        else if (neighbors["back"].neighbors["down"].IsPassable()) backMove = neighbors["back"].neighbors["down"];
+        foreach(var direction in directions)
+        {
+            if (neighbors[direction].IsPassable()) moves[direction] = neighbors[direction];
+            else if (neighbors[direction].neighbors["up"].IsPassable()) moves[direction] = neighbors[direction].neighbors["up"];
+            else if (neighbors[direction].neighbors["down"].IsPassable()) moves[direction] = neighbors[direction].neighbors["down"];
+        }
     }
 
     void changeWalked()
@@ -84,5 +78,10 @@ public class GridSpace
     public void SetEntity(Entity e)
     {
         entity = e;
+    }
+
+    public Vector3 getWorldPosition()
+    {
+        return gridPosition + gridManager.getOrigin();
     }
 }

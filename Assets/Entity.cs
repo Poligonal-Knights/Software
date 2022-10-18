@@ -18,7 +18,6 @@ public class Entity : MonoBehaviour
     public virtual void Init()
     {
         UpdateGridSpace();
-        
     }
 
     // Update is called once per frame
