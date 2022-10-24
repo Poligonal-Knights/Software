@@ -58,11 +58,16 @@ public class GridManager : MonoBehaviour
     {
         foreach (var s in spaces)
             s.GetAdyacentsSpaces();
-
-        foreach(var e in FindObjectsOfType<Entity>())
+        foreach (var e in FindObjectsOfType<Entity>())
         {
             e.Init();
         }
+        foreach(var e in FindObjectsOfType<Block>())
+        {
+            e.UpdateUpperSpace();
+        }
+
+
     }
 
     void LinkGridSpaces()

@@ -10,7 +10,7 @@ public class Block : Entity
     public override void Init()
     {
         UpdateGridSpace();
-        UpdateUpperSpace();
+        //UpdateUpperSpace();
     }
 
     void Update()
@@ -18,9 +18,9 @@ public class Block : Entity
         
     }
 
-    void UpdateUpperSpace()
+    public void UpdateUpperSpace()
     {
-        if (walkable && space.neighbors["up"].IsEmpty()) space.neighbors["up"].SetPassable(true);
+        if (walkable && !space.neighbors["up"].HasBlock()) space.neighbors["up"].SetPassable(true);
     }
 
     public bool IsWalkable()

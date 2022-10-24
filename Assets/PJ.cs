@@ -15,7 +15,7 @@ public class PJ : Entity
     public override void Init()
     {
         UpdateGridSpace();
-        speed = 3;
+        speed = 6;
     }
 
     // Update is called once per frame
@@ -35,12 +35,13 @@ public class PJ : Entity
         Queue<BFS_Node> nodes = new Queue<BFS_Node>();
         foreach (var move in space.moves.Values)
         {
-            Debug.Log("alalala");
-            if (!move.visited)
+            if (!move.visited && CanMoveThere(space, move))
             {
-                move.visited = true;
+                print(move.visited);
+                move.SetVisited(true);
+                print(move.visited);
                 GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                Instantiate(sphere, move.getWorldPosition(), Quaternion.identity);
+                sphere.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 Instantiate(sphere, move.getWorldPosition(), Quaternion.identity);
                 sphere.SetActive(false);
                 nodes.Enqueue(new BFS_Node(move, null, 1));
@@ -53,12 +54,12 @@ public class PJ : Entity
             {
                 foreach (var move in actualNode.space.moves.Values)
                 {
-                    if (!move.visited)
+                    if (!move.visited && CanMoveThere(actualNode.space, move))
                     {
-                        move.visited = true;
+                        move.SetVisited(true);
                         //Aqui posiblemente iniciar animacion, mirar espacio de abajo de move, el bloque de ese espacio inicia animacion
                         GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                        Instantiate(sphere, move.getWorldPosition(), Quaternion.identity);
+                        sphere.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                         Instantiate(sphere, move.getWorldPosition(), Quaternion.identity);
                         sphere.SetActive(false);
                         nodes.Enqueue(new BFS_Node(move, actualNode, actualNode.distance + 1));
@@ -68,8 +69,8 @@ public class PJ : Entity
         }
     }
 
-    public virtual void getCandidates()
+    protected virtual bool CanMoveThere(GridSpace start, GridSpace destination)
     {
-
+        return true;
     }
 }

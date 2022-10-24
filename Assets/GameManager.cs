@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     {
         Init();
         grid.Init();
-        foreach (Entity e in entities) e.Init();
+        //foreach (Entity e in entities) e.Init();
         foreach(var p in FindObjectsOfType<PJ>())
         {
             p.FindPath(Vector3Int.zero);

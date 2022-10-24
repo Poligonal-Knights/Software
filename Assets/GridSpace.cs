@@ -33,6 +33,12 @@ public class GridSpace
         else return false;
     }
 
+    public bool HasBlock()
+    {
+        if (entity is Block) return true;
+        else return false;
+    }
+
     public bool IsPassable()
     {
         return passable;
@@ -70,7 +76,7 @@ public class GridSpace
         visited = !visited;
     }
 
-    void setWalked(bool w)
+    public void SetVisited(bool w)
     {
         visited = w;
     }
