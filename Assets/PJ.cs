@@ -52,6 +52,7 @@ public class PJ : Entity
                     {
                         move.SetVisited(true);
                         //Aqui posiblemente iniciar animacion, mirar espacio de abajo de move, el bloque de ese espacio inicia animacion
+                        //move.neighbors["down"].accederaentidad.pasarloABloque.iniciaranimacionDeBloque();
                         nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
                     }
                 }

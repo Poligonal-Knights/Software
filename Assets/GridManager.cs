@@ -66,8 +66,6 @@ public class GridManager : MonoBehaviour
         {
             e.UpdateUpperSpace();
         }
-
-
     }
 
     void LinkGridSpaces()
