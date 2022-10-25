@@ -7,6 +7,13 @@ public class Block : Entity
     public bool walkable;
     public Material material;
 
+    public override void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+        gridManager = gameManager.grid;
+        //meterle componente animator
+    }
+
     public override void Init()
     {
         UpdateGridSpace();
