@@ -12,6 +12,12 @@ public class Block : Entity
         gameManager = FindObjectOfType<GameManager>();
         gridManager = gameManager.grid;
         //meterle componente animator
+        gameObject.AddComponent<Animator>();
+        Animator currentanimator = gameObject.GetComponent<Animator>();
+        RuntimeAnimatorController shinyAnim = Resources.Load("ShineAnim") as RuntimeAnimatorController;
+        //Debug.Log(shinyAnim);
+        currentanimator.runtimeAnimatorController = shinyAnim;
+        currentanimator.SetInteger("estadoAnimacion", 1);
     }
 
     public override void Init()

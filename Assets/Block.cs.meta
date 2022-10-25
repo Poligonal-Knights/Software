@@ -3,7 +3,9 @@ guid: 48c6a894fbaccfe4d9e6e55b0876f3ea
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - material: {instanceID: 0}
+  - shinyAnim: {fileID: 9100000, guid: fefcbb6c1378c0f47bc052c034767601, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
