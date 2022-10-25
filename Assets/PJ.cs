@@ -15,7 +15,7 @@ public class PJ : Entity
     public override void Init()
     {
         UpdateGridSpace();
-        speed = 6;
+        speed = 30;
     }
 
     // Update is called once per frame
@@ -31,38 +31,28 @@ public class PJ : Entity
 
     void BFS()
     {
-        space.visited = true;
+        space.SetVisited(true);
         Queue<BFS_Node> nodes = new Queue<BFS_Node>();
         foreach (var move in space.moves.Values)
         {
             if (!move.visited && CanMoveThere(space, move))
             {
-                print(move.visited);
                 move.SetVisited(true);
-                print(move.visited);
-                GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                sphere.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-                Instantiate(sphere, move.getWorldPosition(), Quaternion.identity);
-                sphere.SetActive(false);
                 nodes.Enqueue(new BFS_Node(move, null, 1));
             }
         }
         while (nodes.Any())
         {
-            var actualNode = nodes.Dequeue();
-            if (actualNode.distance < speed)
+            var currentNode = nodes.Dequeue();
+            if (currentNode.distance < speed)
             {
-                foreach (var move in actualNode.space.moves.Values)
+                foreach (var move in currentNode.space.moves.Values)
                 {
-                    if (!move.visited && CanMoveThere(actualNode.space, move))
+                    if (!move.visited && CanMoveThere(currentNode.space, move))
                     {
                         move.SetVisited(true);
                         //Aqui posiblemente iniciar animacion, mirar espacio de abajo de move, el bloque de ese espacio inicia animacion
-                        GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                        sphere.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-                        Instantiate(sphere, move.getWorldPosition(), Quaternion.identity);
-                        sphere.SetActive(false);
-                        nodes.Enqueue(new BFS_Node(move, actualNode, actualNode.distance + 1));
+                        nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
                     }
                 }
             }

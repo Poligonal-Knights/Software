@@ -26,11 +26,15 @@ public class Entity : MonoBehaviour
         
     }
 
-    public void UpdateGridSpace()
+    protected void UpdateGridSpace()
     {
-        GridManager gm = FindObjectOfType<GridManager>();
         Vector3Int pos = Vector3Int.RoundToInt(transform.position);
-        space = gm.GetGridSpaceWorldCoords(pos);
+        space = gridManager.GetGridSpaceWorldCoords(pos);
         space.SetEntity(this);
+    }
+
+    public GridSpace GetGridSpace()
+    {
+        return space;
     }
 }

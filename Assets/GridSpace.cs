@@ -71,7 +71,7 @@ public class GridSpace
         }
     }
 
-    void changeWalked()
+    void ChangeVisited()
     {
         visited = !visited;
     }
@@ -81,12 +81,17 @@ public class GridSpace
         visited = w;
     }
 
+    public bool IsVisited()
+    {
+        return visited;
+    }
+
     public void SetEntity(Entity e)
     {
         entity = e;
     }
 
-    public Vector3 getWorldPosition()
+    public Vector3 GetWorldPosition()
     {
         return gridPosition + gridManager.getOrigin();
     }

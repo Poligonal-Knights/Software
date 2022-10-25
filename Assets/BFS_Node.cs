@@ -16,4 +16,8 @@ public class BFS_Node
         space.node = this;
     }
 
+    public bool HasParent()
+    {
+        return parent != null;
+    }
 }
