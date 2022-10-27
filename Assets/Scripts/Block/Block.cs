@@ -9,8 +9,7 @@ public class Block : Entity
 
     public override void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
-        gridManager = gameManager.grid;
+        base.Start();
         //meterle componente animator
         gameObject.AddComponent<Animator>();
         Animator currentanimator = gameObject.GetComponent<Animator>();
@@ -22,7 +21,7 @@ public class Block : Entity
 
     public override void Init()
     {
-        UpdateGridSpace();
+        base.Init();
         //UpdateUpperSpace();
     }
 

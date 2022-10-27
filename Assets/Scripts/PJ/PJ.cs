@@ -6,15 +6,14 @@ using UnityEngine;
 public class PJ : Entity
 {
     int speed;
-    // Start is called before the first frame update
-    //void Start()
-    //{
-
-    //}
+    public override void Start()
+    {
+        base.Start();
+    }
 
     public override void Init()
     {
-        UpdateGridSpace();
+        base.Init();
         speed = 30;
     }
 

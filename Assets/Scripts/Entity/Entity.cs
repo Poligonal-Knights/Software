@@ -12,7 +12,7 @@ public class Entity : MonoBehaviour
     public virtual void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
-        gridManager = gameManager.grid;
+        gridManager = gameManager.gridManager;
     }
 
     public virtual void Init()

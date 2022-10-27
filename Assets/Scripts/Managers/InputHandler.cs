@@ -19,11 +19,10 @@ public class InputHandler : MonoBehaviour
             if (EventSystem.current.IsPointerOverGameObject())
             {
                 //hacer cosas de interfaz
-                Debug.Log("mamdisimo");
             }
             else
             {
-                Debug.Log("raycast");
+                
             }
         }
     }

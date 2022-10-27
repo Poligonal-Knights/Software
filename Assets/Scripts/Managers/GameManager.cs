@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GridManager grid;
+    public GridManager gridManager;
+    public TurnManager turnManager;
+
     Entity[] entities;
 
     // Start is called before the first frame update
     void Start()
     {
         Init();
-        grid.Init();
-        foreach(var p in FindObjectsOfType<PJ>())
+        gridManager.Init();
+        turnManager.Init();
+
+        //Cosas de debug, se eliminaran mas adelante
+        foreach (var p in FindObjectsOfType<PJ>())
         {
             p.FindPath(Vector3Int.zero);
         }
