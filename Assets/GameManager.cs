@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Esto es encontrar la ruta
         Init();
         grid.Init();
         foreach(var p in FindObjectsOfType<PJ>())

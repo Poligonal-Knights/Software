@@ -15,7 +15,7 @@ public class PJ : Entity
     public override void Init()
     {
         UpdateGridSpace();
-        speed = 30;
+        speed = 25;
     }
 
     // Update is called once per frame
@@ -39,11 +39,14 @@ public class PJ : Entity
             {
                 move.SetVisited(true);
                 nodes.Enqueue(new BFS_Node(move, null, 1));
+                //Mostrar que el siguiente espacio también se puede mover
+                move.neighbors["down"].GetEntity().GetComponent<Block>().getCurrentAnimator().SetInteger("estadoAnimacion", 1);
             }
         }
         while (nodes.Any())
         {
             var currentNode = nodes.Dequeue();
+            
             if (currentNode.distance < speed)
             {
                 foreach (var move in currentNode.space.moves.Values)
@@ -52,7 +55,7 @@ public class PJ : Entity
                     {
                         move.SetVisited(true);
                         //Aqui posiblemente iniciar animacion, mirar espacio de abajo de move, el bloque de ese espacio inicia animacion
-                        //move.neighbors["down"].accederaentidad.pasarloABloque.iniciaranimacionDeBloque();
+                        move.neighbors["down"].GetEntity().GetComponent<Block>().getCurrentAnimator().SetInteger("estadoAnimacion", 1);
                         nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
                     }
                 }
