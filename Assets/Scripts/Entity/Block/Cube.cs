@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cube : Block
 {
-	public override void Start()
+	protected override void Start()
 	{
 		base.Start();
 	}

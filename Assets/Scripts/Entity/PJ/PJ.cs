@@ -6,7 +6,7 @@ using UnityEngine;
 public class PJ : Entity
 {
     int speed;
-    public override void Start()
+    protected override void Start()
     {
         base.Start();
     }
@@ -18,7 +18,7 @@ public class PJ : Entity
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
 
     }
@@ -28,7 +28,7 @@ public class PJ : Entity
         BFS();
     }
 
-    void BFS()
+    public void BFS()
     {
         space.SetVisited(true);
         Queue<BFS_Node> nodes = new Queue<BFS_Node>();
@@ -67,13 +67,13 @@ public class PJ : Entity
 
     protected virtual bool CanMoveThere(GridSpace start, GridSpace destination)
     {
-        return true;
+        if (start.gridPosition.y == destination.gridPosition.y) return true;
+        return false;
     }
 
     protected override void OnMouseUpAsButton()
     {
         base.OnMouseUpAsButton();
-        BFS();
     }
 
     protected virtual void Movement(GridSpace start, GridSpace destination)

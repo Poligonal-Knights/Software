@@ -46,4 +46,16 @@ public class GUI : MonoBehaviour
     {
         actionCanvas.gameObject.SetActive(true);
     }
+
+    public void ShowPJSelectedUI()
+    {
+        actionCanvas.gameObject.SetActive(true);
+
+    }
+
+    public void ShowEnemySelectedUI()
+    {
+        actionCanvas.gameObject.SetActive(false);
+
+    }
 }

@@ -10,7 +10,7 @@ public class Entity : MonoBehaviour
     protected InputHandler inputHandler;
 
     // Start is called before the first frame update
-    public virtual void Start()
+    protected virtual void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         gridManager = gameManager.gridManager;
@@ -23,7 +23,7 @@ public class Entity : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         
     }

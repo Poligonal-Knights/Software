@@ -11,24 +11,38 @@ public class LogicManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void SetSelectedPJ(PJ pj)
     {
         Debug.Log("SelectedPJ changed!");
         SelectedPJ = pj;
-        UIManager.ShowActionCanvas();
+
+        if (pj is Ally)
+        {
+            //UIManager.ShowActionCanvas();
+            UIManager.ShowPJSelectedUI();
+        }
+        else if (pj is Enemy)
+        {
+            UIManager.ShowEnemySelectedUI();
+        }
     }
 
     public PJ GetSelectedPJ()
     {
         return SelectedPJ;
+    }
+
+    public void MovePJ()
+    {
+        SelectedPJ.BFS();
     }
 }

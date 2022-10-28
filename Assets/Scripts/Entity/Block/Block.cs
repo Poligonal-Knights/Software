@@ -8,7 +8,7 @@ public class Block : Entity
     public Material material;
     Animator animator;
 
-    public override void Start()
+    protected override void Start()
     {
         base.Start();
         animator = gameObject.AddComponent<Animator>();
@@ -22,7 +22,7 @@ public class Block : Entity
         //UpdateUpperSpace();
     }
 
-    void Update()
+    protected override void Update()
     {
         
     }
