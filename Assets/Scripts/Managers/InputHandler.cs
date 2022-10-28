@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class InputHandler : MonoBehaviour
 {
+    Ray ray;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +24,13 @@ public class InputHandler : MonoBehaviour
             }
             else
             {
-                
+                //Ray 
             }
         }
+    }
+
+    public static void Meow()
+    {
+        Debug.Log("Meow");
     }
 }

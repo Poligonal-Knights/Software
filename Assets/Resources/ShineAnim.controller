@@ -65,7 +65,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: estadoAnimacion
+    m_ConditionEvent: animationState
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -21663387950534598}
@@ -90,7 +90,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: estadoAnimacion
+    m_ConditionEvent: animationState
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3866954424108268702}
@@ -170,7 +170,7 @@ AnimatorController:
   m_Name: ShineAnim
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: estadoAnimacion
+  - m_Name: animationState
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -198,7 +198,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: estadoAnimacion
+    m_ConditionEvent: animationState
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3866954424108268702}
@@ -223,7 +223,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: estadoAnimacion
+    m_ConditionEvent: animationState
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -21663387950534598}
@@ -248,7 +248,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: estadoAnimacion
+    m_ConditionEvent: animationState
     m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2448578523772249156}

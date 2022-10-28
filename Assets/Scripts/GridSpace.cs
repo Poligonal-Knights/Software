@@ -91,6 +91,11 @@ public class GridSpace
         entity = e;
     }
 
+    public Entity GetEntity()
+    {
+        return entity;
+    }
+
     public Vector3 GetWorldPosition()
     {
         return gridPosition + gridManager.getOrigin();

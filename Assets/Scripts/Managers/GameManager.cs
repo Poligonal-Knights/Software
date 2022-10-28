@@ -17,24 +17,24 @@ public class GameManager : MonoBehaviour
         turnManager.Init();
 
         //Cosas de debug, se eliminaran mas adelante
-        foreach (var p in FindObjectsOfType<PJ>())
-        {
-            p.FindPath(Vector3Int.zero);
-        }
-        var aux = FindObjectOfType<Goal>().GetGridSpace();
-        if (aux.IsVisited())
-        {
-            var actualNode = aux.node;
-            GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            while(actualNode.HasParent())
-            {
-                Instantiate(sphere, actualNode.space.GetWorldPosition(), Quaternion.identity);
-                actualNode = actualNode.parent;
-            };
-            Instantiate(sphere, actualNode.space.GetWorldPosition(), Quaternion.identity);
-            sphere.SetActive(false);
-        }
-        else Debug.Log("Meta no encontrada");
+        //foreach (var p in FindObjectsOfType<PJ>())
+        //{
+        //    p.FindPath(Vector3Int.zero);
+        //}
+        //var aux = FindObjectOfType<Goal>().GetGridSpace();
+        //if (aux.IsVisited())
+        //{
+        //    var actualNode = aux.node;
+        //    GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        //    while(actualNode.HasParent())
+        //    {
+        //        Instantiate(sphere, actualNode.space.GetWorldPosition(), Quaternion.identity);
+        //        actualNode = actualNode.parent;
+        //    };
+        //    Instantiate(sphere, actualNode.space.GetWorldPosition(), Quaternion.identity);
+        //    sphere.SetActive(false);
+        //}
+        //else Debug.Log("Meta no encontrada");
     }
 
     void Init()
@@ -46,5 +46,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void Wao()
+    {
+        Debug.Log("PJ pulsado");
     }
 }

@@ -14,7 +14,7 @@ public class PJ : Entity
     public override void Init()
     {
         base.Init();
-        speed = 30;
+        speed = 5;
     }
 
     // Update is called once per frame
@@ -38,6 +38,10 @@ public class PJ : Entity
             {
                 move.SetVisited(true);
                 nodes.Enqueue(new BFS_Node(move, null, 1));
+
+                //Animation
+                Block b = move.neighbors["down"].GetEntity() as Block;
+                b.SetInPreviewMode();
             }
         }
         while (nodes.Any())
@@ -50,9 +54,11 @@ public class PJ : Entity
                     if (!move.visited && CanMoveThere(currentNode.space, move))
                     {
                         move.SetVisited(true);
-                        //Aqui posiblemente iniciar animacion, mirar espacio de abajo de move, el bloque de ese espacio inicia animacion
-                        //move.neighbors["down"].accederaentidad.pasarloABloque.iniciaranimacionDeBloque();
                         nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
+
+                        //Animation
+                        Block b = move.neighbors["down"].GetEntity() as Block;
+                        b.SetInPreviewMode();
                     }
                 }
             }
@@ -62,5 +68,11 @@ public class PJ : Entity
     protected virtual bool CanMoveThere(GridSpace start, GridSpace destination)
     {
         return true;
+    }
+
+    void OnMouseUpAsButton()
+    {
+        BFS();
+        InputHandler.Meow();
     }
 }

@@ -6,17 +6,14 @@ public class Block : Entity
 {
     public bool walkable;
     public Material material;
+    Animator animator;
 
     public override void Start()
     {
         base.Start();
-        //meterle componente animator
-        gameObject.AddComponent<Animator>();
-        Animator currentanimator = gameObject.GetComponent<Animator>();
+        animator = gameObject.AddComponent<Animator>();
         RuntimeAnimatorController shinyAnim = Resources.Load("ShineAnim") as RuntimeAnimatorController;
-        //Debug.Log(shinyAnim);
-        currentanimator.runtimeAnimatorController = shinyAnim;
-        currentanimator.SetInteger("estadoAnimacion", 1);
+        animator.runtimeAnimatorController = shinyAnim;
     }
 
     public override void Init()
@@ -38,5 +35,10 @@ public class Block : Entity
     public bool IsWalkable()
     {
         return walkable;
+    }
+
+    public void SetInPreviewMode()
+    {
+        animator.SetInteger("animationState", 1);
     }
 }
