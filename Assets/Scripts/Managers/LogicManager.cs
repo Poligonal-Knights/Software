@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class LogicManager : MonoBehaviour
 {
-
-    public GUI UIManager;
+    public GameManager gameManager;
     PJ SelectedPJ;
 
     //Bool to know is somthing as a PJ is moving, attaking, etc. right know
     bool IsSomethingHappening;
+    bool PreviewMode;
     bool CanCancelAction;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -31,12 +31,12 @@ public class LogicManager : MonoBehaviour
 
         if (pj is Ally)
         {
-            //UIManager.ShowActionCanvas();
-            UIManager.ShowPJSelectedUI();
+            //gameManager.UIManager.ShowActionCanvas();
+            gameManager.UIManager.ShowPJSelectedUI();
         }
         else if (pj is Enemy)
         {
-            UIManager.ShowEnemySelectedUI();
+            gameManager.UIManager.ShowEnemySelectedUI();
         }
     }
 
@@ -48,9 +48,10 @@ public class LogicManager : MonoBehaviour
     //Move button
     public void PreviewPJMovement()
     {
+        PreviewMode = true;
         IsSomethingHappening = true;
         SelectedPJ.BFS();
-        UIManager.ShowCancelCanvas();
+        gameManager.UIManager.ShowCancelCanvas();
     }
 
     public bool CanSomethingHappen()
@@ -60,28 +61,50 @@ public class LogicManager : MonoBehaviour
 
     public void CancelAction()
     {
+        if (PreviewMode) PreviewMode = false;
         IsSomethingHappening = false;
-        UIManager.ShowPrevoiusCanvas();
+        gameManager.UIManager.ShowPrevoiusCanvas();
         StopPJMovementPreview();
     }
 
     public void StopPJMovementPreview()
     {
+        PreviewMode = false;
         FindObjectOfType<GridManager>().StopPJMovementPreview();
+        gameManager.UIManager.ShowEmptyCanvas();
+    }
+
+    public void PJFinishedMoving()
+    {
+        if(gameManager.turnManager.IsPlayerTurn())
+        {
+            gameManager.UIManager.ShowActionCanvas();
+        }
     }
 
     public void EntityClicked(Entity entityClicked)
     {
-        if (CanSomethingHappen())
-        {
+        //if (CanSomethingHappen())
+        if (true)
+            {
             if (entityClicked is PJ)
+            {
                 SetSelectedPJ(entityClicked as PJ);
+            }
+            else if (entityClicked is Block && PreviewMode)
+            {
+                var space = entityClicked.GetGridSpace().neighbors["up"];
+                if(space.IsVisited() && !(space.GetEntity() is PJ))
+                {
+                    SelectedPJ.MoveTo(space);
+                    StopPJMovementPreview();
+                }
+            }
             else
             {
                 SetSelectedPJ(null);
-                UIManager.ShowNothingSelectedUI();
+                gameManager.UIManager.ShowNothingSelectedUI();
             }
         }
-
     }
 }

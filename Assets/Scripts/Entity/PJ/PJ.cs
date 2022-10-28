@@ -2,24 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class PJ : Entity
 {
     int speed;
+    bool IsMoving;
+    Stack<GridSpace> MovementsToDo = new Stack<GridSpace>();
+    GridSpace destination;
+
     protected override void Start()
     {
         base.Start();
+        IsMoving = false;
     }
 
     public override void Init()
     {
         base.Init();
-        speed = 5;
+        speed = 4;
     }
 
     // Update is called once per frame
     protected override void Update()
     {
+        if (!IsMoving && MovementsToDo.Any())
+        {
+            IsMoving = true;
+            destination = MovementsToDo.Pop();
+        }
+        if (IsMoving)
+        {
+            var step = 3 * Time.deltaTime; // calculate distance to move
+            transform.position = Vector3.MoveTowards(transform.position, destination.GetWorldPosition(), step);
+            if (Vector3.Distance(transform.position, destination.GetWorldPosition()) < 0.001f)
+            {
+                IsMoving = false;
+                if (!MovementsToDo.Any())
+                {
+                    gameManager.logicManager.PJFinishedMoving();
+                    UpdateGridSpace();
+                }
+            }
+        }
 
     }
 
@@ -40,8 +65,11 @@ public class PJ : Entity
                 nodes.Enqueue(new BFS_Node(move, null, 1));
 
                 //Animation
-                Block b = move.neighbors["down"].GetEntity() as Block;
-                b.SetInPreviewMode();
+                if (!(move.GetEntity() is PJ))
+                {
+                    Block b = move.neighbors["down"].GetEntity() as Block;
+                    b.SetInPreviewMode();
+                }
             }
         }
         while (nodes.Any())
@@ -53,12 +81,17 @@ public class PJ : Entity
                 {
                     if (!move.visited && CanMoveThere(currentNode.space, move))
                     {
-                        move.SetVisited(true);
-                        nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
-
-                        //Animation
-                        Block b = move.neighbors["down"].GetEntity() as Block;
-                        b.SetInPreviewMode();
+                        if (!(currentNode.distance + 1 == speed && move.GetEntity() is PJ))
+                        {
+                            move.SetVisited(true);
+                            nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
+                            //Animation
+                            if(!(move.GetEntity() is PJ))
+                            {
+                                Block b = move.neighbors["down"].GetEntity() as Block;
+                                b.SetInPreviewMode();
+                            }
+                        }
                     }
                 }
             }
@@ -76,7 +109,19 @@ public class PJ : Entity
     {
         start.GetWorldPosition();
     }
-    
+
+    public virtual void MoveTo(GridSpace finalDestination)
+    {
+        var actualNode = finalDestination.node;
+        while (actualNode.HasParent())
+        {
+            MovementsToDo.Push(actualNode.space);
+            actualNode = actualNode.parent;
+        };
+        MovementsToDo.Push(actualNode.space);
+        space.SetEntity(null);
+    }
+
     protected override void OnMouseUpAsButton()
     {
         base.OnMouseUpAsButton();

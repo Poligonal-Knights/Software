@@ -27,6 +27,11 @@ public class TurnManager : MonoBehaviour
         UIManager.ChangeTurn(playerTurn);
     }
 
+    public bool IsPlayerTurn()
+    {
+        return playerTurn;
+    }
+
     // Update is called once per frame
     void Update()
     {

@@ -12,7 +12,7 @@ public class Knight : Ally
     // Update is called once per frame
     protected override void Update()
     {
-        
+        base.Update();
     }
 
     protected override bool CanMoveThere(GridSpace start, GridSpace destination)
