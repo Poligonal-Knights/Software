@@ -11,6 +11,8 @@ public class GridManager : MonoBehaviour
     Vector3Int minBounds;
     Vector3Int maxBounds;
 
+    public List<GridSpace> visitedSpaces = new List<GridSpace>();
+
     public void Init()
     {
         GetBounds();
@@ -96,6 +98,17 @@ public class GridManager : MonoBehaviour
     public Vector3 getOrigin()
     {
         return minBounds;
+    }
+
+    public void StopPJMovementPreview()
+    {
+        foreach(var space in visitedSpaces)
+        {
+            space.SetVisited(false);
+            var b = space.neighbors["down"].GetEntity() as Block;
+            b.StopAnimation();
+        }
+        visitedSpaces.Clear();
     }
 }
 

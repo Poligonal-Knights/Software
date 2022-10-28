@@ -71,14 +71,14 @@ public class PJ : Entity
         return false;
     }
 
-    protected override void OnMouseUpAsButton()
-    {
-        base.OnMouseUpAsButton();
-    }
 
     protected virtual void Movement(GridSpace start, GridSpace destination)
     {
         start.GetWorldPosition();
     }
     
+    protected override void OnMouseUpAsButton()
+    {
+        base.OnMouseUpAsButton();
+    }
 }

@@ -41,4 +41,9 @@ public class Block : Entity
     {
         animator.SetInteger("animationState", 1);
     }
+
+    public void StopAnimation()
+    {
+        animator.SetInteger("animationState", 0);
+    }
 }

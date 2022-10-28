@@ -76,9 +76,10 @@ public class GridSpace
         visited = !visited;
     }
 
-    public void SetVisited(bool w)
+    public void SetVisited(bool v)
     {
-        visited = w;
+        if(v) gridManager.visitedSpaces.Add(this);
+        visited = v;
     }
 
     public bool IsVisited()

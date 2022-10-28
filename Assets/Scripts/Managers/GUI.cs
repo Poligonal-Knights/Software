@@ -8,12 +8,22 @@ using UnityEngine.EventSystems;
 public class GUI : MonoBehaviour
 {
     // Start is called before the first frame update
+    public Canvas emptyCanvas;
     public Canvas turnCanvas;
     public Canvas actionCanvas;
+    public Canvas cancelCanvas;
 
+    Canvas currentCanvas;
+    Canvas previousCanvas;
+    List<Canvas> allCanvas;
     void Start()
     {
-
+        allCanvas = new List<Canvas>();
+        //allCanvas.Add(turnCanvas);
+        allCanvas.Add(actionCanvas);
+        allCanvas.Add(cancelCanvas);
+        allCanvas.Add(emptyCanvas);
+        currentCanvas = emptyCanvas;
     }
 
     // Update is called once per frame
@@ -42,20 +52,51 @@ public class GUI : MonoBehaviour
 
     }
 
+    void ShowThisCanvas(Canvas canvasToShow)
+    {
+        foreach(Canvas c in allCanvas)
+        {
+            c.gameObject.SetActive(false);
+        }
+        previousCanvas = currentCanvas;
+        Debug.Log(previousCanvas);
+        currentCanvas = canvasToShow;
+        currentCanvas.gameObject.SetActive(true);
+    }
+
+    public void ShowPrevoiusCanvas()
+    {
+        ShowThisCanvas(previousCanvas);
+    }
+
     public void ShowActionCanvas()
     {
-        actionCanvas.gameObject.SetActive(true);
+        ShowThisCanvas(actionCanvas);
+    }
+
+    public void ShowCancelCanvas()
+    {
+        ShowThisCanvas(cancelCanvas);
+    }
+
+    public void ShowEmptyCanvas()
+    {
+        ShowThisCanvas(emptyCanvas);
     }
 
     public void ShowPJSelectedUI()
     {
-        actionCanvas.gameObject.SetActive(true);
-
+        ShowActionCanvas();
     }
 
     public void ShowEnemySelectedUI()
     {
-        actionCanvas.gameObject.SetActive(false);
-
+        ShowEmptyCanvas();
     }
+
+    public void ShowNothingSelectedUI()
+    {
+        ShowEmptyCanvas();
+    }
+
 }

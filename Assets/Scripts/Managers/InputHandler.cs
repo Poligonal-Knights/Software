@@ -37,10 +37,22 @@ public class InputHandler : MonoBehaviour
         }
     }
 
+    //public void EntityClicked(Entity entityClicked)
+    //{
+    //    Debug.Log("Ent.Clicked: " + entityClicked);
+    //    if (entityClicked is PJ)
+    //        logicManager.SetSelectedPJ(entityClicked as PJ);
+    //    else
+    //    {
+    //        logicManager.SetSelectedPJ(null);
+    //    }
+    //}
+
     public void EntityClicked(Entity entityClicked)
     {
         Debug.Log("Ent.Clicked: " + entityClicked);
-        if (entityClicked is PJ)
-            logicManager.SetSelectedPJ(entityClicked as PJ);
+        logicManager.EntityClicked(entityClicked);
     }
+
+
 }
