@@ -36,7 +36,7 @@ public class GridSpace
     public bool HasBlock()
     {
         if (entity is Block) return true;
-        else return false;
+        return false;
     }
 
     public bool IsPassable()
