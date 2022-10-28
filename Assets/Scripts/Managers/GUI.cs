@@ -8,7 +8,8 @@ using UnityEngine.EventSystems;
 public class GUI : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Canvas canvas;
+    public Canvas turnCanvas;
+    public Canvas actionCanvas;
 
     void Start()
     {
@@ -32,12 +33,17 @@ public class GUI : MonoBehaviour
     {
         if (playerTurn)
         {
-            canvas.transform.Find("TurnText").GetComponent<TextMeshProUGUI>().SetText("Tu turno");
+            turnCanvas.transform.Find("TurnText").GetComponent<TextMeshProUGUI>().SetText("Tu turno");
         }
         else
         {
-            canvas.transform.Find("TurnText").GetComponent<TextMeshProUGUI>().SetText("Turno de la IA");
+            turnCanvas.transform.Find("TurnText").GetComponent<TextMeshProUGUI>().SetText("Turno de la IA");
         }
 
+    }
+
+    public void ShowActionCanvas()
+    {
+        actionCanvas.gameObject.SetActive(true);
     }
 }

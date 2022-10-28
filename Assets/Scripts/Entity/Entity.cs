@@ -7,12 +7,14 @@ public class Entity : MonoBehaviour
     protected GridSpace space;
     protected GameManager gameManager;
     protected GridManager gridManager;
+    protected InputHandler inputHandler;
 
     // Start is called before the first frame update
     public virtual void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         gridManager = gameManager.gridManager;
+        inputHandler = gameManager.inputHandler;
     }
 
     public virtual void Init()
@@ -36,5 +38,10 @@ public class Entity : MonoBehaviour
     public GridSpace GetGridSpace()
     {
         return space;
+    }
+
+    protected virtual void OnMouseUpAsButton()
+    {
+        inputHandler.EntityClicked(this);
     }
 }

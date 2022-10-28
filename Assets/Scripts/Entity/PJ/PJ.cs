@@ -70,9 +70,15 @@ public class PJ : Entity
         return true;
     }
 
-    void OnMouseUpAsButton()
+    protected override void OnMouseUpAsButton()
     {
+        base.OnMouseUpAsButton();
         BFS();
-        InputHandler.Meow();
     }
+
+    protected virtual void Movement(GridSpace start, GridSpace destination)
+    {
+        start.GetWorldPosition();
+    }
+    
 }
