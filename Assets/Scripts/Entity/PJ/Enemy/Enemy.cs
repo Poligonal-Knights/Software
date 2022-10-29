@@ -23,7 +23,7 @@ public class Enemy : PJ
     protected override void Update()
     {
         base.Update();
-        if (realizandoTurno && !MovementsToDo.Any())
+        if (realizandoTurno && !MovementsToDo.Any() && !IsMoving)
         {
             //Turno finalizado
             realizandoTurno = false;

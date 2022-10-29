@@ -13,7 +13,7 @@ public class PJ : Entity
 
 
 
-    bool IsMoving;
+    protected bool IsMoving;
     protected Stack<GridSpace> MovementsToDo = new Stack<GridSpace>();
     GridSpace destination;
 
@@ -51,7 +51,6 @@ public class PJ : Entity
                 }
             }
         }
-
     }
 
     public void FindPath(Vector3Int goal)

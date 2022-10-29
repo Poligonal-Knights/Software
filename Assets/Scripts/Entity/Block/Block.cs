@@ -53,7 +53,6 @@ public class Block : Entity
     }
     public void SetInAreaAttackMode()
     {
-    
         animator.SetInteger("animationState", 3);
     }
 }

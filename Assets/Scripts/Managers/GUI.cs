@@ -14,6 +14,7 @@ public class GUI : MonoBehaviour
     public Canvas turnCanvas;
     public Canvas actionCanvas;
     public Canvas cancelCanvas;
+    public Canvas habilitiesCanvas;
     public Canvas alwaysActiveCanvas;
 
     Canvas currentCanvas;
@@ -25,6 +26,7 @@ public class GUI : MonoBehaviour
         allCanvas.Add(actionCanvas);
         allCanvas.Add(cancelCanvas);
         allCanvas.Add(emptyCanvas);
+        allCanvas.Add(habilitiesCanvas);
         //allCanvas.Add(turnCanvas);
         currentCanvas = emptyCanvas;
     }
@@ -65,7 +67,6 @@ public class GUI : MonoBehaviour
             c.gameObject.SetActive(false);
         }
         previousCanvas = currentCanvas;
-        Debug.Log(previousCanvas);
         currentCanvas = canvasToShow;
         currentCanvas.gameObject.SetActive(true);
         //if(GameManager.turnManager.IsPlayerTurn()) turnCanvas.gameObject.SetActive(true);
@@ -90,6 +91,11 @@ public class GUI : MonoBehaviour
     public void ShowEmptyCanvas()
     {
         ShowThisCanvas(emptyCanvas);
+    }
+
+    public void ShowHabilitiesCanvas()
+    {
+        ShowThisCanvas(habilitiesCanvas);
     }
 
     public void ShowPJSelectedUI()

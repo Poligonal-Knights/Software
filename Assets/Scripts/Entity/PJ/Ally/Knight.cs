@@ -20,4 +20,16 @@ public class Knight : Ally
     {
         return base.CanMoveThere(start, destination);
     }
+
+    protected override void Hability0()
+    {
+        foreach(var move in space.moves.Values)
+        {
+            if(move.gridPosition.y == space.gridPosition.y)
+            {
+                var b = move.neighbors["down"].GetEntity() as Block;
+                b.SetInSelectedMode();
+            }
+        }
+    }
 }

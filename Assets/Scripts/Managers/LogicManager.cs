@@ -9,7 +9,9 @@ public class LogicManager : MonoBehaviour
 
     //Bool to know is somthing as a PJ is moving, attaking, etc. right know
     bool IsSomethingHappening;
-    bool PreviewMode;
+    bool MovePreview;
+    bool HabilityDirectionPreview;
+    bool HabilityAreaEfectPreview;
     bool CanCancelAction;
 
     // Start is called before the first frame update
@@ -48,7 +50,7 @@ public class LogicManager : MonoBehaviour
     //Move button
     public void PreviewPJMovement()
     {
-        PreviewMode = true;
+        MovePreview = true;
         IsSomethingHappening = true;
         SelectedPJ.BFS();
         gameManager.UIManager.ShowCancelCanvas();
@@ -59,9 +61,14 @@ public class LogicManager : MonoBehaviour
         return !IsSomethingHappening;
     }
 
+    public void HabilityButton()
+    {
+        gameManager.UIManager.ShowHabilitiesCanvas();
+    }
+
     public void CancelAction()
     {
-        if (PreviewMode) PreviewMode = false;
+        if (MovePreview) MovePreview = false;
         IsSomethingHappening = false;
         gameManager.UIManager.ShowPrevoiusCanvas();
         StopPJMovementPreview();
@@ -69,16 +76,16 @@ public class LogicManager : MonoBehaviour
 
     public void StopPJMovementPreview()
     {
-        PreviewMode = false;
+        MovePreview = false;
         FindObjectOfType<GridManager>().StopPJMovementPreview();
         gameManager.UIManager.ShowEmptyCanvas();
     }
 
     public void PJFinishedMoving()
     {
-        if(gameManager.turnManager.IsPlayerTurn())
+        if (gameManager.turnManager.IsPlayerTurn())
         {
-            //gameManager.UIManager.ShowActionCanvas();
+            gameManager.UIManager.ShowActionCanvas();
         }
     }
 
@@ -86,15 +93,15 @@ public class LogicManager : MonoBehaviour
     {
         //if (CanSomethingHappen())
         if (true)
-            {
+        {
             if (entityClicked is PJ)
             {
                 SetSelectedPJ(entityClicked as PJ);
             }
-            else if (entityClicked is Block && PreviewMode)
+            else if (entityClicked is Block && MovePreview)
             {
                 var space = entityClicked.GetGridSpace().neighbors["up"];
-                if(space.IsVisited() && !(space.GetEntity() is PJ))
+                if (space.IsVisited() && !(space.GetEntity() is PJ))
                 {
                     SelectedPJ.MoveTo(space);
                     StopPJMovementPreview();
@@ -105,6 +112,15 @@ public class LogicManager : MonoBehaviour
                 SetSelectedPJ(null);
                 gameManager.UIManager.ShowNothingSelectedUI();
             }
+        }
+    }
+
+    public void DoHability(int i)
+    {
+        if(SelectedPJ is Ally)
+        {
+            (SelectedPJ as Ally).DoHability(i);
+            gameManager.UIManager.ShowCancelCanvas();
         }
     }
 }
