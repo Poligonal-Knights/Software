@@ -40,19 +40,25 @@ public class Block : Entity
     public void SetInPreviewMode()
     {
         animator.SetInteger("animationState", 1);
+        animator.Play("gStoneAnim", -1, 0f);
     }
 
     public void StopAnimation()
     {
         animator.SetInteger("animationState", 0);
+        animator.Play("gStoneNoAnim", -1, 0f);
+
     }
     public void SetInSelectedMode()
     {
-    
         animator.SetInteger("animationState", 2);
+        animator.Play("gStoneAnimSelec", -1, 0f);
+
     }
     public void SetInAreaAttackMode()
     {
         animator.SetInteger("animationState", 3);
+        animator.Play("gStoneAttack", -1, 0f);
+
     }
 }

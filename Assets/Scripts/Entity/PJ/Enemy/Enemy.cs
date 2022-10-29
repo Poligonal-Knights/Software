@@ -90,4 +90,9 @@ public class Enemy : PJ
     {
         
     }
+
+    public virtual void BePushed()
+    {
+        Debug.Log("oh no oh no stop it pls oh nooo");
+    }
 }

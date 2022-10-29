@@ -23,12 +23,49 @@ public class Knight : Ally
 
     protected override void Hability0()
     {
-        foreach(var move in space.moves.Values)
+        if(IsInitiatingHability)
         {
-            if(move.gridPosition.y == space.gridPosition.y)
+            IsInitiatingHability = false;
+            foreach (var move in space.moves.Values)
             {
-                var b = move.neighbors["down"].GetEntity() as Block;
-                b.SetInSelectedMode();
+                if (move.gridPosition.y == space.gridPosition.y)
+                {
+                    move.SetSelectable(true);
+                    var b = move.neighbors["down"].GetEntity() as Block;
+                    b.SetInSelectedMode();
+                }
+            }
+
+            gridManager.ClearAffectedSpaces();
+        }
+        if(IsSelectingDirection)
+        {
+            Debug.Log("PJ_SelectingDirection");
+            IsSelectingDirection = false;
+            var auxVector = spaceSelected.gridPosition - space.gridPosition;
+            var aux = Vector3.Cross(auxVector, Vector3.up);
+            var spaceAffected1 = gridManager.GetGridSpace(Vector3Int.RoundToInt(spaceSelected.gridPosition + aux));
+            var spaceAffected2 = gridManager.GetGridSpace(Vector3Int.RoundToInt(spaceSelected.gridPosition - aux));
+            space.SetAffected(true);
+            spaceAffected1.SetAffected(true);
+            spaceAffected2.SetAffected(true);
+            (spaceSelected.neighbors["down"].GetEntity() as Block).SetInAreaAttackMode();
+            (spaceAffected1.neighbors["down"].GetEntity() as Block).SetInAreaAttackMode();
+            (spaceAffected2.neighbors["down"].GetEntity() as Block).SetInAreaAttackMode();
+        }
+        if (IsConfirming)
+        {
+            IsConfirming = false;
+            var pushDirection = spaceSelected.gridPosition - space.gridPosition;
+
+            foreach(var affectedSpace in gridManager.affectedSpaces)
+            {
+                var entity = affectedSpace.GetEntity();
+                if (entity is Enemy)
+                {
+                    var enemy = entity as Enemy;
+                    enemy.BePushed();
+                }
             }
         }
     }

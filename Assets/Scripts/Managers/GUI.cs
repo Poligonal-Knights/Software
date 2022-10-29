@@ -13,8 +13,8 @@ public class GUI : MonoBehaviour
     public Canvas emptyCanvas;
     public Canvas turnCanvas;
     public Canvas actionCanvas;
-    public Canvas cancelCanvas;
     public Canvas habilitiesCanvas;
+    public Canvas previewCanvas;
     public Canvas alwaysActiveCanvas;
 
     Canvas currentCanvas;
@@ -24,9 +24,9 @@ public class GUI : MonoBehaviour
     {
         allCanvas = new List<Canvas>();
         allCanvas.Add(actionCanvas);
-        allCanvas.Add(cancelCanvas);
         allCanvas.Add(emptyCanvas);
         allCanvas.Add(habilitiesCanvas);
+        allCanvas.Add(previewCanvas);
         //allCanvas.Add(turnCanvas);
         currentCanvas = emptyCanvas;
     }
@@ -62,40 +62,38 @@ public class GUI : MonoBehaviour
 
     void ShowThisCanvas(Canvas canvasToShow)
     {
-        foreach(Canvas c in allCanvas)
+        foreach (Canvas c in allCanvas)
         {
             c.gameObject.SetActive(false);
         }
-        previousCanvas = currentCanvas;
         currentCanvas = canvasToShow;
         currentCanvas.gameObject.SetActive(true);
         //if(GameManager.turnManager.IsPlayerTurn()) turnCanvas.gameObject.SetActive(true);
         // alwaysActiveCanvas.gameObject.SetActive(true);
     }
 
-    public void ShowPrevoiusCanvas()
-    {
-        ShowThisCanvas(previousCanvas);
-    }
-
     public void ShowActionCanvas()
     {
         ShowThisCanvas(actionCanvas);
-    }
-
-    public void ShowCancelCanvas()
-    {
-        ShowThisCanvas(cancelCanvas);
+        ShowTurnButton();
     }
 
     public void ShowEmptyCanvas()
     {
         ShowThisCanvas(emptyCanvas);
+        //ShowTurnButton();
     }
 
     public void ShowHabilitiesCanvas()
     {
         ShowThisCanvas(habilitiesCanvas);
+        ShowTurnButton();
+    }
+
+    public void ShowPreviewCanvas()
+    {
+        ShowThisCanvas(previewCanvas);
+        HideTurnButton();
     }
 
     public void ShowPJSelectedUI()
@@ -111,6 +109,16 @@ public class GUI : MonoBehaviour
     public void ShowNothingSelectedUI()
     {
         ShowEmptyCanvas();
+    }
+
+    public void ShowTurnButton()
+    {
+        turnCanvas.gameObject.SetActive(true);
+    }
+
+    public void HideTurnButton()
+    {
+        turnCanvas.gameObject.SetActive(false);
     }
 
 }

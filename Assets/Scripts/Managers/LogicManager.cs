@@ -10,14 +10,18 @@ public class LogicManager : MonoBehaviour
     //Bool to know is somthing as a PJ is moving, attaking, etc. right know
     bool IsSomethingHappening;
     bool MovePreview;
+    bool SelectingHability;
     bool HabilityDirectionPreview;
-    bool HabilityAreaEfectPreview;
-    bool CanCancelAction;
+    bool HabilityAreaEffectPreview;
+    //bool CanCancelAction;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        HabilityDirectionPreview = false;
+        HabilityAreaEffectPreview = false;
+        //CanCancelAction = false;
     }
 
     // Update is called once per frame
@@ -33,8 +37,8 @@ public class LogicManager : MonoBehaviour
 
         if (pj is Ally)
         {
-            //gameManager.UIManager.ShowActionCanvas();
-            gameManager.UIManager.ShowPJSelectedUI();
+            gameManager.UIManager.ShowActionCanvas();
+            //gameManager.UIManager.ShowPJSelectedUI();
         }
         else if (pj is Enemy)
         {
@@ -52,8 +56,8 @@ public class LogicManager : MonoBehaviour
     {
         MovePreview = true;
         IsSomethingHappening = true;
+        gameManager.UIManager.ShowPreviewCanvas();
         SelectedPJ.BFS();
-        gameManager.UIManager.ShowCancelCanvas();
     }
 
     public bool CanSomethingHappen()
@@ -64,14 +68,52 @@ public class LogicManager : MonoBehaviour
     public void HabilityButton()
     {
         gameManager.UIManager.ShowHabilitiesCanvas();
+        SelectingHability = true;
+    }
+
+    public void ConfirmAction()
+    {
+        if(MovePreview)
+        {
+            MovePreview = false;
+
+        }
+
+        if(HabilityAreaEffectPreview)
+        {
+            HabilityAreaEffectPreview = false;
+            Debug.Log("Hailidad confirmada");
+            (SelectedPJ as Ally).ConfirmHability();
+            gameManager.UIManager.ShowEmptyCanvas();
+        }
     }
 
     public void CancelAction()
     {
-        if (MovePreview) MovePreview = false;
-        IsSomethingHappening = false;
-        gameManager.UIManager.ShowPrevoiusCanvas();
-        StopPJMovementPreview();
+        if (MovePreview)
+        {
+            MovePreview = false;
+            IsSomethingHappening = false;
+            StopPJMovementPreview();
+            gameManager.UIManager.ShowActionCanvas();
+        }
+
+        if (SelectingHability)
+        {
+            SelectingHability = false;
+            gameManager.UIManager.ShowActionCanvas();
+        }
+
+        if (HabilityDirectionPreview)
+        {
+            (SelectedPJ as Ally).StopDoingHability();
+            HabilityDirectionPreview = false;
+            HabilityAreaEffectPreview = false;
+            SelectingHability = true;
+            gameManager.gridManager.ClearSelectableSpaces();
+            gameManager.gridManager.ClearAffectedSpaces();
+            gameManager.UIManager.ShowHabilitiesCanvas();
+        }
     }
 
     public void StopPJMovementPreview()
@@ -96,31 +138,51 @@ public class LogicManager : MonoBehaviour
         {
             if (entityClicked is PJ)
             {
-                SetSelectedPJ(entityClicked as PJ);
-            }
-            else if (entityClicked is Block && MovePreview)
-            {
-                var space = entityClicked.GetGridSpace().neighbors["up"];
-                if (space.IsVisited() && !(space.GetEntity() is PJ))
+                if (!MovePreview && !SelectingHability && !HabilityDirectionPreview && !HabilityAreaEffectPreview)
                 {
-                    SelectedPJ.MoveTo(space);
-                    StopPJMovementPreview();
+                    SetSelectedPJ(entityClicked as PJ);
                 }
             }
-            else
+            else if (entityClicked is Block)
             {
-                SetSelectedPJ(null);
-                gameManager.UIManager.ShowNothingSelectedUI();
+                if (MovePreview)
+                {
+                    var space = entityClicked.GetGridSpace().neighbors["up"];
+                    if (space.IsVisited() && !(space.GetEntity() is PJ))
+                    {
+                        SelectedPJ.MoveTo(space);
+                        StopPJMovementPreview();
+                    }
+                }
+
+                else if (HabilityDirectionPreview)
+                {
+                    var space = entityClicked.GetGridSpace().neighbors["up"];
+                    if (space.IsSelectable())
+                    {
+                        space.SetSelected(true);
+                        HabilityAreaEffectPreview = true;
+                        (SelectedPJ as Ally).SetHabilitySpaceSelected(space);
+                    }
+                }
+
+                else
+                {
+                    SetSelectedPJ(null);
+                    gameManager.UIManager.ShowNothingSelectedUI();
+                }
             }
         }
     }
 
     public void DoHability(int i)
     {
-        if(SelectedPJ is Ally)
+        if (SelectedPJ is Ally)
         {
             (SelectedPJ as Ally).DoHability(i);
-            gameManager.UIManager.ShowCancelCanvas();
+            HabilityDirectionPreview = true;
+            SelectingHability = false;
+            gameManager.UIManager.ShowPreviewCanvas();
         }
     }
 }

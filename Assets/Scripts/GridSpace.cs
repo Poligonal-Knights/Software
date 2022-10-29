@@ -16,6 +16,9 @@ public class GridSpace
 
     bool passable;
     public bool visited;
+    public bool selectable;
+    public bool selected;
+    public bool affected;
 
     public BFS_Node node;
 
@@ -61,9 +64,9 @@ public class GridSpace
 
     public void Link()
     {
-        var directions = new[] { "left", "right", "forward", "back"};
+        var directions = new[] { "left", "right", "forward", "back" };
 
-        foreach(var direction in directions)
+        foreach (var direction in directions)
         {
             if (neighbors[direction].IsPassable()) moves[direction] = neighbors[direction];
             else if (neighbors[direction].neighbors["up"].IsPassable()) moves[direction] = neighbors[direction].neighbors["up"];
@@ -78,13 +81,46 @@ public class GridSpace
 
     public void SetVisited(bool v)
     {
-        if(v) gridManager.visitedSpaces.Add(this);
+        if (v) gridManager.visitedSpaces.Add(this);
         visited = v;
     }
 
     public bool IsVisited()
     {
         return visited;
+    }
+
+    public void SetSelectable(bool s)
+    {
+        if (s) gridManager.selectableSpaces.Add(this);
+        selectable = s;
+    }
+
+    public bool IsSelectable()
+    {
+        return selectable;
+    }
+
+    public void SetSelected(bool s)
+    {
+        if (s) gridManager.SetSelectedSpace(this);
+        selected = s;
+    }
+
+    public bool IsSelected()
+    {
+        return selected;
+    }
+
+    public void SetAffected(bool s)
+    {
+        if (s) gridManager.affectedSpaces.Add(this);
+        affected = s;
+    }
+
+    public bool IsAffected()
+    {
+        return affected;
     }
 
     public void SetEntity(Entity e)

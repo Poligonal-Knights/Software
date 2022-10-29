@@ -11,9 +11,9 @@ public class PJ : Entity
     protected int movement;
     protected int health;
 
-
-
+    //States
     protected bool IsMoving;
+
     protected Stack<GridSpace> MovementsToDo = new Stack<GridSpace>();
     GridSpace destination;
 

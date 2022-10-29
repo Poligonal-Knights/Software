@@ -12,6 +12,10 @@ public class GridManager : MonoBehaviour
     Vector3Int maxBounds;
 
     public List<GridSpace> visitedSpaces = new List<GridSpace>();
+    public HashSet<GridSpace> selectableSpaces = new HashSet<GridSpace>();
+    public HashSet<GridSpace> affectedSpaces = new HashSet<GridSpace>();
+
+    GridSpace selectedSpace;
 
     public void Init()
     {
@@ -104,11 +108,53 @@ public class GridManager : MonoBehaviour
     {
         foreach(var space in visitedSpaces)
         {
-            space.SetVisited(false);
             var b = space.neighbors["down"].GetEntity() as Block;
             b.StopAnimation();
         }
+        ClearVisitedSpaces();
+    }
+
+    public void SetSelectedSpace(GridSpace g)
+    {
+        if(selectedSpace != null)
+        {
+            selectedSpace.SetSelected(false);
+        }
+        selectedSpace = g;
+    }
+
+    public GridSpace GetSelectedSpace()
+    {
+        return selectedSpace;
+    }
+
+    public void ClearVisitedSpaces()
+    {
+        foreach (var space in visitedSpaces)
+        {
+            space.SetVisited(false);
+        }
         visitedSpaces.Clear();
+    }
+
+    public void ClearSelectableSpaces()
+    {
+        foreach (var space in selectableSpaces)
+        {
+            space.SetSelectable(false);
+            (space.neighbors["down"].GetEntity() as Block).StopAnimation();
+        }
+        selectableSpaces.Clear();
+    }
+
+    public void ClearAffectedSpaces()
+    {
+        foreach (var space in affectedSpaces)
+        {
+            space.SetAffected(false);
+            (space.neighbors["down"].GetEntity() as Block).StopAnimation();
+        }
+        affectedSpaces.Clear();
     }
 }
 
