@@ -46,4 +46,14 @@ public class Block : Entity
     {
         animator.SetInteger("animationState", 0);
     }
+    public void SetInSelectedMode()
+    {
+    
+        animator.SetInteger("animationState", 2);
+    }
+    public void SetInAreaAttackMode()
+    {
+    
+        animator.SetInteger("animationState", 3);
+    }
 }
