@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEditor.Timeline;
 using UnityEngine;
@@ -8,10 +9,12 @@ using UnityEngine.EventSystems;
 public class GUI : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameManager GameManager;
     public Canvas emptyCanvas;
     public Canvas turnCanvas;
     public Canvas actionCanvas;
     public Canvas cancelCanvas;
+    public Canvas alwaysActiveCanvas;
 
     Canvas currentCanvas;
     Canvas previousCanvas;
@@ -19,10 +22,10 @@ public class GUI : MonoBehaviour
     void Start()
     {
         allCanvas = new List<Canvas>();
-        //allCanvas.Add(turnCanvas);
         allCanvas.Add(actionCanvas);
         allCanvas.Add(cancelCanvas);
         allCanvas.Add(emptyCanvas);
+        //allCanvas.Add(turnCanvas);
         currentCanvas = emptyCanvas;
     }
 
@@ -43,11 +46,15 @@ public class GUI : MonoBehaviour
     {
         if (playerTurn)
         {
-            turnCanvas.transform.Find("TurnText").GetComponent<TextMeshProUGUI>().SetText("Tu turno");
+            Debug.Log("Turno aliado comienza");
+            alwaysActiveCanvas.transform.Find("TurnText").GetComponent<TextMeshProUGUI>().SetText("Tu turno");
+            turnCanvas.gameObject.SetActive(true);
         }
         else
         {
-            turnCanvas.transform.Find("TurnText").GetComponent<TextMeshProUGUI>().SetText("Turno de la IA");
+            Debug.Log("Turno enemigo comienza");
+            alwaysActiveCanvas.transform.Find("TurnText").GetComponent<TextMeshProUGUI>().SetText("Turno de la IA");
+            turnCanvas.gameObject.SetActive(false);
         }
 
     }
@@ -62,6 +69,8 @@ public class GUI : MonoBehaviour
         Debug.Log(previousCanvas);
         currentCanvas = canvasToShow;
         currentCanvas.gameObject.SetActive(true);
+        //if(GameManager.turnManager.IsPlayerTurn()) turnCanvas.gameObject.SetActive(true);
+        // alwaysActiveCanvas.gameObject.SetActive(true);
     }
 
     public void ShowPrevoiusCanvas()

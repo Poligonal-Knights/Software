@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public LogicManager logicManager;
     public InputHandler inputHandler;
     public GUI UIManager;
+    public EnemyManager enemyManager;
 
     Entity[] entities;
 

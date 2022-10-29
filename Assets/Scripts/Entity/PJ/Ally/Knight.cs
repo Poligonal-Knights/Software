@@ -8,6 +8,7 @@ public class Knight : Ally
     protected override void Start()
     {
         base.Start();
+        health=10;
     }
     // Update is called once per frame
     protected override void Update()

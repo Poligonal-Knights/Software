@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class TrashMob : Enemy
 {
@@ -8,6 +9,7 @@ public class TrashMob : Enemy
     protected override void Start()
     {
         base.Start();
+        health = 3;
     }
 
     // Update is called once per frame
@@ -16,6 +18,10 @@ public class TrashMob : Enemy
         base.Update();
     }
 
+    public override void EnemyAI()
+    {
+        base.EnemyAI();
+    }
     /*
      Metodo IA()
     {

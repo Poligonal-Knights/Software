@@ -8,6 +8,7 @@ public class WhiteWizard : Ally
     protected override void Start()
     {
         base.Start();
+        health = 8;
     }
 
     // Update is called once per frame

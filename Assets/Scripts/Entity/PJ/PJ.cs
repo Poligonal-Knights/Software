@@ -6,10 +6,11 @@ using static UnityEngine.GraphicsBuffer;
 
 public class PJ : Entity
 {
-    int speed;
+    protected int speed;
     bool IsMoving;
-    Stack<GridSpace> MovementsToDo = new Stack<GridSpace>();
+    protected Stack<GridSpace> MovementsToDo = new Stack<GridSpace>();
     GridSpace destination;
+    protected int health = 5;
 
     protected override void Start()
     {
@@ -126,4 +127,24 @@ public class PJ : Entity
     {
         base.OnMouseUpAsButton();
     }
+
+    // public void setHealth(int newHealth)
+    // {
+    //     health = newHealth;
+    // }
+    //
+    // public int getHealth()
+    // {
+    //     return health;
+    // }
+    //
+    // public void setMovement(int newMovement)
+    // {
+    //     speed=newMovement;
+    // }
+    //
+    // public int getMovement()
+    // {
+    //     return speed;
+    // }
 }

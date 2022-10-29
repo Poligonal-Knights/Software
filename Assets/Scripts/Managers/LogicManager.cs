@@ -78,7 +78,7 @@ public class LogicManager : MonoBehaviour
     {
         if(gameManager.turnManager.IsPlayerTurn())
         {
-            gameManager.UIManager.ShowActionCanvas();
+            //gameManager.UIManager.ShowActionCanvas();
         }
     }
 

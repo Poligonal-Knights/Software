@@ -5,6 +5,7 @@ using UnityEngine;
 public class TurnManager : MonoBehaviour
 {
     public GUI UIManager;
+    public GameManager GameManager;
 
     bool playerTurn;
 
@@ -25,6 +26,10 @@ public class TurnManager : MonoBehaviour
         Debug.Log("Pasa turno");
         playerTurn = !playerTurn;
         UIManager.ChangeTurn(playerTurn);
+        if (!playerTurn)
+        {
+          GameManager.enemyManager.enemyTurn();
+        }
     }
 
     public bool IsPlayerTurn()
