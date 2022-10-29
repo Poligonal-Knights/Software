@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ally : PJ
 {
     int energy;
-    int strength;
+    int trapBonusDamage;
     int pushStrength;
     // Start is called before the first frame update
     protected override void Start()
