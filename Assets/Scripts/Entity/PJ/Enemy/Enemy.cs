@@ -16,7 +16,7 @@ public class Enemy : PJ
     public override void Init()
     {
         base.Init();
-        speed = 3;
+        maxMovement = 3;
     }
 
     // Update is called once per frame
@@ -26,8 +26,8 @@ public class Enemy : PJ
         if (realizandoTurno && !MovementsToDo.Any())
         {
             //Turno finalizado
-            gameManager.enemyManager.enemyTurnEnd();
             realizandoTurno = false;
+            gameManager.enemyManager.enemyTurnEnd();
         }
     }
 
@@ -38,12 +38,21 @@ public class Enemy : PJ
         // gameManager.enemyManager.enemyTurnEnd();
     }
 
+    protected virtual void movementAI2()
+    {
+        BFS();
+        var posibilities = FindObjectOfType<GridManager>().visitedSpaces;
+        int chosenMove = Random.Range(0, posibilities.Count);
+        MoveTo(posibilities[chosenMove]);
+        realizandoTurno = true;
+    }
+
     protected virtual void movementAI()
     {
         List<GridSpace> possibleMoves = new List<GridSpace>();
         GridSpace chosenMove = space;
         List<GridSpace> movimientosEnOrden = new List<GridSpace>();
-        for (int i = 0; i < speed; i++)
+        for (int i = 0; i < maxMovement; i++)
         {
             if (chosenMove.neighbors["right"].IsPassable())
             {
@@ -68,8 +77,8 @@ public class Enemy : PJ
             movimientosEnOrden.Add(chosenMove);
             possibleMoves.Clear();
         }
-        
-        for (int i = movimientosEnOrden.Count-1; i >= 0; i--)
+
+        for (int i = movimientosEnOrden.Count - 1; i >= 0; i--)
         {
             MovementsToDo.Push(movimientosEnOrden[i]);
         }

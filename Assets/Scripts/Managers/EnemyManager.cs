@@ -34,8 +34,9 @@ public class EnemyManager : MonoBehaviour
 
     public void enemyTurnEnd()
     {
+        gameManager.gridManager.visitedSpaces.Clear();
         actualEnemyTurn++;
-        if (actualEnemyTurn < enemyList.Count)
+        if (actualEnemyTurn >= enemyList.Count)
         {
             actualEnemyTurn = 0;
             gameManager.turnManager.ChangeTurn();

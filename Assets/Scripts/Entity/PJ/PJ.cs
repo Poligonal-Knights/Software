@@ -6,11 +6,16 @@ using static UnityEngine.GraphicsBuffer;
 
 public class PJ : Entity
 {
-    protected int speed;
+    //Stats
+    protected int maxMovement;
+    protected int movement;
+    protected int health;
+
+
+
     bool IsMoving;
     protected Stack<GridSpace> MovementsToDo = new Stack<GridSpace>();
     GridSpace destination;
-    protected int health = 5;
 
     protected override void Start()
     {
@@ -21,7 +26,7 @@ public class PJ : Entity
     public override void Init()
     {
         base.Init();
-        speed = 4;
+        maxMovement = 4;
     }
 
     // Update is called once per frame
@@ -76,13 +81,13 @@ public class PJ : Entity
         while (nodes.Any())
         {
             var currentNode = nodes.Dequeue();
-            if (currentNode.distance < speed)
+            if (currentNode.distance < maxMovement)
             {
                 foreach (var move in currentNode.space.moves.Values)
                 {
                     if (!move.visited && CanMoveThere(currentNode.space, move))
                     {
-                        if (!(currentNode.distance + 1 == speed && move.GetEntity() is PJ))
+                        if (!(currentNode.distance + 1 == maxMovement && move.GetEntity() is PJ))
                         {
                             move.SetVisited(true);
                             nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));

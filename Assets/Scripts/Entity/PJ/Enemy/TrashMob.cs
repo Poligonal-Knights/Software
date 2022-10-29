@@ -22,11 +22,4 @@ public class TrashMob : Enemy
     {
         base.EnemyAI();
     }
-    /*
-     Metodo IA()
-    {
-        moverse random
-        atacar si es posible, random
-    }
-     */
 }

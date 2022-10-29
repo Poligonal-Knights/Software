@@ -56,7 +56,6 @@ public class GUI : MonoBehaviour
             alwaysActiveCanvas.transform.Find("TurnText").GetComponent<TextMeshProUGUI>().SetText("Turno de la IA");
             turnCanvas.gameObject.SetActive(false);
         }
-
     }
 
     void ShowThisCanvas(Canvas canvasToShow)
