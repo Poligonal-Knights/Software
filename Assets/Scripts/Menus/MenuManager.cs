@@ -19,7 +19,7 @@ public class MenuManager : MonoBehaviour
 
     public void BeginGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("N1");
     }
     public void OpenOptionP()
     {
