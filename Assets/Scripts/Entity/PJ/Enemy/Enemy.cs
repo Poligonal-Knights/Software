@@ -80,7 +80,7 @@ public class Enemy : PJ
 
         for (int i = movimientosEnOrden.Count - 1; i >= 0; i--)
         {
-            MovementsToDo.Push(movimientosEnOrden[i]);
+            MovementsToDo.Enqueue(movimientosEnOrden[i]);
         }
 
         realizandoTurno = true;
