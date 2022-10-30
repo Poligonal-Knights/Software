@@ -27,6 +27,7 @@ public class Knight : Ally
     {
         if(IsInitiatingHability)
         {
+            gridManager.ClearAffectedSpaces();
             IsInitiatingHability = false;
             foreach (var move in space.moves.Values)
             {
@@ -37,8 +38,6 @@ public class Knight : Ally
                     b.SetInSelectedMode();
                 }
             }
-
-            gridManager.ClearAffectedSpaces();
         }
         if(IsSelectingDirection)
         {
@@ -51,9 +50,9 @@ public class Knight : Ally
             spaceSelected.SetAffected(true);
             spaceAffected1.SetAffected(true);
             spaceAffected2.SetAffected(true);
-            (spaceSelected.neighbors["down"].GetEntity() as Block).SetInAreaAttackMode();
-            (spaceAffected1.neighbors["down"].GetEntity() as Block).SetInAreaAttackMode();
-            (spaceAffected2.neighbors["down"].GetEntity() as Block).SetInAreaAttackMode();
+            //(spaceSelected.neighbors["down"].GetEntity() as Block).SetInAreaAttackMode();
+            //(spaceAffected1.neighbors["down"].GetEntity() as Block).SetInAreaAttackMode();
+            //(spaceAffected2.neighbors["down"].GetEntity() as Block).SetInAreaAttackMode();
         }
         if (IsConfirming)
         {

@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class Enemy : PJ
 {
-    public bool realizandoTurno=false;
+    public bool realizandoTurno = false;
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -89,7 +89,7 @@ public class Enemy : PJ
 
     protected virtual void attackAI()
     {
-        
+
     }
 
     public virtual void BePushed(Vector3Int direction, int pushback, int extraDamage)
@@ -97,17 +97,23 @@ public class Enemy : PJ
         bool bumped = false;
         int i = 0;
         Debug.Log("oh no oh no stop it pls oh nooo");
-        while(bumped == false && i <= pushback)
+        while (!bumped && i <= pushback)
         {
             i++;
-            var pushedInto = gridManager.GetGridSpace(space.gridPosition + direction*i);
+            var pushedInto = gridManager.GetGridSpace(space.gridPosition + direction * i);
             if (pushedInto.IsEmpty())
             {
                 MovementsToDo.Enqueue(pushedInto);
+                if (!pushedInto.IsPassable())
+                {
+                    Debug.Log("Intentando iniciar caida");
+                    bumped = true;
+                    CalculateFallFrom(pushedInto);
+                }
             }
             else
             {
-                Debug.Log("He sufrido "+extraDamage+" y mi vida es "+health);
+                Debug.Log("He sufrido " + extraDamage + " y mi vida es " + health);
                 health -= extraDamage;
                 Debug.Log("Mi vida final es " + health);
                 var crashed = pushedInto.GetEntity();

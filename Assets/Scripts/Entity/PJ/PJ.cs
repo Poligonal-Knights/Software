@@ -13,6 +13,7 @@ public class PJ : Entity
 
     //States
     protected bool IsMoving;
+    protected bool IsDying;
 
     protected Queue<GridSpace> MovementsToDo = new Queue<GridSpace>();
     GridSpace destination;
@@ -39,7 +40,7 @@ public class PJ : Entity
         }
         if (IsMoving)
         {
-            var step = 3 * Time.deltaTime; // calculate distance to move
+            var step = 20 * Time.deltaTime; // calculate distance to move
             transform.position = Vector3.MoveTowards(transform.position, destination.GetWorldPosition(), step);
             if (Vector3.Distance(transform.position, destination.GetWorldPosition()) < 0.001f)
             {
@@ -51,6 +52,8 @@ public class PJ : Entity
                 }
             }
         }
+
+        if (space.gridPosition.y == 0) Destroy(gameObject);
     }
 
     public void FindPath(Vector3Int goal)
@@ -128,6 +131,28 @@ public class PJ : Entity
         movements.Reverse();
         MovementsToDo = new Queue<GridSpace>(movements);
         space.SetEntity(null);
+    }
+
+    public virtual void CalculateFall()
+    {
+        UpdateGridSpace();
+        var actualPosition = space;
+        while (actualPosition.neighbors["down"] !=null && !actualPosition.neighbors["down"].HasBlock())
+        {
+            actualPosition = actualPosition.neighbors["down"];
+            MovementsToDo.Enqueue(actualPosition);
+        }
+    }
+
+    public virtual void CalculateFallFrom(GridSpace start)
+    {
+        UpdateGridSpace(start);
+        var actualPosition = space;
+        while (actualPosition.neighbors["down"] != null && !actualPosition.neighbors["down"].HasBlock())
+        {
+            actualPosition = actualPosition.neighbors["down"];
+            MovementsToDo.Enqueue(actualPosition);
+        }
     }
 
     protected override void OnMouseUpAsButton()

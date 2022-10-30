@@ -106,12 +106,22 @@ public class GridManager : MonoBehaviour
 
     public void StopPJMovementPreview()
     {
-        foreach(var space in visitedSpaces)
-        {
-            var b = space.neighbors["down"].GetEntity() as Block;
-            b.StopAnimation();
-        }
+        //foreach(var space in visitedSpaces)
+        //{
+        //    var b = space.neighbors["down"].GetEntity() as Block;
+        //    b.StopAnimation();
+        //}
         ClearVisitedSpaces();
+    }
+
+    public void StopPJHabilityPreview()
+    {
+        //ClearAffectedSpaces();
+        foreach(var s in affectedSpaces)
+        {
+            if (s.neighbors["down"].HasBlock()) (s.neighbors["down"].GetEntity() as Block).StopAnimation();
+        }
+        ClearSelectableSpaces();
     }
 
     public void SetSelectedSpace(GridSpace g)
@@ -152,7 +162,7 @@ public class GridManager : MonoBehaviour
         foreach (var space in affectedSpaces)
         {
             space.SetAffected(false);
-            (space.neighbors["down"].GetEntity() as Block).StopAnimation();
+            //(space.neighbors["down"].GetEntity() as Block).StopAnimation();
         }
         affectedSpaces.Clear();
     }

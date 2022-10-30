@@ -30,8 +30,22 @@ public class Entity : MonoBehaviour
 
     protected void UpdateGridSpace()
     {
+        if(space != null)
+        {
+            space.SetEntity(null);
+        }
         Vector3Int pos = Vector3Int.RoundToInt(transform.position);
         space = gridManager.GetGridSpaceWorldCoords(pos);
+        space.SetEntity(this);
+    }
+
+    protected void UpdateGridSpace(GridSpace g)
+    {
+        if (space != null)
+        {
+            space.SetEntity(null);
+        }
+        space = g;
         space.SetEntity(this);
     }
 

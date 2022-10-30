@@ -85,6 +85,7 @@ public class LogicManager : MonoBehaviour
             Debug.Log("Hailidad confirmada");
             (SelectedPJ as Ally).ConfirmHability();
             gameManager.UIManager.ShowEmptyCanvas();
+            StopPJHabilityPreview();
         }
     }
 
@@ -107,11 +108,8 @@ public class LogicManager : MonoBehaviour
         if (HabilityDirectionPreview)
         {
             (SelectedPJ as Ally).StopDoingHability();
-            HabilityDirectionPreview = false;
-            HabilityAreaEffectPreview = false;
             SelectingHability = true;
-            gameManager.gridManager.ClearSelectableSpaces();
-            gameManager.gridManager.ClearAffectedSpaces();
+            StopPJHabilityPreview();
             gameManager.UIManager.ShowHabilitiesCanvas();
         }
     }
@@ -119,7 +117,15 @@ public class LogicManager : MonoBehaviour
     public void StopPJMovementPreview()
     {
         MovePreview = false;
-        FindObjectOfType<GridManager>().StopPJMovementPreview();
+        gameManager.gridManager.StopPJMovementPreview();
+        gameManager.UIManager.ShowEmptyCanvas();
+    }
+
+    public void StopPJHabilityPreview()
+    {
+        HabilityDirectionPreview = false;
+        HabilityAreaEffectPreview = false;
+        gameManager.gridManager.StopPJHabilityPreview();
         gameManager.UIManager.ShowEmptyCanvas();
     }
 
@@ -154,7 +160,10 @@ public class LogicManager : MonoBehaviour
                         StopPJMovementPreview();
                     }
                 }
+                else if(SelectingHability)
+                {
 
+                }
                 else if (HabilityDirectionPreview)
                 {
                     var space = entityClicked.GetGridSpace().neighbors["up"];

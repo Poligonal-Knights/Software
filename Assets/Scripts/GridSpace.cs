@@ -81,8 +81,16 @@ public class GridSpace
 
     public void SetVisited(bool v)
     {
-        if (v) gridManager.visitedSpaces.Add(this);
         visited = v;
+        if (visited) gridManager.visitedSpaces.Add(this);
+        if (neighbors["down"].HasBlock())
+        {
+            if (visited && IsEmpty())
+                (neighbors["down"].GetEntity() as Block).SetInPreviewMode();
+            else
+                (neighbors["down"].GetEntity() as Block).StopAnimation();
+
+        }
     }
 
     public bool IsVisited()
@@ -114,8 +122,16 @@ public class GridSpace
 
     public void SetAffected(bool s)
     {
-        if (s) gridManager.affectedSpaces.Add(this);
         affected = s;
+        if (affected) gridManager.affectedSpaces.Add(this);
+        if (neighbors["down"].HasBlock())
+        {
+            if (affected)
+                (neighbors["down"].GetEntity() as Block).SetInAreaAttackMode();
+            else
+                (neighbors["down"].GetEntity() as Block).StopAnimation();
+
+        }
     }
 
     public bool IsAffected()
