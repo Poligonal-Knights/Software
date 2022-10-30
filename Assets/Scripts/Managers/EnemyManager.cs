@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     //Lista de enemigos
-    List<Enemy> enemyList = new List<Enemy>();
+    public List<Enemy> enemyList = new List<Enemy>();
     public GameManager gameManager;
 
     private int actualEnemyTurn =  0;

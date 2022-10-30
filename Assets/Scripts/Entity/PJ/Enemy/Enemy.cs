@@ -72,11 +72,13 @@ public class Enemy : PJ
             {
                 possibleMoves.Add(chosenMove.neighbors["back"]);
             }
-
-            chosenMove = possibleMoves[Random.Range(0, possibleMoves.Count)];
-            // movimientosEnOrden.Add(chosenMove);
-            MovementsToDo.Enqueue(chosenMove);
-            possibleMoves.Clear();
+            if (possibleMoves.Any())
+            {
+                chosenMove = possibleMoves[Random.Range(0, possibleMoves.Count)];
+                // movimientosEnOrden.Add(chosenMove);
+                MovementsToDo.Enqueue(chosenMove);
+                possibleMoves.Clear();
+            }
         }
 
         // for (int i = 0; i < movimientosEnOrden.Count; i++)
@@ -125,6 +127,12 @@ public class Enemy : PJ
                 bumped = true;
             }
         }
+    }
+
+    public override void Die()
+    {
+        base.Die();
+        gameManager.enemyManager.enemyList.Remove(this);
     }
 }
 

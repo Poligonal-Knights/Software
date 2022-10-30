@@ -53,7 +53,7 @@ public class PJ : Entity
             }
         }
 
-        if (space.gridPosition.y == 0) Destroy(gameObject);
+        if (space.gridPosition.y == 0) Die();
     }
 
     public void FindPath(Vector3Int goal)
@@ -153,6 +153,12 @@ public class PJ : Entity
             actualPosition = actualPosition.neighbors["down"];
             MovementsToDo.Enqueue(actualPosition);
         }
+    }
+
+    public virtual void Die()
+    {
+        Destroy(gameObject);
+        IsDying = true;
     }
 
     protected override void OnMouseUpAsButton()
