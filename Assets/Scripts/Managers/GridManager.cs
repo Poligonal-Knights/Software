@@ -17,6 +17,11 @@ public class GridManager : MonoBehaviour
 
     GridSpace selectedSpace;
 
+    public void Start()
+    {
+        
+    }
+
     public void Init()
     {
         GetBounds();
@@ -68,10 +73,12 @@ public class GridManager : MonoBehaviour
         {
             e.Init();
         }
-        foreach(var e in FindObjectsOfType<Block>())
+        Debug.Log("Intentando encontrar todos los bloques");
+        foreach (var e in FindObjectsOfType<Block>())
         {
             e.UpdateUpperSpace();
         }
+        Debug.Log("Intentando encontrar todos los bloques CHECK");
     }
 
     void LinkGridSpaces()

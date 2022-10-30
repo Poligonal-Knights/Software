@@ -22,6 +22,8 @@ public class PJ : Entity
     {
         base.Start();
         IsMoving = false;
+        IsDying = false;
+
     }
 
     public override void Init()
@@ -94,7 +96,7 @@ public class PJ : Entity
                             move.SetVisited(true);
                             nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
                             //Animation
-                            if(!(move.GetEntity() is PJ))
+                            if (!(move.GetEntity() is PJ))
                             {
                                 Block b = move.neighbors["down"].GetEntity() as Block;
                                 b.SetInPreviewMode();
@@ -137,7 +139,7 @@ public class PJ : Entity
     {
         UpdateGridSpace();
         var actualPosition = space;
-        while (actualPosition.neighbors["down"] !=null && !actualPosition.neighbors["down"].HasBlock())
+        while (actualPosition.neighbors["down"] != null && !actualPosition.neighbors["down"].HasBlock())
         {
             actualPosition = actualPosition.neighbors["down"];
             MovementsToDo.Enqueue(actualPosition);
@@ -169,7 +171,7 @@ public class PJ : Entity
     public virtual void DealDamage(int damage)
     {
         health -= damage;
-        if(health <= 0)
+        if (health <= 0)
         {
             Die();
         }

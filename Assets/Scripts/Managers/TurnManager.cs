@@ -18,7 +18,7 @@ public class TurnManager : MonoBehaviour
 
     public void Init()
     {
-        
+
     }
 
     public void ChangeTurn()
@@ -28,7 +28,7 @@ public class TurnManager : MonoBehaviour
         UIManager.ChangeTurn(playerTurn);
         if (!playerTurn)
         {
-          GameManager.enemyManager.enemyTurn();
+            GameManager.enemyManager.enemyTurn();
         }
     }
 
@@ -40,6 +40,6 @@ public class TurnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

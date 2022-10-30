@@ -24,6 +24,10 @@ public class Ally : PJ
     {
         base.Start();
         IsDoingHability = false;
+        IsInitiatingHability = false;
+        IsSelectingDirection = false;
+        IsConfirming = false;
+        IsDoingHabilityAnimation = false;
     }
 
     // Update is called once per frame
@@ -52,7 +56,7 @@ public class Ally : PJ
                     break;
             }
         }
-        
+
     }
 
     public virtual void DoHability(int HabilityToDo)

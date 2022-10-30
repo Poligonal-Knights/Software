@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -22,13 +24,18 @@ public class EnemyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(!enemyList.Any())
+        {
+            SceneManager.LoadScene("Victory");
+        }
     }
 
 
     public void enemyTurn()
     {
+        Debug.Log("Probando");
         enemyList[actualEnemyTurn].EnemyAI();
+        Debug.Log("Probando terminado");
         gameManager.UIManager.ShowEmptyCanvas();
     }
 

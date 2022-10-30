@@ -12,13 +12,17 @@ public class Entity : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
-        gridManager = gameManager.gridManager;
-        inputHandler = gameManager.inputHandler;
+        Debug.Log(this+"intentando");
+        //gameManager = FindObjectOfType<GameManager>();
+        //gridManager = gameManager.gridManager;
+        //inputHandler = gameManager.inputHandler;
     }
 
     public virtual void Init()
     {
+        gameManager = FindObjectOfType<GameManager>();
+        gridManager = gameManager.gridManager;
+        inputHandler = gameManager.inputHandler;
         UpdateGridSpace();
     }
 
@@ -30,12 +34,15 @@ public class Entity : MonoBehaviour
 
     protected void UpdateGridSpace()
     {
-        if(space != null)
+        if (space != null)
         {
             space.SetEntity(null);
         }
         Vector3Int pos = Vector3Int.RoundToInt(transform.position);
-        space = gridManager.GetGridSpaceWorldCoords(pos);
+        Debug.Log("ERROR SEGURO INCOMING");
+        Debug.Log(gameManager.gridManager);
+        space = gameManager.gridManager.GetGridSpaceWorldCoords(pos);
+        Debug.Log(space);
         space.SetEntity(this);
     }
 

@@ -47,6 +47,7 @@ public class GUI : MonoBehaviour
         {
             Debug.Log("Turno aliado comienza");
             alwaysActiveCanvas.transform.Find("TurnText").GetComponent<TextMeshProUGUI>().SetText("Tu turno");
+            Debug.Log("Turno aliado comienza2");
             turnCanvas.gameObject.SetActive(true);
         }
         else

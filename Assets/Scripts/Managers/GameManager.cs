@@ -17,6 +17,12 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Init();
+        gridManager = FindObjectOfType<GridManager>();
+        turnManager = FindObjectOfType<TurnManager>();
+        logicManager = FindObjectOfType<LogicManager>();
+        inputHandler = FindObjectOfType<InputHandler>();
+        enemyManager = FindObjectOfType<EnemyManager>();
+        UIManager = FindObjectOfType<GUI>();
         gridManager.Init();
         turnManager.Init();
 
@@ -46,10 +52,5 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-    }
-
-    public void Wao()
-    {
-        Debug.Log("PJ pulsado");
     }
 }

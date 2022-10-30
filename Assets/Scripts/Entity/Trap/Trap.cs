@@ -17,27 +17,7 @@ public class Trap : Entity
     // Update is called once per frame
     protected override void Update()
     {
-        //if (!activated)
-        //{
-        //    if(LookIsSomeoneIsSameSpace())
-        //    {
 
-        //    }
-        //}
-    }
-
-    protected virtual bool LookIsSomeoneIsSameSpace()
-    {
-        //if (Vector3.Distance(transform.position, destination.GetWorldPosition()) < 0.001f)
-        //{
-        //    IsMoving = false;
-        //    if (!MovementsToDo.Any())
-        //    {
-        //        gameManager.logicManager.PJFinishedMoving();
-        //        UpdateGridSpace();
-        //    }
-        //}
-        return true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -48,5 +28,6 @@ public class Trap : Entity
             var PJcollided = collided as PJ;
             PJcollided.DealDamage(20);
         }
+        Destroy(gameObject);
     }
 }

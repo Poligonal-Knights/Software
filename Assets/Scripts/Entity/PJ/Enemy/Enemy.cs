@@ -63,24 +63,6 @@ public class Enemy : PJ
                     possibleMoves.Add(chosenMove.neighbors[direction]);
                 }
             }
-            //if (chosenMove.neighbors["right"].IsPassable())
-            //{
-            //    possibleMoves.Add(chosenMove.neighbors["right"]);
-            //}
-
-            //if (chosenMove.neighbors["left"].IsPassable())
-            //{
-            //    possibleMoves.Add(chosenMove.neighbors["left"]);
-            //}
-
-            //if (chosenMove.neighbors["forward"].IsPassable())
-            //{
-            //    possibleMoves.Add(chosenMove.neighbors["forward"]);
-            //}
-            //if (chosenMove.neighbors["back"].IsPassable())
-            //{
-            //    possibleMoves.Add(chosenMove.neighbors["back"]);
-            //}
             if (possibleMoves.Any())
             {
                 chosenMove = possibleMoves[Random.Range(0, possibleMoves.Count)];
@@ -142,6 +124,10 @@ public class Enemy : PJ
     public override void Die()
     {
         base.Die();
+        if(realizandoTurno)gameManager.enemyManager.enemyTurnEnd();
+        realizandoTurno = false;
+        IsMoving = false;
+        IsDying = true;
         gameManager.enemyManager.enemyList.Remove(this);
     }
 }
