@@ -74,14 +74,15 @@ public class Enemy : PJ
             }
 
             chosenMove = possibleMoves[Random.Range(0, possibleMoves.Count)];
-            movimientosEnOrden.Add(chosenMove);
+            // movimientosEnOrden.Add(chosenMove);
+            MovementsToDo.Enqueue(chosenMove);
             possibleMoves.Clear();
         }
 
-        for (int i = movimientosEnOrden.Count - 1; i >= 0; i--)
-        {
-            MovementsToDo.Enqueue(movimientosEnOrden[i]);
-        }
+        // for (int i = 0; i < movimientosEnOrden.Count; i++)
+        // {
+        //     MovementsToDo.Enqueue(movimientosEnOrden[i]);
+        // }
 
         realizandoTurno = true;
     }
@@ -91,8 +92,33 @@ public class Enemy : PJ
         
     }
 
-    public virtual void BePushed()
+    public virtual void BePushed(Vector3Int direction, int pushback, int extraDamage)
     {
+        bool bumped = false;
+        int i = 0;
         Debug.Log("oh no oh no stop it pls oh nooo");
+        while(bumped == false && i <= pushback)
+        {
+            i++;
+            var pushedInto = gridManager.GetGridSpace(space.gridPosition + direction*i);
+            if (pushedInto.IsEmpty())
+            {
+                MovementsToDo.Enqueue(pushedInto);
+            }
+            else
+            {
+                Debug.Log("He sufrido "+extraDamage+" y mi vida es "+health);
+                health -= extraDamage;
+                Debug.Log("Mi vida final es " + health);
+                var crashed = pushedInto.GetEntity();
+                if (pushedInto.GetEntity() is Enemy)
+                {
+                    var enemyBumped = pushedInto.GetEntity() as Enemy;
+                    enemyBumped.health -= extraDamage;
+                }
+                bumped = true;
+            }
+        }
     }
 }
+

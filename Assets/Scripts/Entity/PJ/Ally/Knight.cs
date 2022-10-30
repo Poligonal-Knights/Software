@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Knight : Ally
-{
+{   
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
         health=10;
+        pushStrength = 4;
+        trapBonusDamage = 4;
     }
     // Update is called once per frame
     protected override void Update()
@@ -46,7 +48,7 @@ public class Knight : Ally
             var aux = Vector3.Cross(auxVector, Vector3.up);
             var spaceAffected1 = gridManager.GetGridSpace(Vector3Int.RoundToInt(spaceSelected.gridPosition + aux));
             var spaceAffected2 = gridManager.GetGridSpace(Vector3Int.RoundToInt(spaceSelected.gridPosition - aux));
-            space.SetAffected(true);
+            spaceSelected.SetAffected(true);
             spaceAffected1.SetAffected(true);
             spaceAffected2.SetAffected(true);
             (spaceSelected.neighbors["down"].GetEntity() as Block).SetInAreaAttackMode();
@@ -57,14 +59,14 @@ public class Knight : Ally
         {
             IsConfirming = false;
             var pushDirection = spaceSelected.gridPosition - space.gridPosition;
-
             foreach(var affectedSpace in gridManager.affectedSpaces)
             {
+                // Debug.Log(affectedSpace.gridPosition);
                 var entity = affectedSpace.GetEntity();
                 if (entity is Enemy)
                 {
                     var enemy = entity as Enemy;
-                    enemy.BePushed();
+                    enemy.BePushed(pushDirection, pushStrength, trapBonusDamage);
                 }
             }
         }

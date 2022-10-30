@@ -5,9 +5,9 @@ using UnityEngine;
 public class Ally : PJ
 {
     //Stats
-    int energy;
-    int trapBonusDamage;
-    int pushStrength;
+    protected int energy;
+    protected int trapBonusDamage;
+    protected int pushStrength;
 
     //States
     public bool IsDoingHability;

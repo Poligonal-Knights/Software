@@ -9,7 +9,7 @@ public class TrashMob : Enemy
     protected override void Start()
     {
         base.Start();
-        health = 3;
+        health = 5;
     }
 
     // Update is called once per frame
