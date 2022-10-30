@@ -14,7 +14,7 @@ public class PJ : Entity
     //States
     protected bool IsMoving;
 
-    protected Stack<GridSpace> MovementsToDo = new Stack<GridSpace>();
+    protected Queue<GridSpace> MovementsToDo = new Queue<GridSpace>();
     GridSpace destination;
 
     protected override void Start()
@@ -35,7 +35,7 @@ public class PJ : Entity
         if (!IsMoving && MovementsToDo.Any())
         {
             IsMoving = true;
-            destination = MovementsToDo.Pop();
+            destination = MovementsToDo.Dequeue();
         }
         if (IsMoving)
         {
@@ -117,13 +117,16 @@ public class PJ : Entity
 
     public virtual void MoveTo(GridSpace finalDestination)
     {
+        List<GridSpace> movements = new List<GridSpace>();
         var actualNode = finalDestination.node;
         while (actualNode.HasParent())
         {
-            MovementsToDo.Push(actualNode.space);
+            movements.Add(actualNode.space);
             actualNode = actualNode.parent;
         };
-        MovementsToDo.Push(actualNode.space);
+        movements.Add(actualNode.space);
+        movements.Reverse();
+        MovementsToDo = new Queue<GridSpace>(movements);
         space.SetEntity(null);
     }
 
