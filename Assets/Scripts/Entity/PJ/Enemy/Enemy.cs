@@ -54,28 +54,38 @@ public class Enemy : PJ
         List<GridSpace> movimientosEnOrden = new List<GridSpace>();
         for (int i = 0; i < maxMovement; i++)
         {
-            if (chosenMove.neighbors["right"].IsPassable())
-            {
-                possibleMoves.Add(chosenMove.neighbors["right"]);
-            }
+            var directions = new[] { "left", "right", "forward", "back" };
 
-            if (chosenMove.neighbors["left"].IsPassable())
+            foreach(var direction in directions)
             {
-                possibleMoves.Add(chosenMove.neighbors["left"]);
+                if (chosenMove.neighbors[direction].IsPassable() && chosenMove.neighbors[direction].GetEntity() is not Ally)
+                {
+                    possibleMoves.Add(chosenMove.neighbors[direction]);
+                }
             }
+            //if (chosenMove.neighbors["right"].IsPassable())
+            //{
+            //    possibleMoves.Add(chosenMove.neighbors["right"]);
+            //}
 
-            if (chosenMove.neighbors["forward"].IsPassable())
-            {
-                possibleMoves.Add(chosenMove.neighbors["forward"]);
-            }
-            if (chosenMove.neighbors["back"].IsPassable())
-            {
-                possibleMoves.Add(chosenMove.neighbors["back"]);
-            }
+            //if (chosenMove.neighbors["left"].IsPassable())
+            //{
+            //    possibleMoves.Add(chosenMove.neighbors["left"]);
+            //}
+
+            //if (chosenMove.neighbors["forward"].IsPassable())
+            //{
+            //    possibleMoves.Add(chosenMove.neighbors["forward"]);
+            //}
+            //if (chosenMove.neighbors["back"].IsPassable())
+            //{
+            //    possibleMoves.Add(chosenMove.neighbors["back"]);
+            //}
             if (possibleMoves.Any())
             {
                 chosenMove = possibleMoves[Random.Range(0, possibleMoves.Count)];
                 // movimientosEnOrden.Add(chosenMove);
+                if(i != maxMovement - 1 || chosenMove.IsEmpty())
                 MovementsToDo.Enqueue(chosenMove);
                 possibleMoves.Clear();
             }
@@ -98,12 +108,12 @@ public class Enemy : PJ
     {
         bool bumped = false;
         int i = 0;
-        Debug.Log("oh no oh no stop it pls oh nooo");
+        Debug.Log("oh no oh no stop it pls nooo");
         while (!bumped && i <= pushback)
         {
             i++;
             var pushedInto = gridManager.GetGridSpace(space.gridPosition + direction * i);
-            if (pushedInto.IsEmpty())
+            if (pushedInto.IsEmpty() || pushedInto.HasTrap())
             {
                 MovementsToDo.Enqueue(pushedInto);
                 if (!pushedInto.IsPassable())

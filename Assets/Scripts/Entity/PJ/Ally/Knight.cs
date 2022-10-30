@@ -58,15 +58,21 @@ public class Knight : Ally
         {
             IsConfirming = false;
             var pushDirection = spaceSelected.gridPosition - space.gridPosition;
+            var AnyEnemyWasAffected = false;
             foreach(var affectedSpace in gridManager.affectedSpaces)
             {
                 // Debug.Log(affectedSpace.gridPosition);
                 var entity = affectedSpace.GetEntity();
                 if (entity is Enemy)
                 {
+                    AnyEnemyWasAffected = true;
                     var enemy = entity as Enemy;
                     enemy.BePushed(pushDirection, pushStrength, trapBonusDamage);
                 }
+            }
+            if(!AnyEnemyWasAffected)
+            {
+                gameManager.logicManager.PJFinishedMoving();
             }
         }
     }

@@ -40,7 +40,7 @@ public class PJ : Entity
         }
         if (IsMoving)
         {
-            var step = 20 * Time.deltaTime; // calculate distance to move
+            var step = 5 * Time.deltaTime; // calculate distance to move
             transform.position = Vector3.MoveTowards(transform.position, destination.GetWorldPosition(), step);
             if (Vector3.Distance(transform.position, destination.GetWorldPosition()) < 0.001f)
             {
@@ -164,6 +164,15 @@ public class PJ : Entity
     protected override void OnMouseUpAsButton()
     {
         base.OnMouseUpAsButton();
+    }
+
+    public virtual void DealDamage(int damage)
+    {
+        health -= damage;
+        if(health <= 0)
+        {
+            Die();
+        }
     }
 
     // public void setHealth(int newHealth)

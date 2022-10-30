@@ -32,7 +32,13 @@ public class GridSpace
 
     public bool IsEmpty()
     {
-        if (entity == null) return true;
+        if (entity is null) return true;
+        else return false;
+    }
+
+    public bool HasTrap()
+    {
+        if (entity is Trap) return true;
         else return false;
     }
 

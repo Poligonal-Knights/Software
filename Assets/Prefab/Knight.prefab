@@ -110,3 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 828f0079ebbe50c4886c8eded7d79e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsDoingHability: 0
+  IsInitiatingHability: 0
+  IsSelectingDirection: 0
+  IsConfirming: 0
+  IsDoingHabilityAnimation: 0
