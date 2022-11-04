@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
-    public GameManager gameManager;
-    
+    public static GridManager Instance { get; private set; }
+
     GridSpace[,,] spaces;
     Vector3Int minBounds;
     Vector3Int maxBounds;
@@ -16,6 +16,8 @@ public class GridManager : MonoBehaviour
     public HashSet<GridSpace> affectedSpaces = new HashSet<GridSpace>();
 
     GridSpace selectedSpace;
+
+    private void Awake() => Instance = this;
 
     public void Start()
     {

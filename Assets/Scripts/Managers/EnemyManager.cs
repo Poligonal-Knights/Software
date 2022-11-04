@@ -7,12 +7,17 @@ using UnityEngine.SceneManagement;
 
 public class EnemyManager : MonoBehaviour
 {
+    public static EnemyManager Instance { get; private set; }
+
     //Lista de enemigos
     public List<Enemy> enemyList = new List<Enemy>();
     public GameManager gameManager;
 
     private int actualEnemyTurn =  0;
     // Start is called before the first frame update
+
+    private void Awake() => Instance = this;
+
     void Start()
     {
         foreach(var enemy in FindObjectsOfType<Enemy>())
@@ -36,17 +41,17 @@ public class EnemyManager : MonoBehaviour
         Debug.Log("Probando");
         enemyList[actualEnemyTurn].EnemyAI();
         Debug.Log("Probando terminado");
-        gameManager.UIManager.ShowEmptyCanvas();
+        UIManager.Instance.ShowEmptyCanvas();
     }
 
     public void enemyTurnEnd()
     {
-        gameManager.gridManager.visitedSpaces.Clear();
+        GridManager.Instance.visitedSpaces.Clear();
         actualEnemyTurn++;
         if (actualEnemyTurn >= enemyList.Count)
         {
             actualEnemyTurn = 0;
-            gameManager.turnManager.ChangeTurn();
+            TurnManager.Instance.ChangeTurn();
         }
         else
         {

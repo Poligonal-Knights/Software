@@ -3,8 +3,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class GUI : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
+    public static UIManager Instance { get; private set; }
+
     // Start is called before the first frame update
     public GameManager GameManager;
     public Canvas emptyCanvas;
@@ -17,6 +19,9 @@ public class GUI : MonoBehaviour
     Canvas currentCanvas;
     Canvas previousCanvas;
     List<Canvas> allCanvas;
+
+    private void Awake() => Instance = this;
+
     void Start()
     {
         allCanvas = new List<Canvas>();

@@ -27,7 +27,7 @@ public class Enemy : PJ
         {
             //Turno finalizado
             realizandoTurno = false;
-            gameManager.enemyManager.enemyTurnEnd();
+            EnemyManager.Instance.enemyTurnEnd();
         }
     }
 
@@ -94,7 +94,7 @@ public class Enemy : PJ
         while (!bumped && i <= pushback)
         {
             i++;
-            var pushedInto = gridManager.GetGridSpace(space.gridPosition + direction * i);
+            var pushedInto = GridManager.Instance.GetGridSpace(space.gridPosition + direction * i);
             if (pushedInto.IsEmpty() || pushedInto.HasTrap())
             {
                 MovementsToDo.Enqueue(pushedInto);
@@ -124,11 +124,11 @@ public class Enemy : PJ
     public override void Die()
     {
         base.Die();
-        if(realizandoTurno)gameManager.enemyManager.enemyTurnEnd();
+        if(realizandoTurno)EnemyManager.Instance.enemyTurnEnd();
         realizandoTurno = false;
         IsMoving = false;
         IsDying = true;
-        gameManager.enemyManager.enemyList.Remove(this);
+        EnemyManager.Instance.enemyList.Remove(this);
     }
 }
 

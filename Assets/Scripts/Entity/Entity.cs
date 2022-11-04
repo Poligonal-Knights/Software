@@ -5,9 +5,6 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     protected GridSpace space;
-    protected GameManager gameManager;
-    protected GridManager gridManager;
-    protected InputHandler inputHandler;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -20,9 +17,6 @@ public class Entity : MonoBehaviour
 
     public virtual void Init()
     {
-        gameManager = FindObjectOfType<GameManager>();
-        gridManager = gameManager.gridManager;
-        inputHandler = gameManager.inputHandler;
         UpdateGridSpace();
     }
 
@@ -39,9 +33,7 @@ public class Entity : MonoBehaviour
             space.SetEntity(null);
         }
         Vector3Int pos = Vector3Int.RoundToInt(transform.position);
-        Debug.Log("ERROR SEGURO INCOMING");
-        Debug.Log(gameManager.gridManager);
-        space = gameManager.gridManager.GetGridSpaceWorldCoords(pos);
+        space = GridManager.Instance.GetGridSpaceWorldCoords(pos);
         Debug.Log(space);
         space.SetEntity(this);
     }
@@ -63,6 +55,6 @@ public class Entity : MonoBehaviour
 
     protected virtual void OnMouseUpAsButton()
     {
-        inputHandler.EntityClicked(this);
+        InputHandler.Instance.EntityClicked(this);
     }
 }

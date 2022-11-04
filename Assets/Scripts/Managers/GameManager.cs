@@ -4,27 +4,18 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GridManager gridManager;
-    public TurnManager turnManager;
-    public LogicManager logicManager;
-    public InputHandler inputHandler;
-    public GUI UIManager;
-    public EnemyManager enemyManager;
+    public static GameManager Instance { get; private set; }
 
     Entity[] entities;
+
+    private void Awake() => Instance = this;
 
     // Start is called before the first frame update
     void Start()
     {
         Init();
-        gridManager = FindObjectOfType<GridManager>();
-        turnManager = FindObjectOfType<TurnManager>();
-        logicManager = FindObjectOfType<LogicManager>();
-        inputHandler = FindObjectOfType<InputHandler>();
-        enemyManager = FindObjectOfType<EnemyManager>();
-        UIManager = FindObjectOfType<GUI>();
-        gridManager.Init();
-        turnManager.Init();
+        GridManager.Instance.Init();
+        TurnManager.Instance.Init();
 
         //Cosas de debug, se eliminaran mas adelante
         //foreach (var p in FindObjectsOfType<PJ>())

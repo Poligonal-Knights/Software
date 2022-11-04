@@ -27,7 +27,7 @@ public class Knight : Ally
     {
         if(IsInitiatingHability)
         {
-            gridManager.ClearAffectedSpaces();
+            GridManager.Instance.ClearAffectedSpaces();
             IsInitiatingHability = false;
             foreach (var move in space.moves.Values)
             {
@@ -45,8 +45,8 @@ public class Knight : Ally
             IsSelectingDirection = false;
             var auxVector = spaceSelected.gridPosition - space.gridPosition;
             var aux = Vector3.Cross(auxVector, Vector3.up);
-            var spaceAffected1 = gridManager.GetGridSpace(Vector3Int.RoundToInt(spaceSelected.gridPosition + aux));
-            var spaceAffected2 = gridManager.GetGridSpace(Vector3Int.RoundToInt(spaceSelected.gridPosition - aux));
+            var spaceAffected1 = GridManager.Instance.GetGridSpace(Vector3Int.RoundToInt(spaceSelected.gridPosition + aux));
+            var spaceAffected2 = GridManager.Instance.GetGridSpace(Vector3Int.RoundToInt(spaceSelected.gridPosition - aux));
             spaceSelected.SetAffected(true);
             spaceAffected1.SetAffected(true);
             spaceAffected2.SetAffected(true);
@@ -59,7 +59,7 @@ public class Knight : Ally
             IsConfirming = false;
             var pushDirection = spaceSelected.gridPosition - space.gridPosition;
             var AnyEnemyWasAffected = false;
-            foreach(var affectedSpace in gridManager.affectedSpaces)
+            foreach(var affectedSpace in GridManager.Instance.affectedSpaces)
             {
                 // Debug.Log(affectedSpace.gridPosition);
                 var entity = affectedSpace.GetEntity();
@@ -72,7 +72,7 @@ public class Knight : Ally
             }
             if(!AnyEnemyWasAffected)
             {
-                gameManager.logicManager.PJFinishedMoving();
+                LogicManager.Instance.PJFinishedMoving();
             }
         }
     }

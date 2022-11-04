@@ -49,7 +49,7 @@ public class PJ : Entity
                 IsMoving = false;
                 if (!MovementsToDo.Any())
                 {
-                    gameManager.logicManager.PJFinishedMoving();
+                    LogicManager.Instance.PJFinishedMoving();
                     UpdateGridSpace();
                 }
             }

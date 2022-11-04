@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LogicManager : MonoBehaviour
 {
-    public GameManager gameManager;
+    public static LogicManager Instance { get; private set; }
     PJ SelectedPJ;
 
     //Bool to know is somthing as a PJ is moving, attaking, etc. right know
@@ -15,10 +15,10 @@ public class LogicManager : MonoBehaviour
     bool HabilityAreaEffectPreview;
     //bool CanCancelAction;
 
+    private void Awake() => Instance = this;
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
         HabilityDirectionPreview = false;
         HabilityAreaEffectPreview = false;
         //CanCancelAction = false;
@@ -37,12 +37,12 @@ public class LogicManager : MonoBehaviour
 
         if (pj is Ally)
         {
-            gameManager.UIManager.ShowActionCanvas();
+            UIManager.Instance.ShowActionCanvas();
             //gameManager.UIManager.ShowPJSelectedUI();
         }
         else if (pj is Enemy)
         {
-            gameManager.UIManager.ShowEnemySelectedUI();
+            UIManager.Instance.ShowEnemySelectedUI();
         }
     }
 
@@ -56,7 +56,7 @@ public class LogicManager : MonoBehaviour
     {
         MovePreview = true;
         IsSomethingHappening = true;
-        gameManager.UIManager.ShowPreviewCanvas();
+        UIManager.Instance.ShowPreviewCanvas();
         SelectedPJ.BFS();
     }
 
@@ -67,7 +67,7 @@ public class LogicManager : MonoBehaviour
 
     public void HabilityButton()
     {
-        gameManager.UIManager.ShowHabilitiesCanvas();
+        UIManager.Instance.ShowHabilitiesCanvas();
         SelectingHability = true;
     }
 
@@ -84,7 +84,7 @@ public class LogicManager : MonoBehaviour
             HabilityAreaEffectPreview = false;
             Debug.Log("Hailidad confirmada");
             (SelectedPJ as Ally).ConfirmHability();
-            gameManager.UIManager.ShowEmptyCanvas();
+            UIManager.Instance.ShowEmptyCanvas();
             StopPJHabilityPreview();
         }
     }
@@ -96,13 +96,13 @@ public class LogicManager : MonoBehaviour
             MovePreview = false;
             IsSomethingHappening = false;
             StopPJMovementPreview();
-            gameManager.UIManager.ShowActionCanvas();
+            UIManager.Instance.ShowActionCanvas();
         }
 
         if (SelectingHability)
         {
             SelectingHability = false;
-            gameManager.UIManager.ShowActionCanvas();
+            UIManager.Instance.ShowActionCanvas();
         }
 
         if (HabilityDirectionPreview)
@@ -110,30 +110,30 @@ public class LogicManager : MonoBehaviour
             (SelectedPJ as Ally).StopDoingHability();
             SelectingHability = true;
             StopPJHabilityPreview();
-            gameManager.UIManager.ShowHabilitiesCanvas();
+            UIManager.Instance.ShowHabilitiesCanvas();
         }
     }
 
     public void StopPJMovementPreview()
     {
         MovePreview = false;
-        gameManager.gridManager.StopPJMovementPreview();
-        gameManager.UIManager.ShowEmptyCanvas();
+        GridManager.Instance.StopPJMovementPreview();
+        UIManager.Instance.ShowEmptyCanvas();
     }
 
     public void StopPJHabilityPreview()
     {
         HabilityDirectionPreview = false;
         HabilityAreaEffectPreview = false;
-        gameManager.gridManager.StopPJHabilityPreview();
-        gameManager.UIManager.ShowEmptyCanvas();
+        GridManager.Instance.StopPJHabilityPreview();
+        UIManager.Instance.ShowEmptyCanvas();
     }
 
     public void PJFinishedMoving()
     {
-        if (gameManager.turnManager.IsPlayerTurn())
+        if (TurnManager.Instance.IsPlayerTurn())
         {
-            gameManager.UIManager.ShowActionCanvas();
+            UIManager.Instance.ShowActionCanvas();
         }
     }
 
@@ -178,7 +178,7 @@ public class LogicManager : MonoBehaviour
                 else
                 {
                     SetSelectedPJ(null);
-                    gameManager.UIManager.ShowNothingSelectedUI();
+                    UIManager.Instance.ShowNothingSelectedUI();
                 }
             }
         }
@@ -191,7 +191,7 @@ public class LogicManager : MonoBehaviour
             (SelectedPJ as Ally).DoHability(i);
             HabilityDirectionPreview = true;
             SelectingHability = false;
-            gameManager.UIManager.ShowPreviewCanvas();
+            UIManager.Instance.ShowPreviewCanvas();
         }
     }
 }
