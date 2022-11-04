@@ -75,12 +75,10 @@ public class GridManager : MonoBehaviour
         {
             e.Init();
         }
-        Debug.Log("Intentando encontrar todos los bloques");
         foreach (var e in FindObjectsOfType<Block>())
         {
             e.UpdateUpperSpace();
         }
-        Debug.Log("Intentando encontrar todos los bloques CHECK");
     }
 
     void LinkGridSpaces()

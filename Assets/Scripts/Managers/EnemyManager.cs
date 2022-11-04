@@ -38,9 +38,7 @@ public class EnemyManager : MonoBehaviour
 
     public void enemyTurn()
     {
-        Debug.Log("Probando");
         enemyList[actualEnemyTurn].EnemyAI();
-        Debug.Log("Probando terminado");
         UIManager.Instance.ShowEmptyCanvas();
     }
 

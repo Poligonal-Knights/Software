@@ -9,10 +9,7 @@ public class Entity : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        Debug.Log(this+"intentando");
-        //gameManager = FindObjectOfType<GameManager>();
-        //gridManager = gameManager.gridManager;
-        //inputHandler = gameManager.inputHandler;
+
     }
 
     public virtual void Init()
@@ -34,7 +31,6 @@ public class Entity : MonoBehaviour
         }
         Vector3Int pos = Vector3Int.RoundToInt(transform.position);
         space = GridManager.Instance.GetGridSpaceWorldCoords(pos);
-        Debug.Log(space);
         space.SetEntity(this);
     }
 
