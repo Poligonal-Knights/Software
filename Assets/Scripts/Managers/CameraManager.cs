@@ -6,6 +6,7 @@ public class CameraManager : MonoBehaviour
 {
     public GridManager gridManager;
     public int speed;
+    
     // Start is called before the first frame update
     Vector3 center;
     bool rotateL = false;
@@ -18,19 +19,19 @@ public class CameraManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*  center = gridManager.GetCenterofGrid();
-          angle = speed * Time.deltaTime;
-          Debug.LogWarning(angle);
-          transform.RotateAround(center, new Vector3(0, 1, 0), angle);*/
+        
         if (rotateL)
         {
             transform.RotateAround(center, new Vector3(0, 1, 0), -speed * Time.deltaTime);
-            if (transform.rotation.y == 45 || transform.rotation.y == 135 || transform.rotation.y == 225 || transform.rotation.y == 315) rotateL = false;
+            
+            //no funciona buscar como parar la rotacion
+            if (transform.rotation.y == 45 || transform.rotation.y == 135 || transform.rotation.y == -45 || transform.rotation.y == -135) rotateL = false;
         }
         if (rotateR)
         {
             transform.RotateAround(center, new Vector3(0, 1, 0), speed * Time.deltaTime);
-            if (transform.rotation.y == 45 || transform.rotation.y == 135 || transform.rotation.y == 225 || transform.rotation.y == 315) rotateR = false;
+            //no funciona buscar como parar la rotacion
+            if (transform.rotation.y == 45 || transform.rotation.y == 135 || transform.rotation.y == -45 || transform.rotation.y == -135) rotateR = false;
         }
 
     }
