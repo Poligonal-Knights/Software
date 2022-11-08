@@ -173,6 +173,10 @@ public class GridManager : MonoBehaviour
         }
         affectedSpaces.Clear();
     }
+
+    public Vector3 GetCenterofGrid() {
+        return new Vector3(maxBounds.x/2,0,maxBounds.z/2);
+    }
 }
 
 
