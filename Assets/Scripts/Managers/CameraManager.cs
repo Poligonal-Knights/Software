@@ -24,6 +24,11 @@ public class CameraManager : MonoBehaviour
 
     }
 
+    private void FixedUpdate()
+    {
+        
+    }
+
     public void RotRight() {
         center = gridManager.GetCenterofGrid();
         if (!rotating) {

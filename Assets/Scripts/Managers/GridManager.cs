@@ -175,7 +175,8 @@ public class GridManager : MonoBehaviour
     }
 
     public Vector3 GetCenterofGrid() {
-        return new Vector3(maxBounds.x/2,0,maxBounds.z/2);
+        Vector3Int minMax = maxBounds - minBounds;
+        return minMax / 2 + minBounds;
     }
 }
 

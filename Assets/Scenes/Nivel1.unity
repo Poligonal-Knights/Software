@@ -6198,7 +6198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridManager: {fileID: 417798918}
-  speed: 29
+  speed: 51
 --- !u!1001 &965005402
 PrefabInstance:
   m_ObjectHideFlags: 0
