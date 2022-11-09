@@ -9,51 +9,67 @@ public class CameraManager : MonoBehaviour
     
     // Start is called before the first frame update
     Vector3 center;
-    bool rotateL = false;
-    bool rotateR = false;
+    bool rotating = false;
+    
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    // Las rotaciones no son 100% precisas cuantoa mas speed mas error
     void Update()
     {
         
-        if (rotateL)
-        {
-            transform.RotateAround(center, new Vector3(0, 1, 0), -speed * Time.deltaTime);
-            
-            //no funciona buscar como parar la rotacion
-            if (transform.rotation.y == 45 || transform.rotation.y == 135 || transform.rotation.y == -45 || transform.rotation.y == -135) rotateL = false;
-        }
-        if (rotateR)
-        {
-            transform.RotateAround(center, new Vector3(0, 1, 0), speed * Time.deltaTime);
-            //no funciona buscar como parar la rotacion
-            if (transform.rotation.y == 45 || transform.rotation.y == 135 || transform.rotation.y == -45 || transform.rotation.y == -135) rotateR = false;
-        }
+        
 
     }
 
     public void RotRight() {
         center = gridManager.GetCenterofGrid();
-        //Debug.LogWarning(center);
-
-        rotateR = true;
-
-        
-            
-        
+        if (!rotating) {
+            rotating = true;
+            StartCoroutine(RotateCam(true));
+        }
+         
     }
 
     public void RotLeft()
     {
         center = gridManager.GetCenterofGrid();
-        //Debug.LogWarning(center);
+        if (!rotating)
+        {
+            rotating = true;
+            StartCoroutine(RotateCam(false));
+        }
 
-        rotateL = true;
 
+    }
+
+    public IEnumerator RotateCam(bool dir) {
+
+        float rotation = 0;
+        if (dir == true)
+        {
+            
+            while (rotation <= 90f)
+            {
+                float rotPerFrame = speed * Time.deltaTime;
+                transform.RotateAround(center, new Vector3(0, 1, 0), -rotPerFrame);
+                rotation += rotPerFrame;
+                yield return new WaitForEndOfFrame();
+            }
+        }
+        else {
+            while (rotation <= 90f)
+            {
+                float rotPerFrame = speed * Time.deltaTime;
+                transform.RotateAround(center, new Vector3(0, 1, 0), rotPerFrame);
+                rotation += rotPerFrame;
+                yield return new WaitForEndOfFrame();
+            }
+        }
+        rotating = false;
+        
 
     }
 }
