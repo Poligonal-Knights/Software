@@ -15,7 +15,11 @@ public class LogicManager : MonoBehaviour
     bool HabilityAreaEffectPreview;
     //bool CanCancelAction;
 
+    //Rework
+    Hability actualHability;
+
     private void Awake() => Instance = this;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -174,7 +178,6 @@ public class LogicManager : MonoBehaviour
                         (SelectedPJ as Ally).SetHabilitySpaceSelected(space);
                     }
                 }
-
                 else
                 {
                     SetSelectedPJ(null);
@@ -186,9 +189,19 @@ public class LogicManager : MonoBehaviour
 
     public void DoHability(int i)
     {
+        //if (SelectedPJ is Ally)
+        //{
+        //    (SelectedPJ as Ally).DoHability(i);
+        //    HabilityDirectionPreview = true;
+        //    SelectingHability = false;
+        //    UIManager.Instance.ShowPreviewCanvas();
+        //}
+
+        //Rework
         if (SelectedPJ is Ally)
         {
-            (SelectedPJ as Ally).DoHability(i);
+            actualHability = Hability.GetHability(SelectedPJ, i);
+            actualHability.Preview();
             HabilityDirectionPreview = true;
             SelectingHability = false;
             UIManager.Instance.ShowPreviewCanvas();

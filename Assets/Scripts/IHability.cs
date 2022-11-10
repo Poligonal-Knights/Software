@@ -2,13 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IInterface
-{
-
-} IHability
+public interface IHability
 {
     public void Preview();
-    public void SelectObjective();
+    public void SelectTarget(GridSpace grid);
     public void Confirm();
 
 }
