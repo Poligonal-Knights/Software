@@ -10,12 +10,10 @@ public class Block : Entity
 
     protected override void Start()
     {
-        Debug.Log("Intentando animator");
         base.Start();
         animator = gameObject.AddComponent<Animator>();
         RuntimeAnimatorController shinyAnim = Resources.Load("ShineAnim") as RuntimeAnimatorController;
         animator.runtimeAnimatorController = shinyAnim;
-        Debug.Log("Intentando animator 2");
     }
 
     public override void Init()
@@ -61,6 +59,12 @@ public class Block : Entity
     {
         animator.SetInteger("animationState", 3);
         animator.Play("gStoneAttack", -1, 0f);
+    }
 
+    protected override void OnMouseUpAsButton()
+    {
+        base.OnMouseUpAsButton();
+        if (OnContact != null)
+            OnContact();
     }
 }
