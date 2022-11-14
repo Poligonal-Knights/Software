@@ -23,13 +23,12 @@ public class PJ : Entity
         base.Start();
         IsMoving = false;
         IsDying = false;
-
+        maxMovement = 4;
     }
 
     public override void Init()
     {
         base.Init();
-        maxMovement = 4;
     }
 
     // Update is called once per frame
@@ -42,20 +41,20 @@ public class PJ : Entity
         }
         if (IsMoving)
         {
-            var step = 5 * Time.deltaTime; // calculate distance to move
+            var step = 5 * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, destination.GetWorldPosition(), step);
             if (Vector3.Distance(transform.position, destination.GetWorldPosition()) < 0.001f)
             {
                 IsMoving = false;
+                transform.position = destination.GetWorldPosition();
                 if (!MovementsToDo.Any())
                 {
                     LogicManager.Instance.PJFinishedMoving();
                     UpdateGridSpace();
+                    if (space.gridPosition.y == 0) Die();
                 }
             }
         }
-
-        if (space.gridPosition.y == 0) Die();
     }
 
     public void FindPath(Vector3Int goal)
@@ -96,7 +95,7 @@ public class PJ : Entity
                             move.SetVisited(true);
                             nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
                             //Animation
-                            if (!(move.GetEntity() is PJ))
+                            if (move.GetEntity() is not PJ)
                             {
                                 Block b = move.neighbors["down"].GetEntity() as Block;
                                 b.SetInPreviewMode();
@@ -138,22 +137,22 @@ public class PJ : Entity
     public virtual void CalculateFall()
     {
         UpdateGridSpace();
-        var actualPosition = space;
-        while (actualPosition.neighbors["down"] != null && !actualPosition.neighbors["down"].HasBlock())
+        var currentPosition = space;
+        while (currentPosition.neighbors["down"] != null && !currentPosition.neighbors["down"].HasBlock())
         {
-            actualPosition = actualPosition.neighbors["down"];
-            MovementsToDo.Enqueue(actualPosition);
+            currentPosition = currentPosition.neighbors["down"];
+            MovementsToDo.Enqueue(currentPosition);
         }
     }
 
     public virtual void CalculateFallFrom(GridSpace start)
     {
         UpdateGridSpace(start);
-        var actualPosition = space;
-        while (actualPosition.neighbors["down"] != null && !actualPosition.neighbors["down"].HasBlock())
+        var currentPosition = space;
+        while (currentPosition.neighbors["down"] != null && !currentPosition.neighbors["down"].HasBlock())
         {
-            actualPosition = actualPosition.neighbors["down"];
-            MovementsToDo.Enqueue(actualPosition);
+            currentPosition = currentPosition.neighbors["down"];
+            MovementsToDo.Enqueue(currentPosition);
         }
     }
 

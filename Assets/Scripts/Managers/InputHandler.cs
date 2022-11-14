@@ -52,7 +52,7 @@ public class InputHandler : MonoBehaviour
 
     public void EntityClicked(Entity entityClicked)
     {
-        Debug.Log("Ent.Clicked: " + entityClicked);
+        //Debug.Log("Ent.Clicked: " + entityClicked);
         LogicManager.Instance.EntityClicked(entityClicked);
     }
 

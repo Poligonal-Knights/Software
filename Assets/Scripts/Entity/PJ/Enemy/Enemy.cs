@@ -90,7 +90,6 @@ public class Enemy : PJ
     {
         bool bumped = false;
         int i = 0;
-        Debug.Log("oh no oh no stop it pls nooo");
         while (!bumped && i <= pushback)
         {
             i++;
@@ -129,6 +128,12 @@ public class Enemy : PJ
         IsMoving = false;
         IsDying = true;
         EnemyManager.Instance.enemyList.Remove(this);
+    }
+
+    protected override bool CanMoveThere(GridSpace start, GridSpace destination)
+    {
+        if (destination.GetEntity() is Ally) return false;
+        return base.CanMoveThere(start, destination);
     }
 }
 

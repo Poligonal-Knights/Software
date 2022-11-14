@@ -33,7 +33,7 @@ public class GridSpace
     public bool IsEmpty()
     {
         if (entity is null) return true;
-        else return false;
+        return false;
     }
 
     public bool HasTrap()
@@ -106,8 +106,15 @@ public class GridSpace
 
     public void SetSelectable(bool s)
     {
-        if (s) gridManager.selectableSpaces.Add(this);
+        //if (s) gridManager.selectableSpaces.Add(this);
         selectable = s;
+        if (neighbors["down"].HasBlock())
+        {
+            if (selectable)
+                (neighbors["down"].GetEntity() as Block).SetInSelectableMode();
+            else
+                (neighbors["down"].GetEntity() as Block).StopAnimation();
+        }
     }
 
     public bool IsSelectable()
@@ -129,7 +136,7 @@ public class GridSpace
     public void SetAffected(bool s)
     {
         affected = s;
-        if (affected) gridManager.affectedSpaces.Add(this);
+        //if (affected) gridManager.affectedSpaces.Add(this);
         if (neighbors["down"].HasBlock())
         {
             if (affected)

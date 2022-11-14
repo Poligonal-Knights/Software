@@ -49,7 +49,7 @@ public class Block : Entity
         animator.Play("gStoneNoAnim", -1, 0f);
 
     }
-    public void SetInSelectedMode()
+    public void SetInSelectableMode()
     {
         animator.SetInteger("animationState", 2);
         animator.Play("gStoneAnimSelec", -1, 0f);
@@ -64,7 +64,5 @@ public class Block : Entity
     protected override void OnMouseUpAsButton()
     {
         base.OnMouseUpAsButton();
-        if (OnContact != null)
-            OnContact();
     }
 }

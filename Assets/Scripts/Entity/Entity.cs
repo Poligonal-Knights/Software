@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Entity : MonoBehaviour
 {
     protected GridSpace space;
 
+    public UnityEvent<Entity> OnClick;
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
-
+        TurnManager.Instance.ChangeTurnEvent.AddListener(OnChangeTurn);
     }
 
     public virtual void Init()
@@ -52,5 +55,16 @@ public class Entity : MonoBehaviour
     protected virtual void OnMouseUpAsButton()
     {
         InputHandler.Instance.EntityClicked(this);
+        OnClick.Invoke(this);
+    }
+
+    protected virtual void OnChangeTurn()
+    {
+
+    }
+
+    protected virtual void OnDisable()
+    {
+        TurnManager.Instance.ChangeTurnEvent.RemoveListener(OnChangeTurn);
     }
 }

@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TurnManager : MonoBehaviour
 {
     public static TurnManager Instance { get; private set; }
+
+    public UnityEvent ChangeTurnEvent = new UnityEvent();
 
     bool playerTurn;
 
@@ -31,6 +34,7 @@ public class TurnManager : MonoBehaviour
         {
             EnemyManager.Instance.enemyTurn();
         }
+        ChangeTurnEvent.Invoke();
     }
 
     public bool IsPlayerTurn()

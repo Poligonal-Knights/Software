@@ -16,7 +16,7 @@ public class LogicManager : MonoBehaviour
     //bool CanCancelAction;
 
     //Rework
-    Hability actualHability;
+    Hability currentHability;
 
     private void Awake() => Instance = this;
 
@@ -36,7 +36,7 @@ public class LogicManager : MonoBehaviour
 
     public void SetSelectedPJ(PJ pj)
     {
-        Debug.Log("SelectedPJ changed!");
+        //Debug.Log("SelectedPJ changed! Now is: " + pj);
         SelectedPJ = pj;
 
         if (pj is Ally)
@@ -80,14 +80,14 @@ public class LogicManager : MonoBehaviour
         if(MovePreview)
         {
             MovePreview = false;
-
         }
 
         if(HabilityAreaEffectPreview)
         {
             HabilityAreaEffectPreview = false;
-            Debug.Log("Hailidad confirmada");
-            (SelectedPJ as Ally).ConfirmHability();
+            Debug.Log("Habilidad confirmada");
+            currentHability.Confirm();
+            //(SelectedPJ as Ally).ConfirmHability();
             UIManager.Instance.ShowEmptyCanvas();
             StopPJHabilityPreview();
         }
@@ -200,8 +200,8 @@ public class LogicManager : MonoBehaviour
         //Rework
         if (SelectedPJ is Ally)
         {
-            actualHability = Hability.GetHability(SelectedPJ, i);
-            actualHability.Preview();
+            currentHability = Hability.GetHability(SelectedPJ, i);
+            currentHability.Preview();
             HabilityDirectionPreview = true;
             SelectingHability = false;
             UIManager.Instance.ShowPreviewCanvas();
