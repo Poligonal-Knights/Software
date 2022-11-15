@@ -15,9 +15,9 @@ public class Knight_Hability_0 : Hability
             if (move.gridPosition.y == PJSpace.gridPosition.y)
             {
                 AddSelectableSpace(move);
-                var b = move.neighbors["down"].GetEntity() as Block;
-                b.OnClick.RemoveAllListeners();
-                b.OnClick.AddListener(ClickedEntity);
+                //var b = move.neighbors["down"].GetEntity() as Block;
+                //b.OnClick.RemoveAllListeners();
+                //b.OnClick.AddListener(ClickedEntity);
             }
         }
     }
@@ -36,6 +36,7 @@ public class Knight_Hability_0 : Hability
         AddAffectedSpace(spaceAffected1);
         AddAffectedSpace(spaceAffected2);
         SelectedSpace = selected;
+        readyToConfirm = true;
     }
 
     public override void Confirm()
@@ -60,6 +61,14 @@ public class Knight_Hability_0 : Hability
         {
             LogicManager.Instance.PJFinishedMoving();
         }
+    }
+
+    public override void Cancel()
+    {
+        base.Cancel();
+        ClearAffectedSpaces();
+        ClearSelectableSpaces();
+        LogicManager.Instance.PJFinishedMoving();
     }
 
     void RefreshSelectableSpaces()
@@ -87,8 +96,18 @@ public class Knight_Hability_0 : Hability
         }
     }
 
-    void ClickedEntity(Entity e)
+    public override void ClickedEntity(Entity entityClicked)
     {
-        SelectTarget(e.GetGridSpace().neighbors["up"]);
+        GridSpace spaceToBeSelected = null;
+        if (entityClicked is PJ)
+        {
+            spaceToBeSelected = entityClicked.GetGridSpace();
+        }
+        else if (entityClicked is Block)
+        {
+            spaceToBeSelected = entityClicked.GetGridSpace().neighbors["up"];
+        }
+        if (spaceToBeSelected is not null)
+            SelectTarget(spaceToBeSelected);
     }
 }

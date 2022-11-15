@@ -38,15 +38,6 @@ public class Enemy : PJ
         // gameManager.enemyManager.enemyTurnEnd();
     }
 
-    protected virtual void movementAI2()
-    {
-        BFS();
-        var posibilities = FindObjectOfType<GridManager>().visitedSpaces;
-        int chosenMove = Random.Range(0, posibilities.Count);
-        MoveTo(posibilities[chosenMove]);
-        realizandoTurno = true;
-    }
-
     protected virtual void movementAI()
     {
         List<GridSpace> possibleMoves = new List<GridSpace>();
@@ -72,11 +63,6 @@ public class Enemy : PJ
                 possibleMoves.Clear();
             }
         }
-
-        // for (int i = 0; i < movimientosEnOrden.Count; i++)
-        // {
-        //     MovementsToDo.Enqueue(movimientosEnOrden[i]);
-        // }
 
         realizandoTurno = true;
     }
@@ -130,7 +116,7 @@ public class Enemy : PJ
         EnemyManager.Instance.enemyList.Remove(this);
     }
 
-    protected override bool CanMoveThere(GridSpace start, GridSpace destination)
+    public override bool CanMoveThere(GridSpace start, GridSpace destination)
     {
         if (destination.GetEntity() is Ally) return false;
         return base.CanMoveThere(start, destination);

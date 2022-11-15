@@ -13,6 +13,7 @@ public class GridSpace
 
     public Dictionary<string, GridSpace> neighbors = new Dictionary<string, GridSpace>(6);
     public Dictionary<string, GridSpace> moves = new Dictionary<string, GridSpace>(4);
+    public HashSet<GridSpace> jumps = new HashSet<GridSpace>();
 
     bool passable;
     public bool visited;
@@ -72,12 +73,56 @@ public class GridSpace
     {
         var directions = new[] { "left", "right", "forward", "back" };
 
+        //moves link
         foreach (var direction in directions)
         {
             if (neighbors[direction].IsPassable()) moves[direction] = neighbors[direction];
             else if (neighbors[direction].neighbors["up"].IsPassable()) moves[direction] = neighbors[direction].neighbors["up"];
             else if (neighbors[direction].neighbors["down"].IsPassable()) moves[direction] = neighbors[direction].neighbors["down"];
         }
+
+        //Jumps link
+        //high jumps
+        var spaceAtCheckingHeight = neighbors["up"];
+        while (spaceAtCheckingHeight is not null && spaceAtCheckingHeight.IsEmpty())
+        {
+            foreach (var direction in directions)
+            {
+                var candidateSpace = spaceAtCheckingHeight.neighbors[direction];
+                if (candidateSpace.IsPassable())
+                {
+                    jumps.Add(candidateSpace);
+                }
+            }
+            spaceAtCheckingHeight = spaceAtCheckingHeight.neighbors["up"];
+        }
+        //low jumps
+        foreach(var direction in directions)
+        {
+            if(neighbors[direction].IsEmpty())
+            {
+                var auxCondition = true;
+                spaceAtCheckingHeight = neighbors[direction].neighbors["down"];
+                while(spaceAtCheckingHeight is not null && !spaceAtCheckingHeight.HasBlock() && auxCondition)
+                {
+                    if(spaceAtCheckingHeight.IsPassable())
+                    {
+                        auxCondition = false;
+                        jumps.Add(spaceAtCheckingHeight);
+                    }
+                    spaceAtCheckingHeight = neighbors["down"];
+                }
+            }
+        }
+
+        //do
+        //{
+        //    spaceAtCheckingHeight = spaceAtCheckingHeight.neighbors["up"];
+        //    //    foreach(var direction in directions)
+        //    //    {
+        //    //        if ()
+        //    //    }
+        //} while (spaceAtCheckingHeight is not null && spaceAtCheckingHeight.IsEmpty());
     }
 
     void ChangeVisited()
@@ -95,7 +140,6 @@ public class GridSpace
                 (neighbors["down"].GetEntity() as Block).SetInPreviewMode();
             else
                 (neighbors["down"].GetEntity() as Block).StopAnimation();
-
         }
     }
 

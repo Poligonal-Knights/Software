@@ -92,7 +92,7 @@ public class Ally : PJ
     protected virtual void Hability3() { Debug.Log(this + "performed Hab. 3"); }
     protected virtual void Hability4() { Debug.Log(this + "performed Hab. 4"); }
 
-    protected override bool CanMoveThere(GridSpace start, GridSpace destination)
+    public override bool CanMoveThere(GridSpace start, GridSpace destination)
     {
         if (destination.GetEntity() is Enemy) return false;
         return base.CanMoveThere(start, destination);

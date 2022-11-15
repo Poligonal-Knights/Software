@@ -54,8 +54,9 @@ public class Entity : MonoBehaviour
 
     protected virtual void OnMouseUpAsButton()
     {
-        InputHandler.Instance.EntityClicked(this);
-        OnClick.Invoke(this);
+        //InputHandler.Instance.EntityClicked(this);
+        //OnClick.Invoke(this);
+        LogicManager.Instance.EntityClicked(this);
     }
 
     protected virtual void OnChangeTurn()

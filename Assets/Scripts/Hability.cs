@@ -9,9 +9,22 @@ public class Hability
     public static HashSet<GridSpace> AffectedSpaces = new HashSet<GridSpace>();
     public static GridSpace SelectedSpace;
 
+    protected bool readyToConfirm;
+
+    protected PJ pj;
+
+    public Hability()
+    {
+        readyToConfirm = false;
+    }
+
     public virtual void Preview() { }
     public virtual void SelectTarget(GridSpace selected) { }
     public virtual void Confirm() { }
+    public virtual void Cancel()
+    {
+        Debug.Log("Cancelling Hability");
+    }
 
     public virtual void AddAffectedSpace(GridSpace spaceToAdd)
     {
@@ -39,7 +52,7 @@ public class Hability
         foreach (var space in SelectableSpaces)
         {
             var d = space.neighbors["down"];
-            if (!d.IsEmpty()) d.GetEntity().OnClick.RemoveAllListeners();
+            //if (!d.IsEmpty()) d.GetEntity().OnClick.RemoveAllListeners();
             space.SetSelectable(false);
         }
         SelectableSpaces.Clear();
@@ -59,5 +72,20 @@ public class Hability
         }
         Debug.Log("ERROR AL OBTENER HABILIDAD");
         return null;
+    }
+
+    public static Hability GetMovementHability(PJ pj)
+    {
+        return new Movement_Hability();
+    }
+
+    public bool IsReadyToConfirm()
+    {
+        return readyToConfirm;
+    }
+
+    public virtual void ClickedEntity(Entity clickedEntity)
+    {
+
     }
 }

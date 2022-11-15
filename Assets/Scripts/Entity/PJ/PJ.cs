@@ -7,9 +7,9 @@ using static UnityEngine.GraphicsBuffer;
 public class PJ : Entity
 {
     //Stats
-    protected int maxMovement;
-    protected int movement;
-    protected int health;
+    public int maxMovement;
+    public int movement;
+    public int health;
 
     //States
     protected bool IsMoving;
@@ -57,66 +57,10 @@ public class PJ : Entity
         }
     }
 
-    public void FindPath(Vector3Int goal)
-    {
-        BFS();
-    }
-
-    public void BFS()
-    {
-        space.SetVisited(true);
-        Queue<BFS_Node> nodes = new Queue<BFS_Node>();
-        foreach (var move in space.moves.Values)
-        {
-            if (!move.visited && CanMoveThere(space, move))
-            {
-                move.SetVisited(true);
-                nodes.Enqueue(new BFS_Node(move, null, 1));
-
-                //Animation
-                if (!(move.GetEntity() is PJ))
-                {
-                    Block b = move.neighbors["down"].GetEntity() as Block;
-                    b.SetInPreviewMode();
-                }
-            }
-        }
-        while (nodes.Any())
-        {
-            var currentNode = nodes.Dequeue();
-            if (currentNode.distance < maxMovement)
-            {
-                foreach (var move in currentNode.space.moves.Values)
-                {
-                    if (!move.visited && CanMoveThere(currentNode.space, move))
-                    {
-                        if (!(currentNode.distance + 1 == maxMovement && move.GetEntity() is PJ))
-                        {
-                            move.SetVisited(true);
-                            nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
-                            //Animation
-                            if (move.GetEntity() is not PJ)
-                            {
-                                Block b = move.neighbors["down"].GetEntity() as Block;
-                                b.SetInPreviewMode();
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    protected virtual bool CanMoveThere(GridSpace start, GridSpace destination)
+    public virtual bool CanMoveThere(GridSpace start, GridSpace destination)
     {
         if (start.gridPosition.y == destination.gridPosition.y) return true;
         return false;
-    }
-
-
-    protected virtual void Movement(GridSpace start, GridSpace destination)
-    {
-        start.GetWorldPosition();
     }
 
     public virtual void MoveTo(GridSpace finalDestination)
@@ -175,24 +119,4 @@ public class PJ : Entity
             Die();
         }
     }
-
-    // public void setHealth(int newHealth)
-    // {
-    //     health = newHealth;
-    // }
-    //
-    // public int getHealth()
-    // {
-    //     return health;
-    // }
-    //
-    // public void setMovement(int newMovement)
-    // {
-    //     speed=newMovement;
-    // }
-    //
-    // public int getMovement()
-    // {
-    //     return speed;
-    // }
 }
