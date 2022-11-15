@@ -10,6 +10,8 @@ public class PJ : Entity
     public int maxMovement;
     public int movement;
     public int health;
+    public int health;
+    private bool attackPerformed;
 
     //States
     protected bool IsMoving;
@@ -118,5 +120,14 @@ public class PJ : Entity
         {
             Die();
         }
+    }
+    public bool getAttackPerformed()
+    {
+        return attackPerformed;
+    }
+
+    public void setAttackPerformed(bool setter)
+    {
+        attackPerformed = setter;
     }
 }
