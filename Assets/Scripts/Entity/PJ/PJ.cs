@@ -10,7 +10,7 @@ public class PJ : Entity
     public int maxMovement;
     public int movement;
     public int health;
-    public int health;
+    public int damage;
     private bool attackPerformed;
 
     //States

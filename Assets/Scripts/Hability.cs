@@ -65,9 +65,9 @@ public class Hability
             switch (i)
             {
                 case 0:
-                    return new Knight_Hability_0(); break;
+                    return new Knight_Hability_0();
                 case 1:
-                    return new Knight_Hability_1(); break;
+                    return new Knight_Hability_1();
             }
         }
         Debug.Log("ERROR AL OBTENER HABILIDAD");
