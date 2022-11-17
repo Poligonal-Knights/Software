@@ -101,7 +101,7 @@ public class GridSpace
         {
             if(neighbors[direction].IsEmpty())
             {
-                var auxCondition = true;
+                bool auxCondition = true;
                 spaceAtCheckingHeight = neighbors[direction].neighbors["down"];
                 while(spaceAtCheckingHeight is not null && !spaceAtCheckingHeight.HasBlock() && auxCondition)
                 {
@@ -114,15 +114,6 @@ public class GridSpace
                 }
             }
         }
-
-        //do
-        //{
-        //    spaceAtCheckingHeight = spaceAtCheckingHeight.neighbors["up"];
-        //    //    foreach(var direction in directions)
-        //    //    {
-        //    //        if ()
-        //    //    }
-        //} while (spaceAtCheckingHeight is not null && spaceAtCheckingHeight.IsEmpty());
     }
 
     void ChangeVisited()
@@ -136,7 +127,8 @@ public class GridSpace
         if (visited) gridManager.visitedSpaces.Add(this);
         if (neighbors["down"].HasBlock())
         {
-            if (visited && IsEmpty())
+            //if (visited && IsEmpty())
+            if(visited && (IsEmpty() || HasTrap()))
                 (neighbors["down"].GetEntity() as Block).SetInPreviewMode();
             else
                 (neighbors["down"].GetEntity() as Block).StopAnimation();

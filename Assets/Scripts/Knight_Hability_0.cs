@@ -15,9 +15,6 @@ public class Knight_Hability_0 : Hability
             if (move.gridPosition.y == PJSpace.gridPosition.y)
             {
                 AddSelectableSpace(move);
-                //var b = move.neighbors["down"].GetEntity() as Block;
-                //b.OnClick.RemoveAllListeners();
-                //b.OnClick.AddListener(ClickedEntity);
             }
         }
     }
@@ -79,23 +76,6 @@ public class Knight_Hability_0 : Hability
         }
     }
 
-    void ActivateSelectableAnimation()
-    {
-        foreach (var s in SelectableSpaces)
-        {
-            (s.neighbors["down"].GetEntity() as Block).SetInSelectableMode();
-        }
-    }
-
-    void ActivateAffectedAnimation()
-    {
-        foreach (var s in AffectedSpaces)
-        {
-            var block = s.neighbors["down"].GetEntity() as Block;
-            block?.SetInAreaAttackMode();
-        }
-    }
-
     public override void ClickedEntity(Entity entityClicked)
     {
         GridSpace spaceToBeSelected = null;
@@ -107,7 +87,7 @@ public class Knight_Hability_0 : Hability
         {
             spaceToBeSelected = entityClicked.GetGridSpace().neighbors["up"];
         }
-        if (spaceToBeSelected is not null)
+        if (spaceToBeSelected is not null && spaceToBeSelected.IsSelectable())
             SelectTarget(spaceToBeSelected);
     }
 }

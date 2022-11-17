@@ -73,7 +73,7 @@ public class PJ : Entity
         {
             movements.Add(actualNode.space);
             actualNode = actualNode.parent;
-        };
+        }
         movements.Add(actualNode.space);
         movements.Reverse();
         MovementsToDo = new Queue<GridSpace>(movements);

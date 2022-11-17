@@ -17,6 +17,7 @@ public class Movement_Hability : Hability
     {
         SelectedSpace = selected;
         readyToConfirm = true;
+        GameManager.Instance.StartCoroutine(PaintRoute());
     }
 
     public override void Confirm()
@@ -34,13 +35,18 @@ public class Movement_Hability : Hability
 
     public override void ClickedEntity(Entity entityClicked)
     {
-        if(entityClicked is Block)
+        GridSpace spaceToBeSelected = null;
+        if (entityClicked is Block)
         {
-            var selectedSpace = entityClicked.GetGridSpace().neighbors["up"];
-            if(selectedSpace.IsVisited() && selectedSpace.IsEmpty())
-            {
-                SelectTarget(selectedSpace);
-            }
+            spaceToBeSelected = entityClicked.GetGridSpace().neighbors["up"];
+        }
+        else if (entityClicked is PJ or Trap)
+        {
+            spaceToBeSelected = entityClicked.GetGridSpace();
+        }
+        if (spaceToBeSelected != null && spaceToBeSelected.IsVisited() && (spaceToBeSelected.IsEmpty() || spaceToBeSelected.HasTrap()))
+        {
+            SelectTarget(spaceToBeSelected);
         }
     }
 
@@ -77,6 +83,39 @@ public class Movement_Hability : Hability
         }
     }
 
+    void PaintRouteC()
+    {
+        //RefreshVisitedSpaces();
+        //var node = SelectedSpace.node;
+        //PaintNode(node);
+        //while (node.HasParent())
+        //{
+        //    node = node.parent;
+        //    PaintNode(node);
+        //}
+    }
+
+    IEnumerator PaintRoute()
+    {
+        var speed = 0.03f;
+        RefreshVisitedSpaces();
+        Stack<BFS_Node> nodes = new Stack<BFS_Node>();
+        var node = SelectedSpace.node;
+        do
+        {
+            nodes.Push(node);
+            node = node.parent;
+        } while (node != null);
+
+        while (nodes.Any())
+        {
+            node = nodes.Pop();
+            yield return new WaitForSeconds(node.distance * speed);
+            node.space.SetSelectable(true);
+        }
+    }
+
+
     void AddVisitedSpace(GridSpace spaceToAdd)
     {
         spaceToAdd.SetVisited(true);
@@ -85,10 +124,18 @@ public class Movement_Hability : Hability
 
     void ClearVisitedSpaces()
     {
-        foreach(var space in visitedSpaces)
+        foreach (var space in visitedSpaces)
         {
             space.SetVisited(false);
         }
         visitedSpaces.Clear();
+    }
+
+    void RefreshVisitedSpaces()
+    {
+        foreach (var space in visitedSpaces)
+        {
+            space.SetVisited(true);
+        }
     }
 }

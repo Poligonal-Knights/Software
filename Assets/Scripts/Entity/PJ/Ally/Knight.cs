@@ -22,7 +22,6 @@ public class Knight : Ally
     public void SetGritoDeBatalla(bool setTo)
     {
         gritoDeBatalla = setTo;
-        Debug.Log("GB: " + gritoDeBatalla);
     }
 
     public bool UsingGritoDeBatalla()
