@@ -11,6 +11,7 @@ public class PJ : Entity
     public int movement;
     public int health;
     public int damage;
+    public bool CanJump;
     private bool attackPerformed;
 
     //States
@@ -26,6 +27,7 @@ public class PJ : Entity
         IsMoving = false;
         IsDying = false;
         maxMovement = 4;
+        CanJump = false;
     }
 
     public override void Init()
@@ -61,23 +63,55 @@ public class PJ : Entity
 
     public virtual bool CanMoveThere(GridSpace start, GridSpace destination)
     {
-        if (start.gridPosition.y == destination.gridPosition.y) return true;
+        if (CanJump || start.gridPosition.y == destination.gridPosition.y) return true;
         return false;
     }
 
     public virtual void MoveTo(GridSpace finalDestination)
     {
         List<GridSpace> movements = new List<GridSpace>();
-        var actualNode = finalDestination.node;
-        while (actualNode.HasParent())
+        var currentNode = finalDestination.node;
+
+        while(currentNode.HasParent())
         {
-            movements.Add(actualNode.space);
-            actualNode = actualNode.parent;
+            movements.Add(currentNode.space);
+            if(currentNode.space.gridPosition.y != currentNode.parent.space.gridPosition.y)
+            {
+                Vector3Int interDestination;
+                if (currentNode.space.gridPosition.y < currentNode.parent.space.gridPosition.y)
+                {
+                    interDestination = currentNode.space.gridPosition;
+                    interDestination.y = currentNode.parent.space.gridPosition.y;
+                }
+                else
+                {
+                    interDestination = currentNode.parent.space.gridPosition;
+                    interDestination.y = currentNode.space.gridPosition.y;
+                }
+                movements.Add(GridManager.Instance.GetGridSpace(interDestination));
+            }
+            currentNode = currentNode.parent;
         }
-        movements.Add(actualNode.space);
+
+        movements.Add(currentNode.space);
+        if (currentNode.space.gridPosition.y != space.gridPosition.y)
+        {
+            Vector3Int interDestination;
+            if (currentNode.space.gridPosition.y < space.gridPosition.y)
+            {
+                interDestination = currentNode.space.gridPosition;
+                interDestination.y = space.gridPosition.y;
+            }
+            else
+            {
+                interDestination = space.gridPosition;
+                interDestination.y = currentNode.space.gridPosition.y;
+            }
+            movements.Add(GridManager.Instance.GetGridSpace(interDestination));
+        }
         movements.Reverse();
         MovementsToDo = new Queue<GridSpace>(movements);
-        space.SetEntity(null);
+        //space.SetEntity(null);
     }
 
     public virtual void CalculateFall()

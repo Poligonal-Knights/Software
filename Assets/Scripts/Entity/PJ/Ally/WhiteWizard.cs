@@ -9,6 +9,7 @@ public class WhiteWizard : Ally
     {
         base.Start();
         health = 8;
+        CanJump = true;
     }
 
     // Update is called once per frame

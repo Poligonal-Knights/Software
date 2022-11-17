@@ -12,7 +12,8 @@ public class GridSpace
     //Trap trap;
 
     public Dictionary<string, GridSpace> neighbors = new Dictionary<string, GridSpace>(6);
-    public Dictionary<string, GridSpace> moves = new Dictionary<string, GridSpace>(4);
+    //public Dictionary<string, GridSpace> moves = new Dictionary<string, GridSpace>(4);
+    public HashSet<GridSpace> moves = new HashSet<GridSpace>();
     public HashSet<GridSpace> jumps = new HashSet<GridSpace>();
 
     bool passable;
@@ -74,51 +75,44 @@ public class GridSpace
         var directions = new[] { "left", "right", "forward", "back" };
 
         //moves link
-        foreach (var direction in directions)
-        {
-            if (neighbors[direction].IsPassable()) moves[direction] = neighbors[direction];
-            else if (neighbors[direction].neighbors["up"].IsPassable()) moves[direction] = neighbors[direction].neighbors["up"];
-            else if (neighbors[direction].neighbors["down"].IsPassable()) moves[direction] = neighbors[direction].neighbors["down"];
-        }
+        //foreach (var direction in directions)
+        //{
+        //    if (neighbors[direction].IsPassable()) moves[direction] = neighbors[direction];
+        //    else if (neighbors[direction].neighbors["up"].IsPassable()) moves[direction] = neighbors[direction].neighbors["up"];
+        //    else if (neighbors[direction].neighbors["down"].IsPassable()) moves[direction] = neighbors[direction].neighbors["down"];
+        //}
 
-        //Jumps link
-        //high jumps
-        var spaceAtCheckingHeight = neighbors["up"];
-        while (spaceAtCheckingHeight is not null && spaceAtCheckingHeight.IsEmpty())
+        //foreach (var direction in directions)
+        //{
+        //    if (neighbors[direction].IsPassable()) moves.Add(neighbors[direction]);
+        //}
+
+        var spaceAtCheckingHeight = this;
+        while (spaceAtCheckingHeight is not null && !spaceAtCheckingHeight.HasBlock())
         {
             foreach (var direction in directions)
             {
                 var candidateSpace = spaceAtCheckingHeight.neighbors[direction];
                 if (candidateSpace.IsPassable())
                 {
-                    jumps.Add(candidateSpace);
+                    //jumps.Add(candidateSpace);
+                    moves.Add(candidateSpace);
                 }
             }
             spaceAtCheckingHeight = spaceAtCheckingHeight.neighbors["up"];
         }
-        //low jumps
-        foreach(var direction in directions)
+
+        foreach (var direction in directions)
         {
-            if(neighbors[direction].IsEmpty())
+            if (!neighbors[direction].HasBlock())
             {
-                bool auxCondition = true;
                 spaceAtCheckingHeight = neighbors[direction].neighbors["down"];
-                while(spaceAtCheckingHeight is not null && !spaceAtCheckingHeight.HasBlock() && auxCondition)
-                {
-                    if(spaceAtCheckingHeight.IsPassable())
-                    {
-                        auxCondition = false;
-                        jumps.Add(spaceAtCheckingHeight);
-                    }
-                    spaceAtCheckingHeight = neighbors["down"];
-                }
+                while (spaceAtCheckingHeight is not null && !spaceAtCheckingHeight.IsPassable())
+                    spaceAtCheckingHeight = spaceAtCheckingHeight.neighbors["down"];
+                if (spaceAtCheckingHeight is not null && spaceAtCheckingHeight.IsPassable())
+                    moves.Add(spaceAtCheckingHeight);
             }
         }
-    }
-
-    void ChangeVisited()
-    {
-        visited = !visited;
     }
 
     public void SetVisited(bool v)
@@ -128,7 +122,7 @@ public class GridSpace
         if (neighbors["down"].HasBlock())
         {
             //if (visited && IsEmpty())
-            if(visited && (IsEmpty() || HasTrap()))
+            if (visited && (IsEmpty() || HasTrap()))
                 (neighbors["down"].GetEntity() as Block).SetInPreviewMode();
             else
                 (neighbors["down"].GetEntity() as Block).StopAnimation();

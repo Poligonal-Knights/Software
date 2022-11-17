@@ -10,7 +10,7 @@ public class Knight_Hability_0 : Hability
     {
         Debug.Log("Hability Preview");
         var PJSpace = LogicManager.Instance.GetSelectedPJ().GetGridSpace();
-        foreach (var move in PJSpace.moves.Values)
+        foreach (var move in PJSpace.moves)
         {
             if (move.gridPosition.y == PJSpace.gridPosition.y)
             {

@@ -55,7 +55,7 @@ public class Movement_Hability : Hability
         var PJSpace = pj.GetGridSpace();
         AddVisitedSpace(PJSpace);
         Queue<BFS_Node> nodes = new Queue<BFS_Node>();
-        foreach (var move in PJSpace.moves.Values)
+        foreach (var move in PJSpace.moves)
         {
             if (!move.visited && pj.CanMoveThere(PJSpace, move))
             {
@@ -68,7 +68,7 @@ public class Movement_Hability : Hability
             var currentNode = nodes.Dequeue();
             if (currentNode.distance < pj.maxMovement)
             {
-                foreach (var move in currentNode.space.moves.Values)
+                foreach (var move in currentNode.space.moves)
                 {
                     if (!move.visited && pj.CanMoveThere(currentNode.space, move))
                     {
