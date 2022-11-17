@@ -63,7 +63,6 @@ public class Enemy : PJ
                 possibleMoves.Clear();
             }
         }
-
         realizandoTurno = true;
     }
 

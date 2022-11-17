@@ -31,6 +31,15 @@ public class GridSpace
         visited = false;
         passable = false;
     }
+    public void SetEntity(Entity e)
+    {
+        entity = e;
+    }
+
+    public Entity GetEntity()
+    {
+        return entity;
+    }
 
     public bool IsEmpty()
     {
@@ -50,16 +59,6 @@ public class GridSpace
         return false;
     }
 
-    public bool IsPassable()
-    {
-        return passable;
-    }
-
-    public void SetPassable(bool p)
-    {
-        passable = p;
-    }
-
     public void GetAdyacentsSpaces()
     {
         neighbors["right"] = gridManager.GetGridSpace(gridPosition + Vector3Int.right);
@@ -73,19 +72,6 @@ public class GridSpace
     public void Link()
     {
         var directions = new[] { "left", "right", "forward", "back" };
-
-        //moves link
-        //foreach (var direction in directions)
-        //{
-        //    if (neighbors[direction].IsPassable()) moves[direction] = neighbors[direction];
-        //    else if (neighbors[direction].neighbors["up"].IsPassable()) moves[direction] = neighbors[direction].neighbors["up"];
-        //    else if (neighbors[direction].neighbors["down"].IsPassable()) moves[direction] = neighbors[direction].neighbors["down"];
-        //}
-
-        //foreach (var direction in directions)
-        //{
-        //    if (neighbors[direction].IsPassable()) moves.Add(neighbors[direction]);
-        //}
 
         var spaceAtCheckingHeight = this;
         while (spaceAtCheckingHeight is not null && !spaceAtCheckingHeight.HasBlock())
@@ -113,6 +99,29 @@ public class GridSpace
                     moves.Add(spaceAtCheckingHeight);
             }
         }
+    }
+
+    public Vector3 GetPJPlacement()
+    {
+        var b = neighbors["down"].GetEntity() as Block;
+        if (b == null)
+            return GetWorldPosition();
+        return GetWorldPosition() + b.GetPJAdjustment();
+    }
+
+    public Vector3 GetWorldPosition()
+    {
+        return gridPosition + gridManager.getOrigin();
+    }
+
+    public bool IsPassable()
+    {
+        return passable;
+    }
+
+    public void SetPassable(bool p)
+    {
+        passable = p;
     }
 
     public void SetVisited(bool v)
@@ -180,20 +189,5 @@ public class GridSpace
     public bool IsAffected()
     {
         return affected;
-    }
-
-    public void SetEntity(Entity e)
-    {
-        entity = e;
-    }
-
-    public Entity GetEntity()
-    {
-        return entity;
-    }
-
-    public Vector3 GetWorldPosition()
-    {
-        return gridPosition + gridManager.getOrigin();
     }
 }

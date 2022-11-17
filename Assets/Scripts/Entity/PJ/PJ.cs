@@ -46,11 +46,11 @@ public class PJ : Entity
         if (IsMoving)
         {
             var step = 5 * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, destination.GetWorldPosition(), step);
-            if (Vector3.Distance(transform.position, destination.GetWorldPosition()) < 0.001f)
+            transform.position = Vector3.MoveTowards(transform.position, destination.GetPJPlacement(), step);
+            if (Vector3.Distance(transform.position, destination.GetPJPlacement()) < 0.001f)
             {
                 IsMoving = false;
-                transform.position = destination.GetWorldPosition();
+                transform.position = destination.GetPJPlacement();
                 if (!MovementsToDo.Any())
                 {
                     LogicManager.Instance.PJFinishedMoving();

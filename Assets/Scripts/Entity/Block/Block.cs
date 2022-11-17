@@ -37,6 +37,11 @@ public class Block : Entity
         return walkable;
     }
 
+    public virtual Vector3 GetPJAdjustment()
+    {
+        return Vector3.zero;
+    }
+
     public void SetInPreviewMode()
     {
         animator.SetInteger("animationState", 1);

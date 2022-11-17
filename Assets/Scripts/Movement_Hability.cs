@@ -103,7 +103,6 @@ public class Movement_Hability : Hability
         }
     }
 
-
     void AddVisitedSpace(GridSpace spaceToAdd)
     {
         spaceToAdd.SetVisited(true);
