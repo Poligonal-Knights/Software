@@ -83,18 +83,6 @@ public class Movement_Hability : Hability
         }
     }
 
-    void PaintRouteC()
-    {
-        //RefreshVisitedSpaces();
-        //var node = SelectedSpace.node;
-        //PaintNode(node);
-        //while (node.HasParent())
-        //{
-        //    node = node.parent;
-        //    PaintNode(node);
-        //}
-    }
-
     IEnumerator PaintRoute()
     {
         var speed = 0.03f;

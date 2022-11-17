@@ -63,7 +63,17 @@ public class PJ : Entity
 
     public virtual bool CanMoveThere(GridSpace start, GridSpace destination)
     {
-        if (CanJump || start.gridPosition.y == destination.gridPosition.y) return true;
+        if (CanJump || start.gridPosition.y == destination.gridPosition.y)
+        {
+            return true;
+        }
+        else if (start.neighbors["down"].GetEntity() is Half || destination.neighbors["down"].GetEntity() is Half)
+        {
+            if (Mathf.Abs(start.gridPosition.y - destination.gridPosition.y) < 2)
+            {
+                return true;
+            }
+        }
         return false;
     }
 
