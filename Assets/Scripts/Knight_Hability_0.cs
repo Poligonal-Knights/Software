@@ -65,7 +65,6 @@ public class Knight_Hability_0 : Hability
         base.Cancel();
         ClearAffectedSpaces();
         ClearSelectableSpaces();
-        LogicManager.Instance.PJFinishedMoving();
     }
 
     void RefreshSelectableSpaces()

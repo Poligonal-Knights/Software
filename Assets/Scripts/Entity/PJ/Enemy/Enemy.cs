@@ -94,10 +94,9 @@ public class Enemy : PJ
                 Debug.Log("He sufrido " + extraDamage + " y mi vida es " + health);
                 health -= extraDamage;
                 Debug.Log("Mi vida final es " + health);
-                var crashed = pushedInto.GetEntity();
-                if (pushedInto.GetEntity() is Enemy)
+
+                if (pushedInto.GetEntity() is Enemy enemyBumped)
                 {
-                    var enemyBumped = pushedInto.GetEntity() as Enemy;
                     enemyBumped.health -= extraDamage;
                 }
                 bumped = true;

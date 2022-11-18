@@ -24,6 +24,7 @@ public class Hability
     public virtual void Cancel()
     {
         Debug.Log("Cancelling Hability");
+        LogicManager.Instance.PJFinishedMoving();
     }
 
     public virtual void AddAffectedSpace(GridSpace spaceToAdd)
@@ -68,6 +69,10 @@ public class Hability
                     return new Knight_Hability_0();
                 case 1:
                     return new Knight_Hability_1();
+                case 2:
+                    return new Knight_Hability_2();
+                case 3:
+                    return new Knight_Hability_3();
             }
         }
         Debug.Log("ERROR AL OBTENER HABILIDAD");

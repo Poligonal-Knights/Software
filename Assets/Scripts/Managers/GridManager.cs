@@ -100,6 +100,14 @@ public class GridManager : MonoBehaviour
         return spaces[coords.x, coords.y, coords.z];
     }
 
+    public GridSpace GetGridSpace(int x, int y, int z)
+    {
+        if (x < 0 || y < 0 || z < 0 ||
+            x > spaces.GetUpperBound(0) || y > spaces.GetUpperBound(1) || z > spaces.GetUpperBound(2))
+            return null;
+        return spaces[x, y, z];
+    }
+
     public GridSpace GetGridSpaceWorldCoords(Vector3Int worldCoords)
     {
         var gridCoords = worldCoords - minBounds;
