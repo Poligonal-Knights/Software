@@ -7,7 +7,7 @@ using System.Linq;
 
 public class TrashMob : Enemy
 {
-    PJ focusedEnemy;
+    PJ focusedEnemy = null;
     List<PJ> enemiesInRangeList = new List<PJ>();
     public int myDamage;
     // Start is called before the first frame update
@@ -26,24 +26,24 @@ public class TrashMob : Enemy
 
     public override void EnemyAI()
     {
-        base.EnemyAI();
+     //base.EnemyAI();
+     realizandoTurno = true;
     }
 
 
     [Task]
-    void IsEnemyFocused()
+    bool IsEnemyFocused()
     {
-        if (focusedEnemy != null) ThisTask.Succeed();
-        else ThisTask.Fail();
+        return focusedEnemy;
     }
     [Task]
-    void IsEnemyAlive()
+    bool IsEnemyAlive()
     {
-        if (focusedEnemy.health > 0) ThisTask.Succeed();
-        else ThisTask.Fail();
+        if (focusedEnemy != null && focusedEnemy.health > 0) return true;
+        else return false;
     }
     [Task]
-    void EnemiesInRange()
+    bool EnemiesInRange()
     {
         //Implementar comprobación de enemigos a rango
         //enemiesInRangeList.Clear();//Por si acaso
@@ -64,7 +64,7 @@ public class TrashMob : Enemy
         while (nodes.Any())
         {
             var currentNode = nodes.Dequeue();
-            if (currentNode.distance < maxMovement)
+            if (currentNode.distance < maxMovement) //Cambiar por ActualMovement
             {
                 foreach (var move in currentNode.space.moves)
                 {
@@ -83,12 +83,11 @@ public class TrashMob : Enemy
                 }
             }
         }
-        if (enemiesInRangeList.Any()) ThisTask.Succeed();
-        else ThisTask.Fail();
-
+        return enemiesInRangeList.Any();
     }
+    
     [Task]
-    void ChooseCloserEnemy()
+    bool ChooseCloserEnemy()
     {
         //Implementar lógica de elección de enemigo
         Queue<BFS_Node> nodes = new Queue<BFS_Node>();
@@ -124,15 +123,16 @@ public class TrashMob : Enemy
                         goalFinded = true;
                     }
                     else
-                    nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
+                        nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
                 }
             }
         }
-
-        ThisTask.Succeed();
+        return true;
     }
+    
+    
     [Task]
-    void ChooseInjured()
+    bool ChooseInjured()
     {
         var healthMostInjured = Mathf.Infinity;
         foreach (PJ enemy in enemiesInRangeList)
@@ -143,9 +143,11 @@ public class TrashMob : Enemy
                 healthMostInjured = enemy.health;
             }
         }
+        return true;
     }
+    
     [Task]
-    void BattleCryActive()
+    bool BattleCryActive()
     {
         bool worked = false;
         foreach (PJ enemy in enemiesInRangeList)
@@ -160,21 +162,23 @@ public class TrashMob : Enemy
                 }
             }
         }
-        if (worked == false) ThisTask.Fail();
+
+        if (worked == false) return false;
+        else return true;
     }
 
     [Task]
-    void CanIAttack()
+    bool CanIAttack()
     {
         if (focusedEnemy && !getAttackPerformed())
         {
-            ThisTask.Succeed();
+            return true;
         }
-        else ThisTask.Fail();
+        else return false;
     }
 
     [Task]
-    void InAttackRange()
+    bool InAttackRange()
     {
         //Si la distancia entre focusedEnemy y Yo es =<1 -> ThisTask.Succeed()  DONE
         //Considero distancia Manhattan
@@ -183,26 +187,25 @@ public class TrashMob : Enemy
 
         if (distance > 1)//En lugar de 1, enemigo deberia tener su variable rango
         {
-            ThisTask.Succeed();
+            return true;
         }
-        else ThisTask.Fail();
+        else return false;
     }
     [Task]
-    void Attack()
+    bool Attack()
     {
         //Correr animación de ataque mirando al enemigo
         focusedEnemy.health -= damage;
-        ThisTask.Succeed();
+        return true;
     }
 
     [Task]
-    void CanIMove()
+    bool CanIMove()
     {
-        if (movement > 0) ThisTask.Succeed();
-        else ThisTask.Fail();
+        return movement > 0;
     }
     [Task]
-    void GetCloser()
+    bool GetCloser()
     {
         //Implementar camino con el máximo movimiento posible hasta el enemigo DONE?
         //Lo mejor sería implementar un A*, me falta tiempo
@@ -258,14 +261,14 @@ public class TrashMob : Enemy
             }
         }
 
-        ThisTask.Succeed();
+        return true;
     }
 
     [Task]
-    void EndTurn()
+    bool EndTurn()
     {
         EnemyManager.Instance.enemyTurnEnd();
-        ThisTask.Succeed();
+        return true;
     }
 
     [Task]
