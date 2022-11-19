@@ -21,6 +21,8 @@ public class PJ : Entity
     protected Queue<GridSpace> MovementsToDo = new Queue<GridSpace>();
     GridSpace destination;
 
+    HashSet<Buff> buffs = new HashSet<Buff>();
+
     protected override void Start()
     {
         base.Start();
@@ -173,5 +175,30 @@ public class PJ : Entity
     public void setAttackPerformed(bool setter)
     {
         attackPerformed = setter;
+    }
+
+    protected override void OnChangeTurn()
+    {
+        //UpdateBuffs();
+    }
+
+    public void AddBuff(Buff addedBuff)
+    {
+        Debug.Log(this + "Buff received");
+        buffs.Add(addedBuff);
+    }
+
+    public void RemoveBuff(Buff addedBuff)
+    {
+        Debug.Log(this + "Buff removed");
+        buffs.Add(addedBuff);
+    }
+
+    protected virtual void UpdateBuffs()
+    {
+        foreach(Buff buff in buffs)
+        {
+            
+        }
     }
 }

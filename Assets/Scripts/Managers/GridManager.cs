@@ -186,6 +186,12 @@ public class GridManager : MonoBehaviour
         }
         affectedSpaces.Clear();
     }
+
+    public Vector3 GetCenterofGrid()
+    {
+        Vector3Int minMax = maxBounds - minBounds;
+        return minMax / 2 + minBounds;
+    }
 }
 
 

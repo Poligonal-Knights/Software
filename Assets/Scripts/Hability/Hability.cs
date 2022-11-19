@@ -31,6 +31,7 @@ public class Hability
     public virtual void Cancel()
     {
         Debug.Log("Cancelling Hability");
+        LogicManager.Instance.currentHability = null;
         LogicManager.Instance.PJFinishedMoving();
     }
 

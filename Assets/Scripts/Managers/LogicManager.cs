@@ -10,7 +10,7 @@ public class LogicManager : MonoBehaviour
     PJ SelectedPJ;
 
     bool SelectingHability;
-    Hability currentHability;
+    public Hability currentHability;
 
     private void Awake() => Instance = this;
 
@@ -67,8 +67,11 @@ public class LogicManager : MonoBehaviour
             SelectingHability = false;
             UIManager.Instance.ShowActionCanvas();
         }
-        else
-            currentHability?.Cancel();
+        else if(currentHability is not null)
+        {
+            currentHability.Cancel();
+
+        }
     }
 
     public void PJFinishedMoving()

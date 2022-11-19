@@ -32,7 +32,6 @@ public class Movement_Hability : Hability
     {
         base.Cancel();
         ClearVisitedSpaces();
-        LogicManager.Instance.PJFinishedMoving();
     }
 
     public override void ClickedEntity(Entity entityClicked)
