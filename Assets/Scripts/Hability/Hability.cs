@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.WSA;
+using static UnityEngine.UI.GridLayoutGroup;
 
 public class Hability
 {
@@ -11,10 +12,16 @@ public class Hability
 
     protected bool readyToConfirm;
 
-    protected PJ pj;
+    public PJ Owner;
 
     public Hability()
     {
+        readyToConfirm = false;
+    }
+
+    public Hability(PJ owner)
+    {
+        Owner = owner;
         readyToConfirm = false;
     }
 
@@ -66,22 +73,42 @@ public class Hability
             switch (i)
             {
                 case 0:
-                    return new Knight_Hability_0();
+                    return new Knight_Hability_0(pj);
                 case 1:
-                    return new Knight_Hability_1();
+                    return new Knight_Hability_1(pj);
                 case 2:
-                    return new Knight_Hability_2();
+                    return new Knight_Hability_2(pj);
                 case 3:
-                    return new Knight_Hability_3();
+                    return new Knight_Hability_3(pj);
+                case 4:
+                    return new Knight_Hability_4(pj);
             }
         }
+        if (pj is Wizard)
+        {
+            switch (i)
+            {
+                case 0:
+                    return new Wizard_Hability_0(pj);
+                case 1:
+                    return new Wizard_Hability_1(pj);
+                case 2:
+                    return new Wizard_Hability_2(pj);
+                case 3:
+                    return new Wizard_Hability_3(pj);
+                case 4:
+                    return new Wizard_Hability_4(pj);
+            }
+        }
+
+
         Debug.Log("ERROR AL OBTENER HABILIDAD");
         return null;
     }
 
     public static Hability GetMovementHability(PJ pj)
     {
-        return new Movement_Hability();
+        return new Movement_Hability(pj);
     }
 
     public bool IsReadyToConfirm()

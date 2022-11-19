@@ -103,10 +103,14 @@ public class GridSpace
 
     public Vector3 GetPJPlacement()
     {
-        var b = neighbors["down"].GetEntity() as Block;
-        if (b == null)
-            return GetWorldPosition();
-        return GetWorldPosition() + b.GetPJAdjustment();
+        //var b = neighbors["down"].GetEntity() as Block;
+        //if (b == null)
+        //    return GetWorldPosition();
+        //return GetWorldPosition() + b.GetPJAdjustment();
+        var down = neighbors["down"];
+        if (down is not null && down.GetEntity() is Block block)
+            return GetWorldPosition() + block.GetPJAdjustment();
+        return GetWorldPosition();
     }
 
     public Vector3 GetWorldPosition()

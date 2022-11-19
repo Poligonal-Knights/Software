@@ -6,6 +6,8 @@ using UnityEngine;
 //Grito de Batalla
 public class Knight_Hability_1 : Hability
 {
+    public Knight_Hability_1(PJ owner) : base(owner) { }
+
     public override void Preview()
     {
         Debug.Log("Grito de batalla PREVIEW");

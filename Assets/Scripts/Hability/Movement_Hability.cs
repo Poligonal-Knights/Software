@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class Movement_Hability : Hability
 {
+    public Movement_Hability() : base() { }
+    public Movement_Hability(PJ owner) : base(owner) { }
+
     HashSet<GridSpace> visitedSpaces = new HashSet<GridSpace>();
 
     public override void Preview()
     {
-        pj = LogicManager.Instance.GetSelectedPJ();
         BFS();
     }
 
@@ -22,7 +24,7 @@ public class Movement_Hability : Hability
 
     public override void Confirm()
     {
-        pj.MoveTo(SelectedSpace);
+        Owner.MoveTo(SelectedSpace);
         ClearVisitedSpaces();
     }
 
@@ -52,12 +54,12 @@ public class Movement_Hability : Hability
 
     public void BFS()
     {
-        var PJSpace = pj.GetGridSpace();
+        var PJSpace = Owner.GetGridSpace();
         AddVisitedSpace(PJSpace);
         Queue<BFS_Node> nodes = new Queue<BFS_Node>();
         foreach (var move in PJSpace.moves)
         {
-            if (!move.visited && pj.CanMoveThere(PJSpace, move))
+            if (!move.visited && Owner.CanMoveThere(PJSpace, move))
             {
                 AddVisitedSpace(move);
                 nodes.Enqueue(new BFS_Node(move, null, 1));
@@ -66,13 +68,13 @@ public class Movement_Hability : Hability
         while (nodes.Any())
         {
             var currentNode = nodes.Dequeue();
-            if (currentNode.distance < pj.maxMovement)
+            if (currentNode.distance < Owner.maxMovement)
             {
                 foreach (var move in currentNode.space.moves)
                 {
-                    if (!move.visited && pj.CanMoveThere(currentNode.space, move))
+                    if (!move.visited && Owner.CanMoveThere(currentNode.space, move))
                     {
-                        if (!(currentNode.distance + 1 == pj.maxMovement && move.GetEntity() is PJ))
+                        if (!(currentNode.distance + 1 == Owner.maxMovement && move.GetEntity() is PJ))
                         {
                             AddVisitedSpace(move);
                             nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));

@@ -5,6 +5,9 @@ using UnityEngine;
 //Charge
 public class Knight_Hability_2 : Hability
 {
+    public Knight_Hability_2(PJ owner) : base(owner) { }
+
+
     int chargeDistance = 3;
     Vector3Int direction;
     GridSpace finalSpace;
@@ -12,8 +15,7 @@ public class Knight_Hability_2 : Hability
     List<PJ> affectedPJs = new List<PJ>();
     public override void Preview()
     {
-        pj = LogicManager.Instance.GetSelectedPJ();
-        var PJSpace = pj.GetGridSpace();
+        var PJSpace = Owner.GetGridSpace();
         foreach (var move in PJSpace.moves)
         {
             if (move.gridPosition.y == PJSpace.gridPosition.y)
@@ -31,7 +33,7 @@ public class Knight_Hability_2 : Hability
         RefreshSelectableSpaces();
         var i = 1;
         var obstacleFinded = false;
-        direction = SelectedSpace.gridPosition - pj.GetGridSpace().gridPosition;
+        direction = SelectedSpace.gridPosition - Owner.GetGridSpace().gridPosition;
         GridSpace affectedSpace = null;
         while (i < chargeDistance && !obstacleFinded)
         {
@@ -52,7 +54,7 @@ public class Knight_Hability_2 : Hability
     public override void Confirm()
     {
         var PJFinalSpace = GridManager.Instance.GetGridSpace(finalSpace.gridPosition - direction * affectedPJs.Count);
-        pj.MoveTo(PJFinalSpace);
+        Owner.MoveTo(PJFinalSpace);
         GameManager.Instance.StartCoroutine(MoveAffectedPJs());
     }
 
@@ -83,7 +85,7 @@ public class Knight_Hability_2 : Hability
     {
         for(int i = 0; i < affectedPJs.Count; i++)
         {
-            var distanceToKnight = Vector3Int.Distance(affectedPJs[i].GetGridSpace().gridPosition, pj.GetGridSpace().gridPosition);
+            var distanceToKnight = Vector3Int.Distance(affectedPJs[i].GetGridSpace().gridPosition, Owner.GetGridSpace().gridPosition);
             yield return new WaitForSeconds(distanceToKnight * 0.3f);
             affectedPJs[i].MoveTo(GridManager.Instance.GetGridSpace(finalSpace.gridPosition - direction * i));
         }

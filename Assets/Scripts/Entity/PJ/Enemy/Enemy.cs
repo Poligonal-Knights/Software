@@ -74,12 +74,17 @@ public class Enemy : PJ
     public virtual void BePushed(Vector3Int direction, int pushback, int extraDamage)
     {
         bool bumped = false;
+        bool endOfGrid = false;
         int i = 0;
-        while (!bumped && i <= pushback)
+        while (!bumped && i <= pushback && !endOfGrid)
         {
             i++;
             var pushedInto = GridManager.Instance.GetGridSpace(space.gridPosition + direction * i);
-            if (pushedInto.IsEmpty() || pushedInto.HasTrap())
+            if(pushedInto is null)
+            {
+                endOfGrid = true;
+            }
+            else if (pushedInto.IsEmpty() || pushedInto.HasTrap())
             {
                 MovementsToDo.Enqueue(pushedInto);
                 if (!pushedInto.IsPassable())
@@ -97,6 +102,7 @@ public class Enemy : PJ
 
                 if (pushedInto.GetEntity() is Enemy enemyBumped)
                 {
+                    Debug.Log(this + " BUMP");
                     enemyBumped.health -= extraDamage;
                 }
                 bumped = true;

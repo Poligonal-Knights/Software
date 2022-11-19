@@ -29,12 +29,22 @@ public class Ally : PJ
 
     public void SetInvencibility(bool setTo)
     {
-        Debug.Log("Soy to guay");
         invencibility = setTo;
     }
 
     public bool IsInvencible()
     {
         return invencibility;
+    }
+
+    protected override void OnChangeTurn()
+    {
+        if (TurnManager.Instance.IsPlayerTurn()) //CAmbio de ronda
+        {
+            //foreach buff in buffs
+            //buff.cont--;
+
+            SetInvencibility(false);
+        }
     }
 }

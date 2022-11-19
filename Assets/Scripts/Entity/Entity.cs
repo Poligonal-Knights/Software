@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class Entity : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class Entity : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        
+
     }
 
     protected void UpdateGridSpace()
@@ -56,7 +57,10 @@ public class Entity : MonoBehaviour
     {
         //InputHandler.Instance.EntityClicked(this);
         //OnClick.Invoke(this);
-        LogicManager.Instance.EntityClicked(this);
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            LogicManager.Instance.EntityClicked(this);
+        }
     }
 
     protected virtual void OnChangeTurn()

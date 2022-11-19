@@ -5,10 +5,11 @@ using UnityEngine;
 //Bastion
 public class Knight_Hability_3 : Hability
 {
+    public Knight_Hability_3(PJ owner) : base(owner) { }
+
     public override void Preview()
     {
-        pj = LogicManager.Instance.GetSelectedPJ();
-        var PJSpace = pj.GetGridSpace();
+        var PJSpace = Owner.GetGridSpace();
         int y = PJSpace.gridPosition.y;
         for (int x = PJSpace.gridPosition.x - 1; x < PJSpace.gridPosition.x + 2; x++)
             for (int z = PJSpace.gridPosition.z - 1; z < PJSpace.gridPosition.z + 2; z++)

@@ -119,6 +119,11 @@ public class GridManager : MonoBehaviour
         return minBounds;
     }
 
+    public Vector3Int GetGridSize()
+    {
+        return maxBounds - minBounds;
+    }
+
     public void StopPJMovementPreview()
     {
         //foreach(var space in visitedSpaces)

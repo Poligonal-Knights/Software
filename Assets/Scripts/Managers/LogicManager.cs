@@ -99,7 +99,7 @@ public class LogicManager : MonoBehaviour
         {
             currentHability = Hability.GetHability(SelectedPJ, i);
             SelectingHability = false;
-            currentHability.Preview();
+            currentHability?.Preview();
             UIManager.Instance.ShowPreviewCanvas();
         }
     }
