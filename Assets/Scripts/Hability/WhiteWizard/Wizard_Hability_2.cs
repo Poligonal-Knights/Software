@@ -17,7 +17,6 @@ public class Wizard_Hability_2 : Hability
     {
         foreach (var ally in Object.FindObjectsOfType<Ally>())
         {
-            //ally.AddBuff(new Rush(ally));
             new Rush(ally);
         }
     }
