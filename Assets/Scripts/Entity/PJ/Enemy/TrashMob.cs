@@ -241,14 +241,14 @@ public class TrashMob : Enemy
                         goalNode = currentNode;
                     }
                     else
-                    nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
+                        nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
                 }
             }
         }
         if (goalNode is not null)
         {
             var node = goalNode;
-            while ((node.distance > movement || node.space.GetEntity() is PJ) && node is not null)
+            while ((node.distance > movement || node.space.GetEntity() is PJ) && (node is not null)) //Revisar dobles comprobaciones
             {
                 node = node.parent;
             }
