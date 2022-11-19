@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3683618419123175468}
   - component: {fileID: 55930124927064567}
   m_Layer: 0
-  m_Name: Stone
+  m_Name: Stalagmite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 714d530051d25f74285af784aadefcbc, type: 2}
+  - {fileID: 2100000, guid: 468bafababfa37b4f97ee14729bd3779, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
