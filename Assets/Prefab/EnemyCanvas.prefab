@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 2054119563630797359}
   - component: {fileID: 2054119563630797392}
   m_Layer: 5
-  m_Name: EmptyCanvas
+  m_Name: EnemyCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
