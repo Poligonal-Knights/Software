@@ -14,8 +14,9 @@ public class Ally : PJ
     //States
     bool invencibility;
     bool reactionAvailable;
+    public bool deniedReaction = false; //Ha sido denegada la reacción actual en concreto.
 
-    protected int HabilitySelected;
+    protected int AbilitySelected;
     protected GridSpace spaceSelected;
 
     // Start is called before the first frame update
@@ -33,7 +34,7 @@ public class Ally : PJ
             {
                 if (neighbor.gridPosition.y == space.gridPosition.y)
                 {
-                    if(neighbor.GetEntity() is Enemy enemy)
+                    if(neighbor.GetEntity() is Enemy enemy && enemy.beingPushed)
                     {
                         Debug.LogWarning("INTENTANDO REACTION");
                         LogicManager.Instance.reactionAbility.Engage(this, enemy);

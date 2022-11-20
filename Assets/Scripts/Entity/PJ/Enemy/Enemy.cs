@@ -8,6 +8,10 @@ using Random = UnityEngine.Random;
 public class Enemy : PJ
 {
     public bool realizandoTurno = false;
+
+    public bool beingPushed = false;
+
+    public int comboed =0 ; 
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -23,12 +27,17 @@ public class Enemy : PJ
     protected override void Update()
     {
         base.Update();
-        if (realizandoTurno && !MovementsToDo.Any() && !IsMoving)
+        if (!MovementsToDo.Any() && !IsMoving)
+        {
+            beingPushed = false;
+            comboed = 0;
+        }
+        /*if (realizandoTurno && !MovementsToDo.Any() && !IsMoving)
         {
             //Turno finalizado
             realizandoTurno = false;
             EnemyManager.Instance.enemyTurnEnd();
-        }
+        }*/
     }
 
     public virtual void EnemyAI()
@@ -74,7 +83,7 @@ public class Enemy : PJ
     public virtual void BePushed(Vector3Int direction, int pushback, int extraDamage)
     {
         Debug.Log("Pushed");
-
+        beingPushed = true;
         bool bumped = false;
         bool endOfGrid = false;
         int i = 0;
@@ -113,13 +122,13 @@ public class Enemy : PJ
             else
             {
                 Debug.Log("He sufrido " + extraDamage + " y mi vida es " + health);
-                health -= extraDamage;
+                DealDamage(extraDamage);
                 Debug.Log("Mi vida final es " + health);
 
                 if (pushedInto.GetEntity() is Enemy enemyBumped)
                 {
                     Debug.Log(this + " BUMP");
-                    enemyBumped.health -= extraDamage;
+                    enemyBumped.DealDamage(extraDamage);
                 }
                 bumped = true;
             }
@@ -140,6 +149,13 @@ public class Enemy : PJ
     {
         if (destination.GetEntity() is Ally) return false;
         return base.CanMoveThere(start, destination);
+    }
+
+    public override void DealDamage(int damage)
+    {
+        base.DealDamage(damage);
+        Debug.Log("The actual combo is " +comboed);
+        health -= comboed;
     }
 }
 

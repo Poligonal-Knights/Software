@@ -5227,7 +5227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4837352154470818270, guid: d4a01e625bda3134ea6a6f7323d6e2b3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4837352154470818270, guid: d4a01e625bda3134ea6a6f7323d6e2b3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5235,7 +5235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4837352154470818270, guid: d4a01e625bda3134ea6a6f7323d6e2b3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4837352154470818270, guid: d4a01e625bda3134ea6a6f7323d6e2b3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8221,6 +8221,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4683485296739818024, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: damage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683485296739818024, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: energy
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683485296739818024, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: health
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683485296739818024, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: movement
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683485296739818024, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: maxEnergy
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683485296739818024, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: maxHealth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683485296739818024, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: maxMovement
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683485296739818024, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: defaultSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683485296739818024, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: pushStrength
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683485296739818024, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: trapBonusDamage
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4837352154470818258, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
       propertyPath: m_Name
       value: Priest
@@ -8580,6 +8620,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 458121981773691620, guid: c166f6598525cd1458a111949b7475b5, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 458121981773691620, guid: c166f6598525cd1458a111949b7475b5, type: 3}
+      propertyPath: health
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 458121981773691620, guid: c166f6598525cd1458a111949b7475b5, type: 3}
+      propertyPath: movement
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 458121981773691620, guid: c166f6598525cd1458a111949b7475b5, type: 3}
+      propertyPath: maxHealth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 458121981773691620, guid: c166f6598525cd1458a111949b7475b5, type: 3}
+      propertyPath: maxMovement
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 458121981773691620, guid: c166f6598525cd1458a111949b7475b5, type: 3}
+      propertyPath: defaultSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 458121981773691621, guid: c166f6598525cd1458a111949b7475b5, type: 3}
       propertyPath: m_Name
       value: TrashMob (1)
@@ -8814,13 +8878,53 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wizard
       objectReference: {fileID: 0}
+    - target: {fileID: 5322172011782772564, guid: 9dde245212c3d954e98b4bf2f1159e31, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322172011782772564, guid: 9dde245212c3d954e98b4bf2f1159e31, type: 3}
+      propertyPath: energy
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322172011782772564, guid: 9dde245212c3d954e98b4bf2f1159e31, type: 3}
+      propertyPath: health
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322172011782772564, guid: 9dde245212c3d954e98b4bf2f1159e31, type: 3}
+      propertyPath: movement
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322172011782772564, guid: 9dde245212c3d954e98b4bf2f1159e31, type: 3}
+      propertyPath: maxEnergy
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322172011782772564, guid: 9dde245212c3d954e98b4bf2f1159e31, type: 3}
+      propertyPath: maxHealth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322172011782772564, guid: 9dde245212c3d954e98b4bf2f1159e31, type: 3}
+      propertyPath: maxMovement
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322172011782772564, guid: 9dde245212c3d954e98b4bf2f1159e31, type: 3}
+      propertyPath: defaultSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322172011782772564, guid: 9dde245212c3d954e98b4bf2f1159e31, type: 3}
+      propertyPath: pushStrength
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322172011782772564, guid: 9dde245212c3d954e98b4bf2f1159e31, type: 3}
+      propertyPath: trapBonusDamage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5322172011782772568, guid: 9dde245212c3d954e98b4bf2f1159e31, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5322172011782772568, guid: 9dde245212c3d954e98b4bf2f1159e31, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 5322172011782772568, guid: 9dde245212c3d954e98b4bf2f1159e31, type: 3}
       propertyPath: m_LocalPosition.y

@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5face6c-2f1b-4931-a622-ab51a4d8a3bf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RotateWithCamera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Software/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Software/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Software/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Software/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefab/Knight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Knight.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Priest.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Priest.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/TrashMob.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/TrashMob.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Wizard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Wizard.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Ally/Sprite Cleriga B.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Ally/Sprite Cleriga B.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Ally/Sprite Cleriga.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Ally/Sprite Cleriga.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Ally/Sprite Mago B.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Ally/Sprite Mago B.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Ally/Sprite Mago.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Ally/Sprite Mago.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Ally/Sprite Rogue B.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Ally/Sprite Rogue B.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Ally/Sprite Rogue.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Ally/Sprite Rogue.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Ally/Sprite Tank B.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Ally/Sprite Tank B.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Ally/Sprite Tank.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Ally/Sprite Tank.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TesteoJavier.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TesteoJavier.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability/Reaction_Ability.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Reaction_Ability.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Ally/Ally.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Ally/Ally.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/PJ.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/PJ.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +72,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668968586040</updated>
-      <workItem from="1668968652433" duration="1279000" />
+      <workItem from="1668968652433" duration="5666000" />
     </task>
     <servers />
   </component>

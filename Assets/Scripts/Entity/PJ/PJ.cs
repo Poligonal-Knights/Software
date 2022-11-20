@@ -18,10 +18,10 @@ public class PJ : Entity
     public float defaultSpeed;
 
     //States
-    protected bool IsMoving;
+    public bool IsMoving;
     protected bool IsDying;
 
-    protected Queue<GridSpace> MovementsToDo = new Queue<GridSpace>();
+    public Queue<GridSpace> MovementsToDo = new Queue<GridSpace>();
     GridSpace destination;
 
     HashSet<Buff> buffs = new HashSet<Buff>();
