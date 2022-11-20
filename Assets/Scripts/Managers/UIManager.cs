@@ -15,6 +15,8 @@ public class UIManager : MonoBehaviour
     public Canvas habilitiesCanvas;
     public Canvas previewCanvas;
     public Canvas alwaysActiveCanvas;
+    public Sprite wizardPortrait; // Hacer esto es Omega feo ¿meterlos por dirección?
+    public Sprite knightPortrait;
 
     Canvas currentCanvas;
     Canvas previousCanvas;
@@ -77,6 +79,7 @@ public class UIManager : MonoBehaviour
     public void ShowActionCanvas()
     {
         ShowThisCanvas(actionCanvas);
+        ShowSelectedAlly();
         ShowTurnButton();
     }
 
@@ -106,6 +109,7 @@ public class UIManager : MonoBehaviour
     public void ShowEnemySelectedUI()
     {
         ShowEmptyCanvas();
+        ShowSelectedEnemy();
     }
 
     public void ShowNothingSelectedUI()
@@ -121,6 +125,33 @@ public class UIManager : MonoBehaviour
     public void HideTurnButton()
     {
         turnCanvas.gameObject.SetActive(false);
+    }
+
+    public void ShowSelectedAlly()
+    {
+        PJ selectedAlly = LogicManager.Instance.GetSelectedPJ();
+        
+
+        actionCanvas.transform.Find("Health").GetComponent<TextMeshProUGUI>().SetText(selectedAlly.health + "/" + selectedAlly.maxHealth);
+
+        if (selectedAlly is Wizard)
+        {
+            actionCanvas.transform.Find("Portrait").GetComponent<UnityEngine.UI.Image>().sprite = wizardPortrait;
+        }
+        else if (selectedAlly is Knight) 
+        {
+            actionCanvas.transform.Find("Portrait").GetComponent<UnityEngine.UI.Image>().sprite = knightPortrait;
+        }
+        //else if (selectedAlly is )
+    }
+
+    public void ShowSelectedEnemy() 
+    {
+        PJ selectedEnemy = LogicManager.Instance.GetSelectedPJ();
+        Debug.LogWarning(selectedEnemy);
+        emptyCanvas.transform.Find("EHealth").GetComponent<TextMeshProUGUI>().SetText(selectedEnemy.ToString());
+        emptyCanvas.transform.Find("EHealth").GetComponent<TextMeshProUGUI>().SetText(selectedEnemy.health + "/" + selectedEnemy.maxHealth);
+
     }
 
 }
