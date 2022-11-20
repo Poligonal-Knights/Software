@@ -130,10 +130,12 @@ public class UIManager : MonoBehaviour
     public void ShowSelectedAlly()
     {
         PJ selectedAlly = LogicManager.Instance.GetSelectedPJ();
-        if (selectedAlly is Ally ally) 
-        {
-            actionCanvas.transform.Find("Health").GetComponent<TextMeshProUGUI>().SetText(ally.health + "/" + ally.maxHealth);
-            actionCanvas.transform.Find("Energy").GetComponent<TextMeshProUGUI>().SetText(ally.energy + "/" + ally.maxEnergy);
+        if (selectedAlly is Ally ally)
+        { 
+            actionCanvas.transform.Find("Portrait").Find("HealthBar").Find("Text").GetComponent<TextMeshProUGUI>().SetText(ally.health + "/" + ally.maxHealth);
+            actionCanvas.transform.Find("Portrait").Find("HealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = ally.health/10f;
+            actionCanvas.transform.Find("Portrait").Find("EnergyBar").Find("Text").GetComponent<TextMeshProUGUI>().SetText(ally.energy + "/" + ally.maxEnergy);
+            actionCanvas.transform.Find("Portrait").Find("EnergyBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = ally.energy / 10f;
         }
 
        
@@ -157,9 +159,10 @@ public class UIManager : MonoBehaviour
         PJ selectedEnemy = LogicManager.Instance.GetSelectedPJ();
         string fullName = selectedEnemy.ToString();
         string[] subName = fullName.Split(' ');
-        emptyCanvas.transform.Find("EHealth").GetComponent<TextMeshProUGUI>().SetText(selectedEnemy.health + "/" + selectedEnemy.maxHealth);
-        emptyCanvas.transform.Find("EName").GetComponent<TextMeshProUGUI>().SetText(subName[0]+" "+ subName[1]);
         
+        emptyCanvas.transform.Find("EName").GetComponent<TextMeshProUGUI>().SetText(subName[0]+" "+ subName[1]);
+        emptyCanvas.transform.Find("EName").Find("EHealthBar").Find("Text").GetComponent<TextMeshProUGUI>().SetText(selectedEnemy.health + "/" + selectedEnemy.maxHealth);
+        emptyCanvas.transform.Find("EName").Find("EHealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = selectedEnemy.health / 10f;
 
     }
 
