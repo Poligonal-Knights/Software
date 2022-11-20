@@ -130,9 +130,13 @@ public class UIManager : MonoBehaviour
     public void ShowSelectedAlly()
     {
         PJ selectedAlly = LogicManager.Instance.GetSelectedPJ();
-        
+        if (selectedAlly is Ally ally) 
+        {
+            actionCanvas.transform.Find("Health").GetComponent<TextMeshProUGUI>().SetText(ally.health + "/" + ally.maxHealth);
+            actionCanvas.transform.Find("Energy").GetComponent<TextMeshProUGUI>().SetText(ally.energy + "/" + ally.maxEnergy);
+        }
 
-        actionCanvas.transform.Find("Health").GetComponent<TextMeshProUGUI>().SetText(selectedAlly.health + "/" + selectedAlly.maxHealth);
+       
 
         if (selectedAlly is Wizard)
         {
@@ -153,8 +157,9 @@ public class UIManager : MonoBehaviour
         PJ selectedEnemy = LogicManager.Instance.GetSelectedPJ();
         string fullName = selectedEnemy.ToString();
         string[] subName = fullName.Split(' ');
-        emptyCanvas.transform.Find("EName").GetComponent<TextMeshProUGUI>().SetText(subName[0]);
         emptyCanvas.transform.Find("EHealth").GetComponent<TextMeshProUGUI>().SetText(selectedEnemy.health + "/" + selectedEnemy.maxHealth);
+        emptyCanvas.transform.Find("EName").GetComponent<TextMeshProUGUI>().SetText(subName[0]+" "+ subName[1]);
+        
 
     }
 
