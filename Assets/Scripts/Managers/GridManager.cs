@@ -186,6 +186,14 @@ public class GridManager : MonoBehaviour
         }
         affectedSpaces.Clear();
     }
+
+    public void clearNodes()
+    {
+        foreach (var space in spaces)
+        {
+            space.node = null;
+        }
+    }
 }
 
 

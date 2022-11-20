@@ -23,7 +23,9 @@ tree("FocusEnemy")
 					Wait 1.0
 				BattleCryActive()
 				ChooseInjured()
-		ChooseCloserEnemy()
+		sequence
+			Wait 1.0		
+			ChooseCloserEnemy()
 
 //Tree Attack And Move
 tree("AttackAndMove")
@@ -36,6 +38,7 @@ tree("AttackAndMove")
 		sequence
 			Wait 1.0
 			CanIMove()
+			Wait 1.0
 			not
 				InAttackRange()
 			GetCloser()
