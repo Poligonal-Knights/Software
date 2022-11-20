@@ -145,28 +145,39 @@ public class UIManager : MonoBehaviour
         {
             if (ally.maxHealth == 0)
             {
-                actionCanvas.transform.Find("Portrait").Find("HealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = ally.health / 10f;
+                actionCanvas.transform.Find("Portrait").Find("HealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = ally.health / 10.0f;
             }
             else
             {
-                actionCanvas.transform.Find("Portrait").Find("HealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = ally.health / ally.maxHealth;
+                actionCanvas.transform.Find("Portrait").Find("HealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount =(float) ally.health / ally.maxHealth;
             }
 
             actionCanvas.transform.Find("Portrait").Find("HealthBar").Find("Text").GetComponent<TextMeshProUGUI>().SetText(ally.health + "/" + ally.maxHealth);
             
             if (ally.maxEnergy == 0)
             {
-                actionCanvas.transform.Find("Portrait").Find("EnergyBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = ally.energy / 10f;
+                actionCanvas.transform.Find("Portrait").Find("EnergyBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = ally.energy / 10.0f;
             }
             else
             {
-                actionCanvas.transform.Find("Portrait").Find("EnergyBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = ally.energy / ally.maxEnergy;
+                actionCanvas.transform.Find("Portrait").Find("EnergyBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount =(float) ally.energy / ally.maxEnergy;
             }
             actionCanvas.transform.Find("Portrait").Find("EnergyBar").Find("Text").GetComponent<TextMeshProUGUI>().SetText(ally.energy + "/" + ally.maxEnergy);
-            
+
+            if (ally.maxMovement == 0)
+            {
+                actionCanvas.transform.Find("Portrait").Find("MovBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = ally.energy / 10.0f;
+            }
+            else
+            {
+                actionCanvas.transform.Find("Portrait").Find("MovBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = (float)ally.movement / ally.maxMovement;
+            }
+            actionCanvas.transform.Find("Portrait").Find("MovBar").Find("Text").GetComponent<TextMeshProUGUI>().SetText(ally.movement + "/" + ally.maxMovement);
+
+
         }
 
-       
+
 
         if (selectedAlly is Wizard)
         {
@@ -194,11 +205,11 @@ public class UIManager : MonoBehaviour
         enemyCanvas.transform.Find("Portrait").Find("EHealthBar").Find("Text").GetComponent<TextMeshProUGUI>().SetText(selectedEnemy.health + "/" + selectedEnemy.maxHealth);
         if (selectedEnemy.maxHealth == 0)
         {
-            enemyCanvas.transform.Find("Portrait").Find("EHealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = selectedEnemy.health / 10f;
+            enemyCanvas.transform.Find("Portrait").Find("EHealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = selectedEnemy.health / 10.0f;
         }
         else 
         {
-            enemyCanvas.transform.Find("Portrait").Find("EHealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = selectedEnemy.health / selectedEnemy.maxHealth;
+            enemyCanvas.transform.Find("Portrait").Find("EHealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = (float) selectedEnemy.health / selectedEnemy.maxHealth;
         }
         
 
