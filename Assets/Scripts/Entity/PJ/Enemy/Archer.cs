@@ -267,6 +267,61 @@ public class Archer : Enemy
         {
             focusedEnemy = bestEnemy;
         }
+        bool goalFinded = false;
+        BFS_Node goalNode = null;
+
+        Queue<BFS_Node> nodes = new Queue<BFS_Node>();
+        HashSet<GridSpace> visitedSpaces = new HashSet<GridSpace>();
+        foreach (var move in GetGridSpace().moves)
+        {
+            if (move.GetEntity() is not null && move.GetEntity().Equals(focusedEnemy))
+            {
+                goalFinded = true;
+            }
+
+            else if (!visitedSpaces.Contains(move) && CanMoveThere(GetGridSpace(), move))
+            {
+                visitedSpaces.Add(move);
+                nodes.Enqueue(new BFS_Node(move, null, 1));
+            }
+        }
+        while (nodes.Any())
+        {
+            var currentNode = nodes.Dequeue();
+            if (currentNode.distance < maxMovement) //Cambiar por ActualMovement
+            {
+                foreach (var move in currentNode.space.moves)
+                {
+                    if (move.GetEntity() is not null && move.GetEntity().Equals(focusedEnemy))
+                    {
+                        goalFinded = true;
+                        goalNode = currentNode;
+                    }
+                    if (!visitedSpaces.Contains(move) && CanMoveThere(currentNode.space, move))
+                    {
+                        if (!(currentNode.distance + 1 == maxMovement && move.GetEntity() is PJ))
+                        {
+                            visitedSpaces.Add(move);
+                            nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
+                        }
+                    }
+                }
+            }
+        }
+
+        if (goalNode is not null)
+        {
+            var node = goalNode;
+            while ((node is not null) && (node.distance > movement || node.space.GetEntity() is PJ)) //Revisar dobles comprobaciones
+            {
+                node = node.parent;
+            }
+
+            if (node is not null)
+            {
+                bestSpace = node.space;
+            }
+        }
 
         return true;
     }
