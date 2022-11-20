@@ -231,13 +231,14 @@ public class Archer : Enemy
     bool StillAlive()
     {
         if (focusedEnemy)
-            return focusedEnemy.health <= 0;
+            return focusedEnemy.health > 0;
         else return false;
     }
 
     [Task]
     bool EndTurn()
     {
+        setAttackPerformed(false);
         realizandoTurno = false;
         EnemyManager.Instance.enemyTurnEnd();
         return true;
