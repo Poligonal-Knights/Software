@@ -67,7 +67,7 @@ public class Archer : Enemy
             }
         }
 
-        foreach(var enemy in Object.FindObjectsOfType<Ally>())
+        foreach (var enemy in Object.FindObjectsOfType<Ally>())
 
         {
             foreach (var vSpace in visitedSpaces)
@@ -163,10 +163,9 @@ public class Archer : Enemy
         foreach (var cSpace in candidateSpaces)
         {
             var sum = 0;
-            foreach(var enemy in Object.FindObjectsOfType<Ally>())
-
+            foreach (var enemy in Object.FindObjectsOfType<Ally>())
             {
-                sum += ManhattanDistance(cSpace, focusedEnemy.GetGridSpace());
+                sum += ManhattanDistance(cSpace, enemy.GetGridSpace());
             }
 
             if (sum > maxDistance)
@@ -222,7 +221,7 @@ public class Archer : Enemy
     bool Attack()
     {
         //Correr animación de ataque mirando al enemigo
-        Debug.Log("Atacando a "+ focusedEnemy +" con " + focusedEnemy.health);
+        Debug.Log("Atacando a " + focusedEnemy + " con " + focusedEnemy.health);
         focusedEnemy.DealDamage(damage);
         setAttackPerformed(true);
         return true;
@@ -266,10 +265,11 @@ public class Archer : Enemy
                 bestEnemy = enemy;
             }
         }
-        if(bestEnemy != null)
+        if (bestEnemy != null)
         {
             focusedEnemy = bestEnemy;
         }
+        Debug.Log(focusedEnemy);
         bool goalFinded = false;
         BFS_Node goalNode = null;
 
@@ -291,27 +291,24 @@ public class Archer : Enemy
         while (nodes.Any() && !goalFinded)
         {
             var currentNode = nodes.Dequeue();
-            if (currentNode.distance < maxMovement) //Cambiar por ActualMovement
+            foreach (var move in currentNode.space.moves)
             {
-                foreach (var move in currentNode.space.moves)
+                if (move.GetEntity() is not null && move.GetEntity().Equals(focusedEnemy))
                 {
-                    if (move.GetEntity() is not null && move.GetEntity().Equals(focusedEnemy))
+                    goalFinded = true;
+                    goalNode = currentNode;
+                }
+                if (!visitedSpaces.Contains(move) && CanMoveThere(currentNode.space, move))
+                {
+                    if (!(currentNode.distance + 1 == maxMovement && move.GetEntity() is PJ))
                     {
-                        goalFinded = true;
-                        goalNode = currentNode;
-                    }
-                    if (!visitedSpaces.Contains(move) && CanMoveThere(currentNode.space, move))
-                    {
-                        if (!(currentNode.distance + 1 == maxMovement && move.GetEntity() is PJ))
-                        {
-                            visitedSpaces.Add(move);
-                            nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
-                        }
+                        visitedSpaces.Add(move);
+                        nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
                     }
                 }
             }
         }
-
+        Debug.Log(goalNode);
         if (goalNode is not null)
         {
             var node = goalNode;
@@ -319,6 +316,7 @@ public class Archer : Enemy
             {
                 node = node.parent;
             }
+            Debug.Log(node);
 
             if (node is not null)
             {
