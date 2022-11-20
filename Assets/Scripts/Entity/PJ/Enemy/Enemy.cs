@@ -8,6 +8,8 @@ using Random = UnityEngine.Random;
 public class Enemy : PJ
 {
     public bool realizandoTurno = false;
+
+    protected int attackRange;
     // Start is called before the first frame update
     protected override void Start()
     {

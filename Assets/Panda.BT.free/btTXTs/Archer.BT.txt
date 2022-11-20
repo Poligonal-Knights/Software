@@ -1,0 +1,35 @@
+//Si quieres probar comportamiento
+//Añade "Wait 1.0" a las secuencias donde quieras que paren.
+//El contenido que te he dado funciona, así que puedes probar las cosas una a una :)
+tree("Root")
+	while IsMyTurn
+		fallback
+			tree "EnemyInRange"
+			tree "EnemyOOR"
+			
+tree("EnemyInRange")
+	sequence
+		EnemiesInRange()
+		tree "IdentifyPriority"
+		IdentifySafeMove()
+		GetIntoSafeRange()
+		CanIAttack()
+		Attack()
+		StillAlive()
+		EndTurn()
+		
+tree("IdentifyPriority")
+	fallback
+		BattleCryActive()
+		ChooseInjured()
+
+tree("EnemyOOR")
+	fallback
+		sequence
+			CanIMove()
+			IdentifyClosestEnemy()
+			IdentifySafeMove()
+			GetIntoSafeRange()
+			EndTurn()
+		EndTurn()
+	
