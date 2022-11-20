@@ -12,6 +12,7 @@ public class Enemy : PJ
     public bool beingPushed = false;
 
     public int comboed =0 ; 
+    public int attackRange;
     // Start is called before the first frame update
     protected override void Start()
     {

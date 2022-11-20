@@ -192,6 +192,14 @@ public class GridManager : MonoBehaviour
         Vector3Int minMax = maxBounds - minBounds;
         return minMax / 2 + minBounds;
     }
+    
+    public void clearNodes()
+    {
+        foreach (var space in spaces)
+        {
+            space.node = null;
+        }
+    }
 }
 
 
