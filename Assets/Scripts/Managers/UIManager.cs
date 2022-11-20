@@ -15,6 +15,8 @@ public class UIManager : MonoBehaviour
     public Canvas previewCanvas;
     public Canvas ReactionCanvas;
     public Canvas alwaysActiveCanvas;
+    public Canvas enemyCanvas;
+    
     public Sprite wizardPortrait;
     public Sprite knightPortrait;
     public Sprite priestPortrait;
@@ -33,6 +35,7 @@ public class UIManager : MonoBehaviour
         allCanvas.Add(emptyCanvas);
         allCanvas.Add(habilitiesCanvas);
         allCanvas.Add(previewCanvas);
+        allCanvas.Add(enemyCanvas);
         //allCanvas.Add(turnCanvas);
         currentCanvas = emptyCanvas;
     }
@@ -91,6 +94,12 @@ public class UIManager : MonoBehaviour
         //ShowTurnButton();
     }
 
+    public void ShowEnemyCanvas()
+    {
+        ShowThisCanvas(enemyCanvas);
+        
+    }
+
     public void ShowHabilitiesCanvas()
     {
         ShowThisCanvas(habilitiesCanvas);
@@ -110,7 +119,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowEnemySelectedUI()
     {
-        ShowEmptyCanvas();
+        ShowEnemyCanvas();
         ShowSelectedEnemy();
     }
 
@@ -179,17 +188,17 @@ public class UIManager : MonoBehaviour
 
         if (selectedEnemy is TrashMob)
         {
-            emptyCanvas.transform.Find("Portrait").GetComponent<UnityEngine.UI.Image>().sprite = TrashPortrait;
+            enemyCanvas.transform.Find("Portrait").GetComponent<UnityEngine.UI.Image>().sprite = TrashPortrait;
         }
 
-        emptyCanvas.transform.Find("Portrait").Find("EHealthBar").Find("Text").GetComponent<TextMeshProUGUI>().SetText(selectedEnemy.health + "/" + selectedEnemy.maxHealth);
+        enemyCanvas.transform.Find("Portrait").Find("EHealthBar").Find("Text").GetComponent<TextMeshProUGUI>().SetText(selectedEnemy.health + "/" + selectedEnemy.maxHealth);
         if (selectedEnemy.maxHealth == 0)
         {
-            emptyCanvas.transform.Find("Portrait").Find("EHealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = selectedEnemy.health / 10f;
+            enemyCanvas.transform.Find("Portrait").Find("EHealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = selectedEnemy.health / 10f;
         }
         else 
         {
-            emptyCanvas.transform.Find("Portrait").Find("EHealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = selectedEnemy.health / selectedEnemy.maxHealth;
+            enemyCanvas.transform.Find("Portrait").Find("EHealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = selectedEnemy.health / selectedEnemy.maxHealth;
         }
         
 
