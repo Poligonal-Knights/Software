@@ -68,10 +68,11 @@ public class Archer : Enemy
         }
 
         foreach(var enemy in Object.FindObjectsOfType<Ally>())
+
         {
-            foreach(var vSpace in visitedSpaces)
+            foreach (var vSpace in visitedSpaces)
             {
-                if(ManhattanDistance(vSpace, enemy.GetGridSpace()) <= attackRange)
+                if (ManhattanDistance(vSpace, enemy.GetGridSpace()) <= attackRange)
                 {
                     enemiesInRangeList.Add(enemy);
                     break;
@@ -151,7 +152,7 @@ public class Archer : Enemy
         }
 
         HashSet<GridSpace> candidateSpaces = new HashSet<GridSpace>();
-        foreach(var vSpace in visitedSpaces)
+        foreach (var vSpace in visitedSpaces)
         {
             if (ManhattanDistance(vSpace, focusedEnemy.GetGridSpace()) <= attackRange)
             {
@@ -163,11 +164,12 @@ public class Archer : Enemy
         {
             var sum = 0;
             foreach(var enemy in Object.FindObjectsOfType<Ally>())
+
             {
                 sum += ManhattanDistance(cSpace, focusedEnemy.GetGridSpace());
             }
 
-            if(sum > maxDistance)
+            if (sum > maxDistance)
             {
                 maxDistance = sum;
                 bestSpace = cSpace;
@@ -253,6 +255,22 @@ public class Archer : Enemy
     {
         //Encontrar enemigo más cercano
         //Marcar a dicho enemigo como focusedEnemy 
+        int minDistance = 5000;
+        PJ bestEnemy = null;
+        foreach (var enemy in FindObjectsOfType<Ally>())
+        {
+            var distance = ManhattanDistance(space, enemy.GetGridSpace());
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                bestEnemy = enemy;
+            }
+        }
+        if(bestEnemy != null)
+        {
+            focusedEnemy = bestEnemy;
+        }
+
         return true;
     }
 
@@ -264,10 +282,10 @@ public class Archer : Enemy
     }
     //Esto puede ser un desastre, mañana veremos.
 
-    public int ManhattanDistance(GridSpace space1, GridSpace space2)
+    private int ManhattanDistance(GridSpace space1, GridSpace space2)
     {
         var vector = space1.gridPosition - space2.gridPosition;
-        int distance = Mathf.Abs(vector.x) + Mathf.Abs(vector.y) + Mathf.Abs(vector.z);
+        int distance = Mathf.Abs(vector.x) + Mathf.Abs(vector.z);
         return distance;
     }
 
