@@ -1852,6 +1852,7 @@ MonoBehaviour:
       m_Calls: []
   maxMovement: 0
   movement: 0
+  maxHealth: 0
   health: 0
   damage: 0
   CanJump: 0
@@ -5529,6 +5530,7 @@ MonoBehaviour:
       m_Calls: []
   maxMovement: 0
   movement: 0
+  maxHealth: 0
   health: 0
   damage: 0
   CanJump: 0
@@ -5606,7 +5608,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797989804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: 1, z: 3}
+  m_LocalPosition: {x: -7, y: 1, z: 6}
   m_LocalScale: {x: 0.44315, y: 0.44315, z: 0.44315}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7535,7 +7537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5568256321557776688, guid: 896110d04040d074ebcf17ccc58c5ccf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 5568256321557776688, guid: 896110d04040d074ebcf17ccc58c5ccf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7543,7 +7545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5568256321557776688, guid: 896110d04040d074ebcf17ccc58c5ccf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5568256321557776688, guid: 896110d04040d074ebcf17ccc58c5ccf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13028,6 +13030,7 @@ MonoBehaviour:
       m_Calls: []
   maxMovement: 0
   movement: 0
+  maxHealth: 0
   health: 0
   damage: 0
   CanJump: 0
@@ -15423,6 +15426,7 @@ MonoBehaviour:
       m_Calls: []
   maxMovement: 0
   movement: 0
+  maxHealth: 0
   health: 0
   damage: 0
   CanJump: 0
