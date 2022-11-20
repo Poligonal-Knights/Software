@@ -288,7 +288,7 @@ public class Archer : Enemy
                 nodes.Enqueue(new BFS_Node(move, null, 1));
             }
         }
-        while (nodes.Any())
+        while (nodes.Any() && !goalFinded)
         {
             var currentNode = nodes.Dequeue();
             if (currentNode.distance < maxMovement) //Cambiar por ActualMovement
