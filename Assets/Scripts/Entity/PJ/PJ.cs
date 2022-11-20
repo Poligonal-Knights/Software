@@ -79,49 +79,51 @@ public class PJ : Entity
 
     public virtual void MoveTo(GridSpace finalDestination)
     {
-        List<GridSpace> movements = new List<GridSpace>();
-        var currentNode = finalDestination.node;
-
-        while(currentNode.HasParent())
+        if (!finalDestination.Equals(space))
         {
+            List<GridSpace> movements = new List<GridSpace>();
+            var currentNode = finalDestination.node;
+
+            while (currentNode.HasParent())
+            {
+                movements.Add(currentNode.space);
+                if (currentNode.space.gridPosition.y != currentNode.parent.space.gridPosition.y)
+                {
+                    Vector3Int interDestination;
+                    if (currentNode.space.gridPosition.y < currentNode.parent.space.gridPosition.y)
+                    {
+                        interDestination = currentNode.space.gridPosition;
+                        interDestination.y = currentNode.parent.space.gridPosition.y;
+                    }
+                    else
+                    {
+                        interDestination = currentNode.parent.space.gridPosition;
+                        interDestination.y = currentNode.space.gridPosition.y;
+                    }
+                    movements.Add(GridManager.Instance.GetGridSpace(interDestination));
+                }
+                currentNode = currentNode.parent;
+            }
+
             movements.Add(currentNode.space);
-            if(currentNode.space.gridPosition.y != currentNode.parent.space.gridPosition.y)
+            if (currentNode.space.gridPosition.y != space.gridPosition.y)
             {
                 Vector3Int interDestination;
-                if (currentNode.space.gridPosition.y < currentNode.parent.space.gridPosition.y)
+                if (currentNode.space.gridPosition.y < space.gridPosition.y)
                 {
                     interDestination = currentNode.space.gridPosition;
-                    interDestination.y = currentNode.parent.space.gridPosition.y;
+                    interDestination.y = space.gridPosition.y;
                 }
                 else
                 {
-                    interDestination = currentNode.parent.space.gridPosition;
+                    interDestination = space.gridPosition;
                     interDestination.y = currentNode.space.gridPosition.y;
                 }
                 movements.Add(GridManager.Instance.GetGridSpace(interDestination));
             }
-            currentNode = currentNode.parent;
+            movements.Reverse();
+            MovementsToDo = new Queue<GridSpace>(movements);
         }
-
-        movements.Add(currentNode.space);
-        if (currentNode.space.gridPosition.y != space.gridPosition.y)
-        {
-            Vector3Int interDestination;
-            if (currentNode.space.gridPosition.y < space.gridPosition.y)
-            {
-                interDestination = currentNode.space.gridPosition;
-                interDestination.y = space.gridPosition.y;
-            }
-            else
-            {
-                interDestination = space.gridPosition;
-                interDestination.y = currentNode.space.gridPosition.y;
-            }
-            movements.Add(GridManager.Instance.GetGridSpace(interDestination));
-        }
-        movements.Reverse();
-        MovementsToDo = new Queue<GridSpace>(movements);
-        //space.SetEntity(null);
     }
 
     public virtual void CalculateFall()
