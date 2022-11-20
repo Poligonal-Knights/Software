@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     public Canvas alwaysActiveCanvas;
     public Sprite wizardPortrait;
     public Sprite knightPortrait;
+    public Sprite priestPortrait;
 
     Canvas currentCanvas;
     Canvas previousCanvas;
@@ -141,14 +142,18 @@ public class UIManager : MonoBehaviour
         {
             actionCanvas.transform.Find("Portrait").GetComponent<UnityEngine.UI.Image>().sprite = knightPortrait;
         }
-        //else if (selectedAlly is )
+        else if (selectedAlly is Priest )
+        {
+            actionCanvas.transform.Find("Portrait").GetComponent<UnityEngine.UI.Image>().sprite = priestPortrait;
+        }
     }
 
     public void ShowSelectedEnemy() 
     {
         PJ selectedEnemy = LogicManager.Instance.GetSelectedPJ();
-        Debug.Log(selectedEnemy);
-        emptyCanvas.transform.Find("EHealth").GetComponent<TextMeshProUGUI>().SetText(selectedEnemy.ToString());
+        string fullName = selectedEnemy.ToString();
+        string[] subName = fullName.Split(' ');
+        emptyCanvas.transform.Find("EName").GetComponent<TextMeshProUGUI>().SetText(subName[0]);
         emptyCanvas.transform.Find("EHealth").GetComponent<TextMeshProUGUI>().SetText(selectedEnemy.health + "/" + selectedEnemy.maxHealth);
 
     }
