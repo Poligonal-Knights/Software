@@ -26,8 +26,8 @@ public class TrashMob : Enemy
 
     public override void EnemyAI()
     {
-     //base.EnemyAI();
-     realizandoTurno = true;
+        //base.EnemyAI();
+        realizandoTurno = true;
     }
 
 
@@ -36,7 +36,7 @@ public class TrashMob : Enemy
     {
         return focusedEnemy;
     }
-    
+
     [Task]
     bool IsEnemyAlive()
     {
@@ -48,50 +48,50 @@ public class TrashMob : Enemy
     {
         //Implementar comprobación de enemigos a rango
         enemiesInRangeList.Clear();//Por si acaso
-         Queue<BFS_Node> nodes = new Queue<BFS_Node>();
-         HashSet<GridSpace> visitedSpaces = new HashSet<GridSpace>();
-         foreach (var move in GetGridSpace().moves)
-         {
-             if (move.GetEntity() is Ally ally)
-             {
-                 enemiesInRangeList.Add(ally);
-             }
-             if (!visitedSpaces.Contains(move) && CanMoveThere(GetGridSpace(), move))
-             {
-                 visitedSpaces.Add(move);
-                 nodes.Enqueue(new BFS_Node(move, null, 1));
-             }
-         }
-         while (nodes.Any())
-         {
-             var currentNode = nodes.Dequeue();
-             if (currentNode.distance < maxMovement) //Cambiar por ActualMovement
-             {
-                 foreach (var move in currentNode.space.moves)
-                 {
-                     if (!visitedSpaces.Contains(move) && CanMoveThere(currentNode.space, move))
-                     {
-                         foreach (var submove in move.moves)
-                         {
-                             if (submove.GetEntity() is Ally ally)
-                             {
-                                 enemiesInRangeList.Add(ally);
-                             }
-                         }
-                         if (!(currentNode.distance + 1 == maxMovement && move.GetEntity() is PJ))
-                         {
-                             visitedSpaces.Add(move);
-                             nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
-                         }
-                     }
-                 }
-             }
-         }
+        Queue<BFS_Node> nodes = new Queue<BFS_Node>();
+        HashSet<GridSpace> visitedSpaces = new HashSet<GridSpace>();
+        foreach (var move in GetGridSpace().moves)
+        {
+            if (move.GetEntity() is Ally ally)
+            {
+                enemiesInRangeList.Add(ally);
+            }
+            if (!visitedSpaces.Contains(move) && CanMoveThere(GetGridSpace(), move))
+            {
+                visitedSpaces.Add(move);
+                nodes.Enqueue(new BFS_Node(move, null, 1));
+            }
+        }
+        while (nodes.Any())
+        {
+            var currentNode = nodes.Dequeue();
+            if (currentNode.distance < maxMovement) //Cambiar por ActualMovement
+            {
+                foreach (var move in currentNode.space.moves)
+                {
+                    if (!visitedSpaces.Contains(move) && CanMoveThere(currentNode.space, move))
+                    {
+                        foreach (var submove in move.moves)
+                        {
+                            if (submove.GetEntity() is Ally ally)
+                            {
+                                enemiesInRangeList.Add(ally);
+                            }
+                        }
+                        if (!(currentNode.distance + 1 == maxMovement && move.GetEntity() is PJ))
+                        {
+                            visitedSpaces.Add(move);
+                            nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
+                        }
+                    }
+                }
+            }
+        }
         // Debug.Log(enemiesInRangeList);
         // Debug.Log(enemiesInRangeList.Any());
         return enemiesInRangeList.Any();
     }
-    
+
     [Task]
     bool ChooseCloserEnemy()
     {
@@ -101,7 +101,7 @@ public class TrashMob : Enemy
         bool goalFinded = false;
         foreach (var move in GetGridSpace().moves)
         {
-            if (!goalFinded && !visitedSpaces.Contains(move) )
+            if (!goalFinded && !visitedSpaces.Contains(move))
             {
                 if (move.GetEntity() is Ally ally)
                 {
@@ -121,7 +121,7 @@ public class TrashMob : Enemy
         while (nodes.Any() && !goalFinded)
         {
             var currentNode = nodes.Dequeue();
-        
+
             foreach (var move in currentNode.space.moves)
             {
                 if (!goalFinded && !visitedSpaces.Contains(move) && CanMoveThere(currentNode.space, move))
@@ -147,8 +147,8 @@ public class TrashMob : Enemy
         }
         return true;
     }
-    
-    
+
+
     [Task]
     bool ChooseInjured()
     {
@@ -163,7 +163,7 @@ public class TrashMob : Enemy
         }
         return true;
     }
-    
+
     [Task]
     bool BattleCryActive()
     {
@@ -198,7 +198,8 @@ public class TrashMob : Enemy
     [Task]
     bool InAttackRange()
     {
-        if(focusedEnemy!=null){
+        if (focusedEnemy != null)
+        {
             //Si la distancia entre focusedEnemy y Yo es =<1 -> ThisTask.Succeed()  DONE
             //Considero distancia Manhattan
             var vector = focusedEnemy.GetGridSpace().gridPosition - GetGridSpace().gridPosition;
@@ -248,7 +249,7 @@ public class TrashMob : Enemy
                 if (move.GetEntity() is not null && move.GetEntity().Equals(focusedEnemy))
                 {
                     goalFinded = true;
-                }  
+                }
                 else if (!goalFinded && !visitedSpaces.Contains(move) && CanMoveThere(GetGridSpace(), move))
                 {
                     // foreach (var submove in move.moves)
@@ -260,8 +261,8 @@ public class TrashMob : Enemy
                     // }
                     // if(!goalFinded)
                     // {
-                        visitedSpaces.Add(move);
-                        nodes.Enqueue(new BFS_Node(move, null, 1));
+                    visitedSpaces.Add(move);
+                    nodes.Enqueue(new BFS_Node(move, null, 1));
                     // }
                 }
             }
@@ -280,7 +281,7 @@ public class TrashMob : Enemy
                     else if (!goalFinded && !visitedSpaces.Contains(move) && CanMoveThere(currentNode.space, move))
                     {
                         visitedSpaces.Add(move);
-                      nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
+                        nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
                     }
                 }
             }
@@ -288,7 +289,7 @@ public class TrashMob : Enemy
             if (goalNode is not null)
             {
                 var node = goalNode;
-                while ( (node is not null) && (node.distance > movement || node.space.GetEntity() is PJ)) //Revisar dobles comprobaciones
+                while ((node is not null) && (node.distance > movement || node.space.GetEntity() is PJ)) //Revisar dobles comprobaciones
                 {
                     node = node.parent;
                 }
