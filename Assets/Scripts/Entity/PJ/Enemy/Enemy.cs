@@ -90,7 +90,20 @@ public class Enemy : PJ
             else if (pushedInto.IsEmpty() || pushedInto.HasTrap())
             {
                 MovementsToDo.Enqueue(pushedInto);
-                if (!pushedInto.IsPassable())
+                //var IsReactionPosible = false;
+                //foreach(var neighbor in pushedInto.neighbors.Values)
+                //{
+                //    if(neighbor.gridPosition.y == pushedInto.gridPosition.y)
+                //    {
+                //        IsReactionPosible = true;
+                //    }
+                //}
+                //if(IsReactionPosible)
+                //{
+                //    bumped = true;
+
+                //}
+                //else if (!pushedInto.IsPassable())
                 {
                     Debug.Log("Intentando iniciar caida");
                     bumped = true;

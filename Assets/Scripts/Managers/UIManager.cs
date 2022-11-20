@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     public Canvas actionCanvas;
     public Canvas habilitiesCanvas;
     public Canvas previewCanvas;
+    public Canvas ReactionCanvas;
     public Canvas alwaysActiveCanvas;
     public Sprite wizardPortrait;
     public Sprite knightPortrait;
@@ -194,4 +195,8 @@ public class UIManager : MonoBehaviour
 
     }
 
+    public void ShowReactionCanvas(bool b)
+    {
+        ReactionCanvas.gameObject.SetActive(b);
+    }
 }

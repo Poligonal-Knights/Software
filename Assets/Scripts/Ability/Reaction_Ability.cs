@@ -22,8 +22,23 @@ public class Reaction_Ability : Ability
         {
             //ally.SetReactionAvailable(false);
             FreezeEnemies();
-
+            UIManager.Instance.ShowReactionCanvas(true);
         }
+    }
+
+    public override void Confirm()
+    {
+        var direction = enemy.GetGridSpace().gridPosition - ally.GetGridSpace().gridPosition;
+        enemy.BePushed(direction, ally.pushStrength, ally.trapBonusDamage);
+        UnFreezeEnemies();
+        UIManager.Instance.ShowReactionCanvas(false);
+        LogicManager.Instance.PJFinishedMoving();
+    }
+
+    public override void Cancel()
+    {
+        UnFreezeEnemies();
+        UIManager.Instance.ShowReactionCanvas(false);
     }
 
     public void FreezeEnemies()

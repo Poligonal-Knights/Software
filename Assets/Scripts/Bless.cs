@@ -8,7 +8,7 @@ public class Bless : Buff
 
     int movementIncrement = 1;
     int pushStrengthIncrement = 1;
-    int healthIncrement = 5;
+    //int healthIncrement = 5;
 
     public Bless(PJ owner, int turnsDuration = deafaultDuration) : base(owner, turnsDuration) { }
 
@@ -21,8 +21,8 @@ public class Bless : Buff
             ally.movement += movementIncrement;
             ally.maxMovement += movementIncrement;
             ally.pushStrength += pushStrengthIncrement;
-            ally.maxHealth += healthIncrement;
-            ally.Heal(healthIncrement);
+            //ally.maxHealth += healthIncrement;
+            //ally.Heal(healthIncrement);
         }
     }
 
@@ -33,8 +33,8 @@ public class Bless : Buff
             ally.movement -= movementIncrement;
             ally.maxMovement -= movementIncrement;
             ally.pushStrength -= pushStrengthIncrement;
-            ally.maxHealth -= healthIncrement;
-            ally.health = Mathf.Min(ally.health, ally.maxHealth);
+            //ally.maxHealth -= healthIncrement;
+            //ally.health = Mathf.Min(ally.health, ally.maxHealth);
             base.Finish();
         }
     }

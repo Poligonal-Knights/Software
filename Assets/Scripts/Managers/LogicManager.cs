@@ -11,6 +11,7 @@ public class LogicManager : MonoBehaviour
 
     bool SelectingAbility;
     public Ability currentAbility;
+    public Reaction_Ability reactionAbility = new Reaction_Ability(null);
 
     private void Awake() => Instance = this;
 
@@ -115,5 +116,15 @@ public class LogicManager : MonoBehaviour
             currentAbility.Preview();
             UIManager.Instance.ShowPreviewCanvas();
         }
+    }
+
+    public void ComboButton()
+    {
+        reactionAbility?.Confirm();
+    }
+
+    public void NahButton()
+    {
+        reactionAbility?.Cancel();
     }
 }

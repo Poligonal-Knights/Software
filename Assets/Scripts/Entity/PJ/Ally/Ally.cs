@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Ally : PJ
@@ -21,6 +22,24 @@ public class Ally : PJ
     protected override void Start()
     {
         base.Start();
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+        if (reactionAvailable)
+        {
+            foreach (var neighbor in space.neighbors.Values)
+            {
+                if (neighbor.gridPosition.y == space.gridPosition.y)
+                {
+                    if(neighbor.GetEntity() is Enemy enemy)
+                    {
+                        LogicManager.Instance.reactionAbility.Engage(this, enemy);
+                    }
+                }
+            }
+        }
     }
 
     public override bool CanMoveThere(GridSpace start, GridSpace destination)
@@ -51,12 +70,14 @@ public class Ally : PJ
 
     protected override void OnChangeTurn()
     {
+        base.OnChangeTurn();
         if (TurnManager.Instance.IsPlayerTurn()) //CAmbio de ronda
         {
             //foreach buff in buffs
             //buff.cont--;
 
             SetInvencibility(false);
+            SetReactionAvailable(true);
         }
     }
 }

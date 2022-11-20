@@ -14,7 +14,7 @@ public class PJ : Entity
     public int damage;
     public bool CanJump;
     private bool attackPerformed;
-    public float speed;
+    private float speed = 5;
     public float defaultSpeed;
 
     //States
@@ -49,16 +49,20 @@ public class PJ : Entity
         }
         if (IsMoving)
         {
-            var step = 5 * Time.deltaTime;
+            var step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, destination.GetPJPlacement(), step);
             if (Vector3.Distance(transform.position, destination.GetPJPlacement()) < 0.001f)
             {
+                if(destination.GetEntity() is null)
+                {
+                    UpdateGridSpace();
+                }
                 IsMoving = false;
                 transform.position = destination.GetPJPlacement();
                 if (!MovementsToDo.Any())
                 {
                     LogicManager.Instance.PJFinishedMoving();
-                    UpdateGridSpace();
+                    //UpdateGridSpace();
                     if (space.gridPosition.y == 0) Die();
                 }
             }
