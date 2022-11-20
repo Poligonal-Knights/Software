@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Bomba de aire
-public class Wizard_Hability_1 : Hability
+public class Wizard_Ability_1 : Ability
 {
-    public Wizard_Hability_1(PJ owner) : base(owner) { }
+    public Wizard_Ability_1(PJ owner) : base(owner) { }
 
     int radius = 5;
     int bombRange = 2;

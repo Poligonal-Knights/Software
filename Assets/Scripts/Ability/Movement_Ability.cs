@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Movement_Hability : Hability
+public class Movement_Ability : Ability
 {
-    public Movement_Hability() : base() { }
-    public Movement_Hability(PJ owner) : base(owner) { }
+    public Movement_Ability() : base() { }
+    public Movement_Ability(PJ owner) : base(owner) { }
 
     HashSet<GridSpace> visitedSpaces = new HashSet<GridSpace>();
 

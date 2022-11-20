@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Prisa
-public class Wizard_Hability_2 : Hability
+public class Wizard_Ability_2 : Ability
 {
-    public Wizard_Hability_2(PJ owner) : base(owner) { }
+    public Wizard_Ability_2(PJ owner) : base(owner) { }
 
     public override void Preview()
     {

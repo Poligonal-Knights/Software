@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Bastion
-public class Knight_Hability_3 : Hability
+public class Knight_Ability_3 : Ability
 {
-    public Knight_Hability_3(PJ owner) : base(owner) { }
+    public Knight_Ability_3(PJ owner) : base(owner) { }
 
     public override void Preview()
     {

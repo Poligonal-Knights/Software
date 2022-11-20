@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Charge
-public class Knight_Hability_2 : Hability
+public class Knight_Ability_2 : Ability
 {
-    public Knight_Hability_2(PJ owner) : base(owner) { }
+    public Knight_Ability_2(PJ owner) : base(owner) { }
 
 
     int chargeDistance = 3;

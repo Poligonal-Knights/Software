@@ -10,7 +10,7 @@ public class LogicManager : MonoBehaviour
     PJ SelectedPJ;
 
     bool SelectingHability;
-    public Hability currentHability;
+    public Ability currentHability;
 
     private void Awake() => Instance = this;
 
@@ -100,7 +100,7 @@ public class LogicManager : MonoBehaviour
     {
         if (SelectedPJ is Ally)
         {
-            currentHability = Hability.GetHability(SelectedPJ, i);
+            currentHability = Ability.GetHability(SelectedPJ, i);
             SelectingHability = false;
             currentHability?.Preview();
             UIManager.Instance.ShowPreviewCanvas();
@@ -111,7 +111,7 @@ public class LogicManager : MonoBehaviour
     {
         if (SelectedPJ is Ally)
         {
-            currentHability = Hability.GetMovementHability(SelectedPJ);
+            currentHability = Ability.GetMovementHability(SelectedPJ);
             currentHability.Preview();
             UIManager.Instance.ShowPreviewCanvas();
         }

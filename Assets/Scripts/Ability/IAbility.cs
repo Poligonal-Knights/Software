@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IHability
+public interface IAbility
 {
     public void Preview();
     public void SelectTarget(GridSpace grid);

@@ -4,9 +4,9 @@ using UnityEditor;
 using UnityEngine;
 
 //Shield throw
-public class Knight_Hability_4 : Hability
+public class Knight_Ability_4 : Ability
 {
-    public Knight_Hability_4(PJ owner) : base(owner) { }
+    public Knight_Ability_4(PJ owner) : base(owner) { }
 
     public GameObject shield;
 

@@ -4,9 +4,9 @@ using UnityEditor;
 using UnityEngine;
 
 //Grito de Batalla
-public class Knight_Hability_1 : Hability
+public class Knight_Ability_1 : Ability
 {
-    public Knight_Hability_1(PJ owner) : base(owner) { }
+    public Knight_Ability_1(PJ owner) : base(owner) { }
 
     public override void Preview()
     {

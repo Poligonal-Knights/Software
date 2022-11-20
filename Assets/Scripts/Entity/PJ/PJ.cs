@@ -9,6 +9,7 @@ public class PJ : Entity
     //Stats
     public int maxMovement;
     public int movement;
+    public int maxHealth;
     public int health;
     public int damage;
     public bool CanJump;

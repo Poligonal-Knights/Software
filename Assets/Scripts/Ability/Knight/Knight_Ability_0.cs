@@ -1,19 +1,18 @@
-using Newtonsoft.Json.Serialization;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection.Emit;
+using UnityEditor;
 using UnityEngine;
 
 //Basico
-public class Wizard_Hability_0 : Hability
+public class Knight_Ability_0 : Ability
 {
-    public Wizard_Hability_0(PJ owner) : base(owner) { }
-
-    int range = 3;
-    Vector3Int direction;
+    public Knight_Ability_0(PJ owner) : base(owner) { }
 
     public override void Preview()
     {
-        var PJSpace = Owner.GetGridSpace();
+        Debug.Log("Hability Preview");
+        var PJSpace = LogicManager.Instance.GetSelectedPJ().GetGridSpace();
         foreach (var move in PJSpace.moves)
         {
             if (move.gridPosition.y == PJSpace.gridPosition.y)
@@ -25,29 +24,33 @@ public class Wizard_Hability_0 : Hability
 
     public override void SelectTarget(GridSpace selected)
     {
-        readyToConfirm = true;
-        SelectedSpace = selected;
+        Debug.Log("Selecting Target");
         ClearAffectedSpaces();
-        foreach (var s in SelectableSpaces)
-            s.SetSelectable(true);
-        direction = SelectedSpace.gridPosition - Owner.GetGridSpace().gridPosition;
-        for(int i = 1; i <= range; i++)
-        {
-            var affSpace = GridManager.Instance.GetGridSpace(SelectedSpace.gridPosition + direction * i);
-            AddAffectedSpace(affSpace);
-        }
+        RefreshSelectableSpaces();
+        var PJSpace = LogicManager.Instance.GetSelectedPJ().GetGridSpace();
+        var auxVector = selected.gridPosition - PJSpace.gridPosition;
+        var aux = Vector3.Cross(auxVector, Vector3.up);
+        var spaceAffected1 = GridManager.Instance.GetGridSpace(Vector3Int.RoundToInt(selected.gridPosition + aux));
+        var spaceAffected2 = GridManager.Instance.GetGridSpace(Vector3Int.RoundToInt(selected.gridPosition - aux));
+        AddAffectedSpace(selected);
+        AddAffectedSpace(spaceAffected1);
+        AddAffectedSpace(spaceAffected2);
+        SelectedSpace = selected;
+        readyToConfirm = true;
     }
 
     public override void Confirm()
     {
-        var wizard = Owner as Wizard;
+        Debug.Log("Confirming Hability");
+        var knight = LogicManager.Instance.GetSelectedPJ() as Knight;
+        var pushDirection = SelectedSpace.gridPosition - knight.GetGridSpace().gridPosition;
         var AnyEnemyWasAffected = false;
         foreach (var affectedSpace in AffectedSpaces)
         {
             if (affectedSpace.GetEntity() is Enemy enemy)
             {
                 AnyEnemyWasAffected = true;
-                enemy.BePushed(direction, wizard.pushStrength, wizard.trapBonusDamage);
+                enemy.BePushed(pushDirection, knight.pushStrength, knight.trapBonusDamage);
             }
         }
         ClearAffectedSpaces();
@@ -63,6 +66,14 @@ public class Wizard_Hability_0 : Hability
         base.Cancel();
         ClearAffectedSpaces();
         ClearSelectableSpaces();
+    }
+
+    void RefreshSelectableSpaces()
+    {
+        foreach (var s in SelectableSpaces)
+        {
+            s.SetSelectable(true);
+        }
     }
 
     public override void ClickedEntity(Entity entityClicked)

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.WSA;
 using static UnityEngine.UI.GridLayoutGroup;
 
-public class Hability
+public class Ability
 {
     public static HashSet<GridSpace> SelectableSpaces = new HashSet<GridSpace>();
     public static HashSet<GridSpace> AffectedSpaces = new HashSet<GridSpace>();
@@ -14,12 +14,12 @@ public class Hability
 
     public PJ Owner;
 
-    public Hability()
+    public Ability()
     {
         readyToConfirm = false;
     }
 
-    public Hability(PJ owner)
+    public Ability(PJ owner)
     {
         Owner = owner;
         readyToConfirm = false;
@@ -67,22 +67,22 @@ public class Hability
         SelectableSpaces.Clear();
     }
 
-    public static Hability GetHability(PJ pj, int i)
+    public static Ability GetHability(PJ pj, int i)
     {
         if (pj is Knight)
         {
             switch (i)
             {
                 case 0:
-                    return new Knight_Hability_0(pj);
+                    return new Knight_Ability_0(pj);
                 case 1:
-                    return new Knight_Hability_1(pj);
+                    return new Knight_Ability_1(pj);
                 case 2:
-                    return new Knight_Hability_2(pj);
+                    return new Knight_Ability_2(pj);
                 case 3:
-                    return new Knight_Hability_3(pj);
+                    return new Knight_Ability_3(pj);
                 case 4:
-                    return new Knight_Hability_4(pj);
+                    return new Knight_Ability_4(pj);
             }
         }
         if (pj is Wizard)
@@ -90,15 +90,15 @@ public class Hability
             switch (i)
             {
                 case 0:
-                    return new Wizard_Hability_0(pj);
+                    return new Wizard_Ability_0(pj);
                 case 1:
-                    return new Wizard_Hability_1(pj);
+                    return new Wizard_Ability_1(pj);
                 case 2:
-                    return new Wizard_Hability_2(pj);
+                    return new Wizard_Ability_2(pj);
                 case 3:
-                    return new Wizard_Hability_3(pj);
+                    return new Wizard_Ability_3(pj);
                 case 4:
-                    return new Wizard_Hability_4(pj);
+                    return new Wizard_Ability_4(pj);
             }
         }
 
@@ -107,9 +107,9 @@ public class Hability
         return null;
     }
 
-    public static Hability GetMovementHability(PJ pj)
+    public static Ability GetMovementHability(PJ pj)
     {
-        return new Movement_Hability(pj);
+        return new Movement_Ability(pj);
     }
 
     public bool IsReadyToConfirm()

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Barrido de aire
-public class Wizard_Hability_3 : Hability
+public class Wizard_Ability_3 : Ability
 {
-    public Wizard_Hability_3(PJ owner) : base(owner) { }
+    public Wizard_Ability_3(PJ owner) : base(owner) { }
 
     int radius = 5;
     int range = 5;
