@@ -35,6 +35,7 @@ public class Ally : PJ
                 {
                     if(neighbor.GetEntity() is Enemy enemy)
                     {
+                        Debug.LogWarning("INTENTANDO REACTION");
                         LogicManager.Instance.reactionAbility.Engage(this, enemy);
                     }
                 }

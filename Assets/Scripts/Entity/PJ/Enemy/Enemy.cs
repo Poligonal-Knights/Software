@@ -103,7 +103,7 @@ public class Enemy : PJ
                 //    bumped = true;
 
                 //}
-                //else if (!pushedInto.IsPassable())
+                if (!pushedInto.IsPassable())
                 {
                     Debug.Log("Intentando iniciar caida");
                     bumped = true;

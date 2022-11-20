@@ -111,8 +111,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b11aae3c088a6b40928ec6990d005f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsDoingHability: 0
-  IsInitiatingHability: 0
-  IsSelectingDirection: 0
-  IsConfirming: 0
-  IsDoingHabilityAnimation: 0
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+  maxMovement: 0
+  movement: 0
+  maxHealth: 0
+  health: 0
+  damage: 0
+  CanJump: 0
+  defaultSpeed: 0
+  energy: 0
+  maxEnergy: 0
+  trapBonusDamage: 0
+  pushStrength: 5
