@@ -31,6 +31,7 @@ public class Knight : Ally
 
     protected override void OnChangeTurn()
     {
+        base.OnChangeTurn();
         SetGritoDeBatalla(false);
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -60,6 +61,7 @@ public class Wizard_Ability_3 : Ability
             space.SetSelectable(true);
         }
         direction = selected.gridPosition - SelectedSpace.gridPosition;
+        direction.Set(Math.Sign(direction.x), 0, Math.Sign(direction.z));
         for (int i = 0; i < range; i++)
         {
             var affSpace = GridManager.Instance.GetGridSpace(SelectedSpace.gridPosition + i * direction);

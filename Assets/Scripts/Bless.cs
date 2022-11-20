@@ -2,26 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rush : Buff
+public class Bless : Buff
 {
-    const int deafaultDuration = 1;
+    const int deafaultDuration = 2;
 
     int movementIncrement = 1;
     int pushStrengthIncrement = 1;
+    int healthIncrement = 5;
 
-    //public Rush(PJ owner) : base(owner, turnsDuration) { }
-    public Rush(PJ owner, int turnsDuration = deafaultDuration) : base(owner, turnsDuration) { }
+    public Bless(PJ owner, int turnsDuration = deafaultDuration) : base(owner, turnsDuration) { }
 
     protected override void Init()
     {
-        //base.Init();
-        Debug.Log(Owner + " got rushed");
+        Debug.Log(Owner + " Blessed");
 
         if (Owner is Ally ally)
         {
             ally.movement += movementIncrement;
             ally.maxMovement += movementIncrement;
             ally.pushStrength += pushStrengthIncrement;
+            ally.maxHealth += healthIncrement;
+            ally.Heal(healthIncrement);
         }
     }
 
@@ -32,6 +33,8 @@ public class Rush : Buff
             ally.movement -= movementIncrement;
             ally.maxMovement -= movementIncrement;
             ally.pushStrength -= pushStrengthIncrement;
+            ally.maxHealth -= healthIncrement;
+            ally.health = Mathf.Min(ally.health, ally.maxHealth);
             base.Finish();
         }
     }

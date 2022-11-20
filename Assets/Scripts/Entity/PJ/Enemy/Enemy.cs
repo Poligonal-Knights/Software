@@ -73,11 +73,14 @@ public class Enemy : PJ
 
     public virtual void BePushed(Vector3Int direction, int pushback, int extraDamage)
     {
+        Debug.Log("Pushed");
+
         bool bumped = false;
         bool endOfGrid = false;
         int i = 0;
         while (!bumped && i <= pushback && !endOfGrid)
         {
+            Debug.Log(bumped);
             i++;
             var pushedInto = GridManager.Instance.GetGridSpace(space.gridPosition + direction * i);
             if(pushedInto is null)

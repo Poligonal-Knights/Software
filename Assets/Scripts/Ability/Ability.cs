@@ -31,7 +31,7 @@ public class Ability
     public virtual void Cancel()
     {
         Debug.Log("Cancelling Hability");
-        LogicManager.Instance.currentHability = null;
+        LogicManager.Instance.currentAbility = null;
         LogicManager.Instance.PJFinishedMoving();
     }
 
@@ -67,7 +67,7 @@ public class Ability
         SelectableSpaces.Clear();
     }
 
-    public static Ability GetHability(PJ pj, int i)
+    public static Ability GetAbility(PJ pj, int i)
     {
         if (pj is Knight)
         {
@@ -85,7 +85,7 @@ public class Ability
                     return new Knight_Ability_4(pj);
             }
         }
-        if (pj is Wizard)
+        else if (pj is Wizard)
         {
             switch (i)
             {
@@ -101,13 +101,29 @@ public class Ability
                     return new Wizard_Ability_4(pj);
             }
         }
+        else if (pj is Priest)
+        {
+            switch (i)
+            {
+                case 0:
+                    return new Priest_Ability_0(pj);
+                case 1:
+                    return new Priest_Ability_1(pj);
+                case 2:
+                    return new Priest_Ability_2(pj);
+                case 3:
+                    return new Priest_Ability_3(pj);
+                case 4:
+                    return new Priest_Ability_4(pj);
+            }
+        }
 
 
         Debug.Log("ERROR AL OBTENER HABILIDAD");
         return null;
     }
 
-    public static Ability GetMovementHability(PJ pj)
+    public static Ability GetMovementAbility(PJ pj)
     {
         return new Movement_Ability(pj);
     }

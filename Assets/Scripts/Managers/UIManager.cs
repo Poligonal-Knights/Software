@@ -7,7 +7,6 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
 
-    // Start is called before the first frame update
     public GameManager GameManager;
     public Canvas emptyCanvas;
     public Canvas turnCanvas;
@@ -15,7 +14,7 @@ public class UIManager : MonoBehaviour
     public Canvas habilitiesCanvas;
     public Canvas previewCanvas;
     public Canvas alwaysActiveCanvas;
-    public Sprite wizardPortrait; // Hacer esto es Omega feo ¿meterlos por dirección?
+    public Sprite wizardPortrait;
     public Sprite knightPortrait;
 
     Canvas currentCanvas;
@@ -148,7 +147,7 @@ public class UIManager : MonoBehaviour
     public void ShowSelectedEnemy() 
     {
         PJ selectedEnemy = LogicManager.Instance.GetSelectedPJ();
-        Debug.LogWarning(selectedEnemy);
+        Debug.Log(selectedEnemy);
         emptyCanvas.transform.Find("EHealth").GetComponent<TextMeshProUGUI>().SetText(selectedEnemy.ToString());
         emptyCanvas.transform.Find("EHealth").GetComponent<TextMeshProUGUI>().SetText(selectedEnemy.health + "/" + selectedEnemy.maxHealth);
 

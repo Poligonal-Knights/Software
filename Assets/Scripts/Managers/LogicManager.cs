@@ -9,8 +9,8 @@ public class LogicManager : MonoBehaviour
 
     PJ SelectedPJ;
 
-    bool SelectingHability;
-    public Ability currentHability;
+    bool SelectingAbility;
+    public Ability currentAbility;
 
     private void Awake() => Instance = this;
 
@@ -26,7 +26,7 @@ public class LogicManager : MonoBehaviour
 
     public void SetSelectedPJ(PJ pj)
     {
-        SelectingHability = false;
+        SelectingAbility = false;
         SelectedPJ = pj;
 
         if (pj is Ally)
@@ -44,32 +44,32 @@ public class LogicManager : MonoBehaviour
         return SelectedPJ;
     }
 
-    public void HabilityButton()
+    public void AbilityButton()
     {
         UIManager.Instance.ShowHabilitiesCanvas();
-        SelectingHability = true;
+        SelectingAbility = true;
     }
 
     public void ConfirmAction()
     {
-        if (currentHability is not null && currentHability.IsReadyToConfirm())
+        if (currentAbility is not null && currentAbility.IsReadyToConfirm())
         {
-            currentHability.Confirm();
+            currentAbility.Confirm();
             UIManager.Instance.ShowEmptyCanvas();
-            currentHability = null;
+            currentAbility = null;
         }
     }
 
     public void CancelAction()
     {
-        if (SelectingHability)
+        if (SelectingAbility)
         {
-            SelectingHability = false;
+            SelectingAbility = false;
             UIManager.Instance.ShowActionCanvas();
         }
-        else if(currentHability is not null)
+        else if(currentAbility is not null)
         {
-            currentHability.Cancel();
+            currentAbility.Cancel();
 
         }
     }
@@ -84,9 +84,9 @@ public class LogicManager : MonoBehaviour
 
     public void EntityClicked(Entity entityClicked)
     {
-        if (currentHability is not null)
+        if (currentAbility is not null)
         {
-            currentHability.ClickedEntity(entityClicked);
+            currentAbility.ClickedEntity(entityClicked);
         }
         else
         if (entityClicked is PJ)
@@ -96,23 +96,23 @@ public class LogicManager : MonoBehaviour
         }
     }
 
-    public void DoHability(int i)
+    public void DoAbility(int i)
     {
         if (SelectedPJ is Ally)
         {
-            currentHability = Ability.GetHability(SelectedPJ, i);
-            SelectingHability = false;
-            currentHability?.Preview();
+            currentAbility = Ability.GetAbility(SelectedPJ, i);
+            SelectingAbility = false;
+            currentAbility?.Preview();
             UIManager.Instance.ShowPreviewCanvas();
         }
     }
 
-    public void DoMovementHability()
+    public void DoMovementAbility()
     {
         if (SelectedPJ is Ally)
         {
-            currentHability = Ability.GetMovementHability(SelectedPJ);
-            currentHability.Preview();
+            currentAbility = Ability.GetMovementAbility(SelectedPJ);
+            currentAbility.Preview();
             UIManager.Instance.ShowPreviewCanvas();
         }
     }

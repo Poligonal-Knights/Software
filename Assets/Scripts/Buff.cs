@@ -24,7 +24,6 @@ public class Buff// : MonoBehaviour
     protected virtual void OnChangeTurn()
     {
         Duration--;
-        Debug.Log(Duration);
         if (Duration <= 0)
         {
             Finish();

@@ -53,6 +53,11 @@ public class Entity : MonoBehaviour
         return space;
     }
 
+    public void SetGridSpace(GridSpace set)
+    {
+        space = set;
+    }
+
     protected virtual void OnMouseUpAsButton()
     {
         //InputHandler.Instance.EntityClicked(this);

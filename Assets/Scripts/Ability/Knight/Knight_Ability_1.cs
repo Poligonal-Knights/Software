@@ -25,6 +25,5 @@ public class Knight_Ability_1 : Ability
     public override void Cancel()
     {
         base.Cancel();
-        LogicManager.Instance.PJFinishedMoving();
     }
 }

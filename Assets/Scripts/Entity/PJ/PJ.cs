@@ -129,7 +129,7 @@ public class PJ : Entity
 
     public virtual void CalculateFall()
     {
-        UpdateGridSpace();
+        //UpdateGridSpace();
         var currentPosition = space;
         while (currentPosition.neighbors["down"] != null && !currentPosition.neighbors["down"].HasBlock())
         {
@@ -140,8 +140,8 @@ public class PJ : Entity
 
     public virtual void CalculateFallFrom(GridSpace start)
     {
-        UpdateGridSpace(start);
-        var currentPosition = space;
+        //UpdateGridSpace(start);
+        var currentPosition = start;
         while (currentPosition.neighbors["down"] != null && !currentPosition.neighbors["down"].HasBlock())
         {
             currentPosition = currentPosition.neighbors["down"];
@@ -168,6 +168,13 @@ public class PJ : Entity
             Die();
         }
     }
+
+    public void Heal(int healedHealth)
+    {
+        Debug.Log("OMG! I was healed!");
+        health = Mathf.Max(health + healedHealth, maxHealth);
+    }
+
     public bool getAttackPerformed()
     {
         return attackPerformed;
@@ -180,7 +187,7 @@ public class PJ : Entity
 
     protected override void OnChangeTurn()
     {
-        //UpdateBuffs();
+        base.OnChangeTurn();
     }
 
     public void AddBuff(Buff addedBuff)
