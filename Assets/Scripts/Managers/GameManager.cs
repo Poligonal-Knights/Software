@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public int nextScene;
     public static GameManager Instance { get; private set; }
+    public static void LoadNextScene()
+    {
+        SceneManager.LoadScene(GameManager.Instance.nextScene);
+    }
 
     Entity[] entities;
 

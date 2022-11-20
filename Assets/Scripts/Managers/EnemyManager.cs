@@ -31,7 +31,8 @@ public class EnemyManager : MonoBehaviour
     {
         if(!enemyList.Any())
         {
-            SceneManager.LoadScene("Victory");
+            GameManager.LoadNextScene();
+            //SceneManager.LoadScene("Victory");
         }
     }
 
