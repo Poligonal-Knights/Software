@@ -6691,6 +6691,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (63)
       objectReference: {fileID: 0}
+    - target: {fileID: 7603339211062984112, guid: 61032f29a40e9e348ae570ae0ad882ab, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fe40329174e9720479ab77410cc459ab, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61032f29a40e9e348ae570ae0ad882ab, type: 3}
 --- !u!1001 &1093465423
