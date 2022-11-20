@@ -14,6 +14,8 @@ public class PJ : Entity
     public int damage;
     public bool CanJump;
     private bool attackPerformed;
+    public float speed;
+    public float defaultSpeed;
 
     //States
     protected bool IsMoving;
@@ -38,7 +40,6 @@ public class PJ : Entity
         base.Init();
     }
 
-    // Update is called once per frame
     protected override void Update()
     {
         if (!IsMoving && MovementsToDo.Any())
@@ -85,10 +86,10 @@ public class PJ : Entity
         List<GridSpace> movements = new List<GridSpace>();
         var currentNode = finalDestination.node;
 
-        while(currentNode.HasParent())
+        while (currentNode.HasParent())
         {
             movements.Add(currentNode.space);
-            if(currentNode.space.gridPosition.y != currentNode.parent.space.gridPosition.y)
+            if (currentNode.space.gridPosition.y != currentNode.parent.space.gridPosition.y)
             {
                 Vector3Int interDestination;
                 if (currentNode.space.gridPosition.y < currentNode.parent.space.gridPosition.y)
@@ -124,7 +125,6 @@ public class PJ : Entity
         }
         movements.Reverse();
         MovementsToDo = new Queue<GridSpace>(movements);
-        //space.SetEntity(null);
     }
 
     public virtual void CalculateFall()
@@ -202,11 +202,18 @@ public class PJ : Entity
         buffs.Add(addedBuff);
     }
 
-    protected virtual void UpdateBuffs()
+    public void SetSpeed(float setTo)
     {
-        foreach(Buff buff in buffs)
-        {
-            
-        }
+        speed = setTo;
+    }
+
+    public float GetSpeed(float setTo)
+    {
+        return speed;
+    }
+
+    public void ResetSpeed()
+    {
+        SetSpeed(defaultSpeed);
     }
 }

@@ -8,9 +8,9 @@ public class Wizard : Ally
     protected override void Start()
     {
         base.Start();
-        health = 8;
-        pushStrength = 4;
-        trapBonusDamage = 4;
+        //health = 8;
+        //pushStrength = 4;
+        //trapBonusDamage = 4;
         CanJump = true;
     }
 

@@ -14,7 +14,7 @@ public class TrashMob : Enemy
     protected override void Start()
     {
         base.Start();
-        health = 5;
+        //health = 5;
         damage = myDamage;
     }
 
@@ -28,7 +28,6 @@ public class TrashMob : Enemy
     {
         base.EnemyAI();
     }
-
 
     [Task]
     void IsEnemyFocused()
