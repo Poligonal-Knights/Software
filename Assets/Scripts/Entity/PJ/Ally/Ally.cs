@@ -6,6 +6,7 @@ public class Ally : PJ
 {
     //Stats
     public int energy;
+    public int maxEnergy;
     public int trapBonusDamage;
     public int pushStrength;
 
