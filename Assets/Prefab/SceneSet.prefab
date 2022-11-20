@@ -1076,6 +1076,7 @@ MonoBehaviour:
   alwaysActiveCanvas: {fileID: 8164596033972962402}
   wizardPortrait: {fileID: 21300000, guid: 3e67231c9f86ab849bd071ec22f6903f, type: 3}
   knightPortrait: {fileID: 21300000, guid: deb5d089db9b0ac4f9b553d38357ab76, type: 3}
+  priestPortrait: {fileID: 21300000, guid: 77c46d5448ba3774fb2b5dae13d660f1, type: 3}
 --- !u!1 &8164596033271829537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1573,7 +1574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8164596033471469161
 RectTransform:
   m_ObjectHideFlags: 0
