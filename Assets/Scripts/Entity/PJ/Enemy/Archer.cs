@@ -67,7 +67,7 @@ public class Archer : Enemy
             }
         }
 
-        foreach(var enemy in Object.FindObjectsOfType<Enemy>())
+        foreach(var enemy in Object.FindObjectsOfType<Ally>())
         {
             foreach(var vSpace in visitedSpaces)
             {
@@ -162,7 +162,7 @@ public class Archer : Enemy
         foreach (var cSpace in candidateSpaces)
         {
             var sum = 0;
-            foreach(var enemy in Object.FindObjectsOfType<Enemy>())
+            foreach(var enemy in Object.FindObjectsOfType<Ally>())
             {
                 sum += ManhattanDistance(cSpace, focusedEnemy.GetGridSpace());
             }
@@ -220,6 +220,7 @@ public class Archer : Enemy
     bool Attack()
     {
         //Correr animación de ataque mirando al enemigo
+        Debug.Log("Atacando a "+ focusedEnemy +" con " + focusedEnemy.health);
         focusedEnemy.DealDamage(damage);
         setAttackPerformed(true);
         return true;

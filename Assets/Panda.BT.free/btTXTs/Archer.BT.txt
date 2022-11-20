@@ -13,8 +13,10 @@ tree("EnemyInRange")
 		tree "IdentifyPriority"
 		IdentifySafeMove()
 		GetIntoSafeRange()
+		Wait 1.0
 		CanIAttack()
 		Attack()
+		Wait 1.0
 		StillAlive()
 		EndTurn()
 		
