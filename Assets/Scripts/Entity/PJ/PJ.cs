@@ -87,12 +87,11 @@ public class PJ : Entity
 
     public virtual void MoveTo(GridSpace finalDestination)
     {
-        while (currentNode.HasParent())
+        List<GridSpace> movements = new List<GridSpace>();
+        var currentNode = finalDestination.node;
+
         if (!finalDestination.Equals(space))
         {
-            List<GridSpace> movements = new List<GridSpace>();
-            var currentNode = finalDestination.node;
-
             while (currentNode.HasParent())
             {
                 movements.Add(currentNode.space);
@@ -115,8 +114,8 @@ public class PJ : Entity
             }
 
             movements.Add(currentNode.space);
-            if (currentNode.space.gridPosition.y != currentNode.parent.space.gridPosition.y)
-            //if (currentNode.space.gridPosition.y != space.gridPosition.y)
+            //if (currentNode.space.gridPosition.y != currentNode.parent.space.gridPosition.y)
+            if (currentNode.space.gridPosition.y != space.gridPosition.y)
             {
                 Vector3Int interDestination;
                 if (currentNode.space.gridPosition.y < space.gridPosition.y)
@@ -134,25 +133,6 @@ public class PJ : Entity
             movements.Reverse();
             MovementsToDo = new Queue<GridSpace>(movements);
         }
-
-        movements.Add(currentNode.space);
-        if (currentNode.space.gridPosition.y != space.gridPosition.y)
-        {
-            Vector3Int interDestination;
-            if (currentNode.space.gridPosition.y < space.gridPosition.y)
-            {
-                interDestination = currentNode.space.gridPosition;
-                interDestination.y = space.gridPosition.y;
-            }
-            else
-            {
-                interDestination = space.gridPosition;
-                interDestination.y = currentNode.space.gridPosition.y;
-            }
-            movements.Add(GridManager.Instance.GetGridSpace(interDestination));
-        }
-        movements.Reverse();
-        MovementsToDo = new Queue<GridSpace>(movements);
     }
 
     public virtual void CalculateFall()
