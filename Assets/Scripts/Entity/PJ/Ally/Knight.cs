@@ -9,9 +9,9 @@ public class Knight : Ally
     protected override void Start()
     {
         base.Start();
-        health = 10;
-        pushStrength = 4;
-        trapBonusDamage = 4;
+        //health = 10;
+        //pushStrength = 4;
+        //trapBonusDamage = 4;
     }
 
     protected override void Update()

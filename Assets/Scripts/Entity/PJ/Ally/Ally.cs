@@ -12,6 +12,7 @@ public class Ally : PJ
 
     //States
     bool invencibility;
+    bool reactionAvailable;
 
     protected int HabilitySelected;
     protected GridSpace spaceSelected;
@@ -36,6 +37,16 @@ public class Ally : PJ
     public bool IsInvencible()
     {
         return invencibility;
+    }
+
+    public bool CanReact()
+    {
+        return reactionAvailable;
+    }
+
+    public void SetReactionAvailable(bool setTo)
+    {
+        reactionAvailable = setTo;
     }
 
     protected override void OnChangeTurn()
