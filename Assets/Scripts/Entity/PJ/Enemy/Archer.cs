@@ -181,7 +181,7 @@ public class Archer : Enemy
     bool GetIntoSafeRange()
     {
         //Implementar el GetCloser del arquero hacia la casilla segura
-        if (CanIMove())
+        if (CanIMove() && bestSpace is not null)
         {
             //La idea es que si tengo 0 de movimiento pues no haga nada
             //Así que eso, escribe el codigo aquí dentro
