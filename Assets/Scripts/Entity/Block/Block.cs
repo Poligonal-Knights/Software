@@ -10,12 +10,10 @@ public class Block : Entity
 
     protected override void Start()
     {
-        Debug.Log("Intentando animator");
         base.Start();
         animator = gameObject.AddComponent<Animator>();
         RuntimeAnimatorController shinyAnim = Resources.Load("ShineAnim") as RuntimeAnimatorController;
         animator.runtimeAnimatorController = shinyAnim;
-        Debug.Log("Intentando animator 2");
     }
 
     public override void Init()
@@ -39,6 +37,11 @@ public class Block : Entity
         return walkable;
     }
 
+    public virtual Vector3 GetPJAdjustment()
+    {
+        return Vector3.zero;
+    }
+
     public void SetInPreviewMode()
     {
         animator.SetInteger("animationState", 1);
@@ -51,7 +54,7 @@ public class Block : Entity
         animator.Play("gStoneNoAnim", -1, 0f);
 
     }
-    public void SetInSelectedMode()
+    public void SetInSelectableMode()
     {
         animator.SetInteger("animationState", 2);
         animator.Play("gStoneAnimSelec", -1, 0f);
@@ -61,6 +64,10 @@ public class Block : Entity
     {
         animator.SetInteger("animationState", 3);
         animator.Play("gStoneAttack", -1, 0f);
+    }
 
+    protected override void OnMouseUpAsButton()
+    {
+        base.OnMouseUpAsButton();
     }
 }

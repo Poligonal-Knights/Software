@@ -5,9 +5,11 @@ using UnityEngine.EventSystems;
 
 public class InputHandler : MonoBehaviour
 {
+    public static InputHandler Instance { get; private set; }
 
-    public LogicManager logicManager;
     Ray ray;
+
+    private void Awake() => Instance = this;
 
     // Start is called before the first frame update
     void Start()
@@ -50,8 +52,8 @@ public class InputHandler : MonoBehaviour
 
     public void EntityClicked(Entity entityClicked)
     {
-        Debug.Log("Ent.Clicked: " + entityClicked);
-        logicManager.EntityClicked(entityClicked);
+        //Debug.Log("Ent.Clicked: " + entityClicked);
+        LogicManager.Instance.EntityClicked(entityClicked);
     }
 
 

@@ -1,0 +1,44 @@
+tree("Root")
+	while IsMyTurn
+		fallback
+			repeat
+				sequence
+					Wait 1.0
+					tree "FocusEnemy"
+					tree "AttackAndMove"
+			EndTurn
+
+//Focus Focus Enemy
+tree("FocusEnemy")
+	fallback
+		sequence
+			Wait 1.0
+			IsEnemyFocused()
+			IsEnemyAlive()
+		sequence
+			Wait 1.0
+			EnemiesInRange()
+			fallback
+				not		
+					Wait 1.0
+				BattleCryActive()
+				ChooseInjured()
+		sequence
+			Wait 1.0		
+			ChooseCloserEnemy()
+
+//Tree Attack And Move
+tree("AttackAndMove")
+	fallback
+		sequence
+			Wait 1.0
+			CanIAttack()
+			InAttackRange()
+			Attack()
+		sequence
+			Wait 1.0
+			CanIMove()
+			Wait 1.0
+			not
+				InAttackRange()
+			GetCloser()
