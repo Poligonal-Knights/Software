@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     public Sprite knightPortrait;
     public Sprite priestPortrait;
     public Sprite TrashPortrait;
+    public Sprite ArcherPortrait;
 
     Canvas currentCanvas;
     Canvas previousCanvas;
@@ -200,6 +201,10 @@ public class UIManager : MonoBehaviour
         if (selectedEnemy is TrashMob)
         {
             enemyCanvas.transform.Find("Portrait").GetComponent<UnityEngine.UI.Image>().sprite = TrashPortrait;
+        }
+        else if (selectedEnemy is Archer) 
+        {
+            enemyCanvas.transform.Find("Portrait").GetComponent<UnityEngine.UI.Image>().sprite = ArcherPortrait;
         }
 
         enemyCanvas.transform.Find("Portrait").Find("EHealthBar").Find("Text").GetComponent<TextMeshProUGUI>().SetText(selectedEnemy.health + "/" + selectedEnemy.maxHealth);
