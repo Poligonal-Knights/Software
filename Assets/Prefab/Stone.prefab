@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 714d530051d25f74285af784aadefcbc, type: 2}
+  - {fileID: 2100000, guid: c0d7879e053b54a43b871e933b3e522e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,4 +112,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkable: 1
   material: {fileID: 0}
-  shinyAnim: {fileID: 0}

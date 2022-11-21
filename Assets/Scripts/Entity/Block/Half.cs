@@ -13,4 +13,9 @@ public class Half : Block
         RuntimeAnimatorController shinyAnim = Resources.Load("ShineAnim") as RuntimeAnimatorController;
         animator.runtimeAnimatorController = shinyAnim;
     }
+
+    public override Vector3 GetPJAdjustment()
+    {
+        return new Vector3(.0f, -.5f, -.0f);
+    }
 }

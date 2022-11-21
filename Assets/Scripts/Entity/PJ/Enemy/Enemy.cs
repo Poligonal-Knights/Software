@@ -8,6 +8,11 @@ using Random = UnityEngine.Random;
 public class Enemy : PJ
 {
     public bool realizandoTurno = false;
+
+    public bool beingPushed = false;
+
+    public int comboed =0 ; 
+    public int attackRange;
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -23,12 +28,17 @@ public class Enemy : PJ
     protected override void Update()
     {
         base.Update();
-        if (realizandoTurno && !MovementsToDo.Any() && !IsMoving)
+        if (!MovementsToDo.Any() && !IsMoving)
+        {
+            beingPushed = false;
+            comboed = 0;
+        }
+        /*if (realizandoTurno && !MovementsToDo.Any() && !IsMoving)
         {
             //Turno finalizado
             realizandoTurno = false;
-            gameManager.enemyManager.enemyTurnEnd();
-        }
+            EnemyManager.Instance.enemyTurnEnd();
+        }*/
     }
 
     public virtual void EnemyAI()
@@ -36,15 +46,6 @@ public class Enemy : PJ
         movementAI();
         attackAI();
         // gameManager.enemyManager.enemyTurnEnd();
-    }
-
-    protected virtual void movementAI2()
-    {
-        BFS();
-        var posibilities = FindObjectOfType<GridManager>().visitedSpaces;
-        int chosenMove = Random.Range(0, posibilities.Count);
-        MoveTo(posibilities[chosenMove]);
-        realizandoTurno = true;
     }
 
     protected virtual void movementAI()
@@ -72,12 +73,6 @@ public class Enemy : PJ
                 possibleMoves.Clear();
             }
         }
-
-        // for (int i = 0; i < movimientosEnOrden.Count; i++)
-        // {
-        //     MovementsToDo.Enqueue(movimientosEnOrden[i]);
-        // }
-
         realizandoTurno = true;
     }
 
@@ -88,16 +83,36 @@ public class Enemy : PJ
 
     public virtual void BePushed(Vector3Int direction, int pushback, int extraDamage)
     {
+        Debug.Log("Pushed");
+        beingPushed = true;
         bool bumped = false;
+        bool endOfGrid = false;
         int i = 0;
-        Debug.Log("oh no oh no stop it pls nooo");
-        while (!bumped && i <= pushback)
+        while (!bumped && i <= pushback && !endOfGrid)
         {
+            Debug.Log(bumped);
             i++;
-            var pushedInto = gridManager.GetGridSpace(space.gridPosition + direction * i);
-            if (pushedInto.IsEmpty() || pushedInto.HasTrap())
+            var pushedInto = GridManager.Instance.GetGridSpace(space.gridPosition + direction * i);
+            if(pushedInto is null)
+            {
+                endOfGrid = true;
+            }
+            else if (pushedInto.IsEmpty() || pushedInto.HasTrap())
             {
                 MovementsToDo.Enqueue(pushedInto);
+                //var IsReactionPosible = false;
+                //foreach(var neighbor in pushedInto.neighbors.Values)
+                //{
+                //    if(neighbor.gridPosition.y == pushedInto.gridPosition.y)
+                //    {
+                //        IsReactionPosible = true;
+                //    }
+                //}
+                //if(IsReactionPosible)
+                //{
+                //    bumped = true;
+
+                //}
                 if (!pushedInto.IsPassable())
                 {
                     Debug.Log("Intentando iniciar caida");
@@ -108,13 +123,13 @@ public class Enemy : PJ
             else
             {
                 Debug.Log("He sufrido " + extraDamage + " y mi vida es " + health);
-                health -= extraDamage;
+                DealDamage(extraDamage);
                 Debug.Log("Mi vida final es " + health);
-                var crashed = pushedInto.GetEntity();
-                if (pushedInto.GetEntity() is Enemy)
+
+                if (pushedInto.GetEntity() is Enemy enemyBumped)
                 {
-                    var enemyBumped = pushedInto.GetEntity() as Enemy;
-                    enemyBumped.health -= extraDamage;
+                    Debug.Log(this + " BUMP");
+                    enemyBumped.DealDamage(extraDamage);
                 }
                 bumped = true;
             }
@@ -124,11 +139,24 @@ public class Enemy : PJ
     public override void Die()
     {
         base.Die();
-        if(realizandoTurno)gameManager.enemyManager.enemyTurnEnd();
+        if(realizandoTurno)EnemyManager.Instance.enemyTurnEnd();
         realizandoTurno = false;
         IsMoving = false;
         IsDying = true;
-        gameManager.enemyManager.enemyList.Remove(this);
+        EnemyManager.Instance.enemyList.Remove(this);
+    }
+
+    public override bool CanMoveThere(GridSpace start, GridSpace destination)
+    {
+        if (destination.GetEntity() is Ally) return false;
+        return base.CanMoveThere(start, destination);
+    }
+
+    public override void DealDamage(int damage)
+    {
+        base.DealDamage(damage);
+        Debug.Log("The actual combo is " +comboed);
+        health -= comboed;
     }
 }
 

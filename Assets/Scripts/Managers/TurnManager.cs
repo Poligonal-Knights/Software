@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TurnManager : MonoBehaviour
 {
-    public GUI UIManager;
-    public GameManager GameManager;
+    public static TurnManager Instance { get; private set; }
+
+    public UnityEvent ChangeTurnEvent = new UnityEvent();
 
     bool playerTurn;
+
+    private void Awake() => Instance = this;
 
     // Start is called before the first frame update
     void Start()
@@ -25,11 +29,12 @@ public class TurnManager : MonoBehaviour
     {
         Debug.Log("Pasa turno");
         playerTurn = !playerTurn;
-        UIManager.ChangeTurn(playerTurn);
+        UIManager.Instance.ChangeTurn(playerTurn);
         if (!playerTurn)
         {
-            GameManager.enemyManager.enemyTurn();
+            EnemyManager.Instance.enemyTurn();
         }
+        ChangeTurnEvent.Invoke();
     }
 
     public bool IsPlayerTurn()

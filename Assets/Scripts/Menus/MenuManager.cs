@@ -19,11 +19,11 @@ public class MenuManager : MonoBehaviour
 
     public void BeginGame()
     {
-        SceneManager.LoadScene("Nivel1");
+        SceneManager.LoadScene(1);
     }
     public void OpenOptionP()
     {
-        SceneManager.LoadScene("OpcionesP");
+        //SceneManager.LoadScene("OpcionesP");
     }
 
     public void ExitGame()

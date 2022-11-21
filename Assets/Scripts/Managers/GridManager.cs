@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
-    public GameManager gameManager;
-    
+    public static GridManager Instance { get; private set; }
+
     GridSpace[,,] spaces;
     Vector3Int minBounds;
     Vector3Int maxBounds;
@@ -16,6 +16,8 @@ public class GridManager : MonoBehaviour
     public HashSet<GridSpace> affectedSpaces = new HashSet<GridSpace>();
 
     GridSpace selectedSpace;
+
+    private void Awake() => Instance = this;
 
     public void Start()
     {
@@ -73,12 +75,10 @@ public class GridManager : MonoBehaviour
         {
             e.Init();
         }
-        Debug.Log("Intentando encontrar todos los bloques");
         foreach (var e in FindObjectsOfType<Block>())
         {
             e.UpdateUpperSpace();
         }
-        Debug.Log("Intentando encontrar todos los bloques CHECK");
     }
 
     void LinkGridSpaces()
@@ -100,6 +100,14 @@ public class GridManager : MonoBehaviour
         return spaces[coords.x, coords.y, coords.z];
     }
 
+    public GridSpace GetGridSpace(int x, int y, int z)
+    {
+        if (x < 0 || y < 0 || z < 0 ||
+            x > spaces.GetUpperBound(0) || y > spaces.GetUpperBound(1) || z > spaces.GetUpperBound(2))
+            return null;
+        return spaces[x, y, z];
+    }
+
     public GridSpace GetGridSpaceWorldCoords(Vector3Int worldCoords)
     {
         var gridCoords = worldCoords - minBounds;
@@ -109,6 +117,11 @@ public class GridManager : MonoBehaviour
     public Vector3 getOrigin()
     {
         return minBounds;
+    }
+
+    public Vector3Int GetGridSize()
+    {
+        return maxBounds - minBounds;
     }
 
     public void StopPJMovementPreview()
@@ -172,6 +185,20 @@ public class GridManager : MonoBehaviour
             //(space.neighbors["down"].GetEntity() as Block).StopAnimation();
         }
         affectedSpaces.Clear();
+    }
+
+    public Vector3 GetCenterofGrid()
+    {
+        Vector3Int minMax = maxBounds - minBounds;
+        return minMax / 2 + minBounds;
+    }
+    
+    public void clearNodes()
+    {
+        foreach (var space in spaces)
+        {
+            space.node = null;
+        }
     }
 }
 
