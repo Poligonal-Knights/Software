@@ -198,6 +198,7 @@ public class PJ : Entity
     protected override void OnChangeTurn()
     {
         base.OnChangeTurn();
+        movement = maxMovement;
     }
 
     public void AddBuff(Buff addedBuff)
