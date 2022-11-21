@@ -24,6 +24,15 @@ public class Block : Entity
         
     }
 
+    public void setAnimator(Animator animator)
+    {
+        this.animator = animator;
+    }
+    public virtual Animator getAnimator()
+    {
+        return this.animator;
+    }
+
     public void UpdateUpperSpace()
     {
         if (walkable && !space.neighbors["up"].HasBlock()) space.neighbors["up"].SetPassable(true);
@@ -39,28 +48,27 @@ public class Block : Entity
         return Vector3.zero;
     }
 
-    public void SetInPreviewMode()
+    public virtual void SetInPreviewMode()
     {
-        animator.SetInteger("animationState", 1);
-        animator.Play("gStoneAnim", -1, 0f);
+        
+        getAnimator().SetInteger("animationState", 1);
+        getAnimator().Play("gStoneAnim", -1, 0f);
     }
 
-    public void StopAnimation()
+    public virtual void StopAnimation()
     {
-        animator.SetInteger("animationState", 0);
-        animator.Play("gStoneNoAnim", -1, 0f);
-
+        getAnimator().SetInteger("animationState", 0);
+        getAnimator().Play("gStoneNoAnim", -1, 0f);
     }
-    public void SetInSelectableMode()
+    public virtual void SetInSelectableMode()
     {
-        animator.SetInteger("animationState", 2);
-        animator.Play("gStoneAnimSelec", -1, 0f);
-
+        getAnimator().SetInteger("animationState", 2);
+        getAnimator().Play("gStoneAnimSelec", -1, 0f);
     }
     public void SetInAreaAttackMode()
     {
-        animator.SetInteger("animationState", 3);
-        animator.Play("gStoneAttack", -1, 0f);
+        getAnimator().SetInteger("animationState", 3);
+        getAnimator().Play("gStoneAttack", -1, 0f);
     }
 
     protected override void OnMouseUpAsButton()
