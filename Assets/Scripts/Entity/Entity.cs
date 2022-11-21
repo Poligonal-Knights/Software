@@ -29,12 +29,17 @@ public class Entity : MonoBehaviour
 
     protected void UpdateGridSpace()
     {
+        //var half = false;
         if (space != null)
         {
             space.SetEntity(null);
         }
         Vector3Int pos = Vector3Int.RoundToInt(transform.position);
         space = GridManager.Instance.GetGridSpaceWorldCoords(pos);
+        if (space.GetEntity() is Half half)
+        {
+            space = space.neighbors["up"];
+        } 
         space.SetEntity(this);
     }
 

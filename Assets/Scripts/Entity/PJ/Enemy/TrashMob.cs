@@ -248,6 +248,7 @@ public class TrashMob : Enemy
                 if (move.GetEntity() is not null && move.GetEntity().Equals(focusedEnemy))
                 {
                     goalFinded = true;
+                    Debug.Log("Se ha encontrado una meta");
                 }
                 else if (!goalFinded && !visitedSpaces.Contains(move) && CanMoveThere(GetGridSpace(), move))
                 {
@@ -262,10 +263,11 @@ public class TrashMob : Enemy
                     // {
                     visitedSpaces.Add(move);
                     nodes.Enqueue(new BFS_Node(move, null, 1));
+                    Debug.Log("Añado un nodo");
                     // }
                 }
             }
-
+            Debug.Log("¿Hay nodos? " + nodes.Any());
             while (nodes.Any() && !goalFinded)
             {
                 var currentNode = nodes.Dequeue();
@@ -281,6 +283,7 @@ public class TrashMob : Enemy
                     {
                         visitedSpaces.Add(move);
                         nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
+                        Debug.Log("Meto un nodo en el movimiento");
                     }
                 }
             }

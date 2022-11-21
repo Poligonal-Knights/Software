@@ -32,7 +32,6 @@ public class PJ : Entity
         base.Start();
         IsMoving = false;
         IsDying = false;
-        maxMovement = 4;
         CanJump = false;
     }
 
@@ -55,12 +54,13 @@ public class PJ : Entity
             transform.position = Vector3.MoveTowards(transform.position, destination.GetPJPlacement(), step);
             if (Vector3.Distance(transform.position, destination.GetPJPlacement()) < 0.001f)
             {
+                transform.position = destination.GetPJPlacement();
                 if (destination.GetEntity() is null)
                 {
                     UpdateGridSpace();
                 }
                 IsMoving = false;
-                transform.position = destination.GetPJPlacement();
+                
                 if (!MovementsToDo.Any())
                 {
                     LogicManager.Instance.PJFinishedMoving();
