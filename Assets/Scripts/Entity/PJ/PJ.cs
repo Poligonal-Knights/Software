@@ -187,7 +187,7 @@ public class PJ : Entity
     public void Heal(int healedHealth)
     {
         Debug.Log("OMG! I was healed!");
-        health = Mathf.Max(health + healedHealth, maxHealth);
+        health = Mathf.Min(health + healedHealth, maxHealth);
     }
 
     public bool getAttackPerformed()

@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     public Canvas ReactionCanvas;
     public Canvas alwaysActiveCanvas;
     public Canvas enemyCanvas;
+    public Canvas abilityNonDefined;
     
     public Sprite wizardPortrait;
     public Sprite knightPortrait;
@@ -216,12 +217,19 @@ public class UIManager : MonoBehaviour
         {
             enemyCanvas.transform.Find("Portrait").Find("EHealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = (float) selectedEnemy.health / selectedEnemy.maxHealth;
         }
-        
-
     }
 
     public void ShowReactionCanvas(bool b)
     {
         ReactionCanvas.gameObject.SetActive(b);
+    }
+    public void ShowAbilityNonDefined()
+    {
+        abilityNonDefined.gameObject.SetActive(true);
+    }
+
+    public void HideAbilityNonDefined()
+    {
+        abilityNonDefined.gameObject.SetActive(false);
     }
 }

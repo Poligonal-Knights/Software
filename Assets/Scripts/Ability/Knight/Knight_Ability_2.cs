@@ -7,6 +7,7 @@ public class Knight_Ability_2 : Ability
 {
     public Knight_Ability_2(PJ owner) : base(owner) { EnergyConsumed = 2; }
 
+    /*
 
     int chargeDistance = 3;
     Vector3Int direction;
@@ -91,5 +92,16 @@ public class Knight_Ability_2 : Ability
             yield return new WaitForSeconds(distanceToKnight * 0.3f);
             affectedPJs[i].MoveTo(GridManager.Instance.GetGridSpace(finalSpace.gridPosition - direction * i));
         }
+    }*/
+    public override void Preview()
+    {
+        base.Preview();
+        UIManager.Instance.ShowAbilityNonDefined();
+    }
+    
+    public override void Cancel()
+    {
+        base.Cancel();
+        UIManager.Instance.HideAbilityNonDefined();
     }
 }

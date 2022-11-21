@@ -19,6 +19,7 @@ public class Knight_Ability_3 : Ability
 
     public override void Cancel()
     {
+        base.Cancel();
         ClearSelectableSpaces();
         LogicManager.Instance.PJFinishedMoving();
     }

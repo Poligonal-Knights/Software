@@ -10,7 +10,7 @@ public class Knight_Ability_4 : Ability
 
     public GameObject shield;
 
-    public override void Preview()
+    /*public override void Preview()
     {
         var PJSpace = Owner.GetGridSpace();
         int y = PJSpace.gridPosition.y;
@@ -35,5 +35,16 @@ public class Knight_Ability_4 : Ability
             if (space.GetEntity() is Ally ally) ally.SetInvencibility(true);
         }
         ClearSelectableSpaces();
+    }*/
+    public override void Preview()
+    {
+        base.Preview();
+        UIManager.Instance.ShowAbilityNonDefined();
+    }
+    
+    public override void Cancel()
+    {
+        base.Cancel();
+        UIManager.Instance.HideAbilityNonDefined();
     }
 }
