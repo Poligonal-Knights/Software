@@ -1,30 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.EventSystems;
 
 public class Entity : MonoBehaviour
 {
     protected GridSpace space;
-
-    public UnityEvent<Entity> OnClick;
+    protected GameManager gameManager;
+    protected GridManager gridManager;
+    protected InputHandler inputHandler;
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        TurnManager.Instance.ChangeTurnEvent.AddListener(OnChangeTurn);
+        Debug.Log(this+"intentando");
+        //gameManager = FindObjectOfType<GameManager>();
+        //gridManager = gameManager.gridManager;
+        //inputHandler = gameManager.inputHandler;
     }
 
     public virtual void Init()
     {
+        gameManager = FindObjectOfType<GameManager>();
+        gridManager = gameManager.gridManager;
+        inputHandler = gameManager.inputHandler;
         UpdateGridSpace();
     }
 
     // Update is called once per frame
     protected virtual void Update()
     {
-
+        
     }
 
     protected void UpdateGridSpace()
@@ -34,7 +39,10 @@ public class Entity : MonoBehaviour
             space.SetEntity(null);
         }
         Vector3Int pos = Vector3Int.RoundToInt(transform.position);
-        space = GridManager.Instance.GetGridSpaceWorldCoords(pos);
+        Debug.Log("ERROR SEGURO INCOMING");
+        Debug.Log(gameManager.gridManager);
+        space = gameManager.gridManager.GetGridSpaceWorldCoords(pos);
+        Debug.Log(space);
         space.SetEntity(this);
     }
 
@@ -53,28 +61,8 @@ public class Entity : MonoBehaviour
         return space;
     }
 
-    public void SetGridSpace(GridSpace set)
-    {
-        space = set;
-    }
-
     protected virtual void OnMouseUpAsButton()
     {
-        //InputHandler.Instance.EntityClicked(this);
-        //OnClick.Invoke(this);
-        if (!EventSystem.current.IsPointerOverGameObject())
-        {
-            LogicManager.Instance.EntityClicked(this);
-        }
-    }
-
-    protected virtual void OnChangeTurn()
-    {
-
-    }
-
-    protected virtual void OnDisable()
-    {
-        TurnManager.Instance.ChangeTurnEvent.RemoveListener(OnChangeTurn);
+        inputHandler.EntityClicked(this);
     }
 }

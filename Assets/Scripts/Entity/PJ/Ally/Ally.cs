@@ -1,90 +1,94 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class Ally : PJ
 {
     //Stats
-    public int energy;
-    public int maxEnergy;
-    public int trapBonusDamage;
-    public int pushStrength;
+    protected int energy;
+    protected int trapBonusDamage;
+    protected int pushStrength;
 
     //States
-    bool invencibility;
-    bool reactionAvailable;
-    public bool deniedReaction = false; //Ha sido denegada la reacción actual en concreto.
+    public bool IsDoingHability;
+    public bool IsInitiatingHability;
+    public bool IsSelectingDirection;
+    public bool IsConfirming;
+    public bool IsDoingHabilityAnimation;
 
-    protected int AbilitySelected;
+    protected int HabilitySelected;
     protected GridSpace spaceSelected;
 
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
+        IsDoingHability = false;
+        IsInitiatingHability = false;
+        IsSelectingDirection = false;
+        IsConfirming = false;
+        IsDoingHabilityAnimation = false;
     }
 
+    // Update is called once per frame
     protected override void Update()
     {
         base.Update();
-        if (reactionAvailable)
+
+        if (IsDoingHability)
         {
-            foreach (var neighbor in space.neighbors.Values)
+            switch (HabilitySelected)
             {
-                if (neighbor.gridPosition.y == space.gridPosition.y)
-                {
-                    if(neighbor.GetEntity() is Enemy enemy && enemy.beingPushed)
-                    {
-                        Debug.LogWarning("INTENTANDO REACTION");
-                        LogicManager.Instance.reactionAbility.Engage(this, enemy);
-                    }
-                }
+                case 0:
+                    Hability0();
+                    break;
+                case 1:
+                    Hability1();
+                    break;
+                case 2:
+                    Hability2();
+                    break;
+                case 3:
+                    Hability3();
+                    break;
+                case 4:
+                    Hability4();
+                    break;
             }
         }
+
     }
 
-    public override bool CanMoveThere(GridSpace start, GridSpace destination)
+    public virtual void DoHability(int HabilityToDo)
     {
-        if (destination.GetEntity() is Enemy) return false;
-        return base.CanMoveThere(start, destination);
+        HabilitySelected = HabilityToDo;
+        IsDoingHability = true;
+        IsInitiatingHability = true;
     }
 
-    public void SetInvencibility(bool setTo)
+    public virtual void StopDoingHability()
     {
-        invencibility = setTo;
+        IsDoingHability = false;
     }
 
-    public bool IsInvencible()
+    public void SetHabilitySpaceSelected(GridSpace selected)
     {
-        return invencibility;
-    }
-
-    public bool CanReact()
-    {
-        return reactionAvailable;
-    }
-
-    public void SetReactionAvailable(bool setTo)
-    {
-        reactionAvailable = setTo;
-    }
-
-    protected override void OnChangeTurn()
-    {
-        base.OnChangeTurn();
-        if (TurnManager.Instance.IsPlayerTurn()) //CAmbio de ronda
+        if (selected != null)
         {
-            //foreach buff in buffs
-            //buff.cont--;
-
-            SetInvencibility(false);
-            SetReactionAvailable(true);
+            IsInitiatingHability = true;
         }
+        spaceSelected = selected;
+        IsSelectingDirection = true;
     }
-    public void ReduceEnergy(int reduceAmont)
+
+    public void ConfirmHability()
     {
-        Debug.Log("Energy reduced by: " + reduceAmont);
-        energy -= reduceAmont;
+        IsConfirming = true;
     }
+
+    protected virtual void Hability0() { Debug.Log(this + "performed Hab. 0"); }
+    protected virtual void Hability1() { Debug.Log(this + "performed Hab. 1"); }
+    protected virtual void Hability2() { Debug.Log(this + "performed Hab. 2"); }
+    protected virtual void Hability3() { Debug.Log(this + "performed Hab. 3"); }
+    protected virtual void Hability4() { Debug.Log(this + "performed Hab. 4"); }
 }

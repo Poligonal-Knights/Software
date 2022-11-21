@@ -1,27 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public int nextScene;
-    public static GameManager Instance { get; private set; }
-    public void LoadNextScene()
-    {
-        SceneManager.LoadScene(GameManager.Instance.nextScene);
-    }
+    public GridManager gridManager;
+    public TurnManager turnManager;
+    public LogicManager logicManager;
+    public InputHandler inputHandler;
+    public GUI UIManager;
+    public EnemyManager enemyManager;
 
     Entity[] entities;
-
-    private void Awake() => Instance = this;
 
     // Start is called before the first frame update
     void Start()
     {
         Init();
-        GridManager.Instance.Init();
-        TurnManager.Instance.Init();
+        gridManager = FindObjectOfType<GridManager>();
+        turnManager = FindObjectOfType<TurnManager>();
+        logicManager = FindObjectOfType<LogicManager>();
+        inputHandler = FindObjectOfType<InputHandler>();
+        enemyManager = FindObjectOfType<EnemyManager>();
+        UIManager = FindObjectOfType<GUI>();
+        gridManager.Init();
+        turnManager.Init();
+
+        //Cosas de debug, se eliminaran mas adelante
+        //foreach (var p in FindObjectsOfType<PJ>())
+        //{
+        //    p.FindPath(Vector3Int.zero);
+        //}
+        //var aux = FindObjectOfType<Goal>().GetGridSpace();
+        //if (aux.IsVisited())
+        //{
+        //    var actualNode = aux.node;
+        //    while (actualNode.HasParent())
+        //    {
+        //        actualNode = actualNode.parent;
+        //    };
+        //}
+        //else Debug.Log("Meta no encontrada");
     }
 
     void Init()

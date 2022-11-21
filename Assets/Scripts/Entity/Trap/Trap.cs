@@ -22,7 +22,6 @@ public class Trap : Entity
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Triggered");
         var collided = other.gameObject.GetComponent<Entity>();
         if(collided is PJ)
         {

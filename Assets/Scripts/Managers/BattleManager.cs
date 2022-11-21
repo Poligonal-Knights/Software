@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class BattleManager : MonoBehaviour
 {
-    public static BattleManager Instance { get; private set; }
-
-    private void Awake() => Instance = this;
+    public GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
