@@ -21,7 +21,6 @@ public class Enemy : PJ
     public override void Init()
     {
         base.Init();
-        maxMovement = 3;
     }
 
     // Update is called once per frame
@@ -81,8 +80,9 @@ public class Enemy : PJ
 
     }
 
-    public virtual void BePushed(Vector3Int direction, int pushback, int extraDamage)
+    public virtual void BePushed(Vector3Int direction, int pushback, int extraDamage, Ally pushedBy)
     {
+        LogicManager.Instance.reactionAbility.pushedBy = pushedBy;
         Debug.Log("Pushed");
         beingPushed = true;
         bool bumped = false;

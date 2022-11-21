@@ -66,7 +66,7 @@ public class Wizard_Ability_1 : Ability
                 AnyEnemyWasAffected = true;
                 var direction = enemy.GetGridSpace().gridPosition - SelectedSpace.gridPosition;
                 direction.Set(Math.Sign(direction.x), 0, Math.Sign(direction.z));
-                enemy.BePushed(direction, Wizard.pushStrength, Wizard.trapBonusDamage);
+                enemy.BePushed(direction, Wizard.pushStrength, Wizard.trapBonusDamage, Wizard);
             }
         }
         ClearAffectedSpaces();

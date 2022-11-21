@@ -8,6 +8,7 @@ using Object = UnityEngine.Object;
 public class Reaction_Ability : Ability
 {
     private HashSet<Ally> allies = new HashSet<Ally>();
+    public Ally pushedBy;
     Ally ally;
     Enemy enemy;
     private Boolean thisComboFlag = false;
@@ -15,6 +16,7 @@ public class Reaction_Ability : Ability
 
     public void Engage(Ally ally, Enemy enemy)
     {
+        allies.Add(pushedBy);
         this.ally = ally;
         this.enemy = enemy;
         Preview();
@@ -30,20 +32,16 @@ public class Reaction_Ability : Ability
                 resetAlly.deniedReaction = false;
             }
             allies.Clear();
-            
         }
     }
     public override void Preview()
     {
-        if(ally.CanReact() && !ally.deniedReaction)
+        if(ally.CanReact() && !allies.Contains(ally))
         {
             ally.SetReactionAvailable(false);
             FreezeEnemies();
             UIManager.Instance.ShowReactionCanvas(true);
-            if (!allies.Contains(ally))
-            {
-                allies.Add(ally);
-            }
+            cleanAllies();
         }
     }
 
@@ -53,7 +51,8 @@ public class Reaction_Ability : Ability
         var direction = enemy.GetGridSpace().gridPosition - ally.GetGridSpace().gridPosition;
         enemy.MovementsToDo.Clear();//limpiar movimientos enemigos
         enemy.IsMoving = false;
-        enemy.BePushed(direction, ally.pushStrength, ally.trapBonusDamage);
+        cleanAllies();
+        enemy.BePushed(direction, ally.pushStrength, ally.trapBonusDamage, ally);
         UnFreezeEnemies();
         UIManager.Instance.ShowReactionCanvas(false);
         LogicManager.Instance.PJFinishedMoving();
@@ -83,6 +82,12 @@ public class Reaction_Ability : Ability
         }
     }
     public void OnChangeTurn(){
+        cleanAllies();
+    }
+
+    public void cleanAllies()
+    {
+        pushedBy = null;
         allies.Clear();
     }
 }

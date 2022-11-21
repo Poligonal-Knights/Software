@@ -36,7 +36,6 @@ public class Ally : PJ
                 {
                     if(neighbor.GetEntity() is Enemy enemy && enemy.beingPushed)
                     {
-                        Debug.LogWarning("INTENTANDO REACTION");
                         LogicManager.Instance.reactionAbility.Engage(this, enemy);
                     }
                 }
@@ -73,7 +72,7 @@ public class Ally : PJ
     protected override void OnChangeTurn()
     {
         base.OnChangeTurn();
-        if (TurnManager.Instance.IsPlayerTurn()) //CAmbio de ronda
+        if (TurnManager.Instance.IsPlayerTurn()) //Cambio de ronda
         {
             //foreach buff in buffs
             //buff.cont--;
@@ -82,9 +81,9 @@ public class Ally : PJ
             SetReactionAvailable(true);
         }
     }
-    public void ReduceEnergy(int reduceAmont)
+    public void ReduceEnergy(int reduceAmount)
     {
-        Debug.Log("Energy reduced by: " + reduceAmont);
-        energy -= reduceAmont;
+        Debug.Log("Energy reduced by: " + reduceAmount);
+        energy -= reduceAmount;
     }
 }

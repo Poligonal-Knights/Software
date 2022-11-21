@@ -16,9 +16,7 @@ public class Archer : Enemy
     protected override void Start()
     {
         base.Start();
-        health = 5;
-        damage = myDamage;
-        attackRange = 3;
+        
     }
 
     // Update is called once per frame

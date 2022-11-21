@@ -70,6 +70,12 @@ public class PJ : Entity
                     if (space.gridPosition.y == 0) Die();
                 }
             }
+        }else if (!MovementsToDo.Any())
+        {
+            if (health <= 0)
+            {
+                Die();
+            }
         }
     }
 
@@ -176,10 +182,6 @@ public class PJ : Entity
     public virtual void DealDamage(int damage)
     {
         health -= damage;
-        if (health <= 0)
-        {
-            Die();
-        }
     }
 
     public void Heal(int healedHealth)
