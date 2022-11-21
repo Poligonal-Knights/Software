@@ -6,14 +6,11 @@ public class Block : Entity
 {
     public bool walkable;
     public Material material;
-    Animator animator;
+    public Animator animator;
 
     protected override void Start()
     {
         base.Start();
-        animator = gameObject.AddComponent<Animator>();
-        RuntimeAnimatorController shinyAnim = Resources.Load("ShineAnim") as RuntimeAnimatorController;
-        animator.runtimeAnimatorController = shinyAnim;
     }
 
     public override void Init()
