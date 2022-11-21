@@ -142,8 +142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scripts:
-  - {fileID: 0}
-  autoReset: 0
+  - {fileID: 4900000, guid: 8c58d050ba1e192439ddd50b9ca9cd57, type: 3}
+  autoReset: 1
   tickOn: 0
   sourceInfos:
   - isFoldout: 1

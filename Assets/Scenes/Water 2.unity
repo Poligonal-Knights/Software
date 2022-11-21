@@ -739,6 +739,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrashMob
       objectReference: {fileID: 0}
+    - target: {fileID: 2762371186593407986, guid: c166f6598525cd1458a111949b7475b5, type: 3}
+      propertyPath: sourceInfos.Array.data[0].isFoldout
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c166f6598525cd1458a111949b7475b5, type: 3}
 --- !u!1001 &60625551
