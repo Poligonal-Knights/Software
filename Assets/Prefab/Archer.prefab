@@ -118,8 +118,8 @@ MonoBehaviour:
       m_Calls: []
   maxMovement: 3
   movement: 3
-  maxHealth: 5
-  health: 5
+  maxHealth: 3
+  health: 3
   damage: 2
   CanJump: 0
   defaultSpeed: 5

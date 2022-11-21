@@ -114,17 +114,19 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls: []
-  maxMovement: 3
-  movement: 3
-  maxHealth: 10
-  health: 10
-  damage: 2
+  maxMovement: 4
+  movement: 4
+  maxHealth: 12
+  health: 12
+  damage: 5
   CanJump: 0
   defaultSpeed: 5
+  IsMoving: 0
   energy: 5
   maxEnergy: 5
-  trapBonusDamage: 2
-  pushStrength: 3
+  trapBonusDamage: 5
+  pushStrength: 4
+  deniedReaction: 0
 --- !u!1 &8833514900583522877
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ using UnityEngine;
 //Shield throw
 public class Knight_Ability_4 : Ability
 {
-    public Knight_Ability_4(PJ owner) : base(owner) { EnergyConsumed = 2; }
+    public Knight_Ability_4(PJ owner) : base(owner) { EnergyConsumed = 1; }
 
     public GameObject shield;
 

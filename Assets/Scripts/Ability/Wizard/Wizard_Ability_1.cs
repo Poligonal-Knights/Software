@@ -6,7 +6,7 @@ using UnityEngine;
 //Bomba de aire
 public class Wizard_Ability_1 : Ability
 {
-    public Wizard_Ability_1(PJ owner) : base(owner) { EnergyConsumed = 2; }
+    public Wizard_Ability_1(PJ owner) : base(owner) { EnergyConsumed = 4; }
 
     int radius = 5;
     int bombRange = 2;

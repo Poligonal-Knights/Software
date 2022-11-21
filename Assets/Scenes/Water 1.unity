@@ -11018,6 +11018,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4683485296739818024, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683485296739818024, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: energy
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683485296739818024, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683485296739818024, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: movement
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683485296739818024, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: maxEnergy
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683485296739818024, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683485296739818024, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: maxMovement
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683485296739818024, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: defaultSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683485296739818024, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: pushStrength
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683485296739818024, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: trapBonusDamage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4837352154470818258, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
       propertyPath: m_Name
       value: Priest
@@ -14947,6 +14987,30 @@ PrefabInstance:
     - target: {fileID: 4837352154470818270, guid: d4a01e625bda3134ea6a6f7323d6e2b3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837352154470818271, guid: d4a01e625bda3134ea6a6f7323d6e2b3, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837352154470818271, guid: d4a01e625bda3134ea6a6f7323d6e2b3, type: 3}
+      propertyPath: health
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837352154470818271, guid: d4a01e625bda3134ea6a6f7323d6e2b3, type: 3}
+      propertyPath: movement
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837352154470818271, guid: d4a01e625bda3134ea6a6f7323d6e2b3, type: 3}
+      propertyPath: maxHealth
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837352154470818271, guid: d4a01e625bda3134ea6a6f7323d6e2b3, type: 3}
+      propertyPath: maxMovement
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837352154470818271, guid: d4a01e625bda3134ea6a6f7323d6e2b3, type: 3}
+      propertyPath: trapBonusDamage
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4a01e625bda3134ea6a6f7323d6e2b3, type: 3}

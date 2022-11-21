@@ -6,7 +6,7 @@ using UnityEngine;
 //Grito de Batalla
 public class Knight_Ability_1 : Ability
 {
-    public Knight_Ability_1(PJ owner) : base(owner) { EnergyConsumed = 2; }
+    public Knight_Ability_1(PJ owner) : base(owner) { EnergyConsumed = 1; }
 
     public override void Preview()
     {

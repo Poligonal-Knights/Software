@@ -5,7 +5,7 @@ using UnityEngine;
 //Bastion
 public class Knight_Ability_3 : Ability
 {
-    public Knight_Ability_3(PJ owner) : base(owner) { EnergyConsumed = 2; }
+    public Knight_Ability_3(PJ owner) : base(owner) { EnergyConsumed = 3; }
 
     public override void Preview()
     {

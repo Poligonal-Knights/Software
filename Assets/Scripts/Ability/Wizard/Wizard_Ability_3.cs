@@ -6,7 +6,7 @@ using UnityEngine;
 //Barrido de aire
 public class Wizard_Ability_3 : Ability
 {
-    public Wizard_Ability_3(PJ owner) : base(owner) { EnergyConsumed = 2; }
+    public Wizard_Ability_3(PJ owner) : base(owner) { EnergyConsumed = 3; }
 
     int radius = 5;
     int range = 5;
