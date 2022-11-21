@@ -2935,6 +2935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5053322c17d9dd4a8e1ab2c461fa520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: 0
 --- !u!1 &8164596034153796245
 GameObject:
   m_ObjectHideFlags: 0
@@ -4909,6 +4910,10 @@ PrefabInstance:
     - target: {fileID: 4902665385320172868, guid: dc659bf39305b9b4ca4dd4d4a2930aa0, type: 3}
       propertyPath: m_Name
       value: ActionCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902665385320172868, guid: dc659bf39305b9b4ca4dd4d4a2930aa0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4902665385320172872, guid: dc659bf39305b9b4ca4dd4d4a2930aa0, type: 3}
       propertyPath: m_Pivot.x
