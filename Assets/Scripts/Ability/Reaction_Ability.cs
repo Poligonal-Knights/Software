@@ -36,12 +36,12 @@ public class Reaction_Ability : Ability
     }
     public override void Preview()
     {
-        if(ally.CanReact() && !allies.Contains(ally))
+        if(ally.CanReact() && !allies.Contains(ally) && enemy.health >0 )
         {
             ally.SetReactionAvailable(false);
             FreezeEnemies();
             UIManager.Instance.ShowReactionCanvas(true);
-            cleanAllies();
+            allies.Add(ally);
         }
     }
 
