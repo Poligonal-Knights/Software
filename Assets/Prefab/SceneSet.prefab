@@ -1687,6 +1687,7 @@ MonoBehaviour:
   knightPortrait: {fileID: 21300000, guid: deb5d089db9b0ac4f9b553d38357ab76, type: 3}
   priestPortrait: {fileID: 21300000, guid: 77c46d5448ba3774fb2b5dae13d660f1, type: 3}
   TrashPortrait: {fileID: 21300000, guid: 08375fae42bbf2a43af0c9395b9c318e, type: 3}
+  ArcherPortrait: {fileID: 21300000, guid: 59b2e3e3fffa6594caaa5dae9ec360c9, type: 3}
 --- !u!1 &8164596033272892166
 GameObject:
   m_ObjectHideFlags: 0
@@ -2935,6 +2936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5053322c17d9dd4a8e1ab2c461fa520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: 0
 --- !u!1 &8164596034153796245
 GameObject:
   m_ObjectHideFlags: 0
