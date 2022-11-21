@@ -64,7 +64,7 @@ public class TrashMob : Enemy
         while (nodes.Any())
         {
             var currentNode = nodes.Dequeue();
-            if (currentNode.distance < maxMovement) //Cambiar por ActualMovement
+            if (currentNode.distance < movement) //Cambiar por ActualMovement
             {
                 foreach (var move in currentNode.space.moves)
                 {
@@ -77,7 +77,7 @@ public class TrashMob : Enemy
                                 enemiesInRangeList.Add(ally);
                             }
                         }
-                        if (!(currentNode.distance + 1 == maxMovement && move.GetEntity() is PJ))
+                        if (!(currentNode.distance + 1 == movement && move.GetEntity() is PJ))
                         {
                             visitedSpaces.Add(move);
                             nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));

@@ -7,7 +7,7 @@ using UnityEngine;
 //Basico
 public class Knight_Ability_0 : Ability
 {
-    public Knight_Ability_0(PJ owner) : base(owner) { }
+    public Knight_Ability_0(PJ owner) : base(owner) { EnergyConsumed = 0;}
 
     public override void Preview()
     {
@@ -41,6 +41,7 @@ public class Knight_Ability_0 : Ability
 
     public override void Confirm()
     {
+        base.Confirm();
         Debug.Log("Confirming Hability");
         var knight = LogicManager.Instance.GetSelectedPJ() as Knight;
         var pushDirection = SelectedSpace.gridPosition - knight.GetGridSpace().gridPosition;

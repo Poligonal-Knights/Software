@@ -6,7 +6,7 @@ using UnityEngine;
 //Grito de Batalla
 public class Knight_Ability_1 : Ability
 {
-    public Knight_Ability_1(PJ owner) : base(owner) { }
+    public Knight_Ability_1(PJ owner) : base(owner) { EnergyConsumed = 2; }
 
     public override void Preview()
     {
@@ -16,6 +16,8 @@ public class Knight_Ability_1 : Ability
 
     public override void Confirm()
     {
+        base.Confirm();
+
         Debug.Log("Grito de batalla Confirmed");
         var knight = LogicManager.Instance.GetSelectedPJ() as Knight;
         knight.SetGritoDeBatalla(true);

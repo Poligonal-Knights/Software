@@ -5,7 +5,7 @@ using UnityEngine;
 //Bless
 public class Priest_Ability_2 : Ability
 {
-    public Priest_Ability_2(PJ owner) : base(owner) { }
+    public Priest_Ability_2(PJ owner) : base(owner) { EnergyConsumed = 2; }
 
     public override void Preview()
     {
@@ -29,7 +29,9 @@ public class Priest_Ability_2 : Ability
 
     public override void Confirm()
     {
-        foreach(var s in AffectedSpaces)
+        base.Confirm();
+
+        foreach (var s in AffectedSpaces)
         {
             if(s.GetEntity() is Ally ally)
             {

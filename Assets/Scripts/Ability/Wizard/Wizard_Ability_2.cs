@@ -5,7 +5,7 @@ using UnityEngine;
 //Prisa
 public class Wizard_Ability_2 : Ability
 {
-    public Wizard_Ability_2(PJ owner) : base(owner) { }
+    public Wizard_Ability_2(PJ owner) : base(owner) { EnergyConsumed = 2; }
 
     public override void Preview()
     {
@@ -15,6 +15,8 @@ public class Wizard_Ability_2 : Ability
 
     public override void Confirm()
     {
+        base.Confirm();
+
         foreach (var ally in Object.FindObjectsOfType<Ally>())
         {
             new Rush(ally);

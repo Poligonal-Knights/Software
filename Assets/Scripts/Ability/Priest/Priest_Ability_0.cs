@@ -7,7 +7,7 @@ using UnityEngine.Timeline;
 //Basico
 public class Priest_Ability_0 : Ability
 {
-    public Priest_Ability_0(PJ owner) : base(owner) { }
+    public Priest_Ability_0(PJ owner) : base(owner) { EnergyConsumed = 2; }
 
     int selectableRadius = 5;
 
@@ -46,6 +46,8 @@ public class Priest_Ability_0 : Ability
 
     public override void Confirm()
     {
+        base.Confirm();
+
         var priest = Owner as Priest;
         foreach (var affectedSpace in AffectedSpaces)
         {

@@ -5,7 +5,7 @@ using UnityEngine;
 //Swap
 public class Priest_Ability_4 : Ability
 {
-    public Priest_Ability_4(PJ owner) : base(owner) { }
+    public Priest_Ability_4(PJ owner) : base(owner) { EnergyConsumed = 2; }
 
     GridSpace firstTarget, secondTarget;
 

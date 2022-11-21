@@ -47,6 +47,7 @@ public class PJ : Entity
         {
             IsMoving = true;
             destination = MovementsToDo.Dequeue();
+            ReduceMovement(1);
         }
         if (IsMoving)
         {
@@ -54,7 +55,7 @@ public class PJ : Entity
             transform.position = Vector3.MoveTowards(transform.position, destination.GetPJPlacement(), step);
             if (Vector3.Distance(transform.position, destination.GetPJPlacement()) < 0.001f)
             {
-                if(destination.GetEntity() is null)
+                if (destination.GetEntity() is null)
                 {
                     UpdateGridSpace();
                 }
@@ -224,5 +225,20 @@ public class PJ : Entity
     public void ResetSpeed()
     {
         SetSpeed(defaultSpeed);
+    }
+
+    public void SetMovement(int setTo)
+    {
+        movement = setTo;
+    }
+
+    public void ReduceMovement(int amount)
+    {
+        SetMovement(movement - amount);
+    }
+
+    public void ResetMovement()
+    {
+        SetSpeed(maxMovement);
     }
 }

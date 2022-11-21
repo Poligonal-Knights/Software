@@ -5,7 +5,7 @@ using UnityEngine;
 //Charge
 public class Knight_Ability_2 : Ability
 {
-    public Knight_Ability_2(PJ owner) : base(owner) { }
+    public Knight_Ability_2(PJ owner) : base(owner) { EnergyConsumed = 2; }
 
 
     int chargeDistance = 3;
@@ -53,6 +53,8 @@ public class Knight_Ability_2 : Ability
 
     public override void Confirm()
     {
+        base.Confirm();
+
         var PJFinalSpace = GridManager.Instance.GetGridSpace(finalSpace.gridPosition - direction * affectedPJs.Count);
         Owner.MoveTo(PJFinalSpace);
         GameManager.Instance.StartCoroutine(MoveAffectedPJs());

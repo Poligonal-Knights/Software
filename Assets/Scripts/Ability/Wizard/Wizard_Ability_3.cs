@@ -6,7 +6,7 @@ using UnityEngine;
 //Barrido de aire
 public class Wizard_Ability_3 : Ability
 {
-    public Wizard_Ability_3(PJ owner) : base(owner) { }
+    public Wizard_Ability_3(PJ owner) : base(owner) { EnergyConsumed = 2; }
 
     int radius = 5;
     int range = 5;
@@ -72,6 +72,8 @@ public class Wizard_Ability_3 : Ability
 
     public override void Confirm()
     {
+        base.Confirm();
+
         Debug.Log("Confirming Hability");
         var wizard = Owner as Wizard;
         var AnyEnemyWasAffected = false;

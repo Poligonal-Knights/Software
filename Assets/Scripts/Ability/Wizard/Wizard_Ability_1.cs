@@ -6,7 +6,7 @@ using UnityEngine;
 //Bomba de aire
 public class Wizard_Ability_1 : Ability
 {
-    public Wizard_Ability_1(PJ owner) : base(owner) { }
+    public Wizard_Ability_1(PJ owner) : base(owner) { EnergyConsumed = 2; }
 
     int radius = 5;
     int bombRange = 2;
@@ -53,6 +53,9 @@ public class Wizard_Ability_1 : Ability
 
     public override void Confirm()
     {
+        base.Confirm();
+
+
         Wizard Wizard = Owner as Wizard;
         bool AnyEnemyWasAffected = false;
         Debug.Log(AffectedSpaces.Count);

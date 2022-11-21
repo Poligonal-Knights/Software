@@ -6,6 +6,8 @@ using static UnityEngine.UI.GridLayoutGroup;
 
 public class Ability
 {
+    public int EnergyConsumed;
+
     public static HashSet<GridSpace> SelectableSpaces = new HashSet<GridSpace>();
     public static HashSet<GridSpace> AffectedSpaces = new HashSet<GridSpace>();
     public static GridSpace SelectedSpace;
@@ -27,7 +29,13 @@ public class Ability
 
     public virtual void Preview() { }
     public virtual void SelectTarget(GridSpace selected) { }
-    public virtual void Confirm() { }
+    public virtual void Confirm()
+    {
+        Debug.Log("Habilidad Confirmada");
+        (Owner as Ally).ReduceEnergy(EnergyConsumed);
+    }
+
+    public virtual int GetEnergyConsumed() { return EnergyConsumed; }
     public virtual void Cancel()
     {
         Debug.Log("Cancelling Hability");

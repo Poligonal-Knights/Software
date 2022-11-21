@@ -82,4 +82,9 @@ public class Ally : PJ
             SetReactionAvailable(true);
         }
     }
+    public void ReduceEnergy(int reduceAmont)
+    {
+        Debug.Log("Energy reduced by: " + reduceAmont);
+        energy -= reduceAmont;
+    }
 }

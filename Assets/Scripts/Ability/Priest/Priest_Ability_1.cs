@@ -5,7 +5,7 @@ using UnityEngine;
 //Curacion
 public class Priest_Ability_1 : Ability
 {
-    public Priest_Ability_1(PJ owner) : base(owner) { }
+    public Priest_Ability_1(PJ owner) : base(owner) { EnergyConsumed = 2; }
 
     int selectableRadius = 5;
     int areaRange = 5;
@@ -62,6 +62,8 @@ public class Priest_Ability_1 : Ability
     }
     public override void Confirm()
     {
+        base.Confirm();
+
         foreach (var affectedSpace in AffectedSpaces)
         {
             if (affectedSpace.GetEntity() is Ally ally)

@@ -6,7 +6,7 @@ using UnityEngine;
 //Shield throw
 public class Knight_Ability_4 : Ability
 {
-    public Knight_Ability_4(PJ owner) : base(owner) { }
+    public Knight_Ability_4(PJ owner) : base(owner) { EnergyConsumed = 2; }
 
     public GameObject shield;
 
@@ -28,6 +28,8 @@ public class Knight_Ability_4 : Ability
 
     public override void Confirm()
     {
+        base.Confirm();
+
         foreach (var space in SelectableSpaces)
         {
             if (space.GetEntity() is Ally ally) ally.SetInvencibility(true);

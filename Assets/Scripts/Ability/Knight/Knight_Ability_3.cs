@@ -5,7 +5,7 @@ using UnityEngine;
 //Bastion
 public class Knight_Ability_3 : Ability
 {
-    public Knight_Ability_3(PJ owner) : base(owner) { }
+    public Knight_Ability_3(PJ owner) : base(owner) { EnergyConsumed = 2; }
 
     public override void Preview()
     {
@@ -25,6 +25,8 @@ public class Knight_Ability_3 : Ability
 
     public override void Confirm()
     {
+        base.Confirm();
+
         foreach (var space in SelectableSpaces)
         {
             if (space.GetEntity() is Ally ally) ally.SetInvencibility(true);

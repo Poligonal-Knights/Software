@@ -58,7 +58,7 @@ public class Movement_Ability : Ability
         Queue<BFS_Node> nodes = new Queue<BFS_Node>();
         foreach (var move in PJSpace.moves)
         {
-            if (!move.visited && Owner.CanMoveThere(PJSpace, move))
+            if (Owner.movement > 0 && !move.visited && Owner.CanMoveThere(PJSpace, move))
             {
                 AddVisitedSpace(move);
                 nodes.Enqueue(new BFS_Node(move, null, 1));
@@ -73,7 +73,7 @@ public class Movement_Ability : Ability
                 {
                     if (!move.visited && Owner.CanMoveThere(currentNode.space, move))
                     {
-                        if (!(currentNode.distance + 1 == Owner.maxMovement && move.GetEntity() is PJ))
+                        if (!(currentNode.distance + 1 == Owner.movement && move.GetEntity() is PJ))
                         {
                             AddVisitedSpace(move);
                             nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
