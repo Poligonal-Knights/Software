@@ -250,21 +250,11 @@ public class TrashMob : Enemy
                     goalFinded = true;
                     Debug.Log("Se ha encontrado una meta");
                 }
-                else if (!goalFinded && !visitedSpaces.Contains(move) && CanMoveThere(GetGridSpace(), move))
+                else if (!goalFinded && !visitedSpaces.Contains(move) && CanMoveThere(GetGridSpace(), move) && move.GetEntity() is not PJ)
                 {
-                    // foreach (var submove in move.moves)
-                    // {
-                    //     if (submove.GetEntity().Equals(focusedEnemy))
-                    //     {
-                    //         goalFinded = true;
-                    //     }    
-                    // }
-                    // if(!goalFinded)
-                    // {
                     visitedSpaces.Add(move);
                     nodes.Enqueue(new BFS_Node(move, null, 1));
                     Debug.Log("Añado un nodo");
-                    // }
                 }
             }
             Debug.Log("¿Hay nodos? " + nodes.Any());
@@ -279,11 +269,11 @@ public class TrashMob : Enemy
                         goalFinded = true;
                         goalNode = currentNode;
                     }
-                    else if (!goalFinded && !visitedSpaces.Contains(move) && CanMoveThere(currentNode.space, move))
+                    else if (!goalFinded && !visitedSpaces.Contains(move) && CanMoveThere(currentNode.space, move) && !(currentNode.distance + 1 == movement && move.GetEntity() is PJ))
                     {
                         visitedSpaces.Add(move);
                         nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
-                        Debug.Log("Meto un nodo en el movimiento");
+                        Debug.Log(this+ "Meto un nodo en el movimiento"); 
                     }
                 }
             }

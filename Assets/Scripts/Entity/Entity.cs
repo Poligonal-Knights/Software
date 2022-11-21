@@ -36,10 +36,10 @@ public class Entity : MonoBehaviour
         }
         Vector3Int pos = Vector3Int.RoundToInt(transform.position);
         space = GridManager.Instance.GetGridSpaceWorldCoords(pos);
-        if (space.GetEntity() is Half half)
-        {
-            space = space.neighbors["up"];
-        } 
+        //if (space.GetEntity() is Half half)
+        //{
+        //    space = space.neighbors["up"];
+        //}
         space.SetEntity(this);
     }
 

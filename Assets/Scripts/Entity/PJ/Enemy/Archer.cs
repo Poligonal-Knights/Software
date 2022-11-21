@@ -308,7 +308,6 @@ public class Archer : Enemy
                 }
             }
         }
-        Debug.Log(goalNode);
         if (goalNode is not null)
         {
             var node = goalNode;

@@ -67,7 +67,7 @@ public class Movement_Ability : Ability
         while (nodes.Any())
         {
             var currentNode = nodes.Dequeue();
-            if (currentNode.distance < Owner.maxMovement)
+            if (currentNode.distance < Owner.movement)
             {
                 foreach (var move in currentNode.space.moves)
                 {

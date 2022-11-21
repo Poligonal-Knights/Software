@@ -45,22 +45,24 @@ public class PJ : Entity
         if (!IsMoving && MovementsToDo.Any())
         {
             IsMoving = true;
+            //var previousDestination;
             destination = MovementsToDo.Dequeue();
-            ReduceMovement(1);
+
+            //ReduceMovement(1);
         }
         if (IsMoving)
         {
             var step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, destination.GetPJPlacement(), step);
-            if (Vector3.Distance(transform.position, destination.GetPJPlacement()) < 0.001f)
+            transform.position = Vector3.MoveTowards(transform.position, destination.GetWorldPosition(), step);
+            if (Vector3.Distance(transform.position, destination.GetWorldPosition()) < 0.001f)
             {
-                transform.position = destination.GetPJPlacement();
+                transform.position = destination.GetWorldPosition();
                 if (destination.GetEntity() is null)
                 {
                     UpdateGridSpace();
                 }
+                //transform.position = destination.GetPJPlacement();
                 IsMoving = false;
-                
                 if (!MovementsToDo.Any())
                 {
                     LogicManager.Instance.PJFinishedMoving();
@@ -91,7 +93,7 @@ public class PJ : Entity
     {
         List<GridSpace> movements = new List<GridSpace>();
         var currentNode = finalDestination.node;
-
+        var cont = 0;
         if (!finalDestination.Equals(space))
         {
             while (currentNode.HasParent())
@@ -113,8 +115,9 @@ public class PJ : Entity
                     movements.Add(GridManager.Instance.GetGridSpace(interDestination));
                 }
                 currentNode = currentNode.parent;
+                cont++;
             }
-
+            ReduceMovement(cont+1);
             movements.Add(currentNode.space);
             //if (currentNode.space.gridPosition.y != currentNode.parent.space.gridPosition.y)
             if (currentNode.space.gridPosition.y != space.gridPosition.y)
