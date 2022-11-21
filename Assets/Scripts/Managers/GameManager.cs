@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public int nextScene;
     public static GameManager Instance { get; private set; }
-    public static void LoadNextScene()
+    public void LoadNextScene()
     {
         SceneManager.LoadScene(GameManager.Instance.nextScene);
     }
@@ -22,22 +22,6 @@ public class GameManager : MonoBehaviour
         Init();
         GridManager.Instance.Init();
         TurnManager.Instance.Init();
-
-        //Cosas de debug, se eliminaran mas adelante
-        //foreach (var p in FindObjectsOfType<PJ>())
-        //{
-        //    p.FindPath(Vector3Int.zero);
-        //}
-        //var aux = FindObjectOfType<Goal>().GetGridSpace();
-        //if (aux.IsVisited())
-        //{
-        //    var actualNode = aux.node;
-        //    while (actualNode.HasParent())
-        //    {
-        //        actualNode = actualNode.parent;
-        //    };
-        //}
-        //else Debug.Log("Meta no encontrada");
     }
 
     void Init()
