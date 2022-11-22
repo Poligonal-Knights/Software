@@ -29,6 +29,6 @@ public class Trap : Entity
             var PJcollided = collided as PJ;
             PJcollided.DealDamage(20);
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }
