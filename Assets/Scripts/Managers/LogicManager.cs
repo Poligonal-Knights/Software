@@ -30,13 +30,16 @@ public class LogicManager : MonoBehaviour
         SelectingAbility = false;
         SelectedPJ = pj;
 
-        if (pj is Ally)
+        if (TurnManager.Instance.IsPlayerTurn())
         {
-            UIManager.Instance.ShowActionCanvas();
-        }
-        else if (pj is Enemy)
-        {
-            UIManager.Instance.ShowEnemySelectedUI();
+            if (pj is Ally)
+            {
+                UIManager.Instance.ShowActionCanvas();
+            }
+            else if (pj is Enemy)
+            {
+                UIManager.Instance.ShowEnemySelectedUI();
+            }
         }
     }
 
@@ -68,7 +71,7 @@ public class LogicManager : MonoBehaviour
             SelectingAbility = false;
             UIManager.Instance.ShowActionCanvas();
         }
-        else if(currentAbility is not null)
+        else if (currentAbility is not null)
         {
             currentAbility.Cancel();
 
@@ -93,7 +96,6 @@ public class LogicManager : MonoBehaviour
         if (entityClicked is PJ)
         {
             SetSelectedPJ(entityClicked as PJ);
-            Debug.Log("SPJ: " + SelectedPJ);
         }
     }
 
