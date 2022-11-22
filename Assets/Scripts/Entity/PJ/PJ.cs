@@ -70,7 +70,8 @@ public class PJ : Entity
                     if (space.gridPosition.y == 0) Die();
                 }
             }
-        }else if (!MovementsToDo.Any())
+        }
+        else if (!MovementsToDo.Any())
         {
             if (health <= 0)
             {
@@ -123,7 +124,7 @@ public class PJ : Entity
                 currentNode = currentNode.parent;
                 cont++;
             }
-            ReduceMovement(cont+1);
+            ReduceMovement(cont + 1);
             movements.Add(currentNode.space);
             //if (currentNode.space.gridPosition.y != currentNode.parent.space.gridPosition.y)
             if (currentNode.space.gridPosition.y != space.gridPosition.y)
@@ -157,19 +158,36 @@ public class PJ : Entity
         }
     }
 
-    public virtual void CalculateFallFrom(GridSpace start)
+    public virtual void CalculateFallFrom(GridSpace start, Vector3Int direction)
     {
         //UpdateGridSpace(start);
         var currentPosition = start;
-        while (currentPosition.neighbors["down"] != null && !currentPosition.neighbors["down"].HasBlock())
+        bool stop = false;
+        while (currentPosition.neighbors["down"] != null && !stop)
         {
-            if (currentPosition.neighbors["down"].GetEntity() is PJ fallingIn)
+            //if (currentPosition.neighbors["down"].GetEntity() is PJ fallingIn)
+            //{
+            //    fallingIn.DealDamage(100); //provisional, la verdad
+            //}
+            var downEntity = currentPosition.neighbors["down"].GetEntity();
+            if (downEntity is PJ pj)
             {
-                fallingIn.DealDamage(100); //provisional, la verdad
+                stop = true;
+                var newDestination = GridManager.Instance.GetGridSpace(currentPosition.gridPosition + direction);
+                MovementsToDo.Enqueue(newDestination);
+                CalculateFallFrom(newDestination, direction);
             }
-            currentPosition = currentPosition.neighbors["down"];
-            MovementsToDo.Enqueue(currentPosition);
+            else if (downEntity is Block)
+            {
+                stop = true;
+            }
+            else
+            {
+                currentPosition = currentPosition.neighbors["down"];
+                MovementsToDo.Enqueue(currentPosition);
+            }
         }
+
     }
 
     public virtual void Die()
@@ -202,12 +220,6 @@ public class PJ : Entity
     public void setAttackPerformed(bool setter)
     {
         attackPerformed = setter;
-    }
-
-    protected override void OnChangeTurn()
-    {
-        base.OnChangeTurn();
-        movement = maxMovement;
     }
 
     public void AddBuff(Buff addedBuff)
@@ -249,6 +261,13 @@ public class PJ : Entity
 
     public void ResetMovement()
     {
-        SetSpeed(maxMovement);
+        SetMovement(maxMovement);
+    }
+
+    protected override void OnChangeTurn()
+    {
+        base.OnChangeTurn();
+        ResetMovement();
+        attackPerformed = false;
     }
 }

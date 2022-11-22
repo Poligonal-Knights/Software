@@ -11,7 +11,7 @@ public class Enemy : PJ
 
     public bool beingPushed = false;
 
-    public int comboed =0 ; 
+    public int comboed = 0; 
     public int attackRange;
     // Start is called before the first frame update
     protected override void Start()
@@ -117,7 +117,7 @@ public class Enemy : PJ
                 {
                     Debug.Log("Intentando iniciar caida");
                     bumped = true;
-                    CalculateFallFrom(pushedInto);
+                    CalculateFallFrom(pushedInto, direction);
                 }
             }
             else

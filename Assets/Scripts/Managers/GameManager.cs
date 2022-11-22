@@ -32,6 +32,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        foreach (Entity entity in entities)
+        {
+            var position = entity.GetGridSpace().gridPosition;
+            
+        }
 
     }
 }

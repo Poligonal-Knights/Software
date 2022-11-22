@@ -58,7 +58,7 @@ public class GridManager : MonoBehaviour
 
     void CreateGridSpaces()
     {
-        var range = maxBounds - minBounds + new Vector3Int(1, 2, 1);
+        var range = maxBounds - minBounds + new Vector3Int(2, 2, 2);
         spaces = new GridSpace[range.x, range.y, range.z];
 
         for (int i = 0; i < range.x; i++)
