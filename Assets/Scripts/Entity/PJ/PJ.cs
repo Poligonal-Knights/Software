@@ -163,6 +163,10 @@ public class PJ : Entity
         var currentPosition = start;
         while (currentPosition.neighbors["down"] != null && !currentPosition.neighbors["down"].HasBlock())
         {
+            if (currentPosition.neighbors["down"].GetEntity() is PJ fallingIn)
+            {
+                fallingIn.DealDamage(100); //provisional, la verdad
+            }
             currentPosition = currentPosition.neighbors["down"];
             MovementsToDo.Enqueue(currentPosition);
         }
