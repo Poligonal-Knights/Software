@@ -305,6 +305,7 @@ public class TrashMob : Enemy
     {
         realizandoTurno = false;
         EnemyManager.Instance.enemyTurnEnd();
+        focusedEnemy = null;
         return true;
     }
 
