@@ -193,6 +193,7 @@ public class PJ : Entity
 
     public virtual void Die()
     {
+        space.SetEntity(null);
         Destroy(gameObject);
         IsDying = true;
     }

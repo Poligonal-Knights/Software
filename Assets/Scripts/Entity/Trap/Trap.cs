@@ -27,8 +27,8 @@ public class Trap : Entity
         if(collided is PJ)
         {
             var PJcollided = collided as PJ;
-            PJcollided.DealDamage(20);
+            PJcollided.Die();
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }

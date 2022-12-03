@@ -200,7 +200,8 @@ public class TrashMob : Enemy
             //Si la distancia entre focusedEnemy y Yo es =<1 -> ThisTask.Succeed()  DONE
             //Considero distancia Manhattan
             var vector = focusedEnemy.GetGridSpace().gridPosition - GetGridSpace().gridPosition;
-            var distance = Mathf.Abs(vector.x) + Mathf.Abs(vector.y) + Mathf.Abs(vector.z);
+            //var distance = Mathf.Abs(vector.x) + Mathf.Abs(vector.y) + Mathf.Abs(vector.z);
+            var distance = Mathf.Abs(vector.x) + Mathf.Abs(vector.z);
 
             if (distance <= 1)//En lugar de 1, enemigo deberia tener su variable rango
             {
