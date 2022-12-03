@@ -1,0 +1,34 @@
+tree("Root")
+	while IsMyTurn
+		fallback
+			repeat
+				sequence
+					tree "FocusEnemy"
+					tree "AttackAndMove"
+			EndTurn
+
+//Focus Focus Enemy
+tree("FocusEnemy")
+	fallback
+		IsTargetFocused()
+			//Preguntar por esto a Jordan, me parece innecesario, el mago debería elegir enemigos diferentes cada vez o algo
+		sequence
+			EnemiesInRange()
+			fallback
+				BattleCryActive()
+				ChooseOptimalSpace()
+		ChooseCloserEnemy()
+
+//Tree Attack And Move
+tree("AttackAndMove")
+	fallback
+		sequence
+			CanIAttack()
+			SpaceInAttackRange()
+			Attack()
+		sequence
+			CanIMove()
+			not
+				SpaceInAttackRange()
+			GetCloser()
+			Wait 1.0

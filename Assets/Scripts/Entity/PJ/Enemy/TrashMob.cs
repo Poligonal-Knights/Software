@@ -9,13 +9,11 @@ public class TrashMob : Enemy
 {
     PJ focusedEnemy = null;
     List<PJ> enemiesInRangeList = new List<PJ>();
-    public int myDamage;
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
         //health = 5;
-        damage = myDamage;
     }
 
     // Update is called once per frame

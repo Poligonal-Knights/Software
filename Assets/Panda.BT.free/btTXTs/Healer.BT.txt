@@ -1,0 +1,37 @@
+tree("Root")
+	while IsMyTurn
+		fallback
+			tree "Healing"
+			tree "Debuffing"
+			tree "Alone"
+
+tree ("Healing")
+	sequence
+		IsAllyInRange()
+		MostDamagedAlly()
+		GetCloserFocusedAlly()
+		CanIHeal()
+		Heal()
+		EndTurn()
+tree ("Debuffing")
+	sequence
+		EnemiesInRange()
+		fallback
+			BattleCryActive()
+			ChooseCloserEnemy()
+		GetCloser()
+		CanIAttack()
+		Attack()
+		CanIMove()
+		IsAnyoneAlive()
+		ChooseCloserAlly()
+		GetCloserFocusedAlly()
+		EndTurn
+tree ("Alone")
+	sequence
+		mute
+			sequence
+				IsAnyoneAlive()
+				ChooseCloserAlly()
+				GetCloserFocusedAlly()
+		EndTurn
