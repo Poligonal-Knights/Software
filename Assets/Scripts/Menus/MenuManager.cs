@@ -42,4 +42,14 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(6);
     }
 
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void BackToMSelect()
+    {
+        SceneManager.LoadScene(1);
+    }
+
 }
