@@ -1,0 +1,101 @@
+tree("Root")
+	while IsMyTurn
+		fallback
+			Sequence
+				IsInOffense()
+				tree "Trashmob"
+			repeat
+				sequence
+					tree "ProtectedAlly"
+					tree "ChooseProtectedAlly"
+					tree "Offense"
+			EndTurn
+
+//There's a protected Ally
+tree("ProtectedAlly")
+	sequence
+		IsAllyChosen()
+		fallback
+			tree "ProtectiveOffense"
+			tree "Buffing"
+
+tree("ProtectiveOffense")
+	sequence
+		EnemyInAllysRange()
+		FocusedEnemyInRange()
+		GetCloserEnemyFocused()
+		CanIAttack()
+		Attack()
+		GetCloserProtectedAlly()
+
+tree ("Buffing")
+	sequence
+		fallback
+			sequence
+				IsAllyInRange()
+				GetCloserProtectedAlly()
+				DefenseBuff()
+			sequence
+				MovementBuff()
+				GetCloserProtectedAlly()
+		EndTurn()
+
+//Tree ChooseProtectedAlly
+tree("ChooseProtectedAlly")
+	not
+		sequence
+			IsAnyoneAlive()
+			tree "PriorityAlly"
+
+tree ("PriorityAlly")
+	fallback
+		AlliesInRange()
+		fallback
+			IsThereAnyHealer()
+			IsThereAnyMage()
+			IsThereAnyArcher()
+			IsThereAnyTrashmob()
+		ChooseCloserAlly()
+
+tree ("Offense")
+	sequence
+		ChangeToOffense()
+		tree "Trashmob"
+
+
+tree("Trashmob")
+	while IsMyTurn
+		fallback
+			repeat
+				sequence
+					tree "FocusEnemy"
+					tree "AttackAndMove"
+			EndTurn
+
+//Focus Focus Enemy
+tree("FocusEnemy")
+	fallback
+		sequence
+			IsEnemyFocused()
+			IsEnemyAlive()
+		sequence
+			EnemiesInRange()
+			fallback
+				BattleCryActive()
+				ChooseInjured()
+		sequence		
+			ChooseCloserEnemy()
+
+//Tree Attack And Move
+tree("AttackAndMove")
+	fallback
+		sequence
+			CanIAttack()
+			InAttackRange()
+			Attack()
+		sequence
+			CanIMove()
+			not
+				InAttackRange()
+			GetCloserEnemyFocused()
+			Wait 1.0

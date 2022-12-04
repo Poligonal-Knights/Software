@@ -9,7 +9,6 @@ public class TrashMob : Enemy
 {
     PJ focusedEnemy = null;
     List<PJ> enemiesInRangeList = new List<PJ>();
-    public int myDamage;
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -43,7 +42,7 @@ public class TrashMob : Enemy
     [Task]
     bool EnemiesInRange()
     {
-        //Implementar comprobación de enemigos a rango
+        //Implementar comprobaciï¿½n de enemigos a rango
         enemiesInRangeList.Clear();//Por si acaso
         Queue<BFS_Node> nodes = new Queue<BFS_Node>();
         HashSet<GridSpace> visitedSpaces = new HashSet<GridSpace>();
@@ -92,7 +91,7 @@ public class TrashMob : Enemy
     [Task]
     bool ChooseCloserEnemy()
     {
-        //Implementar lógica de elección de enemigo
+        //Implementar lï¿½gica de elecciï¿½n de enemigo
         Queue<BFS_Node> nodes = new Queue<BFS_Node>();
         HashSet<GridSpace> visitedSpaces = new HashSet<GridSpace>();
         bool goalFinded = false;
@@ -217,7 +216,7 @@ public class TrashMob : Enemy
     [Task]
     bool Attack()
     {
-        //Correr animación de ataque mirando al enemigo
+        //Correr animaciï¿½n de ataque mirando al enemigo
         focusedEnemy.DealDamage(damage);
         setAttackPerformed(true);
         return true;
@@ -233,8 +232,8 @@ public class TrashMob : Enemy
     {
         //GridManager.Instance.clearNodes();
         Debug.Log(focusedEnemy);
-        //Implementar camino con el máximo movimiento posible hasta el enemigo DONE?
-        //Lo mejor sería implementar un A*, me falta tiempo
+        //Implementar camino con el mï¿½ximo movimiento posible hasta el enemigo DONE?
+        //Lo mejor serï¿½a implementar un A*, me falta tiempo
         //Implemento BFS hasta encontrar meta
         if (focusedEnemy)
         {
@@ -253,10 +252,10 @@ public class TrashMob : Enemy
                 {
                     visitedSpaces.Add(move);
                     nodes.Enqueue(new BFS_Node(move, null, 1));
-                    Debug.Log("Añado un nodo");
+                    Debug.Log("Aï¿½ado un nodo");
                 }
             }
-            Debug.Log("¿Hay nodos? " + nodes.Any());
+            Debug.Log("ï¿½Hay nodos? " + nodes.Any());
             while (nodes.Any() && !goalFinded)
             {
                 var currentNode = nodes.Dequeue();

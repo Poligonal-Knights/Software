@@ -21,6 +21,7 @@ public class PJ : Entity
     private bool attackPerformed;
     private float speed = 5;
     public float defaultSpeed;
+    public int defense = 0;
 
     //States
     public bool IsMoving;
@@ -234,7 +235,7 @@ public class PJ : Entity
 
     public virtual void DealDamage(int damage)
     {
-        health -= damage;
+        health -= (damage-defense);
     }
 
     public void Heal(int healedHealth)
