@@ -112,9 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b11aae3c088a6b40928ec6990d005f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClick:
-    m_PersistentCalls:
-      m_Calls: []
+  frontSprite: {fileID: 21300000, guid: 3e67231c9f86ab849bd071ec22f6903f, type: 3}
+  backSprite: {fileID: 21300000, guid: 2e2f8f0c498b2534cbf495587464dd8e, type: 3}
   maxMovement: 5
   movement: 5
   maxHealth: 8

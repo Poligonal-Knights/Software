@@ -8,8 +8,13 @@ public class RotateWithCamera : MonoBehaviour
     void Update()
     {
         //transform.rotation = Quaternion.Euler(0f, Camera.main.transform.rotation.eulerAngles.y, 0f);
-        transform.rotation = Camera.main.transform.rotation;
+        //transform.rotation = Camera.main.transform.rotation;
         
         //Introducir limites con los sprites y crearlos en conjuntos de 4 que siempre sigan el mismo orden
+    }
+    private void FixedUpdate()
+    {
+        transform.rotation = Camera.main.transform.rotation;
+
     }
 }

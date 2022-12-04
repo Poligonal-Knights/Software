@@ -8,9 +8,11 @@ public class Entity : MonoBehaviour
 {
     protected GridSpace space;
 
-    public UnityEvent<Entity> OnClick;
+    protected virtual void Awake()
+    {
 
-    // Start is called before the first frame update
+    }
+
     protected virtual void Start()
     {
         TurnManager.Instance.ChangeTurnEvent.AddListener(OnChangeTurn);
@@ -21,25 +23,19 @@ public class Entity : MonoBehaviour
         UpdateGridSpace();
     }
 
-    // Update is called once per frame
     protected virtual void Update()
     {
 
     }
 
-    protected void UpdateGridSpace()
+    protected virtual void UpdateGridSpace()
     {
-        //var half = false;
         if (space != null)
         {
             space.SetEntity(null);
         }
         Vector3Int pos = Vector3Int.RoundToInt(transform.position);
         space = GridManager.Instance.GetGridSpaceWorldCoords(pos);
-        //if (space.GetEntity() is Half half)
-        //{
-        //    space = space.neighbors["up"];
-        //}
         space.SetEntity(this);
     }
 

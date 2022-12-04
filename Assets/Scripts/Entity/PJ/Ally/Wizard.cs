@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Wizard : Ally
 {
+
+    protected override void Awake()
+    {
+        base.Awake();
+        CanJump = true;
+    }
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
-        //health = 8;
-        //pushStrength = 4;
-        //trapBonusDamage = 4;
-        CanJump = true;
     }
 
     // Update is called once per frame

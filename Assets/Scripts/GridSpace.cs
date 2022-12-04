@@ -9,7 +9,7 @@ public class GridSpace
     GridManager gridManager;
     public Vector3Int gridPosition;
     Entity entity;
-    //Trap trap;
+    HashSet<Activatable> activatables = new HashSet<Activatable>();
 
     public Dictionary<string, GridSpace> neighbors = new Dictionary<string, GridSpace>(6);
     //public Dictionary<string, GridSpace> moves = new Dictionary<string, GridSpace>(4);
@@ -31,6 +31,7 @@ public class GridSpace
         visited = false;
         passable = false;
     }
+
     public void SetEntity(Entity e)
     {
         entity = e;
@@ -45,6 +46,16 @@ public class GridSpace
     {
         if (entity is null) return true;
         return false;
+    }
+
+    public void AddActivatable(Activatable add)
+    {
+        activatables.Add(add);
+    }
+
+    public void RemoveActivatable(Activatable add)
+    {
+        activatables.Remove(add);
     }
 
     public bool HasTrap()

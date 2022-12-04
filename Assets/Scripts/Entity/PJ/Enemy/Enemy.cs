@@ -43,7 +43,6 @@ public class Enemy : PJ
     public virtual void EnemyAI()
     {
         movementAI();
-        attackAI();
         // gameManager.enemyManager.enemyTurnEnd();
     }
 
@@ -75,11 +74,6 @@ public class Enemy : PJ
         realizandoTurno = true;
     }
 
-    protected virtual void attackAI()
-    {
-
-    }
-
     public virtual void BePushed(Vector3Int direction, int pushback, int extraDamage, Ally pushedBy)
     {
         LogicManager.Instance.reactionAbility.pushedBy = pushedBy;
@@ -90,7 +84,7 @@ public class Enemy : PJ
         int i = 0;
         while (!bumped && i <= pushback && !endOfGrid)
         {
-            Debug.Log(bumped);
+            Debug.Log("Bumped: " + bumped);
             i++;
             var pushedInto = GridManager.Instance.GetGridSpace(space.gridPosition + direction * i);
             if(pushedInto is null)

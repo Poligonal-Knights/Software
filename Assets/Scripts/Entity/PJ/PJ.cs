@@ -4,9 +4,13 @@ using System.Linq;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
+using System;
 
 public class PJ : Entity
 {
+    public Sprite frontSprite;
+    public Sprite backSprite;
+
     //Stats
     public int maxMovement;
     public int movement;
@@ -21,23 +25,38 @@ public class PJ : Entity
     //States
     public bool IsMoving;
     protected bool IsDying;
+    protected Vector2 orientation;
+    SpriteRenderer spriteRenderer;
 
     public Queue<GridSpace> MovementsToDo = new Queue<GridSpace>();
     GridSpace destination;
 
     HashSet<Buff> buffs = new HashSet<Buff>();
 
-    protected override void Start()
+    protected override void Awake()
     {
-        base.Start();
+        base.Awake();
         IsMoving = false;
         IsDying = false;
         CanJump = false;
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+    }
+
+    protected override void Start()
+    {
+        base.Start();
+        //IsMoving = false;
+        //IsDying = false;
+        //CanJump = false;
+        //spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     public override void Init()
     {
         base.Init();
+        destination = space;
+        orientation = Vector2.down;
+        UpdateOrientation();
     }
 
     protected override void Update()
@@ -47,8 +66,10 @@ public class PJ : Entity
             IsMoving = true;
             //var previousDestination;
             destination = MovementsToDo.Dequeue();
-
-            //ReduceMovement(1);
+            var or = destination.GetWorldPosition() - transform.position;
+            if (or.x != 0 || or.z != 0)
+                orientation = new Vector2(or.x, or.z);
+            UpdateOrientation();
         }
         if (IsMoving)
         {
@@ -75,6 +96,7 @@ public class PJ : Entity
         {
             if (health <= 0)
             {
+                Debug.Log("tengo movimientos antes de morir: " + MovementsToDo.Any());
                 Die();
             }
         }
@@ -147,6 +169,18 @@ public class PJ : Entity
         }
     }
 
+    public void UpdateOrientation()
+    {
+        //var or = destination.GetWorldPosition() - transform.position;
+        //orientation = new Vector2(or.x, or.z);
+        var cam = Camera.main.transform.position - transform.position;
+        var camera = new Vector2(cam.x, cam.z);
+        var angle = Vector2.SignedAngle(orientation, camera);
+        spriteRenderer.sprite = Math.Abs(angle) < 90.0f ? frontSprite : backSprite;
+        spriteRenderer.flipX = angle > 0 ? true : false;
+
+    }
+
     public virtual void CalculateFall()
     {
         //UpdateGridSpace();
@@ -165,10 +199,6 @@ public class PJ : Entity
         bool stop = false;
         while (currentPosition.neighbors["down"] != null && !stop)
         {
-            //if (currentPosition.neighbors["down"].GetEntity() is PJ fallingIn)
-            //{
-            //    fallingIn.DealDamage(100); //provisional, la verdad
-            //}
             var downEntity = currentPosition.neighbors["down"].GetEntity();
             if (downEntity is PJ pj)
             {
