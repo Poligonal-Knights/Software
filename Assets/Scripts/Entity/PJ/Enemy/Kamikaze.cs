@@ -27,6 +27,41 @@ public class Kamikaze : Enemy
     {
         realizandoTurno = true;
     }
+
+    HashSet<GridSpace> BFS(int rangeToUse = 0)
+    {
+        //var range = rangeToUse;
+        var range = rangeToUse == 0 ? movement : rangeToUse;
+        HashSet<GridSpace> spaces = new HashSet<GridSpace>();
+        Queue<BFS_Node> nodes = new Queue<BFS_Node>();
+        foreach (var move in space.moves)
+        {
+            if (movement > 0 && !move.visited && CanMoveThere(space, move))
+            {
+                spaces.Add(move);
+                nodes.Enqueue(new BFS_Node(move, null, 1));
+            }
+        }
+        while (nodes.Any())
+        {
+            var currentNode = nodes.Dequeue();
+            if (currentNode.distance < movement)
+            {
+                foreach (var move in currentNode.space.moves)
+                {
+                    if (!move.visited && CanMoveThere(currentNode.space, move))
+                    {
+                        if (!(currentNode.distance + 1 == movement && move.GetEntity() is PJ))
+                        {
+                            spaces.Add(move);
+                            nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
+                        }
+                    }
+                }
+            }
+        }
+        return spaces;
+    }
     
     [Task]
     bool EndTurn()
@@ -46,14 +81,25 @@ public class Kamikaze : Enemy
     [Task]
     bool EnemiesInRange()
     {
-        //Comprobar los enemigos que hay a rango de explotar y devolver false si no hay ninguno
-        return false;
+        var spacesInRange = BFS();
+        foreach(var s in spacesInRange)
+        {
+            if(s.GetEntity() is Ally ally)
+            {
+                enemiesInRangeList.Add(ally);
+            }
+        }
+        return enemiesInRangeList.Any();
     }
 
     [Task]
     bool ChooseCloserEnemy()
     {
         //Elegir enemigo más cercano para ir moviendose si no hay nadie a rango de explotar
+        foreach(var enemy in GameManager.Instance.enemies)
+        {
+
+        }
         return false;
     }
 

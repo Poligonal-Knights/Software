@@ -17,7 +17,7 @@ public class Wizard_Ability_2 : Ability
     {
         base.Confirm();
 
-        foreach (var ally in Object.FindObjectsOfType<Ally>())
+        foreach (var ally in GameManager.Instance.allies)
         {
             new Rush(ally);
         }

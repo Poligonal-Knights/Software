@@ -136,7 +136,7 @@ public class Enemy : PJ
         if(realizandoTurno)EnemyManager.Instance.enemyTurnEnd();
         realizandoTurno = false;
         IsMoving = false;
-        IsDying = true;
+        //IsDying = true;
         EnemyManager.Instance.enemyList.Remove(this);
     }
 

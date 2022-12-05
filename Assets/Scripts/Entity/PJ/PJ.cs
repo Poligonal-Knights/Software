@@ -103,6 +103,12 @@ public class PJ : Entity
         }
     }
 
+    protected override void UpdateGridSpace()
+    {
+        base.UpdateGridSpace();
+        space.ActivateActivatables(this);
+    }
+
     public virtual bool CanMoveThere(GridSpace start, GridSpace destination)
     {
         if (CanJump || start.gridPosition.y == destination.gridPosition.y)
@@ -224,8 +230,9 @@ public class PJ : Entity
     public virtual void Die()
     {
         space.SetEntity(null);
-        Destroy(gameObject);
         IsDying = true;
+        GameManager.Instance.RemovePJ(this);
+        Destroy(gameObject);
     }
 
     protected override void OnMouseUpAsButton()

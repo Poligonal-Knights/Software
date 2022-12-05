@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,11 +13,22 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(GameManager.Instance.nextScene);
     }
 
-    Entity[] entities;
+    public HashSet<Entity> entities;
+    public HashSet<Block> blocks;
+    public HashSet<PJ> PJs;
+    public HashSet<Ally> allies;
+    public HashSet<Enemy> enemies;
 
-    private void Awake() => Instance = this;
+    private void Awake()
+    {
+        Instance = this;
+        entities = FindObjectsOfType<Entity>().ToHashSet();
+        blocks = FindObjectsOfType<Block>().ToHashSet();
+        PJs = FindObjectsOfType<PJ>().ToHashSet();
+        allies = FindObjectsOfType<Ally>().ToHashSet();
+        enemies = FindObjectsOfType<Enemy>().ToHashSet();
+    }
 
-    // Start is called before the first frame update
     void Start()
     {
         Init();
@@ -26,17 +38,26 @@ public class GameManager : MonoBehaviour
 
     void Init()
     {
-        entities = FindObjectsOfType<Entity>();
+
     }
 
-    // Update is called once per frame
+    public void RemovePJ(PJ PJToRemove)
+    {
+        entities.Remove(PJToRemove);
+        PJs.Remove(PJToRemove);
+        if (PJToRemove is Ally ally)
+        {
+            allies.Remove(ally);
+        }
+        else if (PJToRemove is Enemy enemy)
+        {
+            enemies.Remove(enemy);
+        }
+    }
+
     void Update()
     {
-        //foreach (Entity entity in entities)
-        //{
-        //    var position = entity.GetGridSpace().gridPosition;
-            
-        //}
+
 
     }
 }

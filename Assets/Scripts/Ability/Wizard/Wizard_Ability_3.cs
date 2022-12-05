@@ -82,7 +82,7 @@ public class Wizard_Ability_3 : Ability
             if (affectedSpace.GetEntity() is Enemy enemy)
             {
                 AnyEnemyWasAffected = true;
-                enemy.BePushed(direction, wizard.pushStrength, wizard.trapBonusDamage, wizard);
+                enemy.BePushed(direction, wizard.pushStrength, wizard.damage, wizard);
             }
         }
         ClearAffectedSpaces();

@@ -8,7 +8,7 @@ using System.Linq;
 public class Warden : Enemy
 {
     List<PJ> enemiesInRangeList = new List<PJ>();
-    private List<Enemy> myAllies;
+    //private List<Enemy> myAllies;
     private PJ focusedEnemy = null;
     private Enemy protectedAlly = null;
 
@@ -17,7 +17,7 @@ public class Warden : Enemy
     protected override void Start()
     {
         base.Start();
-        myAllies = FindObjectsOfType<Enemy>().ToList();
+        //myAllies = FindObjectsOfType<Enemy>().ToList();
     }
 
     // Update is called once per frame
@@ -62,9 +62,9 @@ public class Warden : Enemy
     [Task]
     bool IsAnyoneAlive()
     {
-        foreach (var ally in myAllies)
+        foreach (var myAlly in GameManager.Instance.enemies)
         {
-            if (ally.health > 0 && ally is not Warden)
+            if (myAlly.health > 0 && myAlly is not Warden)
             {
                 return true;
             }

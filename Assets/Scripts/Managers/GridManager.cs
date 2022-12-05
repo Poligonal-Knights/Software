@@ -37,8 +37,8 @@ public class GridManager : MonoBehaviour
     {
         minBounds = new Vector3Int(Int32.MaxValue, Int32.MaxValue, Int32.MaxValue);
         maxBounds = new Vector3Int(Int32.MinValue, Int32.MinValue, Int32.MinValue);
-        Entity[] entities = GameObject.FindObjectsOfType<Entity>();
-        foreach (Entity e in entities)
+        //Entity[] entities = GameObject.FindObjectsOfType<Entity>();
+        foreach (Entity e in GameManager.Instance.entities)
         {
             var pos = Vector3Int.RoundToInt(e.transform.position);
             minBounds = Vector3Int.Min(pos, minBounds);
@@ -71,11 +71,11 @@ public class GridManager : MonoBehaviour
     {
         foreach (var s in spaces)
             s.GetAdyacentsSpaces();
-        foreach (var e in FindObjectsOfType<Entity>())
+        foreach (var e in GameManager.Instance.entities)
         {
             e.Init();
         }
-        foreach (var e in FindObjectsOfType<Block>())
+        foreach (var e in GameManager.Instance.blocks)
         {
             e.UpdateUpperSpace();
         }

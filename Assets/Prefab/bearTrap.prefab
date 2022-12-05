@@ -98,8 +98,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6061046727505203797}
   - component: {fileID: 8695063868082678838}
-  - component: {fileID: 5920950347398517334}
   - component: {fileID: 4158923813786269172}
+  - component: {fileID: -3702604212680945609}
   m_Layer: 0
   m_Name: bearTrap
   m_TagString: Untagged
@@ -136,22 +136,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.31, y: 0.2728111, z: 0.32200533}
   m_Center: {x: 0, y: -0.2648283, z: 0}
---- !u!114 &5920950347398517334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8158245455516006307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3bb14c6ce7a1c64fb78f2c33c401703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnClick:
-    m_PersistentCalls:
-      m_Calls: []
-  activated: 0
 --- !u!54 &4158923813786269172
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -168,3 +152,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-3702604212680945609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8158245455516006307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d21d400c09bac544b40175b37eaee71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 3

@@ -11,7 +11,7 @@ public class Priest_Ability_4 : Ability
 
     public override void Preview()
     {
-        foreach (var pj in Object.FindObjectsOfType<PJ>())
+        foreach (var pj in GameManager.Instance.PJs)
         {
             AddSelectableSpace(pj.GetGridSpace());
         }

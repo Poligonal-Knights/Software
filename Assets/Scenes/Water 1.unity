@@ -3149,11 +3149,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 458121981773691544, guid: c166f6598525cd1458a111949b7475b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.0002
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 458121981773691544, guid: c166f6598525cd1458a111949b7475b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9248645
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 458121981773691544, guid: c166f6598525cd1458a111949b7475b5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8894,6 +8894,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8164596033238225240, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8164596033238225247, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.450965
@@ -8909,6 +8913,10 @@ PrefabInstance:
     - target: {fileID: 8164596034103304777, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: nextScene
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798416303241275856, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
@@ -14958,7 +14966,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4837352154470818270, guid: d4a01e625bda3134ea6a6f7323d6e2b3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.85712504
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4837352154470818270, guid: d4a01e625bda3134ea6a6f7323d6e2b3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15015,6 +15023,10 @@ PrefabInstance:
     - target: {fileID: 4837352154470818271, guid: d4a01e625bda3134ea6a6f7323d6e2b3, type: 3}
       propertyPath: trapBonusDamage
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5505578552521478079, guid: d4a01e625bda3134ea6a6f7323d6e2b3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4a01e625bda3134ea6a6f7323d6e2b3, type: 3}

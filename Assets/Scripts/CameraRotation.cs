@@ -36,7 +36,7 @@ public class CameraRotation : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         transform.RotateAround(center, Vector3.up, clockwise * speed * (duration - timeSinceStart));
-        foreach (var pjs in FindObjectsOfType<PJ>())
+        foreach (var pjs in GameManager.Instance.PJs)
         {
             pjs.UpdateOrientation();
         }
