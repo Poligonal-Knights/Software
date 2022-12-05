@@ -22,21 +22,22 @@ public class Kamikaze : Enemy
     {
         base.Update();
     }
-    
+
     public override void EnemyAI()
     {
         realizandoTurno = true;
     }
 
-    HashSet<GridSpace> BFS(int rangeToUse = 0)
+    HashSet<GridSpace> BFS(GridSpace start = null, int rangeToUse = 0)
     {
         //var range = rangeToUse;
         var range = rangeToUse == 0 ? movement : rangeToUse;
+        var initialSpace = start == null ? space : start;
         HashSet<GridSpace> spaces = new HashSet<GridSpace>();
         Queue<BFS_Node> nodes = new Queue<BFS_Node>();
-        foreach (var move in space.moves)
+        foreach (var move in initialSpace.moves)
         {
-            if (movement > 0 && !move.visited && CanMoveThere(space, move))
+            if (range > 0 && !spaces.Contains(move) && CanMoveThere(space, move))
             {
                 spaces.Add(move);
                 nodes.Enqueue(new BFS_Node(move, null, 1));
@@ -45,13 +46,13 @@ public class Kamikaze : Enemy
         while (nodes.Any())
         {
             var currentNode = nodes.Dequeue();
-            if (currentNode.distance < movement)
+            if (currentNode.distance < range)
             {
                 foreach (var move in currentNode.space.moves)
                 {
-                    if (!move.visited && CanMoveThere(currentNode.space, move))
+                    if (!spaces.Contains(move) && CanMoveThere(currentNode.space, move))
                     {
-                        if (!(currentNode.distance + 1 == movement && move.GetEntity() is PJ))
+                        if (!(currentNode.distance + 1 == range && move.GetEntity() is PJ))
                         {
                             spaces.Add(move);
                             nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
@@ -62,7 +63,7 @@ public class Kamikaze : Enemy
         }
         return spaces;
     }
-    
+
     [Task]
     bool EndTurn()
     {
@@ -73,7 +74,7 @@ public class Kamikaze : Enemy
     }
 
     [Task]
-    bool  IsMyTurn()
+    bool IsMyTurn()
     {
         return realizandoTurno;
     }
@@ -81,10 +82,10 @@ public class Kamikaze : Enemy
     [Task]
     bool EnemiesInRange()
     {
-        var spacesInRange = BFS();
-        foreach(var s in spacesInRange)
+        var spacesInRange = BFS(rangeToUse: movement + attackRange);
+        foreach (var s in spacesInRange)
         {
-            if(s.GetEntity() is Ally ally)
+            if (s.GetEntity() is Ally ally)
             {
                 enemiesInRangeList.Add(ally);
             }
@@ -96,7 +97,7 @@ public class Kamikaze : Enemy
     bool ChooseCloserEnemy()
     {
         //Elegir enemigo más cercano para ir moviendose si no hay nadie a rango de explotar
-        foreach(var enemy in GameManager.Instance.enemies)
+        foreach (var enemy in GameManager.Instance.enemies)
         {
 
         }
