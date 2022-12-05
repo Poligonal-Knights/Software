@@ -220,6 +220,7 @@ public class Archer : Enemy
     [Task]
     bool Attack()
     {
+        LineRendererManager.Instance.AddLine(this.GetGridSpace().GetWorldPosition(), focusedEnemy.GetGridSpace().GetWorldPosition());
         //Correr animación de ataque mirando al enemigo
         Debug.Log("Atacando a " + focusedEnemy + " con " + focusedEnemy.health);
         focusedEnemy.DealDamage(damage);

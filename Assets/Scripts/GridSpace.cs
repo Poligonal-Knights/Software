@@ -229,7 +229,19 @@ public class GridSpace
                 (neighbors["down"].GetEntity() as Block).SetInAreaAttackMode();
             else
                 (neighbors["down"].GetEntity() as Block).StopAnimation();
+        }
+    }
 
+    public void SetHealed(bool s)
+    {
+        affected = s;
+        //if (affected) gridManager.affectedSpaces.Add(this);
+        if (neighbors["down"].HasBlock())
+        {
+            if (affected)
+                (neighbors["down"].GetEntity() as Block).SetInAreaHealMode();
+            else
+                (neighbors["down"].GetEntity() as Block).StopAnimation();
         }
     }
 

@@ -13501,6 +13501,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1468960736262111311, guid: 480ff3ff1c406504d84b8b9cac1da2bc, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1470004804129264388, guid: 480ff3ff1c406504d84b8b9cac1da2bc, type: 3}
       propertyPath: m_Name
       value: Archer
