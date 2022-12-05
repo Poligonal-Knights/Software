@@ -13,7 +13,7 @@ public class Knight_Ability_3 : Ability
         int y = PJSpace.gridPosition.y;
         for (int x = PJSpace.gridPosition.x - 1; x < PJSpace.gridPosition.x + 2; x++)
             for (int z = PJSpace.gridPosition.z - 1; z < PJSpace.gridPosition.z + 2; z++)
-                AddSelectableSpace(GridManager.Instance.GetGridSpace(x, y, z));
+                AddHealedSpace(GridManager.Instance.GetGridSpace(x, y, z));
         readyToConfirm = true;
     }
 
@@ -21,6 +21,7 @@ public class Knight_Ability_3 : Ability
     {
         base.Cancel();
         ClearSelectableSpaces();
+        ClearAffectedSpaces();
         LogicManager.Instance.PJFinishedMoving();
     }
 
@@ -33,5 +34,6 @@ public class Knight_Ability_3 : Ability
             if (space.GetEntity() is Ally ally) ally.SetInvencibility(true);
         }
         ClearSelectableSpaces();
+        ClearAffectedSpaces();
     }
 }

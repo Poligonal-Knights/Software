@@ -23,7 +23,7 @@ public class Wizard_Ability_0 : Ability
             }
         }
     }
-
+    //MIRAR SI QUIERO QUE PUEDA PEGAR A MELEE (SE CAMBIA EL INT I = 1 POR = 0 Y EL <= RANGE POR <RANGE)
     public override void SelectTarget(GridSpace selected)
     {
         readyToConfirm = true;

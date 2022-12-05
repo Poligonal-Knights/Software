@@ -23,7 +23,7 @@ public class Priest_Ability_2 : Ability
             s.SetSelectable(true);
         }
         SelectedSpace = selected;
-        AddAffectedSpace(selected);
+        AddHealedSpace(selected);
         readyToConfirm = true;
     }
 

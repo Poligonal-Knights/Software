@@ -54,7 +54,7 @@ public class Priest_Ability_1 : Ability
                     var candidateSpace = GridManager.Instance.GetGridSpace(x, y, z);
                     if (candidateSpace != null && candidateSpace.IsPassable())
                     {
-                        AddAffectedSpace(candidateSpace);
+                        AddHealedSpace(candidateSpace);
                     }
                 }
             }

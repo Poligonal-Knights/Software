@@ -122,12 +122,12 @@ MonoBehaviour:
   damage: 2
   CanJump: 0
   defaultSpeed: 5
+  defense: 0
   IsMoving: 0
   realizandoTurno: 0
   beingPushed: 0
   comboed: 0
   attackRange: 1
-  myDamage: 2
 --- !u!114 &2762371186593407986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 7086527525058498307}
   - component: {fileID: 2981716171773218135}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
