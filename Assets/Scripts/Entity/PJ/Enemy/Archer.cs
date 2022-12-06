@@ -16,7 +16,7 @@ public class Archer : Enemy
     protected override void Start()
     {
         base.Start();
-        
+
     }
 
     // Update is called once per frame
@@ -72,7 +72,7 @@ public class Archer : Enemy
             {
                 //if (ManhattanDistance(vSpace, enemy.GetGridSpace()) <= attackRange)
                 if (vSpace.ManhattanDistance2D(enemy.GetGridSpace()) <= attackRange)
-                    {
+                {
                     enemiesInRangeList.Add(enemy);
                     break;
                 }
@@ -155,7 +155,7 @@ public class Archer : Enemy
         {
             //if (ManhattanDistance(vSpace, focusedEnemy.GetGridSpace()) <= attackRange)
             if (GridSpace.ManhattanDistance2D(vSpace, focusedEnemy.GetGridSpace()) <= attackRange)
-                {
+            {
                 candidateSpaces.Add(vSpace);
             }
         }
@@ -220,7 +220,9 @@ public class Archer : Enemy
     [Task]
     bool Attack()
     {
-        LineRendererManager.Instance.AddLine(this.GetGridSpace().GetWorldPosition(), focusedEnemy.GetGridSpace().GetWorldPosition());
+        Debug.Log(this + " ATTACK");
+        if (!getAttackPerformed())
+            LineRendererManager.Instance.AddLine(this.GetGridSpace().GetWorldPosition(), focusedEnemy.GetGridSpace().GetWorldPosition());
         //Correr animación de ataque mirando al enemigo
         Debug.Log("Atacando a " + focusedEnemy + " con " + focusedEnemy.health);
         focusedEnemy.DealDamage(damage);

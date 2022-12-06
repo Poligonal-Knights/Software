@@ -46,6 +46,8 @@ public class GridManager : MonoBehaviour
         }
         minBounds -= Vector3Int.one;
         maxBounds += Vector3Int.one;
+        Debug.Log(minBounds);
+        Debug.Log(maxBounds);
     }
 
     void ShowBounds()
@@ -190,6 +192,7 @@ public class GridManager : MonoBehaviour
     public Vector3 GetCenterofGrid()
     {
         Vector3Int minMax = maxBounds - minBounds;
+        Debug.Log("center: " + (minMax / 2 + minBounds));
         return minMax / 2 + minBounds;
     }
     
