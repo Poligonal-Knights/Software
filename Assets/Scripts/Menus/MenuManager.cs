@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     // Start is called before the first frame update
+    public static MenuManager Instance { get; private set; }
+    private void Awake() => Instance = this;
     void Start()
     {
         
@@ -50,6 +52,14 @@ public class MenuManager : MonoBehaviour
     public void BackToMSelect()
     {
         SceneManager.LoadScene(1);
+    }
+
+    
+
+    public void CloseLvlCanvas()
+    {
+        MenuClicker.Instance.selectedCanvas.gameObject.SetActive(false);
+        MenuClicker.Instance.pointer.transform.SetPositionAndRotation(new Vector3(0,50,0),new Quaternion());
     }
 
 }
