@@ -5609,6 +5609,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SettingsCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3966342205057350927, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
     - target: {fileID: 4070266573934801150, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5693,6 +5697,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4429883940740159792, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915966646203543252, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
+    - target: {fileID: 6786205049647255080, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
+    - target: {fileID: 6816525460316820496, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7868701014638337904, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
+    - target: {fileID: 7970212875845066957, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
+    - target: {fileID: 8088501190290971372, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
+    - target: {fileID: 8523416502362193769, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8551275806546636251, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
 --- !u!224 &5278002702842554498 stripped
