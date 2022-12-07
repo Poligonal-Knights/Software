@@ -2100,7 +2100,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7660722270007298678}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: HideAllSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &425148199037695791
 GameObject:
   m_ObjectHideFlags: 0
@@ -2434,7 +2446,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7121803447939401012}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2886581603283975654}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &507751287666820877
 GameObject:
   m_ObjectHideFlags: 0
@@ -2767,7 +2791,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2708752133172446814}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2305674152755439486}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &543757308515285269
 GameObject:
   m_ObjectHideFlags: 0
@@ -2888,7 +2924,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6913824986205095907}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4853210272641374207}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &588552516774449676
 GameObject:
   m_ObjectHideFlags: 0
@@ -3223,7 +3271,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 850623106120586659}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: HideAllSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &627081221136324892
 GameObject:
   m_ObjectHideFlags: 0
@@ -4270,7 +4330,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4648113072437171809}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: HideAllSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &802883024188464008
 GameObject:
   m_ObjectHideFlags: 0
@@ -4569,7 +4641,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4932258992312638565}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: HideAllSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &866241659445670666
 GameObject:
   m_ObjectHideFlags: 0
@@ -5834,7 +5918,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3656788184442184632}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4853210272641374207}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1111392555456275421
 GameObject:
   m_ObjectHideFlags: 0
@@ -7566,7 +7662,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2686084365070481219}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 389571058384777350}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1388807115090500320
 GameObject:
   m_ObjectHideFlags: 0
@@ -8076,7 +8184,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5237068552153205261}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6981692613575475076}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1504920502242087363
 GameObject:
   m_ObjectHideFlags: 0
@@ -8171,7 +8291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5726144934015439399
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8210,7 +8330,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -8731,7 +8851,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &8464554192082218114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9216,7 +9336,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3662309304776188842}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4853210272641374207}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1773109525742351549
 GameObject:
   m_ObjectHideFlags: 0
@@ -9413,7 +9545,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4760211734266423072
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9452,7 +9584,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -10282,7 +10414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1366796567508492034
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11515,7 +11647,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6312249797599437716}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3588717965838492827}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2265694771243620765
 GameObject:
   m_ObjectHideFlags: 0
@@ -12105,7 +12249,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7301751637162055130}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6981692613575475076}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2414397354634283411
 GameObject:
   m_ObjectHideFlags: 0
@@ -12303,7 +12459,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6824496822290647680}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3588717965838492827}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2447981487304014203
 GameObject:
   m_ObjectHideFlags: 0
@@ -17168,7 +17336,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3864296322522919038}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6981692613575475076}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3402909928043264043
 GameObject:
   m_ObjectHideFlags: 0
@@ -17253,7 +17433,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &2992741680831223401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18788,7 +18968,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6882675634908845445}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4853210272641374207}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3694434769469042630
 GameObject:
   m_ObjectHideFlags: 0
@@ -19979,7 +20171,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &4561987759014718804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20259,21 +20451,21 @@ MonoBehaviour:
   adelAb3Canvas: {fileID: 6125855890233077117}
   adelAb4Canvas: {fileID: 7996446680237444542}
   adelPasiveCanvas: {fileID: 4745465307032136388}
-  magnusCanvas: {fileID: 7492418669903976950}
+  magnusCanvas: {fileID: 282582181546487061}
   magnusBasicCanvas: {fileID: 6981433247958481518}
   magnusAb1Canvas: {fileID: 4148485735235071984}
   magnusAb2Canvas: {fileID: 4737723082710644986}
   magnusAb3Canvas: {fileID: 8255272660100778921}
   magnusAb4Canvas: {fileID: 3975274538545250232}
   magnusPasiveCanvas: {fileID: 9021172767405897426}
-  kelsierCanvas: {fileID: 5855311474542659571}
+  kelsierCanvas: {fileID: 6981692613575475076}
   kelsierBasicCanvas: {fileID: 7312327197085857191}
   kelsierAb1Canvas: {fileID: 967883882781429871}
   kelsierAb2Canvas: {fileID: 5441809075743660492}
   kelsierAb3Canvas: {fileID: 2886581603283975654}
   kelsierAb4Canvas: {fileID: 6223623036130971950}
   kelsierPasiveCanvas: {fileID: 893591243927378095}
-  petraCanvas: {fileID: 2792357596202956705}
+  petraCanvas: {fileID: 4853210272641374207}
   petraBasicCanvas: {fileID: 2305674152755439486}
   petraAb1Canvas: {fileID: 389571058384777350}
   petraAb2Canvas: {fileID: 6798492029527484088}
@@ -20408,7 +20600,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8973040381218042358}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3588717965838492827}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3926542789469098643
 GameObject:
   m_ObjectHideFlags: 0
@@ -21435,7 +21639,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5552107828906277611}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: HideAllSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4066210162549954427
 GameObject:
   m_ObjectHideFlags: 0
@@ -21557,7 +21773,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 799514718630790194}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7203671476822888258}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4077650026932540324
 GameObject:
   m_ObjectHideFlags: 0
@@ -23318,7 +23546,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 161918385874596739}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: HideAllSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4537027703866034360
 GameObject:
   m_ObjectHideFlags: 0
@@ -23668,7 +23908,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8743397437216967009}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4853210272641374207}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4549509970975701276
 GameObject:
   m_ObjectHideFlags: 0
@@ -23753,7 +24005,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &975566244328290831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24219,7 +24471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3113143405457287696
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24290,7 +24542,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &5687794088989524327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25731,7 +25983,7 @@ MonoBehaviour:
         m_MethodName: ShowThisCanvas
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 6865613071571723549}
+          m_ObjectArgument: {fileID: 4287132136137286089}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -26114,7 +26366,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8234791904694812558}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: HideAllSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5185825898468228793
 GameObject:
   m_ObjectHideFlags: 0
@@ -27085,7 +27349,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4695012785310426448}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6981692613575475076}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5346812855810837269
 GameObject:
   m_ObjectHideFlags: 0
@@ -27206,7 +27482,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6806655162997015026}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4853210272641374207}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5368759105204682447
 GameObject:
   m_ObjectHideFlags: 0
@@ -28806,7 +29094,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2351896216086446480}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: HideAllSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5729568841912182686
 GameObject:
   m_ObjectHideFlags: 0
@@ -29891,7 +30191,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5604507745705968673}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6798492029527484088}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5858502332814851000
 GameObject:
   m_ObjectHideFlags: 0
@@ -31098,7 +31410,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2622137242502086660}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6981692613575475076}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6135270900978383930
 GameObject:
   m_ObjectHideFlags: 0
@@ -33172,7 +33496,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6935006569698571247}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: HideAllSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6505139405348725612
 GameObject:
   m_ObjectHideFlags: 0
@@ -33877,7 +34213,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6362029782265024503}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: HideAllSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6653125078791459386
 GameObject:
   m_ObjectHideFlags: 0
@@ -34375,7 +34723,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &6748139848403868699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35143,7 +35491,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6579709801799330495}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7312327197085857191}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6976019685903673618
 GameObject:
   m_ObjectHideFlags: 0
@@ -35341,7 +35701,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1288461634864325702}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 967883882781429871}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6985989138442861733
 GameObject:
   m_ObjectHideFlags: 0
@@ -36031,7 +36403,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9139951740015631270}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 282582181546487061}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7104042645806178902
 GameObject:
   m_ObjectHideFlags: 0
@@ -36305,7 +36689,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4687101074270652045}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: HideAllSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7143837981291035326
 GameObject:
   m_ObjectHideFlags: 0
@@ -36645,7 +37041,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &6315011236391050495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37131,7 +37527,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6543755993531748103}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: HideAllSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7389314133966864769
 GameObject:
   m_ObjectHideFlags: 0
@@ -37837,7 +38245,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4511157148124850065}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: HideAllSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7460261916975673158
 GameObject:
   m_ObjectHideFlags: 0
@@ -37958,7 +38378,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5197171427331194402}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4111917211352003932}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7460263140241993343
 GameObject:
   m_ObjectHideFlags: 0
@@ -38504,7 +38936,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &3765673996289325229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38854,7 +39286,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2268530395081254144}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: HideAllSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7739260900629936984
 GameObject:
   m_ObjectHideFlags: 0
@@ -39189,7 +39633,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7000149649967802681}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: HideAllSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7806073858410793864
 GameObject:
   m_ObjectHideFlags: 0
@@ -39445,7 +39901,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4205374312329729549}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6981692613575475076}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7816186368399841650
 GameObject:
   m_ObjectHideFlags: 0
@@ -39852,7 +40320,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6743136023856235878}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: HideAllSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7975718776466967345
 GameObject:
   m_ObjectHideFlags: 0
@@ -40109,7 +40589,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8019460848077482592}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: HideAllSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8007770162256171619
 GameObject:
   m_ObjectHideFlags: 0
@@ -41689,7 +42181,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3583665765966560420}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4642645439819174768}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8392009033196646918
 GameObject:
   m_ObjectHideFlags: 0
@@ -41989,7 +42493,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 548589365802865210}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: HideAllSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8446604350293646196
 GameObject:
   m_ObjectHideFlags: 0
@@ -42323,7 +42839,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3992271245872847699}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 282582181546487061}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8484165533594790388
 GameObject:
   m_ObjectHideFlags: 0
@@ -43033,7 +43561,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4659315981158948936}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: HideAllSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8648635150566588767
 GameObject:
   m_ObjectHideFlags: 0
@@ -43396,7 +43936,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4824294379220782843}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 893591243927378095}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8717142142097175733
 GameObject:
   m_ObjectHideFlags: 0
@@ -44140,7 +44692,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7923721527374723164}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5441809075743660492}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8804996530703567004
 GameObject:
   m_ObjectHideFlags: 0
@@ -44647,7 +45211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2456232132087211298
 RectTransform:
   m_ObjectHideFlags: 0
@@ -44718,7 +45282,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &4006940971791080888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44992,7 +45556,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8774038677474326053}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7269270085828355861}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8940501288055893221
 GameObject:
   m_ObjectHideFlags: 0
@@ -45425,7 +46001,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5875479704103658500}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: HideAllSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9027654812994935678
 GameObject:
   m_ObjectHideFlags: 0
@@ -46705,7 +47293,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 741257889121250277}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 282582181546487061}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9133604958129984334
 GameObject:
   m_ObjectHideFlags: 0
@@ -46827,7 +47427,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1707741905404436661}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4607301568133808901}
+        m_TargetAssemblyTypeName: SettingsInGameManager, Assembly-CSharp
+        m_MethodName: ShowThisCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6223623036130971950}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9164046646692362119
 GameObject:
   m_ObjectHideFlags: 0
