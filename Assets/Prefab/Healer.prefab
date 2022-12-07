@@ -113,9 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8a474900dfb76e45b7df0be4281c206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClick:
-    m_PersistentCalls:
-      m_Calls: []
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
   maxMovement: 3
   movement: 3
   maxHealth: 6
