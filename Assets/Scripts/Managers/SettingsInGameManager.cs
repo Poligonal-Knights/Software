@@ -131,6 +131,6 @@ public class SettingsInGameManager : MonoBehaviour
         {
             c.gameObject.SetActive(false);
         }
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
     }
 }
