@@ -117,7 +117,7 @@ public class SettingsInGameManager : MonoBehaviour
         foreach (Canvas c in allControlCanvas)
         {
             c.gameObject.SetActive(false);
-        }
+        }                  
         //previousCanvas = currentCanvas;
         //currentCanvas = canvasToShow;
         canvasToShow.gameObject.SetActive(true);

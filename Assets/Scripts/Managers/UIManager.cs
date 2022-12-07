@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     public Canvas alwaysActiveCanvas;
     public Canvas enemyCanvas;
     public Canvas abilityNonDefined;
+    public Canvas SettingsCanvas; 
     
     public Sprite wizardPortrait;
     public Sprite knightPortrait;
@@ -39,6 +40,7 @@ public class UIManager : MonoBehaviour
         allCanvas.Add(habilitiesCanvas);
         allCanvas.Add(previewCanvas);
         allCanvas.Add(enemyCanvas);
+        allCanvas.Add(SettingsCanvas);
         //allCanvas.Add(MenuInGameCanvas);
         //allCanvas.Add(turnCanvas);
         currentCanvas = emptyCanvas;
@@ -83,6 +85,7 @@ public class UIManager : MonoBehaviour
         currentCanvas = canvasToShow;
         currentCanvas.gameObject.SetActive(true);
         //if(GameManager.turnManager.IsPlayerTurn()) turnCanvas.gameObject.SetActive(true);
+        //if(GameManager.turnManager.IsPlayerTurn()) turnCanvas.gameObject.SetActive(true);
         // alwaysActiveCanvas.gameObject.SetActive(true);
     }
 
@@ -96,6 +99,13 @@ public class UIManager : MonoBehaviour
     public void ShowEmptyCanvas()
     {
         ShowThisCanvas(emptyCanvas);
+        //ShowTurnButton();
+    }
+
+    public void ShowSettings()
+    {
+        ShowThisCanvas(SettingsCanvas);
+        alwaysActiveCanvas.gameObject.SetActive(false);
         //ShowTurnButton();
     }
 
