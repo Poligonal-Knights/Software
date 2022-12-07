@@ -21,7 +21,7 @@ public class GridManager : MonoBehaviour
 
     public void Start()
     {
-        
+
     }
 
     public void Init()
@@ -46,8 +46,6 @@ public class GridManager : MonoBehaviour
         }
         minBounds -= Vector3Int.one;
         maxBounds += Vector3Int.one;
-        Debug.Log(minBounds);
-        Debug.Log(maxBounds);
     }
 
     void ShowBounds()
@@ -72,7 +70,7 @@ public class GridManager : MonoBehaviour
     void LoadEntities()
     {
         foreach (var s in spaces)
-            s.GetAdyacentsSpaces();
+            s.GetAdyacentSpaces();
         foreach (var e in GameManager.Instance.entities)
         {
             e.Init();
@@ -126,6 +124,94 @@ public class GridManager : MonoBehaviour
         return maxBounds - minBounds;
     }
 
+    public static HashSet<GridSpace> SpacesAtManhattanRange(GridSpace center, int distance)
+    {
+        HashSet<GridSpace> spacesAtRange = new HashSet<GridSpace>();
+        var spacePosition = center.gridPosition;
+        for (int x = spacePosition.x - distance; x <= spacePosition.x + distance; x++)
+        {
+            for (int z = spacePosition.z - distance + Mathf.Abs(x - spacePosition.x); z <= spacePosition.z + distance - Mathf.Abs(x - spacePosition.x); z++)
+            {
+                for (int y = 0; y < Instance.GetGridSize().y; y++)
+                {
+                    var candidateSpace = Instance.GetGridSpace(x, y, z);
+                    if (candidateSpace != null && candidateSpace.IsPassable())
+                    {
+                        spacesAtRange.Add(candidateSpace);
+                    }
+                }
+            }
+        }
+        return spacesAtRange;
+    }
+
+    public static HashSet<GridSpace> SpacesAtManhattanRange(HashSet<GridSpace> centers, int distance)
+    {
+        HashSet<GridSpace> spacesAtRange = new HashSet<GridSpace>();
+        HashSet<(int, int)> columns = new HashSet<(int, int)>(); //Ligera optimizacion
+
+        foreach (var s in centers)
+        {
+            var spacePosition = s.gridPosition;
+            for (int x = spacePosition.x - distance; x <= spacePosition.x + distance; x++)
+            {
+                for (int z = spacePosition.z - distance + Mathf.Abs(x - spacePosition.x); z <= spacePosition.z + distance - Mathf.Abs(x - spacePosition.x); z++)
+                {
+                    if (columns.Add((x, z)))
+                        for (int y = 0; y < Instance.GetGridSize().y; y++)
+                        {
+                            var candidateSpace = Instance.GetGridSpace(x, y, z);
+                            if (candidateSpace != null && candidateSpace.IsPassable())
+                            {
+                                spacesAtRange.Add(candidateSpace);
+                            }
+                        }
+                    //else Debug.Log("OPTIMIZACION FUNCIONA");
+                }
+            }
+        }
+        return spacesAtRange;
+    }
+
+    public static HashSet<GridSpace> SpacesAtManhattanRange2D(GridSpace center, int distance)
+    {
+        HashSet<GridSpace> spacesAtRange = new HashSet<GridSpace>();
+        var spacePosition = center.gridPosition;
+        for (int x = spacePosition.x - distance; x <= spacePosition.x + distance; x++)
+        {
+            for (int z = spacePosition.z - distance + Mathf.Abs(x - spacePosition.x); z <= spacePosition.z + distance - Mathf.Abs(x - spacePosition.x); z++)
+            {
+                var candidateSpace = Instance.GetGridSpace(x, spacePosition.y, z);
+                if (candidateSpace != null && candidateSpace.IsPassable())
+                {
+                    spacesAtRange.Add(candidateSpace);
+                }
+            }
+        }
+        return spacesAtRange;
+    }
+
+    public static HashSet<GridSpace> SpacesAtManhattanRange2D(HashSet<GridSpace> centers, int distance)
+    {
+        HashSet<GridSpace> spacesAtRange = new HashSet<GridSpace>();
+        foreach (var s in centers)
+        {
+            var spacePosition = s.gridPosition;
+            for (int x = spacePosition.x - distance; x <= spacePosition.x + distance; x++)
+            {
+                for (int z = spacePosition.z - distance + Mathf.Abs(x - spacePosition.x); z <= spacePosition.z + distance - Mathf.Abs(x - spacePosition.x); z++)
+                {
+                    var candidateSpace = Instance.GetGridSpace(x, spacePosition.y, z);
+                    if (candidateSpace != null && candidateSpace.IsPassable())
+                    {
+                        spacesAtRange.Add(candidateSpace);
+                    }
+                }
+            }
+        }
+        return spacesAtRange;
+    }
+
     public void StopPJMovementPreview()
     {
         //foreach(var space in visitedSpaces)
@@ -139,7 +225,7 @@ public class GridManager : MonoBehaviour
     public void StopPJHabilityPreview()
     {
         //ClearAffectedSpaces();
-        foreach(var s in affectedSpaces)
+        foreach (var s in affectedSpaces)
         {
             if (s.neighbors["down"].HasBlock()) (s.neighbors["down"].GetEntity() as Block).StopAnimation();
         }
@@ -148,7 +234,7 @@ public class GridManager : MonoBehaviour
 
     public void SetSelectedSpace(GridSpace g)
     {
-        if(selectedSpace != null)
+        if (selectedSpace != null)
         {
             selectedSpace.SetSelected(false);
         }
@@ -195,7 +281,7 @@ public class GridManager : MonoBehaviour
         Debug.Log("center: " + (minMax / 2 + minBounds));
         return minMax / 2 + minBounds;
     }
-    
+
     public void clearNodes()
     {
         foreach (var space in spaces)

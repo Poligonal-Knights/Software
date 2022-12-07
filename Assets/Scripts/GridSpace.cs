@@ -78,7 +78,7 @@ public class GridSpace
         return false;
     }
 
-    public void GetAdyacentsSpaces()
+    public void GetAdyacentSpaces()
     {
         neighbors["right"] = gridManager.GetGridSpace(gridPosition + Vector3Int.right);
         neighbors["left"] = gridManager.GetGridSpace(gridPosition + Vector3Int.left);

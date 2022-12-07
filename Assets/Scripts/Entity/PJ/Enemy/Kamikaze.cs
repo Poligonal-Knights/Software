@@ -28,42 +28,6 @@ public class Kamikaze : Enemy
         realizandoTurno = true;
     }
 
-    HashSet<GridSpace> BFS(GridSpace start = null, int rangeToUse = 0)
-    {
-        //var range = rangeToUse;
-        var range = rangeToUse == 0 ? movement : rangeToUse;
-        var initialSpace = start == null ? space : start;
-        HashSet<GridSpace> spaces = new HashSet<GridSpace>();
-        Queue<BFS_Node> nodes = new Queue<BFS_Node>();
-        foreach (var move in initialSpace.moves)
-        {
-            if (range > 0 && !spaces.Contains(move) && CanMoveThere(space, move))
-            {
-                spaces.Add(move);
-                nodes.Enqueue(new BFS_Node(move, null, 1));
-            }
-        }
-        while (nodes.Any())
-        {
-            var currentNode = nodes.Dequeue();
-            if (currentNode.distance < range)
-            {
-                foreach (var move in currentNode.space.moves)
-                {
-                    if (!spaces.Contains(move) && CanMoveThere(currentNode.space, move))
-                    {
-                        if (!(currentNode.distance + 1 == range && move.GetEntity() is PJ))
-                        {
-                            spaces.Add(move);
-                            nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
-                        }
-                    }
-                }
-            }
-        }
-        return spaces;
-    }
-
     [Task]
     bool EndTurn()
     {
@@ -82,12 +46,17 @@ public class Kamikaze : Enemy
     [Task]
     bool EnemiesInRange()
     {
-        var spacesInRange = BFS(rangeToUse: movement + attackRange);
-        foreach (var s in spacesInRange)
+        HashSet<GridSpace> spacesInRange = BFS.GetSpacesInRange(space, movement, CanMoveThere);
+        foreach (var enemy in GameManager.Instance.allies)
         {
-            if (s.GetEntity() is Ally ally)
+            foreach (var s in spacesInRange)
             {
-                enemiesInRangeList.Add(ally);
+                if (s.gridPosition.y == enemy.GetGridSpace().gridPosition.y &&
+                                s.ManhattanDistance2D(enemy.GetGridSpace()) <= attackRange)
+                {
+                    enemiesInRangeList.Add(enemy);
+                    break;
+                }
             }
         }
         return enemiesInRangeList.Any();
@@ -97,17 +66,52 @@ public class Kamikaze : Enemy
     bool ChooseCloserEnemy()
     {
         //Elegir enemigo más cercano para ir moviendose si no hay nadie a rango de explotar
-        foreach (var enemy in GameManager.Instance.enemies)
+        GridSpace closerEnemySpace = BFS.GetGoalGridSpace(space, int.MaxValue, CanMoveThere, (GridSpace candidate) =>
         {
-
-        }
-        return false;
+            if (candidate.GetEntity() is null)
+            {
+                foreach (var move in candidate.moves)
+                {
+                    if (move.GetEntity() is Ally)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        });
+        focusedEnemy = closerEnemySpace.GetEntity() as PJ;
+        optimalSpace = closerEnemySpace;
+        return true;
     }
 
     [Task]
     bool ChooseOptimalSpace()
     {
         //Elegir espacio donde más enemigos son afectados
+        GridSpace _OptimalSpace = null;
+        //SpacesInRange quiza puede estar en un miembro para ahorrar una busqueda
+        HashSet<GridSpace> spacesInMovementRange = BFS.GetSpacesInRange(space, movement, CanMoveThere);
+        var enemies = GameManager.Instance.allies;
+        int enemiesAffected, maxEnemiesAffected = 0;
+        foreach (var space in spacesInMovementRange)
+        {
+            enemiesAffected = 0;
+            foreach (var enemy in enemies)
+            {
+                if (space.gridPosition.y == enemy.GetGridSpace().gridPosition.y &&
+                    space.ManhattanDistance2D(enemy.GetGridSpace()) <= attackRange)
+                {
+                    enemiesAffected++;
+                }
+            }
+            if (maxEnemiesAffected < enemiesAffected)
+            {
+                maxEnemiesAffected = enemiesAffected;
+                _OptimalSpace = space;
+            }
+        }
+        optimalSpace = _OptimalSpace;
         return true;
     }
     [Task]
@@ -116,11 +120,12 @@ public class Kamikaze : Enemy
         bool worked = false;
         foreach (PJ enemy in enemiesInRangeList)
         {
-            if (enemy is Knight)
+            if (enemy is Knight knight)
             {
-                if ((enemy as Knight).UsingGritoDeBatalla())
+                if (knight.UsingGritoDeBatalla())
                 {
-                    focusedEnemy = enemy;
+                    focusedEnemy = knight;
+                    optimalSpace = focusedEnemy.GetGridSpace();
                     ThisTask.Succeed();
                     worked = true;
                 }
@@ -138,8 +143,17 @@ public class Kamikaze : Enemy
     [Task]
     bool Explosion()
     {
-        this.DealDamage(999);
         //Implementar daño a los enemigos en rango de la explosión
+        foreach (var enemy in GameManager.Instance.allies)
+        {
+            if (space.gridPosition.y == enemy.GetGridSpace().gridPosition.y &&
+                space.ManhattanDistance2D(enemy.GetGridSpace()) <= attackRange)
+            {
+                enemy.DealDamage(damage);
+            }
+        }
+        this.DealDamage(health);
+        Debug.Log("THINGS GOT BOOMBY BOOMBY");
         return false;
     }
     [Task]
@@ -152,6 +166,21 @@ public class Kamikaze : Enemy
     bool GetCloser()
     {
         //Moverse a la casilla seleccionada como optima
+        var goalNode = optimalSpace.node;
+        if (goalNode is not null)
+        {
+            var node = goalNode;
+            while ((node is not null) && (node.distance > movement || node.space.GetEntity() is PJ))
+            {
+                node = node.parent;
+            }
+
+            if (node is not null)
+            {
+                MoveTo(node.space);
+            }
+        }
+
         return true;
     }
 }

@@ -113,9 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f79bf77496a29046b24bf49da9dda20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClick:
-    m_PersistentCalls:
-      m_Calls: []
+  frontSprite: {fileID: 21300000, guid: bfcbf11e2b1c0604282986e2ebf9a87a, type: 3}
+  backSprite: {fileID: 21300000, guid: 39871663929e7e047a6bc37e5653427d, type: 3}
   maxMovement: 3
   movement: 3
   maxHealth: 3
@@ -123,6 +122,7 @@ MonoBehaviour:
   damage: 5
   CanJump: 0
   defaultSpeed: 3
+  defense: 0
   IsMoving: 0
   realizandoTurno: 0
   beingPushed: 0
@@ -160,6 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4732579589997778177}
   - component: {fileID: 8544944727083871867}
+  - component: {fileID: 837332148155390352}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -234,3 +235,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &837332148155390352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7269074092783762198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481723ea5e8deae4386d185b731e0aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

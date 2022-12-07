@@ -86,6 +86,7 @@ public class Warden : Enemy
     [Task]
     bool IsThereAnyHealer()
     {
+        protectedAlly = null;
         return false;
     }
     [Task]
@@ -106,6 +107,7 @@ public class Warden : Enemy
     [Task]
     bool ChooseCloserAlly()
     {
+        //CUANDO NO LLEGO A NINGUNO
         //Nombrar como protegido el aliado más cercano y ya.
         return true;
     }

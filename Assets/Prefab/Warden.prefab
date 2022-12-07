@@ -118,7 +118,7 @@ MonoBehaviour:
   autoReset: 1
   tickOn: 0
   sourceInfos:
-  - isFoldout: 1
+  - isFoldout: 0
     breakPoints: 
     breakPointStatuses: 
     collapsedLines: 
@@ -135,9 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf7a5e4285780944a92044d37cfffee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClick:
-    m_PersistentCalls:
-      m_Calls: []
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
   maxMovement: 0
   movement: 0
   maxHealth: 0

@@ -254,7 +254,7 @@ public class PJ : Entity
     public virtual void DealDamage(int damage)
     {
         GetComponentInChildren<SpriteRenderer>().color = new Color(1, 0, 0);
-        StartCoroutine("GetColorBack");
+        StartCoroutine(GetColorBack());
         health -= (damage-defense);
     }
     IEnumerator GetColorBack()
@@ -270,7 +270,7 @@ public class PJ : Entity
         if (health < maxHealth)
         {
             GetComponentInChildren<SpriteRenderer>().color = new Color(0, 1, 0);
-            StartCoroutine("GetColorBack");
+            StartCoroutine(GetColorBack());
         }
         health = Mathf.Min(health + healedHealth, maxHealth);
     }
