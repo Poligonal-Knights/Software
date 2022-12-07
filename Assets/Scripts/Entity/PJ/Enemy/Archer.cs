@@ -65,6 +65,7 @@ public class Archer : Enemy
             }
         }
 
+        visitedSpaces.Add(this.GetGridSpace());
         foreach (var enemy in GameManager.Instance.allies)
 
         {
@@ -202,8 +203,8 @@ public class Archer : Enemy
         {
             //Si la distancia entre focusedEnemy y Yo es =<1 -> ThisTask.Succeed()  DONE
             //Considero distancia Manhattan
-            var vector = focusedEnemy.GetGridSpace().gridPosition - GetGridSpace().gridPosition;
-            var distance = Mathf.Abs(vector.x) + Mathf.Abs(vector.y) + Mathf.Abs(vector.z);
+            var distance = GridSpace.ManhattanDistance2D(this.GetGridSpace(), focusedEnemy.GetGridSpace());
+            //var distance = Mathf.Abs(vector.x) + Mathf.Abs(vector.y) + Mathf.Abs(vector.z);
 
             if (distance <= attackRange)//Incluído attackRange en Enemy
             {
