@@ -49,12 +49,13 @@ tree("ChooseProtectedAlly")
 
 tree ("PriorityAlly")
 	fallback
-		AlliesInRange()
-		fallback
-			IsThereAnyHealer()
-			IsThereAnyMage()
-			IsThereAnyArcher()
-			IsThereAnyTrashmob()
+		sequence
+			AlliesInRange()
+			fallback
+				IsThereAnyHealer()
+				IsThereAnyMage()
+				IsThereAnyArcher()
+				IsThereAnyTrashmob()
 		ChooseCloserAlly()
 
 tree ("Offense")
