@@ -37,18 +37,18 @@ public class MenuClicker : MonoBehaviour
                     pointer.transform.SetPositionAndRotation(pos, hit.transform.rotation);
                     if (GameObject.ReferenceEquals(hit.transform.gameObject,lvl1))
                     {
-                        selectedCanvas.transform.Find("text").Find("SiBt").GetComponent<Button>().onClick.AddListener(() => MenuManager.Instance.Lvl1());
+                        selectedCanvas.transform.Find("SiBt").GetComponent<Button>().onClick.AddListener(() => MenuManager.Instance.Lvl1());
                     }else if (GameObject.ReferenceEquals(hit.transform.gameObject, lvl2))
                     {
-                        selectedCanvas.transform.Find("text").Find("SiBt").GetComponent<Button>().onClick.AddListener(() => MenuManager.Instance.Lvl2());
+                        selectedCanvas.transform.Find("SiBt").GetComponent<Button>().onClick.AddListener(() => MenuManager.Instance.Lvl2());
                     }
                     else if (GameObject.ReferenceEquals(hit.transform.gameObject, lvl3))
                     {
-                        selectedCanvas.transform.Find("text").Find("SiBt").GetComponent<Button>().onClick.AddListener(() => MenuManager.Instance.Lvl3());
+                        selectedCanvas.transform.Find("SiBt").GetComponent<Button>().onClick.AddListener(() => MenuManager.Instance.Lvl3());
                     }
                     else if (GameObject.ReferenceEquals(hit.transform.gameObject, lvl4))
                     {
-                        selectedCanvas.transform.Find("text").Find("SiBt").GetComponent<Button>().onClick.AddListener(() => MenuManager.Instance.Lvl4());
+                        selectedCanvas.transform.Find("SiBt").GetComponent<Button>().onClick.AddListener(() => MenuManager.Instance.Lvl4());
                     }
 
 
@@ -57,7 +57,7 @@ public class MenuClicker : MonoBehaviour
                 }
                 else 
                 {
-                   // selectedCanvas.gameObject.SetActive(false);
+                    selectedCanvas.gameObject.SetActive(false);
                     pointer.transform.SetPositionAndRotation(oldPos, hit.transform.rotation);
                 }
             }
