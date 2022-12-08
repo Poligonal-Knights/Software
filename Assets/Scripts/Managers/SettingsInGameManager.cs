@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -121,6 +122,7 @@ public class SettingsInGameManager : MonoBehaviour
         //previousCanvas = currentCanvas;
         //currentCanvas = canvasToShow;
         canvasToShow.gameObject.SetActive(true);
+        Debug.Log("Activado canvas" + canvasToShow.ToString());
         //if(GameManager.turnManager.IsPlayerTurn()) turnCanvas.gameObject.SetActive(true);
         // alwaysActiveCanvas.gameObject.SetActive(true);
     }

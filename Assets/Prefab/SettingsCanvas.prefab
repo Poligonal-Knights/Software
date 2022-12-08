@@ -1696,7 +1696,7 @@ MonoBehaviour:
         m_MethodName: ShowThisCanvas
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 2792357596202956705}
+          m_ObjectArgument: {fileID: 4853210272641374207}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -5607,7 +5607,7 @@ MonoBehaviour:
         m_MethodName: ShowThisCanvas
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 7160716247855102216}
+          m_ObjectArgument: {fileID: 4111917211352003932}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -9563,7 +9563,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5726144934015439399
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9628,7 +9628,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &8607891267773125054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9773,7 +9773,7 @@ MonoBehaviour:
         m_MethodName: ShowThisCanvas
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 6865613071571723549}
+          m_ObjectArgument: {fileID: 4287132136137286089}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -10971,7 +10971,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4760211734266423072
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11036,7 +11036,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &150716001222779646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15354,7 +15354,7 @@ MonoBehaviour:
         m_MethodName: ShowThisCanvas
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 7492418669903976950}
+          m_ObjectArgument: {fileID: 282582181546487061}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -16467,7 +16467,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &5869568907560563762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22650,7 +22650,7 @@ MonoBehaviour:
         m_MethodName: ShowThisCanvas
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 5855311474542659571}
+          m_ObjectArgument: {fileID: 6981692613575475076}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -24674,7 +24674,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3605645676106012761
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24739,7 +24739,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &6806308023954511240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27726,7 +27726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3113143405457287696
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35178,7 +35178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7639519398107303719
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36736,7 +36736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1971643207026621547
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36801,7 +36801,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &6851726719480266253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48562,7 +48562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1069106606697601230
 RectTransform:
   m_ObjectHideFlags: 0
@@ -49169,7 +49169,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1720289856482764350
 RectTransform:
   m_ObjectHideFlags: 0
@@ -50746,7 +50746,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2456232132087211298
 RectTransform:
   m_ObjectHideFlags: 0
