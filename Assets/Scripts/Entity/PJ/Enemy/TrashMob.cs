@@ -216,6 +216,8 @@ public class TrashMob : Enemy
     [Task]
     bool Attack()
     {
+        if (!getAttackPerformed())
+            LineRendererManager.Instance.AddLine(this.GetGridSpace().GetWorldPosition(), focusedEnemy.GetGridSpace().GetWorldPosition());
         //Correr animaci�n de ataque mirando al enemigo
         focusedEnemy.DealDamage(damage);
         setAttackPerformed(true);
@@ -231,7 +233,7 @@ public class TrashMob : Enemy
     bool GetCloser()
     {
         //GridManager.Instance.clearNodes();
-        Debug.Log(focusedEnemy);
+        //Debug.Log(focusedEnemy);
         //Implementar camino con el m�ximo movimiento posible hasta el enemigo DONE?
         //Lo mejor ser�a implementar un A*, me falta tiempo
         //Implemento BFS hasta encontrar meta
@@ -252,10 +254,9 @@ public class TrashMob : Enemy
                 {
                     visitedSpaces.Add(move);
                     nodes.Enqueue(new BFS_Node(move, null, 1));
-                    Debug.Log("A�ado un nodo");
                 }
             }
-            Debug.Log("�Hay nodos? " + nodes.Any());
+            //Debug.Log("�Hay nodos? " + nodes.Any());
             while (nodes.Any() && !goalFinded)
             {
                 var currentNode = nodes.Dequeue();
@@ -271,7 +272,7 @@ public class TrashMob : Enemy
                     {
                         visitedSpaces.Add(move);
                         nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
-                        Debug.Log(this+ "Meto un nodo en el movimiento"); 
+                        //Debug.Log(this+ "Meto un nodo en el movimiento"); 
                     }
                 }
             }

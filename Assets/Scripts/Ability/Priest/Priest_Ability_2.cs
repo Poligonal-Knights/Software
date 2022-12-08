@@ -9,7 +9,7 @@ public class Priest_Ability_2 : Ability
 
     public override void Preview()
     {
-        foreach(var ally in Object.FindObjectsOfType<Ally>())
+        foreach(var ally in GameManager.Instance.allies)
         {
             AddSelectableSpace(ally.GetGridSpace());
         }
@@ -23,7 +23,7 @@ public class Priest_Ability_2 : Ability
             s.SetSelectable(true);
         }
         SelectedSpace = selected;
-        AddAffectedSpace(selected);
+        AddHealedSpace(selected);
         readyToConfirm = true;
     }
 

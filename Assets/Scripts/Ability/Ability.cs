@@ -47,6 +47,12 @@ public class Ability
         AffectedSpaces.Add(spaceToAdd);
     }
 
+    public virtual void AddHealedSpace(GridSpace spacetoAdd)
+    {
+        spacetoAdd.SetHealed(true);
+        AffectedSpaces.Add(spacetoAdd);
+    }
+
     public virtual void AddSelectableSpace(GridSpace spaceToAdd)
     {
         spaceToAdd.SetSelectable(true);

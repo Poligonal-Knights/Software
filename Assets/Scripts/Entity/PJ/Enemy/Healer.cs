@@ -167,7 +167,7 @@ public class Healer : Enemy
     [Task]
     bool IsAnyoneAlive()
     {
-        foreach (var ally in FindObjectsOfType<Enemy>())
+        foreach (var ally in GameManager.Instance.enemies)
         {
             if (ally.health > 0)
             {
