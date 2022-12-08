@@ -16,7 +16,7 @@ public class Archer : Enemy
     protected override void Start()
     {
         base.Start();
-
+        
     }
 
     // Update is called once per frame
@@ -65,14 +65,12 @@ public class Archer : Enemy
             }
         }
 
-        visitedSpaces.Add(this.GetGridSpace());
-        foreach (var enemy in GameManager.Instance.allies)
+        foreach (var enemy in Object.FindObjectsOfType<Ally>())
 
         {
             foreach (var vSpace in visitedSpaces)
             {
-                //if (ManhattanDistance(vSpace, enemy.GetGridSpace()) <= attackRange)
-                if (vSpace.ManhattanDistance2D(enemy.GetGridSpace()) <= attackRange)
+                if (ManhattanDistance(vSpace, enemy.GetGridSpace()) <= attackRange)
                 {
                     enemiesInRangeList.Add(enemy);
                     break;
@@ -154,8 +152,7 @@ public class Archer : Enemy
         HashSet<GridSpace> candidateSpaces = new HashSet<GridSpace>();
         foreach (var vSpace in visitedSpaces)
         {
-            //if (ManhattanDistance(vSpace, focusedEnemy.GetGridSpace()) <= attackRange)
-            if (GridSpace.ManhattanDistance2D(vSpace, focusedEnemy.GetGridSpace()) <= attackRange)
+            if (ManhattanDistance(vSpace, focusedEnemy.GetGridSpace()) <= attackRange)
             {
                 candidateSpaces.Add(vSpace);
             }
@@ -164,9 +161,9 @@ public class Archer : Enemy
         foreach (var cSpace in candidateSpaces)
         {
             var sum = 0;
-            foreach (var enemy in GameManager.Instance.allies)
+            foreach (var enemy in Object.FindObjectsOfType<Ally>())
             {
-                sum += GridSpace.ManhattanDistance2D(cSpace, enemy.GetGridSpace());
+                sum += ManhattanDistance(cSpace, enemy.GetGridSpace());
             }
 
             if (sum > maxDistance)
@@ -203,8 +200,8 @@ public class Archer : Enemy
         {
             //Si la distancia entre focusedEnemy y Yo es =<1 -> ThisTask.Succeed()  DONE
             //Considero distancia Manhattan
-            var distance = GridSpace.ManhattanDistance2D(this.GetGridSpace(), focusedEnemy.GetGridSpace());
-            //var distance = Mathf.Abs(vector.x) + Mathf.Abs(vector.y) + Mathf.Abs(vector.z);
+            var vector = focusedEnemy.GetGridSpace().gridPosition - GetGridSpace().gridPosition;
+            var distance = Mathf.Abs(vector.x) + Mathf.Abs(vector.y) + Mathf.Abs(vector.z);
 
             if (distance <= attackRange)//Incluído attackRange en Enemy
             {
@@ -221,9 +218,6 @@ public class Archer : Enemy
     [Task]
     bool Attack()
     {
-        Debug.Log(this + " ATTACK");
-        if (!getAttackPerformed())
-            LineRendererManager.Instance.AddLine(this.GetGridSpace().GetWorldPosition(), focusedEnemy.GetGridSpace().GetWorldPosition());
         //Correr animación de ataque mirando al enemigo
         Debug.Log("Atacando a " + focusedEnemy + " con " + focusedEnemy.health);
         focusedEnemy.DealDamage(damage);
@@ -261,9 +255,9 @@ public class Archer : Enemy
         //Marcar a dicho enemigo como focusedEnemy 
         int minDistance = 5000;
         PJ bestEnemy = null;
-        foreach (var enemy in GameManager.Instance.allies)
+        foreach (var enemy in FindObjectsOfType<Ally>())
         {
-            var distance = GridSpace.ManhattanDistance2D(space, enemy.GetGridSpace());
+            var distance = ManhattanDistance(space, enemy.GetGridSpace());
             if (distance < minDistance)
             {
                 minDistance = distance;
@@ -337,4 +331,13 @@ public class Archer : Enemy
         if (realizandoTurno)
             ThisTask.Succeed();
     }
+    //Esto puede ser un desastre, mañana veremos.
+
+    private int ManhattanDistance(GridSpace space1, GridSpace space2)
+    {
+        var vector = space1.gridPosition - space2.gridPosition;
+        int distance = Mathf.Abs(vector.x) + Mathf.Abs(vector.z);
+        return distance;
+    }
+
 }

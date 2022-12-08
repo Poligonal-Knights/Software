@@ -71,12 +71,6 @@ public class Block : Entity
         getAnimator().Play("gStoneAttack", -1, 0f);
     }
 
-    public void SetInAreaHealMode()
-    {
-        getAnimator().SetInteger("animationState", 4);
-        getAnimator().Play("gStoneHealAndBuff", -1, 0f);
-    }
-
     protected override void OnMouseUpAsButton()
     {
         base.OnMouseUpAsButton();

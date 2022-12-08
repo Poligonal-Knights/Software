@@ -111,6 +111,7 @@ MonoBehaviour:
   IsMoving: 0
   energy: 5
   maxEnergy: 5
+  trapBonusDamage: 0
   pushStrength: 4
   deniedReaction: 0
 --- !u!136 &1830296689601221216

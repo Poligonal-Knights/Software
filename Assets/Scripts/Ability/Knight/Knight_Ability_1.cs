@@ -12,7 +12,6 @@ public class Knight_Ability_1 : Ability
     {
         Debug.Log("Grito de batalla PREVIEW");
         readyToConfirm = true;
-        AddHealedSpace(Owner.GetGridSpace());
     }
 
     public override void Confirm()
@@ -23,14 +22,10 @@ public class Knight_Ability_1 : Ability
         var knight = LogicManager.Instance.GetSelectedPJ() as Knight;
         knight.SetGritoDeBatalla(true);
         LogicManager.Instance.PJFinishedMoving();
-        ClearAffectedSpaces();
-        ClearSelectableSpaces();
     }
 
     public override void Cancel()
     {
         base.Cancel();
-        ClearAffectedSpaces();
-        ClearSelectableSpaces();
     }
 }

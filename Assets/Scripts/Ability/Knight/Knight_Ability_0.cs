@@ -51,7 +51,7 @@ public class Knight_Ability_0 : Ability
             if (affectedSpace.GetEntity() is Enemy enemy)
             {
                 AnyEnemyWasAffected = true;
-                enemy.BePushed(pushDirection, knight.pushStrength, knight.damage, knight);
+                enemy.BePushed(pushDirection, knight.pushStrength, knight.trapBonusDamage, knight);
             }
         }
         ClearAffectedSpaces();

@@ -20,7 +20,7 @@ public class EnemyManager : MonoBehaviour
 
     void Start()
     {
-        foreach(var enemy in GameManager.Instance.enemies)
+        foreach(var enemy in FindObjectsOfType<Enemy>())
         {
             enemyList.Add(enemy);
         }

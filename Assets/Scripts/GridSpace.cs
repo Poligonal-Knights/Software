@@ -48,14 +48,6 @@ public class GridSpace
         return false;
     }
 
-    public void ActivateActivatables(PJ Activator)
-    {
-        foreach(var a in activatables)
-        {
-            a.Activate(Activator);
-        }
-    }
-
     public void AddActivatable(Activatable add)
     {
         activatables.Add(add);
@@ -78,7 +70,7 @@ public class GridSpace
         return false;
     }
 
-    public void GetAdyacentSpaces()
+    public void GetAdyacentsSpaces()
     {
         neighbors["right"] = gridManager.GetGridSpace(gridPosition + Vector3Int.right);
         neighbors["left"] = gridManager.GetGridSpace(gridPosition + Vector3Int.left);
@@ -135,30 +127,6 @@ public class GridSpace
     public Vector3 GetWorldPosition()
     {
         return gridPosition + gridManager.getOrigin();
-    }
-
-    static public int ManhattanDistance(GridSpace space1, GridSpace space2)
-    {
-        var vector = space1.gridPosition - space2.gridPosition;
-        int distance = Mathf.Abs(vector.x) + Mathf.Abs(vector.y) + Mathf.Abs(vector.z);
-        return distance;
-    }
-
-    static public int ManhattanDistance2D(GridSpace space1, GridSpace space2)
-    {
-        var vector = space1.gridPosition - space2.gridPosition;
-        int distance = Mathf.Abs(vector.x) + Mathf.Abs(vector.z);
-        return distance;
-    }
-
-    public int ManhattanDistance(GridSpace otherSpace)
-    {
-        return ManhattanDistance(this, otherSpace);
-    }
-
-    public int ManhattanDistance2D(GridSpace otherSpace)
-    {
-        return ManhattanDistance2D(this, otherSpace);
     }
 
     public bool IsPassable()
@@ -229,19 +197,7 @@ public class GridSpace
                 (neighbors["down"].GetEntity() as Block).SetInAreaAttackMode();
             else
                 (neighbors["down"].GetEntity() as Block).StopAnimation();
-        }
-    }
 
-    public void SetHealed(bool s)
-    {
-        affected = s;
-        //if (affected) gridManager.affectedSpaces.Add(this);
-        if (neighbors["down"].HasBlock())
-        {
-            if (affected)
-                (neighbors["down"].GetEntity() as Block).SetInAreaHealMode();
-            else
-                (neighbors["down"].GetEntity() as Block).StopAnimation();
         }
     }
 

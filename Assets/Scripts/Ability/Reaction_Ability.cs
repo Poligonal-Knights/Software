@@ -52,7 +52,7 @@ public class Reaction_Ability : Ability
         enemy.MovementsToDo.Clear();//limpiar movimientos enemigos
         enemy.IsMoving = false;
         cleanAllies();
-        enemy.BePushed(direction, ally.pushStrength, ally.damage, ally);
+        enemy.BePushed(direction, ally.pushStrength, ally.trapBonusDamage, ally);
         UnFreezeEnemies();
         UIManager.Instance.ShowReactionCanvas(false);
         LogicManager.Instance.PJFinishedMoving();
@@ -68,7 +68,7 @@ public class Reaction_Ability : Ability
 
     public void FreezeEnemies()
     {
-        foreach(var enemy in GameManager.Instance.enemies)
+        foreach(var enemy in Object.FindObjectsOfType<Enemy>())
         {
             enemy.SetSpeed(0.0f);
         }
@@ -76,7 +76,7 @@ public class Reaction_Ability : Ability
 
     public void UnFreezeEnemies()
     {
-        foreach (var enemy in GameManager.Instance.enemies)
+        foreach (var enemy in Object.FindObjectsOfType<Enemy>())
         {
             enemy.ResetSpeed();
         }

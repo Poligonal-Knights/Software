@@ -5,16 +5,10 @@ using UnityEngine;
 
 public class BearTrap : Activatable
 {
-    public int Damage;
-
-    public override void Activate(PJ Activator)
+    public override void Activate()
     {
-        base.Activate(Activator);
+        base.Activate();
         //Animacion de activar
-        Debug.LogWarning("BEARTRAP ACTIVATED");
-        Activator.DealDamage(Damage);
-        Activator.SetMovement(0);
-        Activator.MovementsToDo.Clear();
     }
 
     public override void Deactivate()
@@ -25,6 +19,6 @@ public class BearTrap : Activatable
 
     protected override void SetActivatableSpaces()
     {
-        AddActivatableSpace(space);
+        space.AddActivatable(this);
     }
 }

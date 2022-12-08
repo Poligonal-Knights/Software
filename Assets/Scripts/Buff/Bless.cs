@@ -8,26 +8,21 @@ public class Bless : Buff
 
     int movementIncrement = 1;
     int pushStrengthIncrement = 1;
-    int healthIncrement = 5;
-    int defenseIncrement = 1;
-    int damageIncrement = 1;
+    //int healthIncrement = 5;
 
     public Bless(PJ owner, int turnsDuration = deafaultDuration) : base(owner, turnsDuration) { }
 
     protected override void Init()
     {
         Debug.Log(Owner + " Blessed");
-        //Animacion de inicio
 
         if (Owner is Ally ally)
         {
             ally.movement += movementIncrement;
             ally.maxMovement += movementIncrement;
             ally.pushStrength += pushStrengthIncrement;
-            ally.maxHealth += healthIncrement;
-            ally.Heal(healthIncrement);
-            ally.defense += defenseIncrement;
-            ally.damage += damageIncrement;
+            //ally.maxHealth += healthIncrement;
+            //ally.Heal(healthIncrement);
         }
     }
 
@@ -38,23 +33,14 @@ public class Bless : Buff
             ally.movement -= movementIncrement;
             ally.maxMovement -= movementIncrement;
             ally.pushStrength -= pushStrengthIncrement;
-            ally.maxHealth -= healthIncrement;
-            ally.health = Mathf.Min(ally.health, ally.maxHealth);
-            ally.defense -= defenseIncrement;
-            ally.damage -= damageIncrement;
+            //ally.maxHealth -= healthIncrement;
+            //ally.health = Mathf.Min(ally.health, ally.maxHealth);
             base.Finish();
         }
-        //Animacion de finish
     }
 
     protected override bool CanOwnerHaveThisBuff()
     {
         return Owner is Ally;
-    }
-
-    protected override void OnChangeTurn()
-    {
-        base.OnChangeTurn();
-        //Animacion de cada turno
     }
 }

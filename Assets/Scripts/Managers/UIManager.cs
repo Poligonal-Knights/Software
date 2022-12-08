@@ -10,7 +10,6 @@ public class UIManager : MonoBehaviour
     public GameManager GameManager;
     public Canvas emptyCanvas;
     public Canvas turnCanvas;
-    //public Canvas MenuInGameCanvas;
     public Canvas actionCanvas;
     public Canvas habilitiesCanvas;
     public Canvas previewCanvas;
@@ -39,7 +38,6 @@ public class UIManager : MonoBehaviour
         allCanvas.Add(habilitiesCanvas);
         allCanvas.Add(previewCanvas);
         allCanvas.Add(enemyCanvas);
-        //allCanvas.Add(MenuInGameCanvas);
         //allCanvas.Add(turnCanvas);
         currentCanvas = emptyCanvas;
     }
@@ -79,7 +77,6 @@ public class UIManager : MonoBehaviour
         {
             c.gameObject.SetActive(false);
         }
-        previousCanvas = currentCanvas;
         currentCanvas = canvasToShow;
         currentCanvas.gameObject.SetActive(true);
         //if(GameManager.turnManager.IsPlayerTurn()) turnCanvas.gameObject.SetActive(true);
@@ -221,18 +218,6 @@ public class UIManager : MonoBehaviour
             enemyCanvas.transform.Find("Portrait").Find("EHealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = (float) selectedEnemy.health / selectedEnemy.maxHealth;
         }
     }
-
-    /*public void ShowMenuIngameCanvas()
-    {
-        ShowThisCanvas(MenuInGameCanvas);
-        alwaysActiveCanvas.gameObject.SetActive(false);
-    }
-
-    public void HideMenuIngameCanvas()
-    {
-        ShowThisCanvas(previousCanvas);
-        alwaysActiveCanvas.gameObject.SetActive(true);
-    }*/
 
     public void ShowReactionCanvas(bool b)
     {

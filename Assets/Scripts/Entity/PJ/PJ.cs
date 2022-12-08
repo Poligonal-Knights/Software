@@ -28,7 +28,6 @@ public class PJ : Entity
     protected bool IsDying;
     protected Vector2 orientation;
     SpriteRenderer spriteRenderer;
-    //bool inHalf = false;
 
     public Queue<GridSpace> MovementsToDo = new Queue<GridSpace>();
     GridSpace destination;
@@ -77,16 +76,6 @@ public class PJ : Entity
         {
             var step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, destination.GetWorldPosition(), step);
-            //Cositas de los halfs
-            if (destination.neighbors["down"].GetEntity() is Half)
-            {
-                this.transform.Find("Sprite").transform.localPosition= new Vector3(0,-0.5f,0);
-            }
-            else
-            {
-                this.transform.Find("Sprite").transform.localPosition= new Vector3(0, 0, 0);
-            }
-            //Terminado cositas de los halfs
             if (Vector3.Distance(transform.position, destination.GetWorldPosition()) < 0.001f)
             {
                 transform.position = destination.GetWorldPosition();
@@ -112,12 +101,6 @@ public class PJ : Entity
                 Die();
             }
         }
-    }
-
-    protected override void UpdateGridSpace()
-    {
-        base.UpdateGridSpace();
-        space.ActivateActivatables(this);
     }
 
     public virtual bool CanMoveThere(GridSpace start, GridSpace destination)
@@ -241,9 +224,8 @@ public class PJ : Entity
     public virtual void Die()
     {
         space.SetEntity(null);
-        IsDying = true;
-        GameManager.Instance.RemovePJ(this);
         Destroy(gameObject);
+        IsDying = true;
     }
 
     protected override void OnMouseUpAsButton()
@@ -253,25 +235,12 @@ public class PJ : Entity
 
     public virtual void DealDamage(int damage)
     {
-        GetComponentInChildren<SpriteRenderer>().color = new Color(1, 0, 0);
-        StartCoroutine(GetColorBack());
         health -= (damage-defense);
-    }
-    IEnumerator GetColorBack()
-    {
-        yield return new WaitForSeconds(.5f);
-        GetComponentInChildren<SpriteRenderer>().color = new Color(1, 1, 1);
-        
     }
 
     public void Heal(int healedHealth)
     {
-        //Debug.Log("OMG! I was healed!");
-        if (health < maxHealth)
-        {
-            GetComponentInChildren<SpriteRenderer>().color = new Color(0, 1, 0);
-            StartCoroutine(GetColorBack());
-        }
+        Debug.Log("OMG! I was healed!");
         health = Mathf.Min(health + healedHealth, maxHealth);
     }
 

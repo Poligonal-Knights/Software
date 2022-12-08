@@ -5,7 +5,7 @@ using UnityEngine;
 public class Activatable : Entity
 {
     bool active;
-    protected HashSet<GridSpace> activatableSpaces = new HashSet<GridSpace>();
+    HashSet<GridSpace> activatableSpaces;
 
     public override void Init()
     {
@@ -13,7 +13,7 @@ public class Activatable : Entity
         SetActivatableSpaces();
     }
 
-    public virtual void Activate(PJ Activator)
+    public virtual void Activate()
     {
         active = true;
     }
@@ -26,12 +26,6 @@ public class Activatable : Entity
     public bool IsActivated()
     {
         return active;
-    }
-
-    protected void AddActivatableSpace(GridSpace spaceToAdd)
-    {
-        activatableSpaces.Add(spaceToAdd);
-        space.AddActivatable(this);
     }
 
     protected virtual void SetActivatableSpaces()
@@ -56,7 +50,7 @@ public class Activatable : Entity
         //}
         Vector3Int pos = Vector3Int.RoundToInt(transform.position);
         space = GridManager.Instance.GetGridSpaceWorldCoords(pos);
-        //space.SetEntity(this);
+        space.SetEntity(this);
     }
 
     protected override void OnDisable()

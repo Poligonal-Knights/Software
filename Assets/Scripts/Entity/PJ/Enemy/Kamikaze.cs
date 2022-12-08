@@ -22,12 +22,12 @@ public class Kamikaze : Enemy
     {
         base.Update();
     }
-
+    
     public override void EnemyAI()
     {
         realizandoTurno = true;
     }
-
+    
     [Task]
     bool EndTurn()
     {
@@ -38,7 +38,7 @@ public class Kamikaze : Enemy
     }
 
     [Task]
-    bool IsMyTurn()
+    bool  IsMyTurn()
     {
         return realizandoTurno;
     }
@@ -46,72 +46,21 @@ public class Kamikaze : Enemy
     [Task]
     bool EnemiesInRange()
     {
-        HashSet<GridSpace> spacesInRange = BFS.GetSpacesInRange(space, movement, CanMoveThere);
-        foreach (var enemy in GameManager.Instance.allies)
-        {
-            foreach (var s in spacesInRange)
-            {
-                if (s.gridPosition.y == enemy.GetGridSpace().gridPosition.y &&
-                                s.ManhattanDistance2D(enemy.GetGridSpace()) <= attackRange)
-                {
-                    enemiesInRangeList.Add(enemy);
-                    break;
-                }
-            }
-        }
-        return enemiesInRangeList.Any();
+        //Comprobar los enemigos que hay a rango de explotar y devolver false si no hay ninguno
+        return false;
     }
 
     [Task]
     bool ChooseCloserEnemy()
     {
         //Elegir enemigo más cercano para ir moviendose si no hay nadie a rango de explotar
-        GridSpace closerEnemySpace = BFS.GetGoalGridSpace(space, int.MaxValue, CanMoveThere, (GridSpace candidate) =>
-        {
-            if (candidate.GetEntity() is null)
-            {
-                foreach (var move in candidate.moves)
-                {
-                    if (move.GetEntity() is Ally)
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
-        });
-        focusedEnemy = closerEnemySpace.GetEntity() as PJ;
-        optimalSpace = closerEnemySpace;
-        return true;
+        return false;
     }
 
     [Task]
     bool ChooseOptimalSpace()
     {
         //Elegir espacio donde más enemigos son afectados
-        GridSpace _OptimalSpace = null;
-        //SpacesInRange quiza puede estar en un miembro para ahorrar una busqueda
-        HashSet<GridSpace> spacesInMovementRange = BFS.GetSpacesInRange(space, movement, CanMoveThere);
-        var enemies = GameManager.Instance.allies;
-        int enemiesAffected, maxEnemiesAffected = 0;
-        foreach (var space in spacesInMovementRange)
-        {
-            enemiesAffected = 0;
-            foreach (var enemy in enemies)
-            {
-                if (space.gridPosition.y == enemy.GetGridSpace().gridPosition.y &&
-                    space.ManhattanDistance2D(enemy.GetGridSpace()) <= attackRange)
-                {
-                    enemiesAffected++;
-                }
-            }
-            if (maxEnemiesAffected < enemiesAffected)
-            {
-                maxEnemiesAffected = enemiesAffected;
-                _OptimalSpace = space;
-            }
-        }
-        optimalSpace = _OptimalSpace;
         return true;
     }
     [Task]
@@ -120,12 +69,11 @@ public class Kamikaze : Enemy
         bool worked = false;
         foreach (PJ enemy in enemiesInRangeList)
         {
-            if (enemy is Knight knight)
+            if (enemy is Knight)
             {
-                if (knight.UsingGritoDeBatalla())
+                if ((enemy as Knight).UsingGritoDeBatalla())
                 {
-                    focusedEnemy = knight;
-                    optimalSpace = focusedEnemy.GetGridSpace();
+                    focusedEnemy = enemy;
                     ThisTask.Succeed();
                     worked = true;
                 }
@@ -143,17 +91,8 @@ public class Kamikaze : Enemy
     [Task]
     bool Explosion()
     {
+        this.DealDamage(999);
         //Implementar daño a los enemigos en rango de la explosión
-        foreach (var enemy in GameManager.Instance.allies)
-        {
-            if (space.gridPosition.y == enemy.GetGridSpace().gridPosition.y &&
-                space.ManhattanDistance2D(enemy.GetGridSpace()) <= attackRange)
-            {
-                enemy.DealDamage(damage);
-            }
-        }
-        this.DealDamage(health);
-        Debug.Log("THINGS GOT BOOMBY BOOMBY");
         return false;
     }
     [Task]
@@ -166,21 +105,6 @@ public class Kamikaze : Enemy
     bool GetCloser()
     {
         //Moverse a la casilla seleccionada como optima
-        var goalNode = optimalSpace.node;
-        if (goalNode is not null)
-        {
-            var node = goalNode;
-            while ((node is not null) && (node.distance > movement || node.space.GetEntity() is PJ))
-            {
-                node = node.parent;
-            }
-
-            if (node is not null)
-            {
-                MoveTo(node.space);
-            }
-        }
-
         return true;
     }
 }

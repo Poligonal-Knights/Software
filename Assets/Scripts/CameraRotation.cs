@@ -11,6 +11,7 @@ public class CameraRotation : MonoBehaviour
 
     void Start()
     {
+        center = GridManager.Instance.GetCenterofGrid();
         speed = 90.0f / duration;
     }
 
@@ -26,7 +27,6 @@ public class CameraRotation : MonoBehaviour
 
     IEnumerator RotateCam(bool dir)
     {
-        center = GridManager.Instance.GetCenterofGrid();
         var timeSinceStart = 0.0f;
         var clockwise = dir ? -1 : 1;
         while (duration > timeSinceStart + Time.deltaTime)
@@ -36,7 +36,7 @@ public class CameraRotation : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         transform.RotateAround(center, Vector3.up, clockwise * speed * (duration - timeSinceStart));
-        foreach (var pjs in GameManager.Instance.PJs)
+        foreach (var pjs in FindObjectsOfType<PJ>())
         {
             pjs.UpdateOrientation();
         }

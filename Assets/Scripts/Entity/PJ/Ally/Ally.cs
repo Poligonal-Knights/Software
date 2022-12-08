@@ -8,7 +8,7 @@ public class Ally : PJ
     //Stats
     public int energy;
     public int maxEnergy;
-    //public int trapBonusDamage;
+    public int trapBonusDamage;
     public int pushStrength;
 
     //States
@@ -34,7 +34,7 @@ public class Ally : PJ
             {
                 if (neighbor.gridPosition.y == space.gridPosition.y)
                 {
-                    if (neighbor.GetEntity() is Enemy enemy && enemy.beingPushed)
+                    if(neighbor.GetEntity() is Enemy enemy && enemy.beingPushed)
                     {
                         LogicManager.Instance.reactionAbility.Engage(this, enemy);
                     }
@@ -47,12 +47,6 @@ public class Ally : PJ
     {
         if (destination.GetEntity() is Enemy) return false;
         return base.CanMoveThere(start, destination);
-    }
-
-    public override void DealDamage(int damage)
-    {
-        if (!invencibility)
-            base.DealDamage(damage);
     }
 
     public void SetInvencibility(bool setTo)
