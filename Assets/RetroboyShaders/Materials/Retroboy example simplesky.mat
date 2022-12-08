@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Retroboy example simplesky
+  m_Shader: {fileID: 4800000, guid: bb09a6c08f008884f82b9ac57962fe22, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Diffuse:
+        m_Texture: {fileID: 2800000, guid: 9f1ceff62a5f2f0429b9dd4c86904f0e, type: 3}
+        m_Scale: {x: 2, y: 2}
+        m_Offset: {x: 0, y: 0}
+    - _GBDitherTexture01:
+        m_Texture: {fileID: 2800000, guid: 3b2af90e1580a044e90ffe7ddf322c99, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GBDitherTexture02:
+        m_Texture: {fileID: 2800000, guid: 3b2af90e1580a044e90ffe7ddf322c99, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GbDitherTexture03:
+        m_Texture: {fileID: 2800000, guid: eac22e44b790d8046a9a2ab5a73ade0d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Gradient:
+        m_Texture: {fileID: 2800000, guid: e4435b5b835da7b4296717bb3f2041a9, type: 3}
+        m_Scale: {x: 1, y: 0.4}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Banding: 8
+    - _ColourReduce: 4
+    - _Contrast: 1.3928571
+    - _DitherBlend: 32
+    - _DitherTile: 4
+    - _GlobalTile: 1.39
+    - _Offset: 0.83928573
+    - _Pixelate: 1
+    - _Tile: 1
+    - _X_ScrollSpeed: 0
+    - _Y_ScrollSpeed: 0
+    m_Colors:
+    - _BaseColor: {r: 0.141115, g: 0.4862745, b: 0.1603439, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color01: {r: 0.03443987, g: 0.3063596, b: 0.3602941, a: 1}
+    - _Color02: {r: 0.78676474, g: 0.7325051, b: 0, a: 1}
+    - _Colour01: {r: 0, g: 0.751724, b: 1, a: 1}
+    - _Colour02: {r: 0.34010705, g: 0.17225347, b: 0.86764705, a: 1}
+    - _SecondaryColor: {r: 0.124506, g: 0.3607843, b: 0.1376691, a: 1}
+    - _Sky01: {r: 0, g: 0.12383359, b: 0.4852941, a: 1}
+    - _Sky02: {r: 0.007352948, g: 0.6713994, b: 1, a: 1}
+  m_BuildTextureStacks: []
