@@ -8876,7 +8876,7 @@ PrefabInstance:
     - target: {fileID: 45265482344832303, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: _InkJsonFile
       value: 
-      objectReference: {fileID: 4900000, guid: 911881940e5d4b1458a3bc08faef346b, type: 3}
+      objectReference: {fileID: 4900000, guid: d1cdeebc5dc67bb46bfb14e7d958144a, type: 3}
     - target: {fileID: 45265482344832303, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: canvasCamara
       value: 
