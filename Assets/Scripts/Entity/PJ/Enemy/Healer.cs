@@ -10,11 +10,10 @@ public class Healer : Enemy
 {
     PJ focusedEnemy = null;
     private Enemy focusedAlly = null;
-    List<PJ> enemiesInRangeList = new List<PJ>();
-
-    private List<Enemy> alliesInRangeList = new List<Enemy>();
+    HashSet<PJ> enemiesInRange = new HashSet<PJ>();
+    private HashSet<Enemy> alliesInRange = new HashSet<Enemy>();
     //El damage en este enemigo simboliza la sanación que hace
-    
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -34,25 +33,37 @@ public class Healer : Enemy
         realizandoTurno = true;
     }
     [Task]
-    bool  IsMyTurn()
+    bool IsMyTurn()
     {
         return realizandoTurno;
     }
-    
+
     [Task]
     bool IsAllyInRange()
     {
         //Marcar a los aliados a rango y meterlos en 
-        //alliesInRangeList
-        return false; 
+        var spacesInMovementRange = BFS.GetSpacesInRange(space, movement, CanMoveThere);
+        foreach (var ally in GameManager.Instance.enemies)
+        {
+            foreach (var s in spacesInMovementRange)
+            {
+                var distance = GridSpace.ManhattanDistance2D(s, ally.GetGridSpace());
+                if (distance <= attackRange)
+                {
+                    enemiesInRange.Add(ally);
+                    break;
+                }
+            }
+        }
+        return alliesInRange.Any();
     }
 
     [Task]
     bool MostDamagedAlly()
     {
         bool anyDamaged = false;
-        float diffInHealth = math.INFINITY;
-        foreach (var ally in alliesInRangeList)
+        int diffInHealth = int.MinValue;
+        foreach (var ally in alliesInRange)
         {
             int thisDiffInHealth = ally.maxHealth - ally.health;
             if (thisDiffInHealth != 0 && thisDiffInHealth > diffInHealth)
@@ -60,13 +71,16 @@ public class Healer : Enemy
                 diffInHealth = thisDiffInHealth;
                 focusedAlly = ally;
                 anyDamaged = true;
-            }   
+            }
         }
         return anyDamaged;
     }
     [Task]
     bool GetCloserFocusedAlly()
     {
+        //BFS.GetGoalGridSpace()
+
+
         return true;
     }
 
@@ -108,7 +122,20 @@ public class Healer : Enemy
     public bool EnemiesInRange()
     {
         //Mirar si hay enemigos a rango
-        return true;
+        var spacesInMovementRange = BFS.GetSpacesInRange(space, movement, CanMoveThere);
+        foreach (var enemy in GameManager.Instance.allies)
+        {
+            foreach (var s in spacesInMovementRange)
+            {
+                var distance = GridSpace.ManhattanDistance2D(s, enemy.GetGridSpace());
+                if (distance <= attackRange)
+                {
+                    enemiesInRange.Add(enemy);
+                    break;
+                }
+            }
+        }
+        return enemiesInRange.Any();
     }
 
     [Task]
@@ -117,12 +144,12 @@ public class Healer : Enemy
         //lo de siempre, decidir enemigo más cercano
         return true;
     }
-    
+
     [Task]
     bool BattleCryActive()
     {
         bool worked = false;
-        foreach (PJ enemy in enemiesInRangeList)
+        foreach (PJ enemy in enemiesInRange)
         {
             if (enemy is Knight)
             {
