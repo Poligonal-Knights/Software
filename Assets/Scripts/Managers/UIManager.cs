@@ -105,8 +105,8 @@ public class UIManager : MonoBehaviour
     public void ShowSettings()
     {
         ShowThisCanvas(SettingsCanvas);
-        //alwaysActiveCanvas.gameObject.SetActive(false);
-        //turnCanvas.gameObject.SetActive(false);
+        alwaysActiveCanvas.gameObject.SetActive(false);
+        turnCanvas.gameObject.SetActive(false);
         //ShowTurnButton();
     }
 

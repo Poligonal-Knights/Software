@@ -3,9 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class SettingsInGameManager : MonoBehaviour
 {
     public Canvas initialCanvas;
+    public Canvas alwaysActive;
+    public Canvas turnButton;
     //ADEL
     public Canvas adelCanvas;
     public Canvas adelBasicCanvas;
@@ -133,6 +136,8 @@ public class SettingsInGameManager : MonoBehaviour
         {
             c.gameObject.SetActive(false);
         }
+        alwaysActive.gameObject.SetActive(true);
+        turnButton.gameObject.SetActive(true);
         //this.gameObject.SetActive(false);
     }
 }
