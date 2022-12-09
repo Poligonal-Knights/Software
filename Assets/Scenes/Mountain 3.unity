@@ -25901,6 +25901,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4837352154470818271, guid: d4a01e625bda3134ea6a6f7323d6e2b3, type: 3}
+      propertyPath: teclaPiano
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4a01e625bda3134ea6a6f7323d6e2b3, type: 3}
 --- !u!1001 &1305037371
