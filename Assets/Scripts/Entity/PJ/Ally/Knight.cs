@@ -25,7 +25,7 @@ public class Knight : Ally
     }
 
     public bool UsingGritoDeBatalla()
-    {
+    { 
         return gritoDeBatalla;
     }
 

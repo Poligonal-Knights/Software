@@ -253,6 +253,7 @@ public class PJ : Entity
 
     public virtual void DealDamage(int damage)
     {
+        
         GetComponentInChildren<SpriteRenderer>().color = new Color(1, 0, 0);
         StartCoroutine("GetColorBack");
         health -= (damage-defense);

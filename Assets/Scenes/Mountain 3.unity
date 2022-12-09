@@ -23414,6 +23414,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6698662422850950841, guid: f3738b085ea7c954dbba97b976ea5b30, type: 3}
   m_PrefabInstance: {fileID: 1158633449}
   m_PrefabAsset: {fileID: 0}
+--- !u!223 &1161786394 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 7749697775466752072, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+  m_PrefabInstance: {fileID: 1964358453}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1162430135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38566,7 +38571,7 @@ PrefabInstance:
     - target: {fileID: 8164596034103304777, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: dialogoFinal
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1161786394}
     - target: {fileID: 8164596034869079022, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_IsActive
       value: 1
