@@ -18567,6 +18567,10 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1849362418929312962, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2307817674586481882, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_Name
       value: SceneSet

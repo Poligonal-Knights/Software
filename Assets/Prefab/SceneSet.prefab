@@ -4515,7 +4515,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6733808516008643218
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4890,7 +4890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4282827447044120683
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7791,7 +7791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8164596033681494078
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10642,7 +10642,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2446809710057758437
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10844,7 +10844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 856985730436609690, guid: eae4b03031ea3674095889ea56b2fb57, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2575845412195093106, guid: eae4b03031ea3674095889ea56b2fb57, type: 3}
       propertyPath: m_Pivot.x
@@ -11286,6 +11286,10 @@ PrefabInstance:
     - target: {fileID: 2054119563630797393, guid: f42874f444e9a004bbef193907704412, type: 3}
       propertyPath: m_Name
       value: EnemyCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054119563630797393, guid: f42874f444e9a004bbef193907704412, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f42874f444e9a004bbef193907704412, type: 3}
