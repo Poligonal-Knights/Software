@@ -59,9 +59,11 @@ public class NuevoDialogo : MonoBehaviour
         }
         else
         {
+            UIManager.Instance.ShowTurnButton(true);
+            UIManager.Instance.ShowAlwaysCanvas(true);
             gameObject.SetActive(false);
-            turnButton.gameObject.SetActive(true);
-            canvasCamara.gameObject.SetActive(true);
+            //turnButton.gameObject.SetActive(true);
+            //canvasCamara.gameObject.SetActive(true);
         }
     }
 
