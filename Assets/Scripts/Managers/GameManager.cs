@@ -53,6 +53,19 @@ public class GameManager : MonoBehaviour
         {
             enemies.Remove(enemy);
         }
+
+        if (enemies.Count <= 0) Victory();
+        if (allies.Count <= 0) Defeat();
+    }
+
+    void Victory()
+    {
+        GameManager.Instance.LoadNextScene();
+    }
+
+    void Defeat()
+    {
+        Debug.Log("DERROTA");
     }
 
     void Update()
