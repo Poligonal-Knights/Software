@@ -46,7 +46,7 @@ public class Kamikaze : Enemy
     [Task]
     bool EnemiesInRange()
     {
-        HashSet<GridSpace> spacesInRange = BFS.GetSpacesInRange(space, movement, CanMoveThere);
+        List<GridSpace> spacesInRange = BFS.GetSpacesInRange(space, movement, CanMoveThere);
         foreach (var enemy in GameManager.Instance.allies)
         {
             foreach (var s in spacesInRange)
@@ -91,7 +91,7 @@ public class Kamikaze : Enemy
         //Elegir espacio donde más enemigos son afectados
         GridSpace _OptimalSpace = null;
         //SpacesInRange quiza puede estar en un miembro para ahorrar una busqueda
-        HashSet<GridSpace> spacesInMovementRange = BFS.GetSpacesInRange(space, movement, CanMoveThere);
+        List<GridSpace> spacesInMovementRange = BFS.GetSpacesInRange(space, movement, CanMoveThere);
         var enemies = GameManager.Instance.allies;
         int enemiesAffected, maxEnemiesAffected = 0;
         foreach (var space in spacesInMovementRange)

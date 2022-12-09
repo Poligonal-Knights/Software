@@ -25,23 +25,24 @@ public class Warden : Enemy
     {
         base.Update();
     }
-    
+
     public override void EnemyAI()
     {
         realizandoTurno = true;
     }
-    
+
     [Task]
     bool EndTurn()
     {
         realizandoTurno = false;
-        EnemyManager.Instance.enemyTurnEnd();
         focusedEnemy = null;
+        //protectedAlly = null;
+        EnemyManager.Instance.enemyTurnEnd();
         return true;
     }
 
     [Task]
-    bool  IsMyTurn()
+    bool IsMyTurn()
     {
         return realizandoTurno;
     }
@@ -50,13 +51,26 @@ public class Warden : Enemy
     bool EnemiesInRange()
     {
         //Comprobar los enemigos que hay a rango de explotar y devolver false si no hay ninguno
+        var spacesInMovementRange = BFS.GetSpacesInRange(space, movement, CanMoveThere);
+        foreach (var enemy in GameManager.Instance.allies)
+        {
+            foreach (var s in spacesInMovementRange)
+            {
+                var distance = GridSpace.ManhattanDistance2D(s, enemy.GetGridSpace());
+                if (distance <= attackRange)
+                {
+                    enemiesInRangeList.Add(enemy);
+                    break;
+                }
+            }
+        }
         return false;
     }
 
     [Task]
     bool IsAllyChosen()
     {
-        return protectedAlly != null && protectedAlly.health>0;
+        return protectedAlly != null && protectedAlly.health > 0;
     }
 
     [Task]
@@ -77,6 +91,15 @@ public class Warden : Enemy
     {
         //Devolver si hay aliados en rango de movimiento
         //O quizás movBuff
+        var spacesInRange = BFS.GetSpacesInRange(space, movement, CanMoveThere);
+        foreach(var s in spacesInRange)
+        {
+            foreach(var ally in GameManager.Instance.enemies)
+            {
+                var distance = GridSpace.ManhattanDistance2D(s, ally.GetGridSpace());
+                if (distance <= attackRange) return true;
+            }
+        }
         return false;
     }
 
@@ -86,22 +109,41 @@ public class Warden : Enemy
     [Task]
     bool IsThereAnyHealer()
     {
-        protectedAlly = null;
+        var allies = FindObjectsOfType<Healer>();
+        if (allies.Length > 0)
+        {
+            return true;
+        }
         return false;
     }
     [Task]
     bool IsThereAnyMage()
     {
+        var allies = FindObjectsOfType<Mage>();
+        if (allies.Length > 0)
+        {
+            return true;
+        }
         return false;
     }
     [Task]
     bool IsThereAnyArcher()
     {
+        var allies = FindObjectsOfType<Archer>();
+        if (allies.Length > 0)
+        {
+            return true;
+        }
         return false;
     }
     [Task]
     bool IsThereAnyTrashmob()
     {
+        var allies = FindObjectsOfType<TrashMob>();
+        if (allies.Length > 0)
+        {
+            return true;
+        }
         return false;
     }
     [Task]
@@ -109,6 +151,23 @@ public class Warden : Enemy
     {
         //CUANDO NO LLEGO A NINGUNO
         //Nombrar como protegido el aliado más cercano y ya.
+        BFS.GetGoalGridSpace(space, int.MinValue, CanMoveThere, candidate =>
+        {
+            if (candidate.GetEntity() is null)
+            {
+                foreach (var ally in GameManager.Instance.enemies)
+                {
+                    var distance = GridSpace.ManhattanDistance2D(candidate, ally.GetGridSpace());
+                    if (distance <= attackRange)
+                    {
+                        protectedAlly = ally;
+                        return true;
+                    }
+                }
+            }
+            return false;
+        });
+
         return true;
     }
     //FIN COMPROBACIÓN NUEVO PROTEGIDO
@@ -127,7 +186,13 @@ public class Warden : Enemy
     bool EnemyInAllysRange()
     {
         //Devolver si existe a algún enemigo a 2 casillas del protegido 
-        return true; 
+        foreach (var enemy in GameManager.Instance.allies)
+        {
+            var distance = GridSpace.ManhattanDistance2D(protectedAlly.GetGridSpace(), enemy.GetGridSpace());
+            if (distance <= 2) return true;
+        }
+
+        return false;
     }
 
     [Task]
@@ -136,22 +201,98 @@ public class Warden : Enemy
         //Comprobar si alguno de los enemigos a rango del
         //aliado está a rango de ser golpeado por el guardian
         //y marcarlo como focusedEnemy
-        
+        var espaciosARangoDelAliado = BFS.GetSpacesInRange(protectedAlly.GetGridSpace(), protectedAlly.movement, protectedAlly.CanMoveThere);
+        List<PJ> enemigosARangoDelAliado = new List<PJ>();
+        foreach (var enemy in GameManager.Instance.allies)
+        {
+            foreach (var space in espaciosARangoDelAliado)
+            {
+                var distance = GridSpace.ManhattanDistance2D(space, enemy.GetGridSpace());
+                if (distance <= protectedAlly.attackRange)
+                {
+                    enemigosARangoDelAliado.Add(enemy);
+                    break;
+                }
+            }
+        }
+        var espaciosEnRangoPropio = BFS.GetSpacesInRange(space, movement, CanMoveThere);
+        var done = false;
+        foreach(var space in espaciosEnRangoPropio)
+        {
+            foreach(var enemy in enemigosARangoDelAliado)
+            {
+                var distance = GridSpace.ManhattanDistance2D(space, enemy.GetGridSpace());
+                if(distance <= attackRange)
+                {
+                    focusedEnemy = enemy;
+                    done = true;
+                    break;
+                }
+            }
+            if(done) break;
+        }
         return focusedEnemy;
     }
-    
+
     [Task]
     bool GetCloserEnemyFocused()
     {
+        var goalSpace = BFS.GetGoalGridSpace(space, int.MaxValue, CanMoveThere, candidate =>
+        {
+            if(candidate.GetEntity() is null)
+            {
+                var distance = GridSpace.ManhattanDistance2D(candidate, focusedEnemy.GetGridSpace());
+                return distance <= attackRange;
+            }
+            return false;
+        });
+
+        var goalNode = goalSpace.node;
+        if (goalNode is not null)
+        {
+            var node = goalNode;
+            while ((node is not null) && (node.distance > movement || node.space.GetEntity() is PJ))
+            {
+                node = node.parent;
+            }
+
+            if (node is not null)
+            {
+                MoveTo(node.space);
+            }
+        }
         return true;
     }
-    
+
     [Task]
     bool GetCloserProtectedAlly()
     {
+        var goalSpace = BFS.GetGoalGridSpace(space, int.MaxValue, CanMoveThere, candidate =>
+        {
+            if (candidate.GetEntity() is null)
+            {
+                var distance = GridSpace.ManhattanDistance2D(candidate, protectedAlly.GetGridSpace());
+                return distance <= attackRange;
+            }
+            return false;
+        });
+        var goalNode = goalSpace.node;
+        if (goalNode is not null)
+        {
+            var node = goalNode;
+            while ((node is not null) && (node.distance > movement || node.space.GetEntity() is PJ))
+            {
+                node = node.parent;
+            }
+
+            if (node is not null)
+            {
+                MoveTo(node.space);
+            }
+        }
         return true;
     }
-    
+
     [Task]
     bool CanIAttack()
     {
@@ -178,13 +319,22 @@ public class Warden : Enemy
     [Task]
     bool IsAllyInRange()
     {
-        return false; 
+        var spacesInRange = BFS.GetSpacesInRange(space, movement, CanMoveThere);
+        foreach(var s in spacesInRange)
+        {
+            var distance = GridSpace.ManhattanDistance2D(s, protectedAlly.GetGridSpace());
+            if (distance <= attackRange) return true;
+        }
+
+        return false;
     }
 
     [Task]
     bool DefenseBuff()
     {
         //Crear buffo de defensa para ProtectedAlly y el Warden
+        new Tough(this);
+        new Tough(protectedAlly);
         return true;
     }
     [Task]
@@ -225,23 +375,15 @@ public class Warden : Enemy
     [Task]
     bool BattleCryActive()
     {
-        bool worked = false;
         foreach (PJ enemy in enemiesInRangeList)
-        {
-            if (enemy is Knight)
+            if (enemy is Knight knight && knight.UsingGritoDeBatalla())
             {
-                if ((enemy as Knight).UsingGritoDeBatalla())
-                {
-                    focusedEnemy = enemy;
-                    ThisTask.Succeed();
-                    worked = true;
-                }
+                focusedEnemy = enemy;
+                return true;
             }
-        }
-
-        if (worked == false) return false;
-        else return true;
+        return false;
     }
+
     [Task]
     bool InAttackRange()
     {
@@ -268,7 +410,7 @@ public class Warden : Enemy
     {
         return movement > 0;
     }
-    
+
     [Task]
     bool ChooseCloserEnemy()
     {

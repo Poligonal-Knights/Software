@@ -25,7 +25,7 @@ tree ("Debuffing")
 		CanIMove()
 		IsAnyoneAlive()
 		ChooseCloserAlly()
-		GetCloserFocusedAlly()
+		//GetCloserFocusedAlly()
 		EndTurn
 tree ("Alone")
 	sequence
@@ -33,5 +33,5 @@ tree ("Alone")
 			sequence
 				IsAnyoneAlive()
 				ChooseCloserAlly()
-				GetCloserFocusedAlly()
+				//GetCloserFocusedAlly()
 		EndTurn

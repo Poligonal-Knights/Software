@@ -131,8 +131,8 @@ public class Mage : Enemy
     bool EnemiesInRange()
     {
         //Comprobar los enemigos que hay a rango de explotar y devolver false si no hay ninguno
-        HashSet<GridSpace> spacesInMovementRange = BFS.GetSpacesInRange(space, movement, CanMoveThere);
-        var spacesInAttackRange = GridManager.SpacesAtManhattanRange(spacesInMovementRange, attackRange);
+        List<GridSpace> spacesInMovementRange = BFS.GetSpacesInRange(space, movement, CanMoveThere);
+        var spacesInAttackRange = GridManager.SpacesAtManhattanRange(spacesInMovementRange.ToHashSet(), attackRange);
         HashSet<GridSpace> enemySpaces = new HashSet<GridSpace>();
         foreach (var enemy in GameManager.Instance.allies)
             enemySpaces.Add(enemy.GetGridSpace());
@@ -145,8 +145,8 @@ public class Mage : Enemy
     [Task]
     bool ChooseOptimalSpace()
     {
-        HashSet<GridSpace> spacesInMovementRange = BFS.GetSpacesInRange(space, movement, CanMoveThere);
-        var spacesInAttackRange = GridManager.SpacesAtManhattanRange(spacesInMovementRange, attackRange);
+        List<GridSpace> spacesInMovementRange = BFS.GetSpacesInRange(space, movement, CanMoveThere);
+        var spacesInAttackRange = GridManager.SpacesAtManhattanRange(spacesInMovementRange.ToHashSet(), attackRange);
 
         GridSpace _optimalSpace = null;
         int enemiesAffected, maxEnemiesAffected = 0;

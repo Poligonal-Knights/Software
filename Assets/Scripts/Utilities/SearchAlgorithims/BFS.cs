@@ -6,9 +6,9 @@ using UnityEngine;
 
 public static class BFS
 {
-    public static HashSet<GridSpace> GetSpacesInRange(GridSpace start, int range, Func<GridSpace, GridSpace, bool> CanMoveThere)
+    public static List<GridSpace> GetSpacesInRange(GridSpace start, int range, Func<GridSpace, GridSpace, bool> CanMoveThere)
     {
-        HashSet<GridSpace> visitedSpaces = new HashSet<GridSpace>();
+        List<GridSpace> visitedSpaces = new List<GridSpace>();
         Queue<BFS_Node> nodes = new Queue<BFS_Node>();
         visitedSpaces.Add(start);
         foreach (GridSpace move in start.moves)
@@ -42,7 +42,7 @@ public static class BFS
 
     public static GridSpace GetGoalGridSpace(GridSpace start, int range, Func<GridSpace, GridSpace, bool> CanMoveThere, Predicate<GridSpace> goalCheck)
     {
-        HashSet<GridSpace> visitedSpaces = new HashSet<GridSpace>();
+        List<GridSpace> visitedSpaces = new List<GridSpace>();
         Queue<BFS_Node> nodes = new Queue<BFS_Node>();
         visitedSpaces.Add(start);
         foreach (GridSpace move in start.moves)

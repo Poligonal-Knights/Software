@@ -5,12 +5,13 @@ using UnityEngine.UIElements;
 using Panda;
 using System.Linq;
 using Unity.Mathematics;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 public class Healer : Enemy
 {
     PJ focusedEnemy = null;
     private Enemy focusedAlly = null;
-    HashSet<PJ> enemiesInRange = new HashSet<PJ>();
+    List<PJ> enemiesInRange = new List<PJ>();
     private HashSet<Enemy> alliesInRange = new HashSet<Enemy>();
     //El damage en este enemigo simboliza la sanación que hace
 
@@ -50,7 +51,7 @@ public class Healer : Enemy
                 var distance = GridSpace.ManhattanDistance2D(s, ally.GetGridSpace());
                 if (distance <= attackRange)
                 {
-                    enemiesInRange.Add(ally);
+                    alliesInRange.Add(ally);
                     break;
                 }
             }
@@ -69,7 +70,9 @@ public class Healer : Enemy
             if (thisDiffInHealth != 0 && thisDiffInHealth > diffInHealth)
             {
                 diffInHealth = thisDiffInHealth;
+                Debug.Log("FOCUSED ALLY");
                 focusedAlly = ally;
+                Debug.Log(focusedAlly);
                 anyDamaged = true;
             }
         }
@@ -78,9 +81,30 @@ public class Healer : Enemy
     [Task]
     bool GetCloserFocusedAlly()
     {
-        //BFS.GetGoalGridSpace()
+        var goalSpace = BFS.GetGoalGridSpace(space, int.MaxValue, CanMoveThere, candidate =>
+        {
+            if (candidate.GetEntity() is null)
+            {
+                var distance = candidate.ManhattanDistance2D(focusedAlly.GetGridSpace());
+                if (distance <= attackRange)
+                    return true;
+            }
+            return false;
+        });
+        var goalNode = goalSpace.node;
+        if (goalNode is not null)
+        {
+            var node = goalNode;
+            while ((node is not null) && (node.distance > movement || node.space.GetEntity() is PJ))
+            {
+                node = node.parent;
+            }
 
-
+            if (node is not null)
+            {
+                MoveTo(node.space);
+            }
+        }
         return true;
     }
 
@@ -136,40 +160,75 @@ public class Healer : Enemy
             }
         }
         return enemiesInRange.Any();
+        //var goalSpace = BFS.GetGoalGridSpace(space, movement, CanMoveThere, candidate =>
+        //{
+        //    foreach (var enemy in GameManager.Instance.allies)
+        //    {
+        //        var distance = GridSpace.ManhattanDistance2D(candidate, enemy.GetGridSpace());
+        //        if (distance <= attackRange)
+        //        {
+        //            focusedEnemy = enemy;
+        //            return true;
+        //        }
+        //    }
+        //    return false;
+        //});
+        //if(goalSpace is not null)
+        //{
+        //    MoveTo(goalSpace);
+        //}
+        //else
+        //{
+
+        //}
+        //return enemiesInRange.Any();
     }
 
     [Task]
     bool ChooseCloserEnemy()
     {
         //lo de siempre, decidir enemigo más cercano
+        //var goalSpace = BFS.GetGoalGridSpace(space, movement, CanMoveThere, candidate =>
+        //{
+        //    if (candidate.GetEntity() is null)
+        //    {
+        //        var distance = candidate.ManhattanDistance2D(focusedEnemy.GetGridSpace());
+        //        if (distance <= attackRange)
+        //            return true;
+        //    }
+        //    return false;
+        //});
+        focusedEnemy = enemiesInRange[0];
         return true;
     }
 
     [Task]
     bool BattleCryActive()
     {
-        bool worked = false;
         foreach (PJ enemy in enemiesInRange)
-        {
-            if (enemy is Knight)
+            if (enemy is Knight knight && knight.UsingGritoDeBatalla())
             {
-                if ((enemy as Knight).UsingGritoDeBatalla())
-                {
-                    focusedEnemy = enemy;
-                    ThisTask.Succeed();
-                    worked = true;
-                }
+                focusedEnemy = knight;
+                return true;
             }
-        }
-        // if (worked == false) return false;
-        // else return true;
-        return worked;
+        return false;
     }
 
     [Task]
     bool GetCloser()
     {
         //Moverse hasta la distancia justa para Atacar.
+        var goalSpace = BFS.GetGoalGridSpace(space, int.MaxValue, CanMoveThere, candidate =>
+        {
+            if (candidate.GetEntity() is null)
+            {
+                var distance = candidate.ManhattanDistance2D(focusedEnemy.GetGridSpace());
+                if (distance <= attackRange)
+                    return true;
+            }
+            return false;
+        });
+        MoveTo(goalSpace);
         return true;
     }
 
@@ -177,6 +236,7 @@ public class Healer : Enemy
     bool Attack()
     {
         //Activar Debuff de daño y defensa
+        new Curse(focusedEnemy);
         return true;
     }
 
@@ -185,12 +245,47 @@ public class Healer : Enemy
     {
         return movement > 0;
     }
+
     [Task]
     bool ChooseCloserAlly()
     {
         //lo de siempre, decidir aliado más cercano y meterlo en focused ally
+        var spaceWithAllyInRange = BFS.GetGoalGridSpace(space, int.MaxValue, CanMoveThere,
+            //candidate => candidate.GetEntity() is Ally);
+            candidate =>
+            {
+                if (candidate.GetEntity() is null)
+                {
+                    foreach (var ally in GameManager.Instance.enemies)
+                    {
+                        var distance = candidate.ManhattanDistance2D(ally.GetGridSpace());
+                        if (distance <= attackRange)
+                            return true;
+                    }
+                }
+                return false;
+            });
+
+        var goalNode = spaceWithAllyInRange?.node;
+        if (goalNode is not null)
+        {
+            var node = goalNode;
+            while ((node is not null) && (node.distance > movement || node.space.GetEntity() is PJ))
+            {
+                node = node.parent;
+            }
+
+            if (node is not null)
+            {
+                MoveTo(node.space);
+            }
+            else return false;
+        }
+        else return false;
+
         return true;
     }
+
     [Task]
     bool IsAnyoneAlive()
     {

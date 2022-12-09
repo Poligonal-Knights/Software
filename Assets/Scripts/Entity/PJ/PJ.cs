@@ -78,7 +78,7 @@ public class PJ : Entity
             var step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, destination.GetWorldPosition(), step);
             //Cositas de los halfs
-            if (destination.neighbors["down"].GetEntity() is Half)
+            if (destination.neighbors["down"]?.GetEntity() is Half)
             {
                 this.transform.Find("Sprite").transform.localPosition= new Vector3(0,-0.5f,0);
             }

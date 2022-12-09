@@ -113,8 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8a474900dfb76e45b7df0be4281c206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frontSprite: {fileID: 0}
-  backSprite: {fileID: 0}
+  frontSprite: {fileID: 21300000, guid: bf2ee0cc955ae73489f0545b26309981, type: 3}
+  backSprite: {fileID: 21300000, guid: 9746b3642b4cd2642a009d1bb9306f50, type: 3}
   maxMovement: 3
   movement: 3
   maxHealth: 6
@@ -160,6 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8617794484589334168}
   - component: {fileID: 4001622664739338039}
+  - component: {fileID: 5225857780115093137}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -234,3 +235,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5225857780115093137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7110495422782607386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481723ea5e8deae4386d185b731e0aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

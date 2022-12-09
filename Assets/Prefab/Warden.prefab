@@ -135,21 +135,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf7a5e4285780944a92044d37cfffee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frontSprite: {fileID: 0}
-  backSprite: {fileID: 0}
-  maxMovement: 0
-  movement: 0
-  maxHealth: 0
-  health: 0
-  damage: 0
+  frontSprite: {fileID: 21300000, guid: 2916be213f5a6d245bd23fc8edd93fe4, type: 3}
+  backSprite: {fileID: 21300000, guid: 803b116940a133a4fa7bca950f44d347, type: 3}
+  maxMovement: 4
+  movement: 4
+  maxHealth: 4
+  health: 4
+  damage: 4
   CanJump: 0
-  defaultSpeed: 0
+  defaultSpeed: 3
   defense: 0
   IsMoving: 0
   realizandoTurno: 0
   beingPushed: 0
   comboed: 0
-  attackRange: 0
+  attackRange: 3
 --- !u!1 &9064554234426885698
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,8 +160,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1716077181246771522}
   - component: {fileID: 618765017945029063}
+  - component: {fileID: 8116790052843253538}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -234,3 +235,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8116790052843253538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9064554234426885698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481723ea5e8deae4386d185b731e0aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

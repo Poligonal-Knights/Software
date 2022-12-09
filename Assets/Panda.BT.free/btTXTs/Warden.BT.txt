@@ -5,7 +5,7 @@ tree("Root")
 				IsInOffense()
 				tree "Trashmob"
 			repeat
-				sequence
+				fallback
 					tree "ProtectedAlly"
 					tree "ChooseProtectedAlly"
 					tree "Offense"
