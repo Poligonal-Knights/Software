@@ -116,11 +116,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _InkJsonFile: {fileID: 0}
   textSpeed: 0
-  componenteTexto: {fileID: 0}
-  componenteNombre: {fileID: 0}
-  characterIcono: {fileID: 0}
-  canvasTurno: {fileID: 0}
-  canvasCamara: {fileID: 0}
+  componenteTexto: {fileID: 7803187977418275821}
+  componenteNombre: {fileID: 3126452241723637830}
+  characterIcono: {fileID: 7311478590166273471}
 --- !u!1 &1615294327160362517
 GameObject:
   m_ObjectHideFlags: 0

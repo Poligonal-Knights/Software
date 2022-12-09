@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public HashSet<PJ> PJs;
     public HashSet<Ally> allies;
     public HashSet<Enemy> enemies;
+    public Canvas dialogoFinal;
 
     private void Awake()
     {
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
 
     void Victory()
     {
+        dialogoFinal.gameObject.SetActive(true);
         GameManager.Instance.LoadNextScene();
     }
 

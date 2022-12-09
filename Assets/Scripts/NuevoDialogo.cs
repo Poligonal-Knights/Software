@@ -17,9 +17,9 @@ public class NuevoDialogo : MonoBehaviour
     public TextMeshProUGUI componenteTexto;
     public TextMeshProUGUI componenteNombre;
     public Image characterIcono;
-    public Canvas canvasTurno;
-    public Canvas canvasCamara;
-    public Button turnButton;
+    //public Canvas canvasTurno;
+    //public Canvas canvasCamara;
+    //public Button turnButton;
 
     void Start()
     {
@@ -40,6 +40,9 @@ public class NuevoDialogo : MonoBehaviour
 
     void inicioDial()
     {
+        UIManager.Instance.ShowTurnButton(false);
+        UIManager.Instance.ShowAlwaysCanvas(false);
+
         _StoryScript = new Story(_InkJsonFile.text);
 
         _StoryScript.BindExternalFunction("Name", (string charName) => ChangeName(charName));
