@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     public Canvas alwaysActiveCanvas;
     public Canvas enemyCanvas;
     public Canvas abilityNonDefined;
+    public Canvas SettingsCanvas; 
     
     public Sprite wizardPortrait;
     public Sprite knightPortrait;
@@ -29,6 +30,9 @@ public class UIManager : MonoBehaviour
     Canvas previousCanvas;
     List<Canvas> allCanvas;
 
+    public PJPointer allyPointer;
+    public PJPointer enemyPointer;
+
     private void Awake() => Instance = this;
 
     void Start()
@@ -39,6 +43,7 @@ public class UIManager : MonoBehaviour
         allCanvas.Add(habilitiesCanvas);
         allCanvas.Add(previewCanvas);
         allCanvas.Add(enemyCanvas);
+        allCanvas.Add(SettingsCanvas);
         //allCanvas.Add(MenuInGameCanvas);
         //allCanvas.Add(turnCanvas);
         currentCanvas = emptyCanvas;
@@ -83,6 +88,7 @@ public class UIManager : MonoBehaviour
         currentCanvas = canvasToShow;
         currentCanvas.gameObject.SetActive(true);
         //if(GameManager.turnManager.IsPlayerTurn()) turnCanvas.gameObject.SetActive(true);
+        //if(GameManager.turnManager.IsPlayerTurn()) turnCanvas.gameObject.SetActive(true);
         // alwaysActiveCanvas.gameObject.SetActive(true);
     }
 
@@ -95,7 +101,18 @@ public class UIManager : MonoBehaviour
 
     public void ShowEmptyCanvas()
     {
+        //PJPointer.Instance.ResetPos();
+        allyPointer.ResetPos();
+        enemyPointer.ResetPos();
         ShowThisCanvas(emptyCanvas);
+        //ShowTurnButton();
+    }
+
+    public void ShowSettings()
+    {
+        ShowThisCanvas(SettingsCanvas);
+        alwaysActiveCanvas.gameObject.SetActive(false);
+        turnCanvas.gameObject.SetActive(false);
         //ShowTurnButton();
     }
 
@@ -107,6 +124,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowHabilitiesCanvas()
     {
+        ChangeSelectedHab();
         ShowThisCanvas(habilitiesCanvas);
         ShowTurnButton();
     }
@@ -151,6 +169,7 @@ public class UIManager : MonoBehaviour
     public void ShowSelectedAlly()
     {
         PJ selectedAlly = LogicManager.Instance.GetSelectedPJ();
+        MovePointer(selectedAlly);
         if (selectedAlly is Ally ally)
         {
             if (ally.maxHealth == 0)
@@ -207,6 +226,8 @@ public class UIManager : MonoBehaviour
     {
         PJ selectedEnemy = LogicManager.Instance.GetSelectedPJ();
 
+        MovePointer(selectedEnemy);
+
         if (selectedEnemy is TrashMob)
         {
             enemyCanvas.transform.Find("Portrait").GetComponent<UnityEngine.UI.Image>().sprite = TrashPortrait;
@@ -225,6 +246,38 @@ public class UIManager : MonoBehaviour
         {
             enemyCanvas.transform.Find("Portrait").Find("EHealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = (float) selectedEnemy.health / selectedEnemy.maxHealth;
         }
+    }
+
+    public void ChangeSelectedHab() 
+    {
+        PJ selectedAlly = LogicManager.Instance.GetSelectedPJ();
+        
+        if (selectedAlly is Wizard)
+        {
+            habilitiesCanvas.transform.GetChild(0).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Empujón de Viento");
+            habilitiesCanvas.transform.GetChild(1).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Bomba de Aire");
+            habilitiesCanvas.transform.GetChild(2).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Prisa");
+            habilitiesCanvas.transform.GetChild(3).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Barrido de Aire");
+            habilitiesCanvas.transform.GetChild(4).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Muro de Viento");
+
+        }
+        else if (selectedAlly is Knight)
+        {
+            habilitiesCanvas.transform.GetChild(0).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Escudazo");
+            habilitiesCanvas.transform.GetChild(1).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Provocación");
+            habilitiesCanvas.transform.GetChild(2).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Carga de Escudo");
+            habilitiesCanvas.transform.GetChild(3).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Cubrir Aliados");
+            habilitiesCanvas.transform.GetChild(4).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Lanzar Escudo");
+        }
+        else if (selectedAlly is Priest)
+        {
+            habilitiesCanvas.transform.GetChild(0).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Atracción");
+            habilitiesCanvas.transform.GetChild(1).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Curación en área");
+            habilitiesCanvas.transform.GetChild(2).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Bendición");
+            habilitiesCanvas.transform.GetChild(3).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Ángel guardián");
+            habilitiesCanvas.transform.GetChild(4).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Transposición");
+        }
+
     }
 
     public void ShowAlwaysCanvas(bool set)
@@ -257,4 +310,18 @@ public class UIManager : MonoBehaviour
     {
         abilityNonDefined.gameObject.SetActive(false);
     }
+
+    public void MovePointer(PJ pj)
+    {
+        if (pj is Ally)
+        {
+            allyPointer.SetPJ(pj);
+
+        }
+        else
+        {
+            enemyPointer.SetPJ(pj);
+        }
+    }
+
 }

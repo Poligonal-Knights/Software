@@ -129,9 +129,24 @@ public class Ability
                     return new Priest_Ability_4(pj);
             }
         }
+        else if (pj is Rogue)
+        {
+            switch (i)
+            {
+                case 0:
+                    return new Rogue_Ability_0(pj);
+                case 1:
+                    return new Rogue_Ability_1(pj);
+                case 2:
+                    return new Rogue_Ability_2(pj);
+                case 3:
+                    return new Rogue_Ability_3(pj);
+                case 4:
+                    return new Rogue_Ability_4(pj);
+            }
+        }
 
-
-        Debug.Log("ERROR AL OBTENER HABILIDAD");
+        Debug.LogWarning("ERROR AL OBTENER HABILIDAD");
         return null;
     }
 

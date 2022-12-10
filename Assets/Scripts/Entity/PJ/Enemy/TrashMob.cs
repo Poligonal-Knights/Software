@@ -217,7 +217,7 @@ public class TrashMob : Enemy
     bool Attack()
     {
         if (!getAttackPerformed())
-            LineRendererManager.Instance.AddLine(this.GetGridSpace().GetWorldPosition(), focusedEnemy.GetGridSpace().GetWorldPosition());
+            LineDrawer.DrawLine(this.GetGridSpace().GetWorldPosition(), focusedEnemy.GetGridSpace().GetWorldPosition());
         //Correr animaci�n de ataque mirando al enemigo
         focusedEnemy.DealDamage(damage);
         setAttackPerformed(true);

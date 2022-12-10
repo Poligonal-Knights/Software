@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using Panda;
 using System.Linq;
-using System.Xml.Serialization;
 
 public class Mage : Enemy
 {
@@ -101,7 +100,7 @@ public class Mage : Enemy
     bool IsTargetFocused()
     {
         return false;
-        return optimalSpace != null;
+        //return optimalSpace != null;
     }
 
     [Task]

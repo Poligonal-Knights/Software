@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 using System;
+using UnityEngine.Events;
 
 public class PJ : Entity
 {
@@ -34,6 +35,9 @@ public class PJ : Entity
     GridSpace destination;
 
     HashSet<Buff> buffs = new HashSet<Buff>();
+
+    public UnityEvent MovementEvent = new UnityEvent();
+    bool InvokeMovementEvent = false;
 
     protected override void Awake()
     {
@@ -70,8 +74,13 @@ public class PJ : Entity
             destination = MovementsToDo.Dequeue();
             var or = destination.GetWorldPosition() - transform.position;
             if (or.x != 0 || or.z != 0)
+            {
                 orientation = new Vector2(or.x, or.z);
+                InvokeMovementEvent = true;
+            }
+            else InvokeMovementEvent = true;
             UpdateOrientation();
+            //MovementEvent.Invoke();
         }
         if (IsMoving)
         {
@@ -80,11 +89,11 @@ public class PJ : Entity
             //Cositas de los halfs
             if (destination.neighbors["down"]?.GetEntity() is Half)
             {
-                this.transform.Find("Sprite").transform.localPosition= new Vector3(0,-0.5f,0);
+                this.transform.Find("Sprite").transform.localPosition = new Vector3(0, -0.5f, 0);
             }
             else
             {
-                this.transform.Find("Sprite").transform.localPosition= new Vector3(0, 0, 0);
+                this.transform.Find("Sprite").transform.localPosition = new Vector3(0, 0, 0);
             }
             //Terminado cositas de los halfs
             if (Vector3.Distance(transform.position, destination.GetWorldPosition()) < 0.001f)
@@ -94,6 +103,7 @@ public class PJ : Entity
                 {
                     UpdateGridSpace();
                 }
+                if (InvokeMovementEvent) MovementEvent.Invoke();
                 //transform.position = destination.GetPJPlacement();
                 IsMoving = false;
                 if (!MovementsToDo.Any())
@@ -255,13 +265,13 @@ public class PJ : Entity
     {
         GetComponentInChildren<SpriteRenderer>().color = new Color(1, 0, 0);
         StartCoroutine(GetColorBack());
-        health -= (damage-defense);
+        health -= (damage - defense);
     }
     IEnumerator GetColorBack()
     {
         yield return new WaitForSeconds(.5f);
         GetComponentInChildren<SpriteRenderer>().color = new Color(1, 1, 1);
-        
+
     }
 
     public void Heal(int healedHealth)

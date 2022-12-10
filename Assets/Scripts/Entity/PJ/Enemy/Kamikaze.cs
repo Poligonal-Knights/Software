@@ -11,13 +11,12 @@ public class Kamikaze : Enemy
     List<PJ> enemiesInRangeList = new List<PJ>();
     private PJ focusedEnemy = null;
     private GridSpace optimalSpace = null;
-    // Start is called before the first frame update
+
     protected override void Start()
     {
         base.Start();
     }
 
-    // Update is called once per frame
     protected override void Update()
     {
         base.Update();
@@ -117,29 +116,22 @@ public class Kamikaze : Enemy
     [Task]
     bool BattleCryActive()
     {
-        bool worked = false;
         foreach (PJ enemy in enemiesInRangeList)
-        {
-            if (enemy is Knight knight)
+            if (enemy is Knight knight && knight.UsingGritoDeBatalla())
             {
-                if (knight.UsingGritoDeBatalla())
-                {
-                    focusedEnemy = knight;
-                    optimalSpace = focusedEnemy.GetGridSpace();
-                    ThisTask.Succeed();
-                    worked = true;
-                }
+                focusedEnemy = knight;
+                optimalSpace = focusedEnemy.GetGridSpace();
+                return true;
             }
-        }
-        // if (worked == false) return false;
-        // else return true;
-        return worked;
+        return false;
     }
+
     [Task]
     bool InOptimalSpace()
     {
         return this.space == optimalSpace;
     }
+
     [Task]
     bool Explosion()
     {
@@ -156,6 +148,7 @@ public class Kamikaze : Enemy
         Debug.Log("THINGS GOT BOOMBY BOOMBY");
         return false;
     }
+
     [Task]
     bool CanIMove()
     {
@@ -180,7 +173,6 @@ public class Kamikaze : Enemy
                 MoveTo(node.space);
             }
         }
-
         return true;
     }
 }
