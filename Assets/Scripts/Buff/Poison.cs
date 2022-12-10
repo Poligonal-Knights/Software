@@ -23,6 +23,7 @@ public class Poison : Buff
         if (Owner is Enemy enemy)
         {
             enemy.MovementEvent.RemoveListener(DamagePerMovement);
+            enemy.MovementEvent.RemoveListener(DamagePerMovement);
             base.Finish();
         }
     }

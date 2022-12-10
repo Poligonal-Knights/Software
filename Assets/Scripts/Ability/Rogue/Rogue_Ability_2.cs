@@ -45,21 +45,14 @@ public class Rogue_Ability_2 : Ability
     {
         base.Confirm();
         Debug.Log("Confirming Hability");
-        var rogue = LogicManager.Instance.GetSelectedPJ() as Rogue;
-        //var pushDirection = SelectedSpace.gridPosition - knight.GetGridSpace().gridPosition;
-        var AnyEnemyWasAffected = false;
-        foreach (var affectedSpace in AffectedSpaces)
-        {
-            if (affectedSpace.GetEntity() is Enemy enemy)
-            {
-                AnyEnemyWasAffected = true;
-                //enemy.BePushed(pushDirection, knight.pushStrength, knight.damage, knight);
-            }
-        }
+        //var rogue = LogicManager.Instance.GetSelectedPJ() as Rogue;
+        var enemyAffected = SelectedSpace.GetEntity() as Enemy;
+        new Poison(enemyAffected);
+
         ClearAffectedSpaces();
         ClearSelectableSpaces();
-            LogicManager.Instance.PJFinishedMoving();
-        
+        LogicManager.Instance.PJFinishedMoving();
+
     }
 
     public override void Cancel()

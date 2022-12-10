@@ -8,6 +8,7 @@ public class Caltrops : Activatable
 
     public override void Activate(PJ Activator)
     {
+        if (Activator is Ally) return;
         base.Activate(Activator);
         //Animacion de activar
         Debug.LogWarning("CALTROPs ACTIVATED");

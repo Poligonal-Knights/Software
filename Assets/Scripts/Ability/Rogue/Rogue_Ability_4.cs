@@ -4,7 +4,7 @@ using System.Reflection.Emit;
 using UnityEditor;
 using UnityEngine;
 
-//Basico
+//Muñeco explosivo
 public class Rogue_Ability_4 : Ability
 {
     public Rogue_Ability_4(PJ owner) : base(owner) { EnergyConsumed = 0;}
@@ -12,10 +12,10 @@ public class Rogue_Ability_4 : Ability
     public override void Preview()
     {
         Debug.Log("Hability Preview");
-        var PJSpace = LogicManager.Instance.GetSelectedPJ().GetGridSpace();
+        var PJSpace = Owner.GetGridSpace();
         foreach (var move in PJSpace.moves)
         {
-            if (move.gridPosition.y == PJSpace.gridPosition.y)
+            if (move.gridPosition.y == PJSpace.gridPosition.y && move.GetEntity() is null)
             {
                 AddSelectableSpace(move);
             }
@@ -27,6 +27,11 @@ public class Rogue_Ability_4 : Ability
         Debug.Log("Selecting Target");
         ClearAffectedSpaces();
         RefreshSelectableSpaces();
+
+        SelectedSpace = selected;
+        AddHealedSpace(SelectedSpace);
+
+
         var PJSpace = LogicManager.Instance.GetSelectedPJ().GetGridSpace();
         var auxVector = selected.gridPosition - PJSpace.gridPosition;
         var aux = Vector3.Cross(auxVector, Vector3.up);
@@ -35,7 +40,6 @@ public class Rogue_Ability_4 : Ability
         AddAffectedSpace(selected);
         AddAffectedSpace(spaceAffected1);
         AddAffectedSpace(spaceAffected2);
-        SelectedSpace = selected;
         readyToConfirm = true;
     }
 

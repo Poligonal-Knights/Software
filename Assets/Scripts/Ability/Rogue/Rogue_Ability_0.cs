@@ -13,7 +13,7 @@ public class Rogue_Ability_0 : Ability
     public override void Preview()
     {
         Debug.Log("Hability Preview");
-        var PJSpace = LogicManager.Instance.GetSelectedPJ().GetGridSpace();
+        var PJSpace = Owner.GetGridSpace();
         foreach (var move in PJSpace.moves)
         {
             if (move.gridPosition.y == PJSpace.gridPosition.y)
@@ -37,7 +37,7 @@ public class Rogue_Ability_0 : Ability
     {
         base.Confirm();
         Debug.Log("Confirming Hability");
-        var rogue = LogicManager.Instance.GetSelectedPJ() as Rogue;
+        var rogue = Owner as Rogue;
         var pushDirection = SelectedSpace.gridPosition - rogue.GetGridSpace().gridPosition;
         var AnyEnemyWasAffected = false;
         GridSpace spawn = null;

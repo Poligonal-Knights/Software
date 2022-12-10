@@ -12,7 +12,7 @@ public class Rogue_Ability_1 : Ability
     public override void Preview()
     {
         Debug.Log("Hability Preview");
-        var PJSpace = LogicManager.Instance.GetSelectedPJ().GetGridSpace();
+        var PJSpace = Owner.GetGridSpace();
         foreach (var move in PJSpace.moves)
         {
             if (move.gridPosition.y == PJSpace.gridPosition.y)
@@ -27,7 +27,7 @@ public class Rogue_Ability_1 : Ability
         Debug.Log("Selecting Target");
         ClearAffectedSpaces();
         RefreshSelectableSpaces();
-        var PJSpace = LogicManager.Instance.GetSelectedPJ().GetGridSpace();
+        var PJSpace = Owner.GetGridSpace();
         var auxVector = selected.gridPosition - PJSpace.gridPosition;
         var aux = Vector3.Cross(auxVector, Vector3.up);
         var spaceAffected1 = GridManager.Instance.GetGridSpace(Vector3Int.RoundToInt(selected.gridPosition + aux));

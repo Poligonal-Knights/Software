@@ -6,6 +6,7 @@ using UnityEngine;
 public class Rogue : Ally
 {
     public GameObject caltrops;
+    public GameObject dummy;
 
     protected override void Start()
     {
