@@ -308,7 +308,7 @@ public class UIManager : MonoBehaviour
 
     public void MovePointer(Vector3 a) 
     {
-        a.y = a.y + 1;
+        a.y = a.y + 0.75f;
         PointerManager.Instance.OnCharacter(a);
     }
 
