@@ -17,8 +17,10 @@ public class NuevoDialogo : MonoBehaviour
     public TextMeshProUGUI componenteTexto;
     public TextMeshProUGUI componenteNombre;
     public Image characterIcono;
-    //public Canvas canvasCamara;
+    public Canvas actionCanvas;
     public Button turnButton;
+
+    public bool final;
 
     void Start()
     {
@@ -41,6 +43,7 @@ public class NuevoDialogo : MonoBehaviour
     {
         UIManager.Instance.ShowTurnButton(false);
         UIManager.Instance.ShowAlwaysCanvas(false);
+        actionCanvas.gameObject.SetActive(false);
 
         _StoryScript = new Story(_InkJsonFile.text);
 
@@ -61,11 +64,18 @@ public class NuevoDialogo : MonoBehaviour
         }
         else
         {
-            UIManager.Instance.ShowTurnButton(true);
-            UIManager.Instance.ShowAlwaysCanvas(true);
-            gameObject.SetActive(false);
-            turnButton.gameObject.SetActive(true);
-            //canvasCamara.gameObject.SetActive(true);
+            if (final == false)
+            {
+                UIManager.Instance.ShowTurnButton(true);
+                UIManager.Instance.ShowAlwaysCanvas(true);
+                gameObject.SetActive(false);
+                turnButton.gameObject.SetActive(true);
+                //actionCanvas.gameObject.SetActive(true);
+            }
+            else
+            {
+                GameManager.Instance.LoadNextScene();
+            }
         }
     }
 

@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public HashSet<Ally> allies;
     public HashSet<Enemy> enemies;
 
+    public Canvas dialogoFinal;
+
     private void Awake()
     {
         Instance = this;
@@ -53,6 +55,19 @@ public class GameManager : MonoBehaviour
         {
             enemies.Remove(enemy);
         }
+
+        if (enemies.Count <= 0) Victory();
+        if (allies.Count <= 0) Defeat();
+    }
+
+    void Victory()
+    {
+        dialogoFinal.gameObject.SetActive(true);
+    }
+
+    void Defeat()
+    {
+        Debug.Log("DERROTA");
     }
 
     void Update()
