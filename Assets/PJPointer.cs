@@ -12,7 +12,6 @@ public class PJPointer : MonoBehaviour
     {
         defaultPos = this.transform.position;
         animator = this.GetComponentInChildren<Animator>();
-        Debug.LogWarning(animator);
     }
 
     // Update is called once per frame
@@ -41,6 +40,5 @@ public class PJPointer : MonoBehaviour
     {
         pj = setTo;
         animator.SetBool("OnObj", pj != null);
-
     }
 }
