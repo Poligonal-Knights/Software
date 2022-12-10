@@ -9419,10 +9419,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7605626245600347394, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: _InkJsonFile
+      value: 
+      objectReference: {fileID: 4900000, guid: bb09e3993e5511d47992ef1b7653f63e, type: 3}
     - target: {fileID: 7780225902104662219, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: _InkJsonFile
       value: 
-      objectReference: {fileID: 4900000, guid: 990f3369819c44b48ac9049330181a20, type: 3}
+      objectReference: {fileID: 4900000, guid: d1cdeebc5dc67bb46bfb14e7d958144a, type: 3}
     - target: {fileID: 7804487033561390042, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_RootOrder
       value: 0
