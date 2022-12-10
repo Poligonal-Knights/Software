@@ -118,6 +118,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowHabilitiesCanvas()
     {
+        ChangeSelectedHab();
         ShowThisCanvas(habilitiesCanvas);
         ShowTurnButton();
     }
@@ -236,6 +237,38 @@ public class UIManager : MonoBehaviour
         {
             enemyCanvas.transform.Find("Portrait").Find("EHealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = (float) selectedEnemy.health / selectedEnemy.maxHealth;
         }
+    }
+
+    public void ChangeSelectedHab() 
+    {
+        PJ selectedAlly = LogicManager.Instance.GetSelectedPJ();
+        
+        if (selectedAlly is Wizard)
+        {
+            habilitiesCanvas.transform.GetChild(0).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Empujón de Viento");
+            habilitiesCanvas.transform.GetChild(1).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Bomba de Aire");
+            habilitiesCanvas.transform.GetChild(2).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Prisa");
+            habilitiesCanvas.transform.GetChild(3).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Barrido de Aire");
+            habilitiesCanvas.transform.GetChild(4).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Muro de Viento");
+
+        }
+        else if (selectedAlly is Knight)
+        {
+            habilitiesCanvas.transform.GetChild(0).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Escudazo");
+            habilitiesCanvas.transform.GetChild(1).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Provocación");
+            habilitiesCanvas.transform.GetChild(2).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Carga de Escudo");
+            habilitiesCanvas.transform.GetChild(3).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Cubrir Aliados");
+            habilitiesCanvas.transform.GetChild(4).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Lanzar Escudo");
+        }
+        else if (selectedAlly is Priest)
+        {
+            habilitiesCanvas.transform.GetChild(0).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Atracción");
+            habilitiesCanvas.transform.GetChild(1).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Curación en área");
+            habilitiesCanvas.transform.GetChild(2).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Bendición");
+            habilitiesCanvas.transform.GetChild(3).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Ángel guardián");
+            habilitiesCanvas.transform.GetChild(4).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Transposición");
+        }
+
     }
 
     public void ShowAlwaysCanvas(bool set)

@@ -43,6 +43,22 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(6);
     }
+    public void Lvl5()
+    {
+        SceneManager.LoadScene(7);
+    }
+    public void Lvl6()
+    {
+        SceneManager.LoadScene(8);
+    }
+    public void Lvl7()
+    {
+        SceneManager.LoadScene(9);
+    }
+    public void Lvl8()
+    {
+        SceneManager.LoadScene(10);
+    }
 
     public void BackToMenu()
     {

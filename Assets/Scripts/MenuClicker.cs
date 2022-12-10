@@ -53,6 +53,22 @@ public class MenuClicker : MonoBehaviour
                     else if (GameObject.ReferenceEquals(hit.transform.gameObject, lvl4))
                     {
                         selectedCanvas.transform.Find("SiBt").GetComponent<Button>().onClick.AddListener(() => MenuManager.Instance.Lvl4());
+                    }//
+                    else if (GameObject.ReferenceEquals(hit.transform.gameObject, lvl5))
+                    {
+                        selectedCanvas.transform.Find("SiBt").GetComponent<Button>().onClick.AddListener(() => MenuManager.Instance.Lvl5());
+                    }
+                    else if (GameObject.ReferenceEquals(hit.transform.gameObject, lvl6))
+                    {
+                        selectedCanvas.transform.Find("SiBt").GetComponent<Button>().onClick.AddListener(() => MenuManager.Instance.Lvl6());
+                    }
+                    else if (GameObject.ReferenceEquals(hit.transform.gameObject, lvl7))
+                    {
+                        selectedCanvas.transform.Find("SiBt").GetComponent<Button>().onClick.AddListener(() => MenuManager.Instance.Lvl7());
+                    }
+                    else if (GameObject.ReferenceEquals(hit.transform.gameObject, lvl8))
+                    {
+                        selectedCanvas.transform.Find("SiBt").GetComponent<Button>().onClick.AddListener(() => MenuManager.Instance.Lvl8());
                     }
 
 

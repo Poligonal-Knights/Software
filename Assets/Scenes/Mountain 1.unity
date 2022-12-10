@@ -11534,11 +11534,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2353054003269073418, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -60
+      value: -47.168884
       objectReference: {fileID: 0}
     - target: {fileID: 2353054003269073418, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -60
+      value: 111.03473
       objectReference: {fileID: 0}
     - target: {fileID: 2487368082279494994, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -11790,7 +11790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8164596033599996457, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8164596033763823562, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_IsActive
@@ -11822,7 +11822,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8164596033972962413, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8164596034103304777, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: nextScene

@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuP.unity
     guid: cbf921b91dc77bd49b079521868cf840
   - enabled: 1
+    path: Assets/Scenes/ModeSelect.unity
+    guid: 0f57943bfe59ad945aa1b4ffc6c5fe06
+  - enabled: 1
     path: Assets/Scenes/LvlSelect3D.unity
     guid: dddbc249a993c4e4aad125ad3ce3e109
   - enabled: 1
