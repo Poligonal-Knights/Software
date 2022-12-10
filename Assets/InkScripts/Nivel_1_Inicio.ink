@@ -11,7 +11,7 @@ Podéis ve-
 {Icon("Kelsier")}
 Estoo...
 
-Juan, creo que se te ha olvidado meternos a Adele y a mí en la escena
+Juan, creo que se te ha olvidado meternos a Adel y a mí en la escena
 
 {Name("Dungeon Master")}
 {Icon("Pedro")}

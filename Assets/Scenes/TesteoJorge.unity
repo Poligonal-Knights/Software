@@ -1033,9 +1033,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1db2399ad6acfbf4ba78996965fe72ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClick:
-    m_PersistentCalls:
-      m_Calls: []
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
   maxMovement: 0
   movement: 0
   maxHealth: 0
@@ -1043,12 +1042,12 @@ MonoBehaviour:
   damage: 0
   CanJump: 0
   defaultSpeed: 0
+  defense: 0
   IsMoving: 0
   realizandoTurno: 0
   beingPushed: 0
   comboed: 0
   attackRange: 0
-  myDamage: 0
 --- !u!136 &201019547
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3563,10 +3562,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1024167685196171522, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: _InkJsonFile
+      value: 
+      objectReference: {fileID: 4900000, guid: 990f3369819c44b48ac9049330181a20, type: 3}
     - target: {fileID: 2307817674586481882, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_Name
       value: SceneSet
       objectReference: {fileID: 0}
+    - target: {fileID: 3321949834852893080, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: _InkJsonFile
+      value: 
+      objectReference: {fileID: 4900000, guid: 16d4d55ec40647845bab3c6846766dc8, type: 3}
     - target: {fileID: 5313655397014988902, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4072,9 +4079,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1db2399ad6acfbf4ba78996965fe72ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClick:
-    m_PersistentCalls:
-      m_Calls: []
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
   maxMovement: 0
   movement: 0
   maxHealth: 0
@@ -4082,12 +4088,12 @@ MonoBehaviour:
   damage: 0
   CanJump: 0
   defaultSpeed: 0
+  defense: 0
   IsMoving: 0
   realizandoTurno: 0
   beingPushed: 0
   comboed: 0
   attackRange: 0
-  myDamage: 0
 --- !u!136 &797989806
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9383,9 +9389,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1db2399ad6acfbf4ba78996965fe72ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClick:
-    m_PersistentCalls:
-      m_Calls: []
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
   maxMovement: 0
   movement: 0
   maxHealth: 0
@@ -9393,12 +9398,12 @@ MonoBehaviour:
   damage: 0
   CanJump: 0
   defaultSpeed: 0
+  defense: 0
   IsMoving: 0
   realizandoTurno: 0
   beingPushed: 0
   comboed: 0
   attackRange: 0
-  myDamage: 0
 --- !u!136 &1762503346
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11144,9 +11149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1db2399ad6acfbf4ba78996965fe72ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClick:
-    m_PersistentCalls:
-      m_Calls: []
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
   maxMovement: 0
   movement: 0
   maxHealth: 0
@@ -11154,12 +11158,12 @@ MonoBehaviour:
   damage: 0
   CanJump: 0
   defaultSpeed: 0
+  defense: 0
   IsMoving: 0
   realizandoTurno: 0
   beingPushed: 0
   comboed: 0
   attackRange: 0
-  myDamage: 0
 --- !u!136 &2027479231
 CapsuleCollider:
   m_ObjectHideFlags: 0

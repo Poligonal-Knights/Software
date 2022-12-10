@@ -3,7 +3,7 @@ EXTERNAL Icon(charName)
 
 {Name("Dungeon Master")}
 {Icon("Pedro")}
-Después de un duro golpe, Kelsier y Adele, os levantáis de la dura caid-
+Después de un duro golpe, Kelsier y Adel, os levantáis de la dura caid-
 
 {Name("Kelsier")}
 {Icon("Kelsier")}
@@ -47,7 +47,7 @@ Puedes saltarte la paja.
 
 {Name("Kelsier")}
 {Icon("Kelsier")}
-Bueno Adele, a lo mejor la información es import-
+Bueno Adel, a lo mejor la información es import-
 
 {Name("Adel")}
 {Icon("Adel")}
