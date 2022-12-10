@@ -7266,6 +7266,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneSet
       objectReference: {fileID: 0}
+    - target: {fileID: 7605626245600347394, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: _InkJsonFile
+      value: 
+      objectReference: {fileID: 4900000, guid: ab47db8ab0c38204c8a9c0fbfb0b25f8, type: 3}
+    - target: {fileID: 7780225902104662219, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: _InkJsonFile
+      value: 
+      objectReference: {fileID: 4900000, guid: 911881940e5d4b1458a3bc08faef346b, type: 3}
     - target: {fileID: 7804487033561390042, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -8266,38 +8274,37 @@ Transform:
   - {fileID: 2043860605}
   - {fileID: 935815851}
   - {fileID: 260077812}
-  - {fileID: 981434385}
-  - {fileID: 370390178}
-  - {fileID: 2036734664}
-  - {fileID: 1483199884}
-  - {fileID: 783310342}
-  - {fileID: 1183134706}
-  - {fileID: 252036261}
   - {fileID: 35555304}
-  - {fileID: 572086429}
   - {fileID: 747187110}
   - {fileID: 1116020192}
   - {fileID: 350279500}
   - {fileID: 1736354691}
-  - {fileID: 1380307125}
-  - {fileID: 892101620}
+  - {fileID: 981434385}
+  - {fileID: 370390178}
   - {fileID: 1371821356}
+  - {fileID: 572086429}
   - {fileID: 37152530}
-  - {fileID: 1611723738}
+  - {fileID: 892101620}
+  - {fileID: 783310342}
   - {fileID: 889856193}
   - {fileID: 75168640}
-  - {fileID: 1101294615}
+  - {fileID: 252036261}
+  - {fileID: 2036734664}
   - {fileID: 18520755}
   - {fileID: 328489659}
   - {fileID: 259611722}
+  - {fileID: 1101294615}
   - {fileID: 939454480}
   - {fileID: 1500081845}
+  - {fileID: 1380307125}
   - {fileID: 759576315}
+  - {fileID: 1183134706}
   - {fileID: 261551405}
   - {fileID: 991603819}
   - {fileID: 820545121}
   - {fileID: 913477653}
   - {fileID: 1129250500}
+  - {fileID: 1483199884}
   - {fileID: 366204243}
   - {fileID: 1811786791}
   - {fileID: 2096178962}
@@ -8307,6 +8314,7 @@ Transform:
   - {fileID: 2024268187}
   - {fileID: 609842124}
   - {fileID: 1576364552}
+  - {fileID: 1611723738}
   - {fileID: 482925171}
   - {fileID: 1375847535}
   - {fileID: 984117174}
