@@ -98,6 +98,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowEmptyCanvas()
     {
+        PointerManager.Instance.ResetPos();
         ShowThisCanvas(emptyCanvas);
         //ShowTurnButton();
     }
@@ -163,6 +164,7 @@ public class UIManager : MonoBehaviour
     public void ShowSelectedAlly()
     {
         PJ selectedAlly = LogicManager.Instance.GetSelectedPJ();
+        MovePointer(selectedAlly.transform.position);
         if (selectedAlly is Ally ally)
         {
             if (ally.maxHealth == 0)
@@ -218,6 +220,8 @@ public class UIManager : MonoBehaviour
     public void ShowSelectedEnemy() 
     {
         PJ selectedEnemy = LogicManager.Instance.GetSelectedPJ();
+
+        MovePointer(selectedEnemy.transform.position);
 
         if (selectedEnemy is TrashMob)
         {
@@ -301,4 +305,11 @@ public class UIManager : MonoBehaviour
     {
         abilityNonDefined.gameObject.SetActive(false);
     }
+
+    public void MovePointer(Vector3 a) 
+    {
+        a.y = a.y + 1;
+        PointerManager.Instance.OnCharacter(a);
+    }
+
 }
