@@ -138,6 +138,11 @@ public class UIManager : MonoBehaviour
         turnCanvas.gameObject.SetActive(true);
     }
 
+    public void ShowTurnButton(bool set)
+    {
+        turnCanvas.gameObject.SetActive(set);
+    }
+
     public void HideTurnButton()
     {
         turnCanvas.gameObject.SetActive(false);
@@ -220,6 +225,11 @@ public class UIManager : MonoBehaviour
         {
             enemyCanvas.transform.Find("Portrait").Find("EHealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = (float) selectedEnemy.health / selectedEnemy.maxHealth;
         }
+    }
+
+    public void ShowAlwaysCanvas(bool set)
+    {
+        alwaysActiveCanvas.gameObject.SetActive(set);
     }
 
     /*public void ShowMenuIngameCanvas()
