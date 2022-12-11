@@ -11145,7 +11145,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 215, y: 178}
-  m_SizeDelta: {x: 390, y: 390}
+  m_SizeDelta: {x: 440, y: 390}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &412232913566733336
 CanvasRenderer:
@@ -11175,7 +11175,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 34bab68ea5ba942429311b025737674b, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -18629,7 +18629,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &7377846126011416609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23155,12 +23155,10 @@ MonoBehaviour:
   adelAb1Canvas: {fileID: 4824294516339451157}
   adelAb2Canvas: {fileID: 8757972009519086157}
   adelAb3Canvas: {fileID: 6125855890233077117}
-  adelAb4Canvas: {fileID: 0}
   adelPasiveCanvas: {fileID: 4745465307032136388}
   magnusCanvas: {fileID: 282582181546487061}
   magnusBasicCanvas: {fileID: 6981433247958481518}
   magnusAb1Canvas: {fileID: 4148485735235071984}
-  magnusAb2Canvas: {fileID: 0}
   magnusAb3Canvas: {fileID: 8255272660100778921}
   magnusAb4Canvas: {fileID: 3975274538545250232}
   magnusPasiveCanvas: {fileID: 9021172767405897426}
@@ -23169,13 +23167,11 @@ MonoBehaviour:
   kelsierAb1Canvas: {fileID: 967883882781429871}
   kelsierAb2Canvas: {fileID: 5441809075743660492}
   kelsierAb3Canvas: {fileID: 6333575803678575974}
-  kelsierAb4Canvas: {fileID: 0}
   kelsierPasiveCanvas: {fileID: 893591243927378095}
   petraCanvas: {fileID: 4853210272641374207}
   petraBasicCanvas: {fileID: 2305674152755439486}
   petraAb1Canvas: {fileID: 389571058384777350}
   petraAb2Canvas: {fileID: 6798492029527484088}
-  petraAb3Canvas: {fileID: 0}
   petraAb4Canvas: {fileID: 7203671476822888258}
   petraPasiveCanvas: {fileID: 7269270085828355861}
   enemyCanvas: {fileID: 4111917211352003932}
@@ -30319,7 +30315,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &4148564562684113489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38094,7 +38090,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &1417752682981738957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48784,7 +48780,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &4042586602200254108
 MonoBehaviour:
   m_ObjectHideFlags: 0

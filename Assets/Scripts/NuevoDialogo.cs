@@ -74,7 +74,7 @@ public class NuevoDialogo : MonoBehaviour
             }
             else
             {
-                GameManager.Instance.LoadNextScene();
+                SceneManager.LoadScene("LvlSelect3D");
             }
         }
     }
