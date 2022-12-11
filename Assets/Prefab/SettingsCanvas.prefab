@@ -643,12 +643,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4969056935043843876}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: ShowThisCanvas
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1948570685889717155}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -4154,7 +4154,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4969056935043843876}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: ShowThisCanvas
         m_Mode: 2
@@ -7802,7 +7802,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4969056935043843876}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: ShowThisCanvas
         m_Mode: 2
@@ -12528,7 +12528,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4969056935043843876}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: ShowThisCanvas
         m_Mode: 2
@@ -12662,7 +12662,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4969056935043843876}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: ShowThisCanvas
         m_Mode: 2
@@ -13413,12 +13413,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4969056935043843876}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: ShowThisCanvas
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1948570685889717155}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -13547,7 +13547,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4969056935043843876}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: HideAllTutorials
         m_Mode: 1
@@ -13959,7 +13959,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4969056935043843876}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: HideAllTutorials
         m_Mode: 1
@@ -14327,7 +14327,7 @@ MonoBehaviour:
         m_MethodName: ShowThisCanvas
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 8526096361529638862}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -15234,7 +15234,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &8681306379655823159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15374,7 +15374,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4969056935043843876}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: HideAllTutorials
         m_Mode: 1
@@ -17335,7 +17335,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4969056935043843876}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: HideAllTutorials
         m_Mode: 1
@@ -21568,7 +21568,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &7739371086656912063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25563,7 +25563,7 @@ MonoBehaviour:
   tankCanvas: {fileID: 4763018709118057491}
   supportCanvas: {fileID: 2988717767418584670}
   kamikazeCanvas: {fileID: 7817964380154999989}
-  controlCanvas: {fileID: 0}
+  controlCanvas: {fileID: 8526096361529638862}
 --- !u!1 &3855767077340472772
 GameObject:
   m_ObjectHideFlags: 0
@@ -29087,7 +29087,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4969056935043843876}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: HideAllTutorials
         m_Mode: 1
@@ -29358,7 +29358,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4969056935043843876}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: HideAllTutorials
         m_Mode: 1
@@ -30714,7 +30714,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4969056935043843876}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: ShowThisCanvas
         m_Mode: 2
@@ -31100,7 +31100,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &5073148283591733617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35780,7 +35780,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4969056935043843876}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: HideAllTutorials
         m_Mode: 1
@@ -37270,7 +37270,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4969056935043843876}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: ShowThisCanvas
         m_Mode: 2
@@ -43769,7 +43769,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4969056935043843876}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: HideAllTutorials
         m_Mode: 1
@@ -48318,7 +48318,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4969056935043843876}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: ShowThisCanvas
         m_Mode: 2
@@ -55491,12 +55491,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4969056935043843876}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: ShowThisCanvas
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 9158056607192720902}
+          m_ObjectArgument: {fileID: 8526096361529638862}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -56306,9 +56306,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Controles
-
-'
+  m_text: Tutoriales
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
