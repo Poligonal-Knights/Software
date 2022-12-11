@@ -2180,7 +2180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59700678e0092463cb106a3995cd22a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scanlineIntensity: 80
+  scanlineIntensity: 65
   scanlineWidth: 2
 --- !u!114 &6143579308648698354
 MonoBehaviour:
@@ -2207,7 +2207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23356f494faf4703bf771f7ebc5708d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensity: 2.85
+  intensity: 2.24
   shift: 0.19
 --- !u!1 &8164596033270069061
 GameObject:
