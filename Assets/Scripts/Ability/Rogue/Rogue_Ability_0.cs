@@ -62,6 +62,8 @@ public class Rogue_Ability_0 : Ability
 
                     enemy.BePushed(pushDirection, rogue.pushStrength, rogue.damage, rogue);
                 }
+                AudioManager.Instance.PlayAttackSound();
+
             }
         }
         ClearAffectedSpaces();

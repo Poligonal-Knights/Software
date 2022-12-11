@@ -59,7 +59,7 @@ public class Priest_Ability_4 : Ability
         ClearSelectableSpaces();
         if (pj1 is Enemy enemy) enemy.weak = true;
         if (pj2 is Enemy enemy2) enemy2.weak = true;
-
+        AudioManager.Instance.Play("Teletransporte");
         LogicManager.Instance.PJFinishedMoving();
     }
 

@@ -56,6 +56,7 @@ public class Priest_Ability_0 : Ability
                 var direction = priest.GetGridSpace().gridPosition - affectedSpace.gridPosition;
                 direction.Set(Math.Sign(direction.x), 0, Math.Sign(direction.z));
                 enemy.weak = true;
+                AudioManager.Instance.PlayAttackSound();
                 enemy.BePushed(direction, priest.pushStrength, priest.damage, priest);
             }
         }

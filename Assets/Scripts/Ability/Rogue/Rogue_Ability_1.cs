@@ -5,7 +5,7 @@ using System.Reflection.Emit;
 using UnityEditor;
 using UnityEngine;
 
-//Basico
+//TrapRope
 public class Rogue_Ability_1 : Ability
 {
     GridSpace affSpace = null;

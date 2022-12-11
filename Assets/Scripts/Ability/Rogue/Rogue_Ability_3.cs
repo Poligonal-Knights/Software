@@ -47,6 +47,7 @@ public class Rogue_Ability_3 : Ability
         {
             Object.Instantiate(oil, affectedSpace.GetWorldPosition(), Quaternion.identity);
         }
+        AudioManager.Instance.PlayAttackSound();
         ClearAffectedSpaces();
         ClearSelectableSpaces();
     }

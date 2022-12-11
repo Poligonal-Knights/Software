@@ -51,6 +51,7 @@ public class Rogue_Ability_2 : Ability
 
         ClearAffectedSpaces();
         ClearSelectableSpaces();
+        AudioManager.Instance.PlayAttackSound();
         LogicManager.Instance.PJFinishedMoving();
 
     }

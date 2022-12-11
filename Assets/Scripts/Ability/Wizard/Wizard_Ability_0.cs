@@ -56,6 +56,7 @@ public class Wizard_Ability_0 : Ability
         }
         ClearAffectedSpaces();
         ClearSelectableSpaces();
+        AudioManager.Instance.PlayAttackSound();
         if (!AnyEnemyWasAffected)
         {
             LogicManager.Instance.PJFinishedMoving();

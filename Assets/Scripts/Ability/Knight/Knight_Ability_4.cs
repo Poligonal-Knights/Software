@@ -40,8 +40,9 @@ public class Knight_Ability_4 : Ability
         {
             var knight = Owner as Knight;
             LineDrawer.DrawLine(knight.GetGridSpace().GetWorldPosition(), affSpace.GetWorldPosition());
-            enemy.DealDamage(knight.damage);
+            enemy.DealDamage(knight.damage, knight);
         }
+        AudioManager.Instance.PlayAttackSound();
         LogicManager.Instance.PJFinishedMoving();
 
     }

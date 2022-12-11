@@ -60,6 +60,10 @@ public class Knight_Ability_0 : Ability
         {
             LogicManager.Instance.PJFinishedMoving();
         }
+        else
+        {
+            AudioManager.Instance.PlayAttackSound();
+        }
     }
 
     public override void Cancel()

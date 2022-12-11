@@ -99,11 +99,11 @@ public class Ability
                 case 1:
                     return new Knight_Ability_1(pj);
                 case 2:
-                    return new Knight_Ability_2(pj);
-                case 3:
                     return new Knight_Ability_3(pj);
-                case 4:
+                case 3:
                     return new Knight_Ability_4(pj);
+                //case 4:
+                //    return new Knight_Ability_4(pj);
             }
         }
         else if (pj is Wizard)
@@ -118,8 +118,8 @@ public class Ability
                     return new Wizard_Ability_2(pj);
                 case 3:
                     return new Wizard_Ability_3(pj);
-                case 4:
-                    return new Wizard_Ability_4(pj);
+                //case 4:
+                //    return new Wizard_Ability_4(pj);
             }
         }
         else if (pj is Priest)
@@ -133,9 +133,9 @@ public class Ability
                 case 2:
                     return new Priest_Ability_2(pj);
                 case 3:
-                    return new Priest_Ability_3(pj);
-                case 4:
                     return new Priest_Ability_4(pj);
+                //case 4:
+                //    return new Priest_Ability_4(pj);
             }
         }
         else if (pj is Rogue)
@@ -150,8 +150,8 @@ public class Ability
                     return new Rogue_Ability_2(pj);
                 case 3:
                     return new Rogue_Ability_3(pj);
-                case 4:
-                    return new Rogue_Ability_4(pj);
+                //case 4:
+                //    return new Rogue_Ability_4(pj);
             }
         }
 
