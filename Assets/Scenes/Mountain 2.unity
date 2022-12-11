@@ -7655,6 +7655,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1815311381088083118, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: SceneMusic
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2041985411244247346, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0

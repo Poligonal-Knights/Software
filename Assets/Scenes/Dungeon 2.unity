@@ -4705,6 +4705,10 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1815311381088083118, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: SceneMusic
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2307817674586481882, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_Name
       value: SceneSet
@@ -4712,6 +4716,10 @@ PrefabInstance:
     - target: {fileID: 2307817674586481882, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2353054003269073418, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -46.381348
       objectReference: {fileID: 0}
     - target: {fileID: 2353054003269073418, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -5132,6 +5140,10 @@ PrefabInstance:
     - target: {fileID: 8164596034153796331, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4282148334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164596034283307752, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -93.80005
       objectReference: {fileID: 0}
     - target: {fileID: 8164596034283307752, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_AnchoredPosition.y
