@@ -399,7 +399,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 478.6667, y: -1.7967529}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 75, y: 43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5851237356736818035
 CanvasRenderer:
@@ -429,7 +429,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 012eb501cab07714ab652848b49d650b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6449eb8f0aef3a347943a96d57ba79c4, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -707,7 +707,7 @@ MonoBehaviour:
   m_margin: {x: -128.73413, y: -156.45642, z: -148.83682, w: -174.82289}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1303596824019683697
@@ -999,7 +999,7 @@ MonoBehaviour:
   m_margin: {x: -90.72562, y: -16.454346, z: -90.72565, w: -14.958496}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1397621502445972679
@@ -1113,8 +1113,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 478.6667, y: -1.7967529}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 455, y: -1.7967529}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9061739451027440928
 CanvasRenderer:
@@ -1144,7 +1144,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 012eb501cab07714ab652848b49d650b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dd5ea6533a86e494da8b1f0c86c6b1cb, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1287,7 +1287,7 @@ MonoBehaviour:
   m_margin: {x: -112.88716, y: -156.45642, z: -111.46814, w: -174.82289}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1868609197415527699
@@ -1792,7 +1792,7 @@ MonoBehaviour:
   m_margin: {x: -90.72562, y: -16.454346, z: -90.72565, w: -14.958496}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2679794896159577038
@@ -1937,11 +1937,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Una vez hayas acabado con tu turno selecciona "terminar turno" para dar
-    comienzo al turno del enemigo.
+  m_text: 'Con esto has aprendido los aspectos esenciales del combate de Materac.
+    Esperamos que disfrutes del juego :)
 
-    Este es el fin del tutorial, disfruta del
-    juego :)'
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -1976,7 +1975,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2144,7 +2143,7 @@ MonoBehaviour:
   m_margin: {x: -90.72562, y: -16.454346, z: -90.72565, w: -14.958496}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &3290373358950771296
@@ -2574,8 +2573,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 478.6667, y: -1.7967529}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 500, y: 25}
+  m_SizeDelta: {x: 80, y: 48.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8800690307173539202
 CanvasRenderer:
@@ -2605,7 +2604,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 012eb501cab07714ab652848b49d650b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38b652818fefbb44da2c7426cc08193d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2815,8 +2814,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Cada personaje tiene 4 habilidades a su disposici\xF3n, de las cuales
-    3 gastan puntos de habilidad. Aseg\xFArate de usar la correcta para cada situaci\xF3n"
+  m_text: "Cada personaje tiene 4 habilidades a su disposici\xF3n, pero cuidado,
+    solo la primera no gasta puntos de habilidad. Aseg\xFArate de usar la correcta
+    para cada situaci\xF3n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -2882,7 +2882,7 @@ MonoBehaviour:
   m_margin: {x: -112.90408, y: -156.45642, z: -148.83682, w: -174.82289}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &3997530368339708611
@@ -3863,7 +3863,7 @@ MonoBehaviour:
   m_margin: {x: -90.72562, y: -16.454346, z: -90.72565, w: -14.958496}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &5503056683593976744
@@ -5017,7 +5017,7 @@ RectTransform:
   m_GameObject: {fileID: 6621979549823767428}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.700001, y: 5.700001, z: 1}
+  m_LocalScale: {x: 5.9519405, y: 5.9519405, z: 1.0442}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5027759292946075881}
@@ -5025,7 +5025,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 703.6667, y: -1.7967529}
+  m_AnchoredPosition: {x: 720, y: 28}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &614593535652094647
@@ -5056,7 +5056,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 012eb501cab07714ab652848b49d650b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1865f7c812c10f4490f0e13bc78773a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -6227,7 +6227,7 @@ MonoBehaviour:
   m_margin: {x: -131.36899, y: -168.32944, z: -167.3122, w: -174.82289}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &7671436938582827996
@@ -6582,9 +6582,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "En la Mazmorra Maldita de Materac el combate se divide en el Turno del
-    Jugador, donde el jugador atacar\xE1 con todos sus personajes y el Turno de la
-    IA, donde el enemigo contraatacar\xE1. "
+  m_text: "El combate se divide en dos etapas: Turno del Jugador, donde el jugador
+    atacar\xE1 con todos sus personajes y el Turno de la IA, donde el enemigo contraatacar\xE1. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -6647,10 +6646,10 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -112.90408, y: -156.45642, z: -148.83682, w: -174.82289}
+  m_margin: {x: -112.90408, y: -156.45642, z: -148.83682, w: -176.07434}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &8061337065345726199
@@ -6764,8 +6763,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 478.6667, y: -1.7967529}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 504, y: 32}
+  m_SizeDelta: {x: 80, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &526701558101000767
 CanvasRenderer:
@@ -6795,7 +6794,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 012eb501cab07714ab652848b49d650b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f424ec63323e8f242a5ee86fb7a0b89b, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -7599,7 +7598,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 478.6667, y: -1.7967529}
+  m_AnchoredPosition: {x: 504, y: 38}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6899752938897949189
@@ -7630,7 +7629,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 012eb501cab07714ab652848b49d650b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1865f7c812c10f4490f0e13bc78773a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -7863,7 +7862,7 @@ GameObject:
   - component: {fileID: 8447361031508398807}
   - component: {fileID: 7804654924697496386}
   m_Layer: 5
-  m_Name: TermiarTurnoCanvas
+  m_Name: TermiarCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
