@@ -34,8 +34,9 @@ public class Ally : PJ
             {
                 if (neighbor.gridPosition.y == space.gridPosition.y)
                 {
-                    if (neighbor.GetEntity() is Enemy enemy && enemy.beingPushed)
+                    if (neighbor.GetEntity() is Enemy enemy && enemy.beingPushed && !LogicManager.Instance.reactionAbility.getAllies().Contains(this))
                     {
+                        Debug.Log("Reacción iniciada por " + this);
                         LogicManager.Instance.reactionAbility.Engage(this, enemy);
                     }
                 }
@@ -49,15 +50,26 @@ public class Ally : PJ
         return base.CanMoveThere(start, destination);
     }
 
-    public override void DealDamage(int damage, PJ attacker = null)
+    public override void DealDamage(int damage, PJ attacker = null, PJ damageTo = null)
     {
+        AudioManager.Instance.Play("AtaqueEnemigo");
         if (!invencibility)
+        {
             base.DealDamage(damage, attacker);
+            AudioManager.Instance.Play("RecibirDano");
+        }
+        else
+        {
+            
+            AudioManager.Instance.Play("Invencibilidad");
+        }
     }
 
     public void SetInvencibility(bool setTo)
     {
         invencibility = setTo;
+        if(setTo) 
+            AudioManager.Instance.Play("Buff");
     }
 
     public bool IsInvencible()

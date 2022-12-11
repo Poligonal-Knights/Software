@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager Instance;
 
+    public int SceneMusic = 0;
     void Awake()
     {
         if(Instance == null)
@@ -35,7 +36,24 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        Play("TemaMenus");
+        switch (SceneMusic)
+        {
+            case 0:
+                Play("TemaMenus");
+                break;
+            case 1:
+                Play("TemaPeleaBosque");
+                break;
+            case 2:
+                Play("TemaPeleaAgua");
+                break;
+            case 3:
+                Play("TemaPeleaMontaña");
+                break;
+            case 4:
+                Play("TemaPeleaDungeon");
+                break;
+        }
     }
 
     public void Play(string name)

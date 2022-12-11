@@ -14,6 +14,7 @@ public class Curse : Buff
     {
         if (Owner is Ally ally)
         {
+            AudioManager.Instance.Play("Debuff");
             ally.defense += defenseIncrement;
             ally.damage += damageIncrement;
         }

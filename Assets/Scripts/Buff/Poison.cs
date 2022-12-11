@@ -14,6 +14,7 @@ public class Poison : Buff
     {
         if (Owner is Enemy enemy)
         {
+            AudioManager.Instance.Play("Debuff");
             enemy.MovementEvent.AddListener(DamagePerMovement);
         }
     }

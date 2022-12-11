@@ -31,7 +31,10 @@ public class Knight_Ability_3 : Ability
 
         foreach (var space in SelectableSpaces)
         {
-            if (space.GetEntity() is Ally ally) ally.SetInvencibility(true);
+            if (space.GetEntity() is Ally ally)
+            {
+                ally.SetInvencibility(true);
+            }
         }
         ClearSelectableSpaces();
         ClearAffectedSpaces();

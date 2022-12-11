@@ -208,7 +208,7 @@ public class Warden : Enemy
             foreach (var space in espaciosARangoDelAliado)
             {
                 var distance = GridSpace.ManhattanDistance2D(space, enemy.GetGridSpace());
-                if (distance <= protectedAlly.attackRange)
+                if (distance <= 2) //Comprobar más adelante
                 {
                     enemigosARangoDelAliado.Add(enemy);
                     break;
@@ -341,6 +341,7 @@ public class Warden : Enemy
     bool MovementBuff()
     {
         this.movement += 3;
+        AudioManager.Instance.Play("Buff");
         return true;
     }
     //A partir de aquí se incluiran los metodos usados

@@ -14,6 +14,7 @@ public class Tough : Buff
     {
         if (Owner is Enemy enemy)
         {
+            AudioManager.Instance.Play("Buff");
             enemy.defense += defenseIncrement;
         }
     }

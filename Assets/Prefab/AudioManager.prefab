@@ -52,7 +52,7 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: TemaPeleaBosque
-    clip: {fileID: 8300000, guid: e37fff91616af844fbe5d250d864a859, type: 3}
+    clip: {fileID: 8300000, guid: e02fe2e50253f4a48bf2b6a1b70d9796, type: 3}
     volume: 0.621
     pitch: 1
     loop: 1
@@ -117,3 +117,28 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Healing
+    clip: {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}
+    volume: 0.621
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Debuff
+    clip: {fileID: 8300000, guid: 5fdb13d3756c84fecac96f5a2d124370, type: 3}
+    volume: 0.621
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Buff
+    clip: {fileID: 8300000, guid: 657578e4be6b64dbf9b09deada272e55, type: 3}
+    volume: 0.621
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Invencibilidad
+    clip: {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
+    volume: 0.621
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  SceneMusic: 0

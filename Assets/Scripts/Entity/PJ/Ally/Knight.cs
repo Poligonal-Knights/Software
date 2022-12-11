@@ -32,7 +32,7 @@ public class Knight : Ally
         SetGritoDeBatalla(false);
     }
 
-    public override void DealDamage(int damage, PJ attacker = null)
+    public override void DealDamage(int damage, PJ attacker = null, PJ damageTo = null)
     {
         if(attacker != null)
         {

@@ -114,14 +114,14 @@ public class PJ : Entity
                 }
             }
         }
-        else if (!MovementsToDo.Any())
+        /*else if (!MovementsToDo.Any())
         {
             if (health <= 0)
             {
                 Debug.Log("tengo movimientos antes de morir: " + MovementsToDo.Any());
                 Die();
             }
-        }
+        }*/
     }
 
     protected override void UpdateGridSpace()
@@ -237,6 +237,7 @@ public class PJ : Entity
             }
             else if (downEntity is Block)
             {
+                this.DealDamage(2);
                 stop = true;
             }
             else
@@ -253,7 +254,7 @@ public class PJ : Entity
         space.SetEntity(null);
         IsDying = true;
         GameManager.Instance.RemovePJ(this);
-        Destroy(gameObject);
+        Destroy(gameObject, .5f);
     }
 
     protected override void OnMouseUpAsButton()
@@ -261,11 +262,41 @@ public class PJ : Entity
         base.OnMouseUpAsButton();
     }
 
-    public virtual void DealDamage(int damage, PJ attacker = null)
+    public virtual void DealDamage(int damage, PJ attacker = null, PJ damageTo = null)
     {
-        GetComponentInChildren<SpriteRenderer>().color = new Color(1, 0, 0);
-        StartCoroutine(GetColorBack());
-        health -= (damage - defense);
+        StartCoroutine(SufferDamage(damage, damageTo));
+    }
+    IEnumerator SufferDamage(int damage, PJ damageTo)
+    {
+        if (!MovementsToDo.Any() && !IsMoving)
+        {
+            Debug.Log("Movimientos finalizados antes del daño");
+            if(!damageTo)
+            {
+                Debug.Log("Debería hacerme daño; " + damage);
+                GetComponentInChildren<SpriteRenderer>().color = new Color(1, 0, 0);
+                StartCoroutine(GetColorBack());
+                AudioManager.Instance.Play("RecibirDano");
+                health -= (damage - defense); 
+                if (health <= 0)
+                {
+                    Debug.Log("tengo movimientos antes de morir: " + MovementsToDo.Any());
+                    Die();
+                }
+            }
+            else
+            {
+                damageTo.DealDamage(damage);
+            }
+        }
+        else
+        {
+            yield return new WaitForSeconds(0.25f);
+            StartCoroutine(SufferDamage(damage, damageTo));
+            Debug.Log("Se está moviendo = "+ IsMoving + "Tiene donde moverse = "+ MovementsToDo.Any());
+        }
+        
+        
     }
 
     IEnumerator GetColorBack()
@@ -279,6 +310,7 @@ public class PJ : Entity
         //Debug.Log("OMG! I was healed!");
         if (health < maxHealth)
         {
+            AudioManager.Instance.Play("Healing");
             GetComponentInChildren<SpriteRenderer>().color = new Color(0, 1, 0);
             StartCoroutine(GetColorBack());
         }

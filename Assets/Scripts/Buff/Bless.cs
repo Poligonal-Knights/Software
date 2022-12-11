@@ -21,6 +21,7 @@ public class Bless : Buff
 
         if (Owner is Ally ally)
         {
+            AudioManager.Instance.Play("Buff");
             ally.movement += movementIncrement;
             ally.maxMovement += movementIncrement;
             ally.pushStrength += pushStrengthIncrement;

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -126,7 +127,7 @@ public class Enemy : PJ
                 if (pushedInto.GetEntity() is Enemy enemyBumped)
                 {
                     Debug.Log(this + " BUMP");
-                    enemyBumped.DealDamage(extraDamage);
+                    DealDamage(extraDamage, null, damageTo: enemyBumped);
                 }
                 bumped = true;
             }
@@ -149,16 +150,16 @@ public class Enemy : PJ
         return base.CanMoveThere(start, destination);
     }
 
-    public override void DealDamage(int damage, PJ attacker = null)
+    public override void DealDamage(int damage, PJ attacker = null, PJ damageTo = null)
     {
-        base.DealDamage(damage, attacker);
-        Debug.Log("The actual combo is " + comboed);
-        health -= comboed;
         if (weak)
         {
-            health -= 1;
+            damage+= 1;
             weak = false;
         }
+        base.DealDamage(damage+comboed, attacker, damageTo);
+        //Debug.Log("The actual combo is " + comboed);
+        //health -= comboed;
     }
 }
 
