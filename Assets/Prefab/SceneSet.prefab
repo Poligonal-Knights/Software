@@ -6222,11 +6222,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3459788098533710676, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_text
+      value: 'Tutorial
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 3853421665587802619, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
       propertyPath: m_Name
       value: SettingsCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 3853421665587802619, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3950598946549244660, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -6318,9 +6328,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4429883940740159792, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+    - target: {fileID: 4399352320204653921, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429883940740159792, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4472842097727172768, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
       propertyPath: m_IsActive
@@ -6340,6 +6354,14 @@ PrefabInstance:
       objectReference: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
     - target: {fileID: 5492078766879975169, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
       propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6468006673916255103, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595115502456235685, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6786205049647255080, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
@@ -6362,6 +6384,22 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
+    - target: {fileID: 8173332067363855904, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8011589954708932828}
+    - target: {fileID: 8173332067363855904, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShowThisCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173332067363855904, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TutorialCanvasManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173332067363855904, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 738729780996095026}
     - target: {fileID: 8523416502362193769, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6370,8 +6408,21 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
+    - target: {fileID: 8987793752152394822, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151073980702885489, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+--- !u!223 &738729780996095026 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 8863990402067915854, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+  m_PrefabInstance: {fileID: 8161444588825663612}
+  m_PrefabAsset: {fileID: 0}
 --- !u!223 &4651912085693889767 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 3588717965838492827, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
@@ -6382,3 +6433,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4070266573934801150, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
   m_PrefabInstance: {fileID: 8161444588825663612}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8011589954708932828 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2192588918245773472, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+  m_PrefabInstance: {fileID: 8161444588825663612}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b3b638e0c2fad844bfaf2313a39ef37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
