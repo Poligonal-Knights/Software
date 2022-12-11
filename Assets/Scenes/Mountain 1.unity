@@ -11879,6 +11879,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -9.100914
       objectReference: {fileID: 0}
+    - target: {fileID: 8164596033270069060, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: MagePortrait
+      value: 
+      objectReference: {fileID: 21300000, guid: 0959f31e9075ad146a11d70074458b7f, type: 3}
+    - target: {fileID: 8164596033270069060, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: roguePortrait
+      value: 
+      objectReference: {fileID: 21300000, guid: 72de872b994d95346afad8746709ce9a, type: 3}
+    - target: {fileID: 8164596033270069060, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: HealerPortrait
+      value: 
+      objectReference: {fileID: 21300000, guid: 012eb501cab07714ab652848b49d650b, type: 3}
+    - target: {fileID: 8164596033270069060, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: KamikazePortrait
+      value: 
+      objectReference: {fileID: 21300000, guid: bfcbf11e2b1c0604282986e2ebf9a87a, type: 3}
     - target: {fileID: 8164596033599996457, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_IsActive
       value: 1
