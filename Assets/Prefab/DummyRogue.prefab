@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4837352154470818269}
   - component: {fileID: 4837352154470818268}
   - component: {fileID: 1830296689601221216}
-  - component: {fileID: 4014313277025337400}
+  - component: {fileID: 307535056884532478}
   m_Layer: 0
   m_Name: DummyRogue
   m_TagString: Untagged
@@ -100,37 +100,36 @@ CapsuleCollider:
   m_Height: 2.72
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4014313277025337400
+--- !u!114 &307535056884532478
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4837352154470818258}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9833102f5980b7341813f806210f07c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f9de210b95cfa14bb811bbde382b7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frontSprite: {fileID: 21300000, guid: 72de872b994d95346afad8746709ce9a, type: 3}
-  backSprite: {fileID: 21300000, guid: e44e19cb7e0443e48a6ae1a834b72341, type: 3}
-  maxMovement: 5
-  movement: 5
-  maxHealth: 7
-  health: 7
-  damage: 5
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  maxMovement: 0
+  movement: 0
+  maxHealth: 0
+  health: 0
+  damage: 0
   CanJump: 0
-  defaultSpeed: 3
+  defaultSpeed: 0
   defense: 0
   IsMoving: 0
   MovementEvent:
     m_PersistentCalls:
       m_Calls: []
-  energy: 5
-  maxEnergy: 5
-  pushStrength: 3
+  energy: 0
+  maxEnergy: 0
+  pushStrength: 0
   deniedReaction: 0
-  caltrops: {fileID: 4743694349413910261, guid: b0100539fd0d36741bc404f7a69ba513, type: 3}
 --- !u!1 &8833514900583522877
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,6 +141,7 @@ GameObject:
   - component: {fileID: 2265273854730581681}
   - component: {fileID: 7778243790979264397}
   - component: {fileID: 5505578552521478079}
+  - component: {fileID: 3324985446045251886}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -206,7 +206,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72de872b994d95346afad8746709ce9a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.70980394}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -228,3 +228,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481723ea5e8deae4386d185b731e0aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3324985446045251886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8833514900583522877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4dcd1f98a5b3964dad04b8c9f5dec13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frontSprite: {fileID: 21300000, guid: 8befee1219d370a49b1f0a13a0ac4e17, type: 3}
+  backSprite: {fileID: 21300000, guid: a648c2fcee430104d8bf0125d14c7003, type: 3}

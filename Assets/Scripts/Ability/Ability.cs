@@ -68,6 +68,15 @@ public class Ability
         AffectedSpaces.Clear();
     }
 
+    //public void ClearHealedSpaces(GridSpace spaceToAdd)
+    //{
+    //    foreach (var space in AffectedSpaces)
+    //    {
+    //        space.SetAffected(false);
+    //    }
+    //    AffectedSpaces.Clear();
+    //}
+
     public void ClearSelectableSpaces()
     {
         foreach (var space in SelectableSpaces)

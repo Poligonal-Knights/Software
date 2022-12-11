@@ -123,11 +123,15 @@ MonoBehaviour:
   defaultSpeed: 3
   defense: 0
   IsMoving: 0
+  MovementEvent:
+    m_PersistentCalls:
+      m_Calls: []
   energy: 5
   maxEnergy: 5
   pushStrength: 3
   deniedReaction: 0
   caltrops: {fileID: 4743694349413910261, guid: b0100539fd0d36741bc404f7a69ba513, type: 3}
+  dummy: {fileID: 4837352154470818258, guid: e42b66d77ab92b647854a50f8183882d, type: 3}
 --- !u!1 &8833514900583522877
 GameObject:
   m_ObjectHideFlags: 0

@@ -267,11 +267,11 @@ public class PJ : Entity
         StartCoroutine(GetColorBack());
         health -= (damage - defense);
     }
+
     IEnumerator GetColorBack()
     {
         yield return new WaitForSeconds(.5f);
         GetComponentInChildren<SpriteRenderer>().color = new Color(1, 1, 1);
-
     }
 
     public void Heal(int healedHealth)

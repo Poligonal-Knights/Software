@@ -4,11 +4,12 @@ using System.Reflection.Emit;
 using UnityEditor;
 using UnityEngine;
 
-//Muñeco explosivo
+//Muñeco explosivo, no tiene futuro
 public class Rogue_Ability_4 : Ability
 {
     public Rogue_Ability_4(PJ owner) : base(owner) { EnergyConsumed = 0;}
 
+    GameObject dummy;
     public override void Preview()
     {
         Debug.Log("Hability Preview");
@@ -31,39 +32,21 @@ public class Rogue_Ability_4 : Ability
         SelectedSpace = selected;
         AddHealedSpace(SelectedSpace);
 
-
-        var PJSpace = LogicManager.Instance.GetSelectedPJ().GetGridSpace();
-        var auxVector = selected.gridPosition - PJSpace.gridPosition;
-        var aux = Vector3.Cross(auxVector, Vector3.up);
-        var spaceAffected1 = GridManager.Instance.GetGridSpace(Vector3Int.RoundToInt(selected.gridPosition + aux));
-        var spaceAffected2 = GridManager.Instance.GetGridSpace(Vector3Int.RoundToInt(selected.gridPosition - aux));
-        AddAffectedSpace(selected);
-        AddAffectedSpace(spaceAffected1);
-        AddAffectedSpace(spaceAffected2);
-        readyToConfirm = true;
+        //Spawnear dummy
+        var rogue = Owner as Rogue;
+        GameObject dummy = Object.Instantiate(rogue.dummy);
+        dummy.transform.position = SelectedSpace.GetWorldPosition();
+        
     }
 
     public override void Confirm()
     {
         base.Confirm();
         Debug.Log("Confirming Hability");
-        var knight = LogicManager.Instance.GetSelectedPJ() as Knight;
-        var pushDirection = SelectedSpace.gridPosition - knight.GetGridSpace().gridPosition;
-        var AnyEnemyWasAffected = false;
-        foreach (var affectedSpace in AffectedSpaces)
-        {
-            if (affectedSpace.GetEntity() is Enemy enemy)
-            {
-                AnyEnemyWasAffected = true;
-                enemy.BePushed(pushDirection, knight.pushStrength, knight.damage, knight);
-            }
-        }
+        //Cambiar opacidad del sprite del dummy
         ClearAffectedSpaces();
         ClearSelectableSpaces();
-        if (!AnyEnemyWasAffected)
-        {
-            LogicManager.Instance.PJFinishedMoving();
-        }
+        LogicManager.Instance.PJFinishedMoving();
     }
 
     public override void Cancel()
