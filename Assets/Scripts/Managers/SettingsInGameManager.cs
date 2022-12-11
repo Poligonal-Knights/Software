@@ -15,14 +15,14 @@ public class SettingsInGameManager : MonoBehaviour
     public Canvas adelAb1Canvas;
     public Canvas adelAb2Canvas;
     public Canvas adelAb3Canvas;
-    public Canvas adelAb4Canvas;
+    //public Canvas adelAb4Canvas;
     public Canvas adelPasiveCanvas;
     //FINADEL
     //MAGNUS
     public Canvas magnusCanvas;
     public Canvas magnusBasicCanvas;
     public Canvas magnusAb1Canvas;
-    public Canvas magnusAb2Canvas;
+    //public Canvas magnusAb2Canvas;
     public Canvas magnusAb3Canvas;
     public Canvas magnusAb4Canvas;
     public Canvas magnusPasiveCanvas;
@@ -33,7 +33,7 @@ public class SettingsInGameManager : MonoBehaviour
     public Canvas kelsierAb1Canvas;
     public Canvas kelsierAb2Canvas;
     public Canvas kelsierAb3Canvas;
-    public Canvas kelsierAb4Canvas;
+    //public Canvas kelsierAb4Canvas;
     public Canvas kelsierPasiveCanvas;
     //FINKELSIER
     //PETRA
@@ -41,7 +41,7 @@ public class SettingsInGameManager : MonoBehaviour
     public Canvas petraBasicCanvas;
     public Canvas petraAb1Canvas;
     public Canvas petraAb2Canvas;
-    public Canvas petraAb3Canvas;
+    //public Canvas petraAb3Canvas;
     public Canvas petraAb4Canvas;
     public Canvas petraPasiveCanvas;
     //FINPETRA
@@ -69,7 +69,7 @@ public class SettingsInGameManager : MonoBehaviour
         allControlCanvas.Add(magnusBasicCanvas);
         allControlCanvas.Add(magnusPasiveCanvas);
         allControlCanvas.Add(magnusAb1Canvas);
-        allControlCanvas.Add(magnusAb2Canvas);
+        //allControlCanvas.Add(magnusAb2Canvas);
         allControlCanvas.Add(magnusAb3Canvas);
         allControlCanvas.Add(magnusAb4Canvas);
         //FIN DE A�adir canvas de Magnus
@@ -80,7 +80,7 @@ public class SettingsInGameManager : MonoBehaviour
         allControlCanvas.Add(adelAb1Canvas);
         allControlCanvas.Add(adelAb2Canvas);
         allControlCanvas.Add(adelAb3Canvas);
-        allControlCanvas.Add(adelAb4Canvas);
+        //allControlCanvas.Add(adelAb4Canvas);
         //FIN DE A�adir canvas de Adel
         //A�adir canvas de Petra
         allControlCanvas.Add(petraCanvas);
@@ -88,7 +88,7 @@ public class SettingsInGameManager : MonoBehaviour
         allControlCanvas.Add(petraPasiveCanvas);
         allControlCanvas.Add(petraAb1Canvas);
         allControlCanvas.Add(petraAb2Canvas);
-        allControlCanvas.Add(petraAb3Canvas);
+        //allControlCanvas.Add(petraAb3Canvas);
         allControlCanvas.Add(petraAb4Canvas);
         //FIN DE A�adir canvas de Petra
         //A�adir canvas de Kelsier
@@ -98,7 +98,7 @@ public class SettingsInGameManager : MonoBehaviour
         allControlCanvas.Add(kelsierAb1Canvas);
         allControlCanvas.Add(kelsierAb2Canvas);
         allControlCanvas.Add(kelsierAb3Canvas);
-        allControlCanvas.Add(kelsierAb4Canvas);
+        //allControlCanvas.Add(kelsierAb4Canvas);
         //FIN DE A�adir canvas de Kelsier
         //A�adir canvas de enemigos
         allControlCanvas.Add(trashmobCanvas);
