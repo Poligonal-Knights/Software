@@ -263,9 +263,9 @@ Canvas:
   m_GameObject: {fileID: 1849362418929312962}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 8164596033238225240}
+  m_PlaneDistance: 1.8
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -826,9 +826,9 @@ Canvas:
   m_GameObject: {fileID: 3828350982301376070}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 8164596033238225240}
+  m_PlaneDistance: 1.8
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -2189,12 +2189,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8164596033238225242}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3742b3db229aa4af88a4485f7a021c8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shift: -0.4
+  shift: -1.19
 --- !u!114 &1881578209389534988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2207,8 +2207,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23356f494faf4703bf771f7ebc5708d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensity: 4.05
-  shift: 0.22
+  intensity: 2.85
+  shift: 0.19
 --- !u!1 &8164596033270069061
 GameObject:
   m_ObjectHideFlags: 0
@@ -2894,7 +2894,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 86.5, y: 26.464996}
+  m_AnchoredPosition: {x: 86.5, y: 26.464966}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8164596033618783252
@@ -3085,9 +3085,9 @@ Canvas:
   m_GameObject: {fileID: 8164596033763823562}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 8164596033238225240}
+  m_PlaneDistance: 1.8
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -3189,9 +3189,9 @@ Canvas:
   m_GameObject: {fileID: 8164596033972962413}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 8164596033238225240}
+  m_PlaneDistance: 1.8
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -3591,7 +3591,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -93.8, y: 19.3}
+  m_AnchoredPosition: {x: -93.80002, y: 19.300003}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8164596034283307758
@@ -3863,7 +3863,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 248.2, y: 26.465}
+  m_AnchoredPosition: {x: 248.20001, y: 26.465027}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8164596034421983183
@@ -4911,9 +4911,9 @@ Canvas:
   m_GameObject: {fileID: 8164596034869079022}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 8164596033238225240}
+  m_PlaneDistance: 1.8
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -5525,6 +5525,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7602390669248205252, guid: eae4b03031ea3674095889ea56b2fb57, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 8164596033238225240}
+    - target: {fileID: 7602390669248205252, guid: eae4b03031ea3674095889ea56b2fb57, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7602390669248205252, guid: eae4b03031ea3674095889ea56b2fb57, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 1.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7746745374902697102, guid: eae4b03031ea3674095889ea56b2fb57, type: 3}
       propertyPath: final
       value: 1
@@ -5835,6 +5847,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4902665385320172873, guid: dc659bf39305b9b4ca4dd4d4a2930aa0, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 8164596033238225240}
+    - target: {fileID: 4902665385320172873, guid: dc659bf39305b9b4ca4dd4d4a2930aa0, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902665385320172873, guid: dc659bf39305b9b4ca4dd4d4a2930aa0, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 1.8
+      objectReference: {fileID: 0}
     - target: {fileID: 4902665385553004934, guid: dc659bf39305b9b4ca4dd4d4a2930aa0, type: 3}
       propertyPath: m_Color.b
       value: 0.18039216
@@ -6038,6 +6062,18 @@ PrefabInstance:
     - target: {fileID: 2054119563630797357, guid: f42874f444e9a004bbef193907704412, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054119563630797358, guid: f42874f444e9a004bbef193907704412, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 8164596033238225240}
+    - target: {fileID: 2054119563630797358, guid: f42874f444e9a004bbef193907704412, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054119563630797358, guid: f42874f444e9a004bbef193907704412, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 2054119563630797393, guid: f42874f444e9a004bbef193907704412, type: 3}
       propertyPath: m_Name
@@ -6467,6 +6503,18 @@ PrefabInstance:
     - target: {fileID: 8987793752152394822, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038701738147033828, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 8164596033238225240}
+    - target: {fileID: 9038701738147033828, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038701738147033828, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 9151073980702885489, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
       propertyPath: m_PresetInfoIsWorld
