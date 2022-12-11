@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuP.unity
     guid: cbf921b91dc77bd49b079521868cf840
   - enabled: 1
+    path: Assets/Scenes/LvlSelect3D.unity
+    guid: dddbc249a993c4e4aad125ad3ce3e109
+  - enabled: 1
     path: Assets/Scenes/Water 1.unity
     guid: 5482a3bb699e51849b00233e87691e1e
   - enabled: 1

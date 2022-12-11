@@ -101,6 +101,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowEmptyCanvas()
     {
+        
         //PJPointer.Instance.ResetPos();
         allyPointer.ResetPos();
         enemyPointer.ResetPos();
