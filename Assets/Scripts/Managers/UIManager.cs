@@ -290,15 +290,15 @@ public class UIManager : MonoBehaviour
         {
             habilitiesCanvas.transform.GetChild(0).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Escudazo");
             habilitiesCanvas.transform.GetChild(1).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Provocación");
-            habilitiesCanvas.transform.GetChild(3).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Cubrir Aliados");
-            habilitiesCanvas.transform.GetChild(4).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Lanzar Escudo");
+            habilitiesCanvas.transform.GetChild(2).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Cubrir Aliados");
+            habilitiesCanvas.transform.GetChild(3).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Lanzar Escudo");
         }
         else if (selectedAlly is Priest)
         {
             habilitiesCanvas.transform.GetChild(0).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Atracción");
             habilitiesCanvas.transform.GetChild(1).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Curación en área");
             habilitiesCanvas.transform.GetChild(2).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Bendición");
-            habilitiesCanvas.transform.GetChild(4).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Transposición");
+            habilitiesCanvas.transform.GetChild(3).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Transposición");
         }
         else if (selectedAlly is Rogue) 
         {
