@@ -2180,7 +2180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59700678e0092463cb106a3995cd22a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scanlineIntensity: 65
+  scanlineIntensity: 55
   scanlineWidth: 2
 --- !u!114 &6143579308648698354
 MonoBehaviour:
@@ -2194,7 +2194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3742b3db229aa4af88a4485f7a021c8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shift: -1.19
+  shift: -0.73
 --- !u!114 &1881578209389534988
 MonoBehaviour:
   m_ObjectHideFlags: 0
