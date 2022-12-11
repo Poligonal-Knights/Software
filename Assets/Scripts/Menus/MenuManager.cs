@@ -25,39 +25,39 @@ public class MenuManager : MonoBehaviour
     }
     public void StoryMode()
     {
-        SceneManager.LoadScene(2); 
+        SceneManager.LoadScene(11); 
     }
     public void Lvl1()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
     }
     public void Lvl2()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(3);
     }
     public void Lvl3()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(4);
     }
     public void Lvl4()
     {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(5);
     }
     public void Lvl5()
     {
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(6);
     }
     public void Lvl6()
     {
-        SceneManager.LoadScene(8);
+        SceneManager.LoadScene(7);
     }
     public void Lvl7()
     {
-        SceneManager.LoadScene(9);
+        SceneManager.LoadScene(8);
     }
     public void Lvl8()
     {
-        SceneManager.LoadScene(10);
+        SceneManager.LoadScene(9);
     }
 
     public void BackToMenu()
@@ -65,9 +65,9 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void BackToMSelect()
+    public void RestartLvl()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(GameManager.currentScene);
     }
 
     
