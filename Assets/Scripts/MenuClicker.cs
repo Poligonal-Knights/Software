@@ -39,8 +39,10 @@ public class MenuClicker : MonoBehaviour
                 {
                     Vector3 pos = new Vector3(hit.transform.position.x, hit.transform.position.y + 0.5f, hit.transform.position.z);
                     pointer.transform.SetPositionAndRotation(pos, hit.transform.rotation);
+
                     if (GameObject.ReferenceEquals(hit.transform.gameObject,lvl1))
                     {
+                        
                         selectedCanvas.transform.Find("SiBt").GetComponent<Button>().onClick.AddListener(() => MenuManager.Instance.Lvl1());
                     }else if (GameObject.ReferenceEquals(hit.transform.gameObject, lvl2))
                     {

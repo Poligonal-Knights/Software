@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(GameManager.Instance.nextScene);
     }
-
+    public static int currentScene;
     public HashSet<Entity> entities;
     public HashSet<Block> blocks;
     public HashSet<PJ> PJs;
@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
         Init();
         GridManager.Instance.Init();
         TurnManager.Instance.Init();
+        
     }
 
     void Init()
@@ -67,7 +68,8 @@ public class GameManager : MonoBehaviour
 
     void Defeat()
     {
-        Debug.Log("DERROTA");
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(10);
     }
 
     void Update()

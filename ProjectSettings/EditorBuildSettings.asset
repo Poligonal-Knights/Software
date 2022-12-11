@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/LvlSelect3D.unity
     guid: dddbc249a993c4e4aad125ad3ce3e109
   - enabled: 1
+    path: Assets/Scenes/Forest 1.unity
+    guid: e66f9b8b31eb0a6419eb0e37b7aa43dc
+  - enabled: 1
+    path: Assets/Scenes/Forest 2.unity
+    guid: 3a492db8671e9c340a2584e31f234efe
+  - enabled: 1
     path: Assets/Scenes/Water 1.unity
     guid: 5482a3bb699e51849b00233e87691e1e
   - enabled: 1
@@ -23,6 +29,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mountain 2.unity
     guid: 39f925ce711d7a6429da88dcb1888cc2
+  - enabled: 1
+    path: Assets/Scenes/Dungeon 1.unity
+    guid: 6940a82084d0502409004afa6674a761
+  - enabled: 1
+    path: Assets/Scenes/Dungeon 2.unity
+    guid: 306a9aef44c398a4bafe4541911a237c
   - enabled: 1
     path: Assets/Scenes/Victory.unity
     guid: fa66490def0ebc946b95cbea69712d7b
