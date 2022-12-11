@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5322172011782772563}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 2}
-  m_LocalScale: {x: 0.44315, y: 0.44315, z: 0.44315}
+  m_LocalPosition: {x: 0, y: 1.0102, z: 2}
+  m_LocalScale: {x: 0.5567294, y: 0.5567294, z: 0.5567294}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5322172012003541713}
@@ -109,6 +109,10 @@ MonoBehaviour:
   defaultSpeed: 0
   defense: 0
   IsMoving: 0
+  orientation: {x: 0, y: 0}
+  MovementEvent:
+    m_PersistentCalls:
+      m_Calls: []
   energy: 15
   maxEnergy: 15
   pushStrength: 3
