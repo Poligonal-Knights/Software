@@ -51,7 +51,7 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  - name: TemaPelea
+  - name: TemaPeleaBosque
     clip: {fileID: 8300000, guid: e37fff91616af844fbe5d250d864a859, type: 3}
     volume: 0.621
     pitch: 1
@@ -89,6 +89,30 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Derrota
     clip: {fileID: 8300000, guid: a0ca8964c08d54c5dbebf245bdc474ca, type: 3}
+    volume: 0.621
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: TemaPeleaAgua
+    clip: {fileID: 8300000, guid: 031c2bc05b9a1614db4ee1f6b2d6febc, type: 3}
+    volume: 0.621
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: "TemaPeleaMonta\xF1a"
+    clip: {fileID: 8300000, guid: 60cb7ae182a0c3a4281973b82961c271, type: 3}
+    volume: 0.621
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: TemaPeleaDungeon
+    clip: {fileID: 8300000, guid: 78d987ad0fef88c48a355160cb6e5548, type: 3}
+    volume: 0.621
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Teletransporte
+    clip: {fileID: 8300000, guid: 35fbad8cdde724f11ba6481f1e64af71, type: 3}
     volume: 0.621
     pitch: 1
     loop: 0

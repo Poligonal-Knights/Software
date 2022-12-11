@@ -37,7 +37,6 @@ public class DialogoOpening : MonoBehaviour
 
     void inicioDial()
     {
-
         _StoryScript = new Story(_InkJsonFile.text);
 
         _StoryScript.BindExternalFunction("Name", (string charName) => ChangeName(charName));

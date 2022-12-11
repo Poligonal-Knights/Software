@@ -326,8 +326,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Dungeon Master
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f7e5add215c3d74c82f1316b5207843, type: 2}
-  m_sharedMaterial: {fileID: -1433852805368577909, guid: 4f7e5add215c3d74c82f1316b5207843, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d4c52ca6ac607aa4b977ce9bb4d644dd, type: 2}
+  m_sharedMaterial: {fileID: -7364980985759778354, guid: d4c52ca6ac607aa4b977ce9bb4d644dd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -461,8 +461,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: TextoDePrueba mamamamamamaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f7e5add215c3d74c82f1316b5207843, type: 2}
-  m_sharedMaterial: {fileID: -1433852805368577909, guid: 4f7e5add215c3d74c82f1316b5207843, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d4c52ca6ac607aa4b977ce9bb4d644dd, type: 2}
+  m_sharedMaterial: {fileID: -7364980985759778354, guid: d4c52ca6ac607aa4b977ce9bb4d644dd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
