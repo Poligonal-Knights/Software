@@ -3170,6 +3170,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 325309385}
     m_Modifications:
+    - target: {fileID: 1654740863837452044, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4837352154470818258, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
       propertyPath: m_Name
       value: Priest
