@@ -45,9 +45,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: Theme
+  - name: TemaMenus
     clip: {fileID: 8300000, guid: 3be369d7846e0dc42a8e20299df5f588, type: 3}
     volume: 0.3
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: TemaPelea
+    clip: {fileID: 8300000, guid: e37fff91616af844fbe5d250d864a859, type: 3}
+    volume: 0.621
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: AtaqueAliado
+    clip: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
+    volume: 0.389
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AtaqueEnemigo
+    clip: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
+    volume: 0.389
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: "PulsarBot\xF3n"
+    clip: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
+    volume: 0.621
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Victoria
+    clip: {fileID: 8300000, guid: 2667a0a008b044e218b63df62e2be749, type: 3}
+    volume: 0.621
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: "RecibirDa\xF1o"
+    clip: {fileID: 8300000, guid: 6e8772b49f34d402a90016ed445d8a2f, type: 3}
+    volume: 0.621
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Derrota
+    clip: {fileID: 8300000, guid: a0ca8964c08d54c5dbebf245bdc474ca, type: 3}
+    volume: 0.621
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
