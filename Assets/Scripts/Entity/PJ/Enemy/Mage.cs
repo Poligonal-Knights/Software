@@ -188,7 +188,7 @@ public class Mage : Enemy
         foreach (var s in spacesAtExplosionRange)
             if (s.GetEntity() is Ally enemy)
             {
-                enemy.DealDamage(damage);
+                enemy.DealDamage(damage, this);
                 Debug.Log("MAGO TRUCO");
 
             }

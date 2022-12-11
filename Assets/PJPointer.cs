@@ -26,6 +26,7 @@ public class PJPointer : MonoBehaviour
 
     public void ResetPos()
     {
+        SetPJ(null);
         animator.SetBool("OnObj", false);
         this.transform.position = defaultPos;
     }

@@ -27,7 +27,7 @@ public class PJ : Entity
     //States
     public bool IsMoving;
     protected bool IsDying;
-    protected Vector2 orientation;
+    public Vector2 orientation;
     SpriteRenderer spriteRenderer;
     //bool inHalf = false;
 
@@ -261,7 +261,7 @@ public class PJ : Entity
         base.OnMouseUpAsButton();
     }
 
-    public virtual void DealDamage(int damage)
+    public virtual void DealDamage(int damage, PJ attacker = null)
     {
         GetComponentInChildren<SpriteRenderer>().color = new Color(1, 0, 0);
         StartCoroutine(GetColorBack());

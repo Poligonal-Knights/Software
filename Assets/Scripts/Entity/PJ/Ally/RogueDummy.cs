@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 //Esto no tiene futuro, intenta implementar funcionalidades tanto de enemigo como de caballero.
 public class RogueDummy : Knight
@@ -32,4 +33,15 @@ public class RogueDummy : Knight
         space = GridManager.Instance.GetGridSpaceWorldCoords(pos);
         space.SetEntity(this);
     }
+
+    protected override void OnMouseUpAsButton()
+    {
+        //InputHandler.Instance.EntityClicked(this);
+        //OnClick.Invoke(this);
+        if (!EventSystem.current.IsPointerOverGameObject() && LogicManager.Instance.currentAbility != null)
+        {
+            LogicManager.Instance.EntityClicked(this);
+        }
+    }
+
 }

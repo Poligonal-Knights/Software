@@ -10,14 +10,40 @@ public class Knight_Ability_4 : Ability
 
     public GameObject shield;
 
-    /*public override void Preview()
+    int attackRange = 4;
+    GridSpace affSpace = null;
+
+    public override void Preview()
     {
         var PJSpace = Owner.GetGridSpace();
-        int y = PJSpace.gridPosition.y;
-        for (int x = PJSpace.gridPosition.x - 1; x < PJSpace.gridPosition.x + 2; x++)
-            for (int z = PJSpace.gridPosition.z - 1; z < PJSpace.gridPosition.z + 2; z++)
-                AddSelectableSpace(GridManager.Instance.GetGridSpace(x, y, z));
+        var spacesInRange = GridManager.SpacesAtManhattanRange(PJSpace, attackRange);
+        foreach(var s in spacesInRange) AddSelectableSpace(s);
+    }
+
+    public override void SelectTarget(GridSpace selected)
+    {
+        if (selected.GetEntity() is not Enemy) return;
+        if(affSpace != null)
+        {
+            affSpace.SetAffected(false);
+            affSpace.SetSelectable(true);
+        }
+        affSpace = selected;
+        affSpace.SetAffected(true);
         readyToConfirm = true;
+    }
+
+    public override void Confirm()
+    {
+        base.Confirm();
+        if(affSpace.GetEntity() is Enemy enemy)
+        {
+            var knight = Owner as Knight;
+            LineDrawer.DrawLine(knight.GetGridSpace().GetWorldPosition(), affSpace.GetWorldPosition());
+            enemy.DealDamage(knight.damage);
+        }
+        LogicManager.Instance.PJFinishedMoving();
+
     }
 
     public override void Cancel()
@@ -26,25 +52,19 @@ public class Knight_Ability_4 : Ability
         LogicManager.Instance.PJFinishedMoving();
     }
 
-    public override void Confirm()
+    public override void ClickedEntity(Entity entityClicked)
     {
-        base.Confirm();
-
-        foreach (var space in SelectableSpaces)
+        GridSpace spaceToBeSelected = null;
+        if (entityClicked is PJ)
         {
-            if (space.GetEntity() is Ally ally) ally.SetInvencibility(true);
+            spaceToBeSelected = entityClicked.GetGridSpace();
         }
-        ClearSelectableSpaces();
-    }*/
-    public override void Preview()
-    {
-        base.Preview();
-        UIManager.Instance.ShowAbilityNonDefined();
+        else if (entityClicked is Block)
+        {
+            spaceToBeSelected = entityClicked.GetGridSpace().neighbors["up"];
+        }
+        if (spaceToBeSelected is not null && spaceToBeSelected.IsSelectable())
+            SelectTarget(spaceToBeSelected);
     }
-    
-    public override void Cancel()
-    {
-        base.Cancel();
-        UIManager.Instance.HideAbilityNonDefined();
-    }
+
 }

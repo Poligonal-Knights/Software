@@ -11,8 +11,10 @@ public class Enemy : PJ
 
     public bool beingPushed = false;
 
-    public int comboed = 0; 
+    public int comboed = 0;
     public int attackRange;
+
+    public bool weak;
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -55,7 +57,7 @@ public class Enemy : PJ
         {
             var directions = new[] { "left", "right", "forward", "back" };
 
-            foreach(var direction in directions)
+            foreach (var direction in directions)
             {
                 if (chosenMove.neighbors[direction].IsPassable() && chosenMove.neighbors[direction].GetEntity() is not Ally)
                 {
@@ -66,8 +68,8 @@ public class Enemy : PJ
             {
                 chosenMove = possibleMoves[Random.Range(0, possibleMoves.Count)];
                 // movimientosEnOrden.Add(chosenMove);
-                if(i != maxMovement - 1 || chosenMove.IsEmpty())
-                MovementsToDo.Enqueue(chosenMove);
+                if (i != maxMovement - 1 || chosenMove.IsEmpty())
+                    MovementsToDo.Enqueue(chosenMove);
                 possibleMoves.Clear();
             }
         }
@@ -81,13 +83,14 @@ public class Enemy : PJ
         beingPushed = true;
         bool bumped = false;
         bool endOfGrid = false;
-        int i = 0;
-        while (!bumped && i <= pushback && !endOfGrid)
+        int i = 0, spacesCounter = 0;
+        while (!bumped && spacesCounter <= pushback && !endOfGrid)
         {
             Debug.Log("Bumped: " + bumped);
             i++;
             var pushedInto = GridManager.Instance.GetGridSpace(space.gridPosition + direction * i);
-            if(pushedInto is null)
+            if (!Oil.HasGridSpaceOil(pushedInto)) spacesCounter++;
+            if (pushedInto is null)
             {
                 endOfGrid = true;
             }
@@ -133,7 +136,7 @@ public class Enemy : PJ
     public override void Die()
     {
         base.Die();
-        if(realizandoTurno)EnemyManager.Instance.enemyTurnEnd();
+        if (realizandoTurno) EnemyManager.Instance.enemyTurnEnd();
         realizandoTurno = false;
         IsMoving = false;
         //IsDying = true;
@@ -146,11 +149,16 @@ public class Enemy : PJ
         return base.CanMoveThere(start, destination);
     }
 
-    public override void DealDamage(int damage)
+    public override void DealDamage(int damage, PJ attacker = null)
     {
-        base.DealDamage(damage);
-        Debug.Log("The actual combo is " +comboed);
+        base.DealDamage(damage, attacker);
+        Debug.Log("The actual combo is " + comboed);
         health -= comboed;
+        if (weak)
+        {
+            health -= 1;
+            weak = false;
+        }
     }
 }
 

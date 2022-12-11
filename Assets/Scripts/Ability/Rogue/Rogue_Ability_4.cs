@@ -34,7 +34,7 @@ public class Rogue_Ability_4 : Ability
 
         //Spawnear dummy
         var rogue = Owner as Rogue;
-        GameObject dummy = Object.Instantiate(rogue.dummy);
+        //GameObject dummy = Object.Instantiate(rogue.dummy);
         dummy.transform.position = SelectedSpace.GetWorldPosition();
         
     }

@@ -219,7 +219,7 @@ public class TrashMob : Enemy
         if (!getAttackPerformed())
             LineDrawer.DrawLine(this.GetGridSpace().GetWorldPosition(), focusedEnemy.GetGridSpace().GetWorldPosition());
         //Correr animaci�n de ataque mirando al enemigo
-        focusedEnemy.DealDamage(damage);
+        focusedEnemy.DealDamage(damage, this);
         setAttackPerformed(true);
         return true;
     }

@@ -10,6 +10,9 @@ public class Rogue_Ability_0 : Ability
 {
     public Rogue_Ability_0(PJ owner) : base(owner) { EnergyConsumed = 0; }
 
+    int pushIncrement = 1;
+    int damageIncrement = 2;
+
     public override void Preview()
     {
         Debug.Log("Hability Preview");
@@ -46,10 +49,20 @@ public class Rogue_Ability_0 : Ability
         {
             if (affectedSpace.GetEntity() is Enemy enemy)
             {
+                int increment = 0;
                 AnyEnemyWasAffected = true;
                 spawn = enemy.GetGridSpace();
                 enemyAffected = enemy;
-                enemy.BePushed(pushDirection, rogue.pushStrength, rogue.damage, rogue);
+                if (IsABackAttack(Owner, enemy))
+                {
+                    Debug.Log("BACK ATTACK");
+                    enemy.BePushed(pushDirection, rogue.pushStrength + pushIncrement, rogue.damage + damageIncrement, rogue);
+                }
+                else
+                {
+
+                    enemy.BePushed(pushDirection, rogue.pushStrength, rogue.damage, rogue);
+                }
             }
         }
         ClearAffectedSpaces();
@@ -62,6 +75,14 @@ public class Rogue_Ability_0 : Ability
         {
             rogue.StartCoroutine(spawnCaltrops(rogue.caltrops, spawn, enemyAffected));
         }
+    }
+
+    bool IsABackAttack(PJ attacker, PJ attacked)
+    {
+        var direction = attacked.GetGridSpace().gridPosition - attacker.GetGridSpace().gridPosition;
+        var directon2D = new Vector2(direction.x, direction.z);
+        var angle = Vector2.Angle(directon2D, attacked.orientation);
+        return angle < 30;
     }
 
     IEnumerator spawnCaltrops(GameObject caltrops, GridSpace spawn, Enemy enemy)

@@ -18,7 +18,6 @@ public class Knight_Ability_1 : Ability
     public override void Confirm()
     {
         base.Confirm();
-
         Debug.Log("Grito de batalla Confirmed");
         var knight = LogicManager.Instance.GetSelectedPJ() as Knight;
         knight.SetGritoDeBatalla(true);

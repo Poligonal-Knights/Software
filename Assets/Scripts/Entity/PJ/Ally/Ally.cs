@@ -49,10 +49,10 @@ public class Ally : PJ
         return base.CanMoveThere(start, destination);
     }
 
-    public override void DealDamage(int damage)
+    public override void DealDamage(int damage, PJ attacker = null)
     {
         if (!invencibility)
-            base.DealDamage(damage);
+            base.DealDamage(damage, attacker);
     }
 
     public void SetInvencibility(bool setTo)

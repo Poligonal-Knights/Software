@@ -141,7 +141,7 @@ public class Kamikaze : Enemy
             if (space.gridPosition.y == enemy.GetGridSpace().gridPosition.y &&
                 space.ManhattanDistance2D(enemy.GetGridSpace()) <= attackRange)
             {
-                enemy.DealDamage(damage);
+                enemy.DealDamage(damage, this);
             }
         }
         this.DealDamage(health);

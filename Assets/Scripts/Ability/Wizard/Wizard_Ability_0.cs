@@ -32,7 +32,7 @@ public class Wizard_Ability_0 : Ability
         foreach (var s in SelectableSpaces)
             s.SetSelectable(true);
         direction = SelectedSpace.gridPosition - Owner.GetGridSpace().gridPosition;
-        for(int i = 1; i <= range; i++)
+        for(int i = 0; i <= range; i++)
         {
             var affSpace = GridManager.Instance.GetGridSpace(SelectedSpace.gridPosition + direction * i);
             AddAffectedSpace(affSpace);
@@ -43,7 +43,7 @@ public class Wizard_Ability_0 : Ability
     {
         base.Confirm();
 
-
+        Debug.Log("AYUDA ME QUIERO MORIR");
         var wizard = Owner as Wizard;
         var AnyEnemyWasAffected = false;
         foreach (var affectedSpace in AffectedSpaces)

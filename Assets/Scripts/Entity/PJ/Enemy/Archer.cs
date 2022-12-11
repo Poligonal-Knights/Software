@@ -226,7 +226,7 @@ public class Archer : Enemy
             LineDrawer.DrawLine(this.GetGridSpace().GetWorldPosition(), focusedEnemy.GetGridSpace().GetWorldPosition());
         //Correr animación de ataque mirando al enemigo
         Debug.Log("Atacando a " + focusedEnemy + " con " + focusedEnemy.health);
-        focusedEnemy.DealDamage(damage);
+        focusedEnemy.DealDamage(damage, this);
         setAttackPerformed(true);
         return true;
     }

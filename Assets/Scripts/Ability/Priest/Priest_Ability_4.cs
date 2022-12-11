@@ -57,6 +57,9 @@ public class Priest_Ability_4 : Ability
         firstTarget.SetAffected(false);
         secondTarget.SetAffected(false);
         ClearSelectableSpaces();
+        if (pj1 is Enemy enemy) enemy.weak = true;
+        if (pj2 is Enemy enemy2) enemy2.weak = true;
+
         LogicManager.Instance.PJFinishedMoving();
     }
 

@@ -31,4 +31,21 @@ public class Knight : Ally
         base.OnChangeTurn();
         SetGritoDeBatalla(false);
     }
+
+    public override void DealDamage(int damage, PJ attacker = null)
+    {
+        if(attacker != null)
+        {
+            var attackDirection = GetGridSpace().gridPosition - attacker.GetGridSpace().gridPosition;
+            var attackDirection2D = new Vector2(attackDirection.x, attackDirection.z);
+            var angle = Vector2.Angle(attackDirection2D, -orientation);
+            if (angle < 30)
+            {
+                var distance = GridSpace.ManhattanDistance(GetGridSpace(), attacker.GetGridSpace());
+                if (distance > 1) damage = 0;
+                else damage -= 1;
+            }
+        }
+        base.DealDamage(damage, attacker);
+    }
 }

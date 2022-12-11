@@ -306,7 +306,7 @@ public class Warden : Enemy
     [Task]
     bool Attack()
     {
-        focusedEnemy.DealDamage(this.damage);
+        focusedEnemy.DealDamage(this.damage, this);
         return true;
     }
 

@@ -4,22 +4,20 @@ using System.Reflection.Emit;
 using UnityEditor;
 using UnityEngine;
 
-//Basico
+//Bomba de aceite
 public class Rogue_Ability_3 : Ability
 {
-    public Rogue_Ability_3(PJ owner) : base(owner) { EnergyConsumed = 0;}
+    int attackRange = 4;
+
+    public Rogue_Ability_3(PJ owner) : base(owner) { EnergyConsumed = 0; }
 
     public override void Preview()
     {
         Debug.Log("Hability Preview");
-        var PJSpace = LogicManager.Instance.GetSelectedPJ().GetGridSpace();
-        foreach (var move in PJSpace.moves)
-        {
-            if (move.gridPosition.y == PJSpace.gridPosition.y)
-            {
-                AddSelectableSpace(move);
-            }
-        }
+        var PJSpace = Owner.GetGridSpace();
+        var spacesInRange = GridManager.SpacesAtManhattanRange(PJSpace, attackRange);
+        foreach (var s in spacesInRange)
+            AddSelectableSpace(s);
     }
 
     public override void SelectTarget(GridSpace selected)
@@ -27,15 +25,15 @@ public class Rogue_Ability_3 : Ability
         Debug.Log("Selecting Target");
         ClearAffectedSpaces();
         RefreshSelectableSpaces();
-        var PJSpace = LogicManager.Instance.GetSelectedPJ().GetGridSpace();
-        var auxVector = selected.gridPosition - PJSpace.gridPosition;
-        var aux = Vector3.Cross(auxVector, Vector3.up);
-        var spaceAffected1 = GridManager.Instance.GetGridSpace(Vector3Int.RoundToInt(selected.gridPosition + aux));
-        var spaceAffected2 = GridManager.Instance.GetGridSpace(Vector3Int.RoundToInt(selected.gridPosition - aux));
-        AddAffectedSpace(selected);
-        AddAffectedSpace(spaceAffected1);
-        AddAffectedSpace(spaceAffected2);
         SelectedSpace = selected;
+        Vector3Int init = SelectedSpace.gridPosition - new Vector3Int(1, 0, 1);
+        for (int x = 0; x < 3; x++)
+            for (int z = 0; z < 3; z++)
+            {
+                var pos = new Vector3Int(x, 0, z) + init;
+                var s = GridManager.Instance.GetGridSpace(pos);
+                if (s is not null && s.IsPassable()) AddAffectedSpace(s);
+            }
         readyToConfirm = true;
     }
 
@@ -43,23 +41,14 @@ public class Rogue_Ability_3 : Ability
     {
         base.Confirm();
         Debug.Log("Confirming Hability");
-        var knight = LogicManager.Instance.GetSelectedPJ() as Knight;
-        var pushDirection = SelectedSpace.gridPosition - knight.GetGridSpace().gridPosition;
-        var AnyEnemyWasAffected = false;
+        var rogue = Owner as Rogue;
+        var oil = rogue.oil;
         foreach (var affectedSpace in AffectedSpaces)
         {
-            if (affectedSpace.GetEntity() is Enemy enemy)
-            {
-                AnyEnemyWasAffected = true;
-                enemy.BePushed(pushDirection, knight.pushStrength, knight.damage, knight);
-            }
+            Object.Instantiate(oil, affectedSpace.GetWorldPosition(), Quaternion.identity);
         }
         ClearAffectedSpaces();
         ClearSelectableSpaces();
-        if (!AnyEnemyWasAffected)
-        {
-            LogicManager.Instance.PJFinishedMoving();
-        }
     }
 
     public override void Cancel()
