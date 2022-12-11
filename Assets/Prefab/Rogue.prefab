@@ -123,6 +123,7 @@ MonoBehaviour:
   defaultSpeed: 3
   defense: 0
   IsMoving: 0
+  orientation: {x: 0, y: 0}
   MovementEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -131,7 +132,7 @@ MonoBehaviour:
   pushStrength: 3
   deniedReaction: 0
   caltrops: {fileID: 4743694349413910261, guid: b0100539fd0d36741bc404f7a69ba513, type: 3}
-  dummy: {fileID: 4837352154470818258, guid: e42b66d77ab92b647854a50f8183882d, type: 3}
+  ropeTrap: {fileID: 922955631575823561, guid: 1eb50c4d79da9c14f8291116af82084e, type: 3}
   oil: {fileID: 7466606596737621828, guid: 566ba6d5f8e9d1a43947799acc02bd8a, type: 3}
 --- !u!1 &8833514900583522877
 GameObject:

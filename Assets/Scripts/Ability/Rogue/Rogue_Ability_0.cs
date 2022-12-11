@@ -49,7 +49,6 @@ public class Rogue_Ability_0 : Ability
         {
             if (affectedSpace.GetEntity() is Enemy enemy)
             {
-                int increment = 0;
                 AnyEnemyWasAffected = true;
                 spawn = enemy.GetGridSpace();
                 enemyAffected = enemy;

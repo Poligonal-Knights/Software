@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection.Emit;
@@ -7,7 +8,9 @@ using UnityEngine;
 //Basico
 public class Rogue_Ability_1 : Ability
 {
-    public Rogue_Ability_1(PJ owner) : base(owner) { EnergyConsumed = 0;}
+    GridSpace affSpace = null;
+
+    public Rogue_Ability_1(PJ owner) : base(owner) { EnergyConsumed = 0; }
 
     public override void Preview()
     {
@@ -15,7 +18,7 @@ public class Rogue_Ability_1 : Ability
         var PJSpace = Owner.GetGridSpace();
         foreach (var move in PJSpace.moves)
         {
-            if (move.gridPosition.y == PJSpace.gridPosition.y)
+            if (move.gridPosition.y == PJSpace.gridPosition.y && move.GetEntity() is null)
             {
                 AddSelectableSpace(move);
             }
@@ -25,17 +28,13 @@ public class Rogue_Ability_1 : Ability
     public override void SelectTarget(GridSpace selected)
     {
         Debug.Log("Selecting Target");
-        ClearAffectedSpaces();
-        RefreshSelectableSpaces();
-        var PJSpace = Owner.GetGridSpace();
-        var auxVector = selected.gridPosition - PJSpace.gridPosition;
-        var aux = Vector3.Cross(auxVector, Vector3.up);
-        var spaceAffected1 = GridManager.Instance.GetGridSpace(Vector3Int.RoundToInt(selected.gridPosition + aux));
-        var spaceAffected2 = GridManager.Instance.GetGridSpace(Vector3Int.RoundToInt(selected.gridPosition - aux));
-        AddAffectedSpace(selected);
-        AddAffectedSpace(spaceAffected1);
-        AddAffectedSpace(spaceAffected2);
-        SelectedSpace = selected;
+        if (affSpace != null)
+        {
+            affSpace.SetAffected(false);
+            affSpace.SetSelectable(true);
+        }
+        affSpace = selected;
+        affSpace.SetAffected(true);
         readyToConfirm = true;
     }
 
@@ -43,23 +42,12 @@ public class Rogue_Ability_1 : Ability
     {
         base.Confirm();
         Debug.Log("Confirming Hability");
-        var knight = LogicManager.Instance.GetSelectedPJ() as Knight;
-        var pushDirection = SelectedSpace.gridPosition - knight.GetGridSpace().gridPosition;
-        var AnyEnemyWasAffected = false;
-        foreach (var affectedSpace in AffectedSpaces)
-        {
-            if (affectedSpace.GetEntity() is Enemy enemy)
-            {
-                AnyEnemyWasAffected = true;
-                enemy.BePushed(pushDirection, knight.pushStrength, knight.damage, knight);
-            }
-        }
+        var rogue = Owner as Rogue;
+        var c = Object.Instantiate(rogue.ropeTrap, affSpace.GetWorldPosition(), Quaternion.identity);
+        c.GetComponent<RopeTrap>().Init();
         ClearAffectedSpaces();
         ClearSelectableSpaces();
-        if (!AnyEnemyWasAffected)
-        {
-            LogicManager.Instance.PJFinishedMoving();
-        }
+        LogicManager.Instance.PJFinishedMoving();
     }
 
     public override void Cancel()
@@ -67,14 +55,6 @@ public class Rogue_Ability_1 : Ability
         base.Cancel();
         ClearAffectedSpaces();
         ClearSelectableSpaces();
-    }
-
-    void RefreshSelectableSpaces()
-    {
-        foreach (var s in SelectableSpaces)
-        {
-            s.SetSelectable(true);
-        }
     }
 
     public override void ClickedEntity(Entity entityClicked)
