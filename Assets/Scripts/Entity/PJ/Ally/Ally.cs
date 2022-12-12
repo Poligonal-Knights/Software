@@ -89,15 +89,16 @@ public class Ally : PJ
 
     protected override void OnChangeTurn()
     {
-        base.OnChangeTurn();
         if (TurnManager.Instance.IsPlayerTurn()) //Cambio de ronda
         {
             //foreach buff in buffs
             //buff.cont--;
 
+            //Debug.Log(this +" : Invencibilidad " + invencibility);
             SetInvencibility(false);
             SetReactionAvailable(true);
         }
+        base.OnChangeTurn();
     }
     public void ReduceEnergy(int reduceAmount)
     {

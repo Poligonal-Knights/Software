@@ -98,6 +98,10 @@ public class Enemy : PJ
             else if (pushedInto.IsEmpty() || pushedInto.HasTrap())
             {
                 MovementsToDo.Enqueue(pushedInto);
+                if (pushedInto.GetEntity() is Activatable)
+                {
+                    DealDamage(extraDamage);
+                }
                 //var IsReactionPosible = false;
                 //foreach(var neighbor in pushedInto.neighbors.Values)
                 //{

@@ -81,7 +81,7 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: "RecibirDa\xF1o"
+  - name: RecibirDano
     clip: {fileID: 8300000, guid: 6e8772b49f34d402a90016ed445d8a2f, type: 3}
     volume: 0.621
     pitch: 1
