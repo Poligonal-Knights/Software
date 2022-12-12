@@ -13,7 +13,7 @@ public class ShaderEffect_CRT : MonoBehaviour {
 
 	void Awake ()
 	{
-		material_Scanlines = new Material( Shader.Find("Hidden/Scanlines") );
+		material_Scanlines = new Material(Shader.Find("Hidden/Scanlines") );
 	}
 
 	void OnRenderImage (RenderTexture source, RenderTexture destination)
