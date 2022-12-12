@@ -237,6 +237,10 @@ public class Warden : Enemy
     [Task]
     bool GetCloserEnemyFocused()
     {
+        if (!focusedEnemy)
+        {
+            return false;
+        }
         var goalSpace = BFS.GetGoalGridSpace(space, int.MaxValue, CanMoveThere, candidate =>
         {
             if(candidate.GetEntity() is null)

@@ -106,6 +106,10 @@ public class Mage : Enemy
     [Task]
     bool ChooseCloserEnemy()
     {
+        if (!focusedEnemy)
+        {
+            return false;
+        }
         Debug.Log("ChooseCloserEnemy");
         //Elegir enemigo más cercano para ir moviendose si no hay nadie a rango de explotar
         GridSpace closerEnemySpace = BFS.GetGoalGridSpace(space, int.MaxValue, CanMoveThere, (GridSpace candidate) =>

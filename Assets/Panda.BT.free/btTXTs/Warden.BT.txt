@@ -24,9 +24,11 @@ tree("ProtectiveOffense")
 		EnemyInAllysRange()
 		FocusedEnemyInRange()
 		GetCloserEnemyFocused()
+		Wait 1.0
 		CanIAttack()
 		Attack()
 		GetCloserProtectedAlly()
+		Wait 1.0
 
 tree ("Buffing")
 	sequence
@@ -34,10 +36,12 @@ tree ("Buffing")
 			sequence
 				IsAllyInRange()
 				GetCloserProtectedAlly()
+				Wait 1.0
 				DefenseBuff()
 			sequence
 				MovementBuff()
 				GetCloserProtectedAlly()
+				Wait 1.0
 		EndTurn()
 
 //Tree ChooseProtectedAlly

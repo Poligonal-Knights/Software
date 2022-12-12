@@ -81,6 +81,10 @@ public class Healer : Enemy
     [Task]
     bool GetCloserFocusedAlly()
     {
+        if (!focusedAlly)
+        {
+            return false;
+        }
         var goalSpace = BFS.GetGoalGridSpace(space, int.MaxValue, CanMoveThere, candidate =>
         {
             if (candidate.GetEntity() is null)

@@ -1189,6 +1189,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3304183766371992093, guid: 1e6fd72f9a9617f4e8b9a3988e977e68, type: 3}
+      propertyPath: sourceInfos.Array.data[0].isFoldout
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3312025720173712100, guid: 1e6fd72f9a9617f4e8b9a3988e977e68, type: 3}
       propertyPath: m_RootOrder
       value: 8

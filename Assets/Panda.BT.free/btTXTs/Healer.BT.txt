@@ -10,6 +10,7 @@ tree ("Healing")
 		IsAllyInRange()
 		MostDamagedAlly()
 		GetCloserFocusedAlly()
+		Wait 1.0
 		CanIHeal()
 		Heal()
 		EndTurn()
@@ -20,18 +21,17 @@ tree ("Debuffing")
 			BattleCryActive()
 			ChooseCloserEnemy()
 		GetCloser()
+		Wait 1.0
 		CanIAttack()
 		Attack()
 		CanIMove()
-		IsAnyoneAlive()
-		ChooseCloserAlly()
-		//GetCloserFocusedAlly()
-		EndTurn
+		tree "Alone"
 tree ("Alone")
 	sequence
 		mute
 			sequence
 				IsAnyoneAlive()
 				ChooseCloserAlly()
-				//GetCloserFocusedAlly()
+				GetCloserFocusedAlly()
+				Wait 1.0
 		EndTurn
