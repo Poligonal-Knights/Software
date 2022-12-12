@@ -29,7 +29,13 @@ public class Knight_Ability_3 : Ability
     {
         base.Confirm();
 
-        foreach (var space in SelectableSpaces)
+        // if (Owner is Ally)
+        // {
+        //     var owner = Owner as Ally;
+        //     owner.SetInvencibility(true);
+        // }
+
+        foreach (var space in AffectedSpaces)
         {
             if (space.GetEntity() is Ally ally)
             {

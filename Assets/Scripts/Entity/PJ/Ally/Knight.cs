@@ -29,7 +29,12 @@ public class Knight : Ally
     protected override void OnChangeTurn()
     {
         base.OnChangeTurn();
-        SetGritoDeBatalla(false);
+        if (TurnManager.Instance.IsPlayerTurn()) //Cambio de ronda
+        {
+            SetGritoDeBatalla(false);
+        }
+        //Debug.Log("grito de batalla: " + gritoDeBatalla);
+
     }
 
     public override void DealDamage(int damage, PJ attacker = null, PJ damageTo = null)
