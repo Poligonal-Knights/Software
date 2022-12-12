@@ -134,6 +134,8 @@ public class Healer : Enemy
     [Task]
     bool Heal()
     {
+        if (!getAttackPerformed())
+            LineDrawer.DrawHeal(this.GetGridSpace().GetWorldPosition(), focusedAlly.GetGridSpace().GetWorldPosition());
         focusedAlly.Heal(damage);
         return true;
     }
@@ -239,6 +241,8 @@ public class Healer : Enemy
     [Task]
     bool Attack()
     {
+        if (!getAttackPerformed())
+            LineDrawer.DrawLine(this.GetGridSpace().GetWorldPosition(), focusedEnemy.GetGridSpace().GetWorldPosition());
         //Activar Debuff de daño y defensa
         new Curse(focusedEnemy);
         return true;

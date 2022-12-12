@@ -185,6 +185,8 @@ public class Mage : Enemy
     [Task]
     bool Attack()
     {
+        if (!getAttackPerformed())
+            LineDrawer.DrawLine(this.GetGridSpace().GetWorldPosition(), optimalSpace.GetWorldPosition());
         setAttackPerformed(true);
 
         //Realizar daño a los enemigos a rango de la explosión donde haya explotado que será en OptimalSpace

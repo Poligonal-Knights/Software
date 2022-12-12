@@ -310,6 +310,8 @@ public class Warden : Enemy
     [Task]
     bool Attack()
     {
+        if (!getAttackPerformed())
+            LineDrawer.DrawLine(this.GetGridSpace().GetWorldPosition(), focusedEnemy.GetGridSpace().GetWorldPosition());
         focusedEnemy.DealDamage(this.damage, this);
         return true;
     }

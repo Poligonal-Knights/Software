@@ -3,13 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d5face6c-2f1b-4931-a622-ab51a4d8a3bf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Software/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Software/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Panda.BT.free/btTXTs/Healer.BT.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Panda.BT.free/btTXTs/Healer.BT.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Panda.BT.free/btTXTs/Warden.BT.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Panda.BT.free/btTXTs/Warden.BT.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Dungeon 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Dungeon 2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TesteoJavier.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TesteoJavier.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/Healer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/Healer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/Kamikaze.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/Kamikaze.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/Mage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/Mage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/Warden.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/Warden.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/LineDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/LineDrawer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +77,7 @@
       <workItem from="1670091001825" duration="11129000" />
       <workItem from="1670388779128" duration="4881000" />
       <workItem from="1670786040376" duration="17136000" />
-      <workItem from="1670816967350" duration="2593000" />
+      <workItem from="1670816967350" duration="3594000" />
     </task>
     <servers />
   </component>
