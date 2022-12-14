@@ -5,7 +5,7 @@ using UnityEngine;
 //Charge
 public class Knight_Ability_2 : Ability
 {
-    public Knight_Ability_2(PJ owner) : base(owner) { EnergyConsumed = 2; }
+    public Knight_Ability_2(Knight owner, int energyRequired = 2) : base(owner, energyRequired) { }
 
     /*
 

@@ -5,10 +5,11 @@ using UnityEngine;
 //Bastion
 public class Knight_Ability_3 : Ability
 {
-    public Knight_Ability_3(PJ owner) : base(owner) { EnergyConsumed = 3; }
+    public Knight_Ability_3(Knight owner, int energyRequired = 2) : base(owner, energyRequired) { }
 
     public override void Preview()
     {
+        base.Preview();
         var PJSpace = Owner.GetGridSpace();
         int y = PJSpace.gridPosition.y;
         for (int x = PJSpace.gridPosition.x - 1; x < PJSpace.gridPosition.x + 2; x++)

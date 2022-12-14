@@ -13,7 +13,8 @@ public class Reaction_Ability : Ability
     Ally ally;
     Enemy enemy;
     private Boolean thisComboFlag = false;
-    public Reaction_Ability(PJ owner) : base(owner) { }
+    public Reaction_Ability() : base() { }
+    public Reaction_Ability(Ally owner) : base(owner) { }
 
     public void Engage(Ally ally, Enemy enemy)
     {

@@ -61,7 +61,7 @@ public class SettingsInGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        allControlCanvas= new List<Canvas>();
+        allControlCanvas = new List<Canvas>();
         allControlCanvas.Add(initialCanvas);
         allControlCanvas.Add(controlCanvas);
         //A�adir canvas de Magnus
@@ -114,14 +114,14 @@ public class SettingsInGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void ShowThisCanvas(Canvas canvasToShow)
     {
         foreach (Canvas c in allControlCanvas)
         {
             c.gameObject.SetActive(false);
-        }                  
+        }
         //previousCanvas = currentCanvas;
         //currentCanvas = canvasToShow;
         canvasToShow.gameObject.SetActive(true);
@@ -137,7 +137,8 @@ public class SettingsInGameManager : MonoBehaviour
             c.gameObject.SetActive(false);
         }
         alwaysActive.gameObject.SetActive(true);
-        turnButton.gameObject.SetActive(true);
+        if (TurnManager.Instance.IsPlayerTurn())
+            turnButton.gameObject.SetActive(true);
         //this.gameObject.SetActive(false);
     }
 }

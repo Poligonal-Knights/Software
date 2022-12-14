@@ -6,14 +6,14 @@ using UnityEngine;
 //Basico
 public class Wizard_Ability_0 : Ability
 {
-    public Wizard_Ability_0(PJ owner) : base(owner) { EnergyConsumed = 0; }
+    public Wizard_Ability_0(Wizard owner, int energyRequired = 2) : base(owner, energyRequired, false) { }
 
     int range = 3;
     Vector3Int direction;
 
     public override void Preview()
     {
-
+        base.Preview();
         var PJSpace = Owner.GetGridSpace();
         foreach (var move in PJSpace.moves)
         {
@@ -61,6 +61,11 @@ public class Wizard_Ability_0 : Ability
         {
             LogicManager.Instance.PJFinishedMoving();
         }
+    }
+
+    protected override bool CanOwnerDoSpecialAbility()
+    {
+        return true;
     }
 
     public override void Cancel()

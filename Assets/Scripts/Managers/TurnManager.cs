@@ -17,7 +17,7 @@ public class TurnManager : MonoBehaviour
     void Start()
     {
         playerTurn = false;
-        ChangeTurn();
+        //ChangeTurn(); Ahora se llama en NuevoDialogo
     }
 
     public void Init()
@@ -27,8 +27,8 @@ public class TurnManager : MonoBehaviour
 
     public void ChangeTurn()
     {
-        Debug.Log("Pasa turno");
         playerTurn = !playerTurn;
+        Debug.Log("Cambio de turno. Turno del jugador: " + playerTurn);
         UIManager.Instance.ChangeTurn(playerTurn);
         if (!playerTurn)
         {

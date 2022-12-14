@@ -6,10 +6,11 @@ using UnityEngine;
 //Grito de Batalla
 public class Knight_Ability_1 : Ability
 {
-    public Knight_Ability_1(PJ owner) : base(owner) { EnergyConsumed = 1; }
+    public Knight_Ability_1(Knight owner, int energyRequired = 2) : base(owner, energyRequired) { }
 
     public override void Preview()
     {
+        base.Preview();
         Debug.Log("Grito de batalla PREVIEW");
         readyToConfirm = true;
         AddHealedSpace(Owner.GetGridSpace());

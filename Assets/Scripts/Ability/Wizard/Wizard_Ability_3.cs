@@ -6,7 +6,7 @@ using UnityEngine;
 //Barrido de aire
 public class Wizard_Ability_3 : Ability
 {
-    public Wizard_Ability_3(PJ owner) : base(owner) { EnergyConsumed = 3; }
+    public Wizard_Ability_3(Wizard owner, int energyRequired = 2) : base(owner, energyRequired) { }
 
     int radius = 5;
     int range = 5;
@@ -17,6 +17,7 @@ public class Wizard_Ability_3 : Ability
 
     public override void Preview()
     {
+        base.Preview();
         var ownerSpacePosition = Owner.GetGridSpace().gridPosition;
         var limits = GridManager.Instance.GetGridSize();
         for (int x = ownerSpacePosition.x - radius; x <= ownerSpacePosition.x + radius; x++)

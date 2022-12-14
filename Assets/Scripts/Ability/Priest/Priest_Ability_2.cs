@@ -5,11 +5,12 @@ using UnityEngine;
 //Bless
 public class Priest_Ability_2 : Ability
 {
-    public Priest_Ability_2(PJ owner) : base(owner) { EnergyConsumed = 2; }
+    public Priest_Ability_2(Priest owner, int energyRequired = 2) : base(owner, energyRequired) { }
 
     public override void Preview()
     {
-        foreach(var ally in GameManager.Instance.allies)
+        base.Preview();
+        foreach (var ally in GameManager.Instance.allies)
         {
             AddSelectableSpace(ally.GetGridSpace());
         }

@@ -5,7 +5,7 @@ using UnityEngine;
 //Curacion
 public class Priest_Ability_1 : Ability
 {
-    public Priest_Ability_1(PJ owner) : base(owner) { EnergyConsumed = 2; }
+    public Priest_Ability_1(Priest owner, int energyRequired = 2) : base(owner, energyRequired) { }
 
     int selectableRadius = 5;
     int areaRange = 5;
@@ -14,6 +14,7 @@ public class Priest_Ability_1 : Ability
 
     public override void Preview()
     {
+        base.Preview();
         Debug.Log("Priest H1 preview");
         var ownerSpacePosition = Owner.GetGridSpace().gridPosition;
         var limits = GridManager.Instance.GetGridSize();

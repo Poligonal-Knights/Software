@@ -7,10 +7,11 @@ using UnityEngine;
 //Basico
 public class Knight_Ability_0 : Ability
 {
-    public Knight_Ability_0(PJ owner) : base(owner) { EnergyConsumed = 0;}
+    public Knight_Ability_0(Knight owner, int energyRequired = 2) : base(owner, energyRequired, false) { }
 
     public override void Preview()
     {
+        base.Preview();
         Debug.Log("Hability Preview");
         var PJSpace = LogicManager.Instance.GetSelectedPJ().GetGridSpace();
         foreach (var move in PJSpace.moves)
@@ -65,9 +66,14 @@ public class Knight_Ability_0 : Ability
 
     public override void Cancel()
     {
-        base.Cancel();
         ClearAffectedSpaces();
         ClearSelectableSpaces();
+        base.Cancel();
+    }
+
+    protected override bool CanOwnerDoSpecialAbility()
+    {
+        return true;
     }
 
     void RefreshSelectableSpaces()

@@ -7,13 +7,14 @@ using UnityEngine;
 //Cerbatana
 public class Rogue_Ability_2 : Ability
 {
-    public Rogue_Ability_2(PJ owner) : base(owner) { EnergyConsumed = 0; }
+    public Rogue_Ability_2(Rogue owner, int energyRequired = 2) : base(owner, energyRequired) { }
+
     int attackRange = 4;
 
     public override void Preview()
     {
+        base.Preview();
         Debug.Log("Hability Preview");
-        Owner = LogicManager.Instance.GetSelectedPJ();
         SelectedSpace = null;
         AffectedSpaces = GridManager.SpacesAtManhattanRange(Owner.GetGridSpace(), attackRange);
         foreach (var s in AffectedSpaces)

@@ -325,6 +325,7 @@ public class PJ : Entity
     public void setAttackPerformed(bool setter)
     {
         attackPerformed = setter;
+        Debug.Log("Ataque realizado: " + attackPerformed);
     }
 
     public void AddBuff(Buff addedBuff)

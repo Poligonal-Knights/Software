@@ -6,13 +6,14 @@ using UnityEngine;
 //Bomba de aire
 public class Wizard_Ability_1 : Ability
 {
-    public Wizard_Ability_1(PJ owner) : base(owner) { EnergyConsumed = 4; }
+    public Wizard_Ability_1(Wizard owner, int energyRequired = 2) : base(owner, energyRequired) { }
 
     int radius = 5;
     int bombRange = 2;
 
     public override void Preview()
     {
+        base.Preview();
         var ownerSpacePosition = Owner.GetGridSpace().gridPosition;
         var limits = GridManager.Instance.GetGridSize();
         for (int x = ownerSpacePosition.x - radius; x <= ownerSpacePosition.x + radius; x++)

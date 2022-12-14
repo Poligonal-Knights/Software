@@ -7,11 +7,12 @@ using UnityEngine;
 //Muñeco explosivo, no tiene futuro
 public class Rogue_Ability_4 : Ability
 {
-    public Rogue_Ability_4(PJ owner) : base(owner) { EnergyConsumed = 0;}
+    public Rogue_Ability_4(Rogue owner, int energyRequired = 2) : base(owner, energyRequired) { }
 
     GameObject dummy;
     public override void Preview()
     {
+        base.Preview();
         Debug.Log("Hability Preview");
         var PJSpace = Owner.GetGridSpace();
         foreach (var move in PJSpace.moves)

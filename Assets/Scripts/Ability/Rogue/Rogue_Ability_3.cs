@@ -7,12 +7,13 @@ using UnityEngine;
 //Bomba de aceite
 public class Rogue_Ability_3 : Ability
 {
-    int attackRange = 4;
+    public Rogue_Ability_3(Rogue owner, int energyRequired = 2) : base(owner, energyRequired) { }
 
-    public Rogue_Ability_3(PJ owner) : base(owner) { EnergyConsumed = 0; }
+    int attackRange = 4;
 
     public override void Preview()
     {
+        base.Preview();
         Debug.Log("Hability Preview");
         var PJSpace = Owner.GetGridSpace();
         var spacesInRange = GridManager.SpacesAtManhattanRange(PJSpace, attackRange);

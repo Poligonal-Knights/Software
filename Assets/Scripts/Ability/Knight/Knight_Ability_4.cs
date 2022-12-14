@@ -6,7 +6,7 @@ using UnityEngine;
 //Shield throw
 public class Knight_Ability_4 : Ability
 {
-    public Knight_Ability_4(PJ owner) : base(owner) { EnergyConsumed = 1; }
+    public Knight_Ability_4(Knight owner, int energyRequired = 2) : base(owner, energyRequired) { }
 
     public GameObject shield;
 
@@ -15,6 +15,7 @@ public class Knight_Ability_4 : Ability
 
     public override void Preview()
     {
+        base.Preview();
         var PJSpace = Owner.GetGridSpace();
         var spacesInRange = GridManager.SpacesAtManhattanRange(PJSpace, attackRange);
         foreach(var s in spacesInRange) AddSelectableSpace(s);
@@ -42,6 +43,7 @@ public class Knight_Ability_4 : Ability
             LineDrawer.DrawLine(knight.GetGridSpace().GetWorldPosition(), affSpace.GetWorldPosition());
             enemy.DealDamage(knight.damage, knight);
         }
+        ClearSelectableSpaces();
         AudioManager.Instance.PlayAttackSound();
         LogicManager.Instance.PJFinishedMoving();
 

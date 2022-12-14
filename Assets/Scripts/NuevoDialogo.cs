@@ -70,6 +70,7 @@ public class NuevoDialogo : MonoBehaviour
                 UIManager.Instance.ShowAlwaysCanvas(true);
                 gameObject.SetActive(false);
                 turnButton.gameObject.SetActive(true);
+                TurnManager.Instance.ChangeTurn();
                 //actionCanvas.gameObject.SetActive(true);
             }
             else

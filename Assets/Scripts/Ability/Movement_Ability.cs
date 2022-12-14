@@ -6,7 +6,7 @@ using UnityEngine;
 public class Movement_Ability : Ability
 {
     public Movement_Ability() : base() { }
-    public Movement_Ability(PJ owner) : base(owner) { }
+    public Movement_Ability(Ally owner) : base(owner) { }
 
     HashSet<GridSpace> visitedSpaces = new HashSet<GridSpace>();
 

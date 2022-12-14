@@ -5,12 +5,13 @@ using UnityEngine;
 //Swap
 public class Priest_Ability_4 : Ability
 {
-    public Priest_Ability_4(PJ owner) : base(owner) { EnergyConsumed = 2; }
+    public Priest_Ability_4(Priest owner, int energyRequired = 2) : base(owner, energyRequired) { }
 
     GridSpace firstTarget, secondTarget;
 
     public override void Preview()
     {
+        base.Preview();
         foreach (var pj in GameManager.Instance.PJs)
         {
             AddSelectableSpace(pj.GetGridSpace());

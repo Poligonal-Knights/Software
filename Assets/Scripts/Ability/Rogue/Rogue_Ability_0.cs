@@ -8,13 +8,14 @@ using UnityEngine;
 //Basico
 public class Rogue_Ability_0 : Ability
 {
-    public Rogue_Ability_0(PJ owner) : base(owner) { EnergyConsumed = 0; }
+    public Rogue_Ability_0(Rogue owner, int energyRequired = 2) : base(owner, energyRequired, false) { }
 
     int pushIncrement = 1;
     int damageIncrement = 2;
 
     public override void Preview()
     {
+        base.Preview();
         Debug.Log("Hability Preview");
         var PJSpace = Owner.GetGridSpace();
         foreach (var move in PJSpace.moves)
@@ -113,6 +114,11 @@ public class Rogue_Ability_0 : Ability
             var c = Object.Instantiate(caltrops, spawn.GetWorldPosition(), Quaternion.identity);
             c.GetComponent<Caltrops>().Init();
         }
+    }
+
+    protected override bool CanOwnerDoSpecialAbility()
+    {
+        return true;
     }
 
     public override void Cancel()

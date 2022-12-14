@@ -11,7 +11,7 @@ public class LogicManager : MonoBehaviour
 
     bool SelectingAbility;
     public Ability currentAbility;
-    public Reaction_Ability reactionAbility = new Reaction_Ability(null);
+    public Reaction_Ability reactionAbility = new Reaction_Ability();
 
     private void Awake() => Instance = this;
 
@@ -101,20 +101,36 @@ public class LogicManager : MonoBehaviour
 
     public void DoAbility(int i)
     {
-        if (SelectedPJ is Ally)
+        if (SelectedPJ is Ally ally)
         {
-            currentAbility = Ability.GetAbility(SelectedPJ, i);
+            var newAbility = Ability.GetAbility(ally, i);
+            if(newAbility is null)
+            {
+                Debug.LogError("ERROR AL OBTENER HABILIDAD");
+                return;
+            }
+            if (!newAbility.IsAbilityAvailable())
+            {
+                Debug.LogWarning("ATAQUE ESPECIAL YA GASTADO ESTE TURNO");
+                return;
+            }
+            if (!newAbility.EnougEnergy())
+            {
+                Debug.LogWarning("ENERGIA NO SUFICIENTE PARA USAR HABILIDAD");
+                return;
+            }
+            currentAbility = newAbility;
             SelectingAbility = false;
-            currentAbility?.Preview();
+            currentAbility.Preview();
             UIManager.Instance.ShowPreviewCanvas();
         }
     }
 
     public void DoMovementAbility()
     {
-        if (SelectedPJ is Ally)
+        if (SelectedPJ is Ally ally)
         {
-            currentAbility = Ability.GetMovementAbility(SelectedPJ);
+            currentAbility = Ability.GetMovementAbility(ally);
             currentAbility.Preview();
             UIManager.Instance.ShowPreviewCanvas();
         }

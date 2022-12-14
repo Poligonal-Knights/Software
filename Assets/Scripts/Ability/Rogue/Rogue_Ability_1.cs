@@ -8,12 +8,13 @@ using UnityEngine;
 //TrapRope
 public class Rogue_Ability_1 : Ability
 {
-    GridSpace affSpace = null;
+    public Rogue_Ability_1(Rogue owner, int energyRequired = 2) : base(owner, energyRequired) { }
 
-    public Rogue_Ability_1(PJ owner) : base(owner) { EnergyConsumed = 0; }
+    GridSpace affSpace = null;
 
     public override void Preview()
     {
+        base.Preview();
         Debug.Log("Hability Preview");
         var PJSpace = Owner.GetGridSpace();
         foreach (var move in PJSpace.moves)

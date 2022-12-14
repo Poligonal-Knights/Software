@@ -7,12 +7,13 @@ using UnityEngine.Timeline;
 //Basico
 public class Priest_Ability_0 : Ability
 {
-    public Priest_Ability_0(PJ owner) : base(owner) { EnergyConsumed = 0; }
+    public Priest_Ability_0(Priest owner, int energyRequired = 2) : base(owner, energyRequired, false) { }
 
     int selectableRadius = 5;
 
     public override void Preview()
     {
+        base.Preview();
         Debug.Log("Priest H1 preview");
         var ownerSpacePosition = Owner.GetGridSpace().gridPosition;
         var limits = GridManager.Instance.GetGridSize();
@@ -69,6 +70,11 @@ public class Priest_Ability_0 : Ability
         base.Cancel();
         ClearAffectedSpaces();
         ClearSelectableSpaces();
+    }
+
+    protected override bool CanOwnerDoSpecialAbility()
+    {
+        return true;
     }
 
     public override void ClickedEntity(Entity entityClicked)
