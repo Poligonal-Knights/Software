@@ -54,9 +54,6 @@ public class Wizard_Ability_1 : Ability
 
     public override void Confirm()
     {
-        base.Confirm();
-
-
         Wizard Wizard = Owner as Wizard;
         bool AnyEnemyWasAffected = false;
         Debug.Log(AffectedSpaces.Count);
@@ -70,20 +67,17 @@ public class Wizard_Ability_1 : Ability
                 enemy.BePushed(direction, Wizard.pushStrength, Wizard.damage, Wizard);
             }
         }
-        ClearAffectedSpaces();
-        ClearSelectableSpaces();
         AudioManager.Instance.PlayAttackSound();
         if (!AnyEnemyWasAffected)
         {
             LogicManager.Instance.PJFinishedMoving();
         }
+        base.Confirm();
     }
 
     public override void Cancel()
     {
         base.Cancel();
-        ClearAffectedSpaces();
-        ClearSelectableSpaces();
     }
 
     public override void ClickedEntity(Entity entityClicked)

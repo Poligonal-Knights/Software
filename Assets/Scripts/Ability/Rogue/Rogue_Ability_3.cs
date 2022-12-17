@@ -14,7 +14,6 @@ public class Rogue_Ability_3 : Ability
     public override void Preview()
     {
         base.Preview();
-        Debug.Log("Hability Preview");
         var PJSpace = Owner.GetGridSpace();
         var spacesInRange = GridManager.SpacesAtManhattanRange(PJSpace, attackRange);
         foreach (var s in spacesInRange)
@@ -40,8 +39,6 @@ public class Rogue_Ability_3 : Ability
 
     public override void Confirm()
     {
-        base.Confirm();
-        Debug.Log("Confirming Hability");
         var rogue = Owner as Rogue;
         var oil = rogue.oil;
         foreach (var affectedSpace in AffectedSpaces)
@@ -49,15 +46,12 @@ public class Rogue_Ability_3 : Ability
             Object.Instantiate(oil, affectedSpace.GetWorldPosition(), Quaternion.identity);
         }
         AudioManager.Instance.PlayAttackSound();
-        ClearAffectedSpaces();
-        ClearSelectableSpaces();
+        base.Confirm();
     }
 
     public override void Cancel()
     {
         base.Cancel();
-        ClearAffectedSpaces();
-        ClearSelectableSpaces();
     }
 
     void RefreshSelectableSpaces()

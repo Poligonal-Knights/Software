@@ -54,7 +54,6 @@ public class Wizard_Ability_3 : Ability
 
     public void SelectDirection(GridSpace selected)
     {
-        Debug.Log("SelDirection");
         readyToConfirm = true;
         ClearAffectedSpaces();
         foreach (var space in selectableSpacesForDirection)
@@ -73,9 +72,6 @@ public class Wizard_Ability_3 : Ability
 
     public override void Confirm()
     {
-        base.Confirm();
-
-        Debug.Log("Confirming Hability");
         var wizard = Owner as Wizard;
         var AnyEnemyWasAffected = false;
         foreach (var affectedSpace in AffectedSpaces)
@@ -86,13 +82,12 @@ public class Wizard_Ability_3 : Ability
                 enemy.BePushed(direction, wizard.pushStrength, wizard.damage, wizard);
             }
         }
-        ClearAffectedSpaces();
-        ClearSelectableSpaces();
         AudioManager.Instance.PlayAttackSound();
         if (!AnyEnemyWasAffected)
         {
             LogicManager.Instance.PJFinishedMoving();
         }
+        base.Confirm();
     }
 
     public override void Cancel()

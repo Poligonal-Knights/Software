@@ -14,7 +14,6 @@ public class Priest_Ability_0 : Ability
     public override void Preview()
     {
         base.Preview();
-        Debug.Log("Priest H1 preview");
         var ownerSpacePosition = Owner.GetGridSpace().gridPosition;
         var limits = GridManager.Instance.GetGridSize();
 
@@ -47,7 +46,6 @@ public class Priest_Ability_0 : Ability
 
     public override void Confirm()
     {
-        base.Confirm();
 
         var priest = Owner as Priest;
         foreach (var affectedSpace in AffectedSpaces)
@@ -61,20 +59,13 @@ public class Priest_Ability_0 : Ability
                 enemy.BePushed(direction, priest.pushStrength, priest.damage, priest);
             }
         }
-        ClearAffectedSpaces();
-        ClearSelectableSpaces();
+
+        base.Confirm();
     }
 
     public override void Cancel()
     {
         base.Cancel();
-        ClearAffectedSpaces();
-        ClearSelectableSpaces();
-    }
-
-    protected override bool CanOwnerDoSpecialAbility()
-    {
-        return true;
     }
 
     public override void ClickedEntity(Entity entityClicked)

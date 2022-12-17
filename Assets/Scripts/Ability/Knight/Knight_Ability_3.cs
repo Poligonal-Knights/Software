@@ -21,14 +21,11 @@ public class Knight_Ability_3 : Ability
     public override void Cancel()
     {
         base.Cancel();
-        ClearSelectableSpaces();
-        ClearAffectedSpaces();
         LogicManager.Instance.PJFinishedMoving();
     }
 
     public override void Confirm()
     {
-        base.Confirm();
 
         // if (Owner is Ally)
         // {
@@ -43,7 +40,6 @@ public class Knight_Ability_3 : Ability
                 ally.SetInvencibility(true);
             }
         }
-        ClearSelectableSpaces();
-        ClearAffectedSpaces();
+        base.Confirm();
     }
 }

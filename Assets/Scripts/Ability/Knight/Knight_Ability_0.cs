@@ -12,7 +12,6 @@ public class Knight_Ability_0 : Ability
     public override void Preview()
     {
         base.Preview();
-        Debug.Log("Hability Preview");
         var PJSpace = LogicManager.Instance.GetSelectedPJ().GetGridSpace();
         foreach (var move in PJSpace.moves)
         {
@@ -25,7 +24,6 @@ public class Knight_Ability_0 : Ability
 
     public override void SelectTarget(GridSpace selected)
     {
-        Debug.Log("Selecting Target");
         ClearAffectedSpaces();
         RefreshSelectableSpaces();
         var PJSpace = LogicManager.Instance.GetSelectedPJ().GetGridSpace();
@@ -42,8 +40,6 @@ public class Knight_Ability_0 : Ability
 
     public override void Confirm()
     {
-        base.Confirm();
-        Debug.Log("Confirming Hability");
         var knight = LogicManager.Instance.GetSelectedPJ() as Knight;
         var pushDirection = SelectedSpace.gridPosition - knight.GetGridSpace().gridPosition;
         var AnyEnemyWasAffected = false;
@@ -55,25 +51,17 @@ public class Knight_Ability_0 : Ability
                 enemy.BePushed(pushDirection, knight.pushStrength, knight.damage, knight);
             }
         }
-        ClearAffectedSpaces();
-        ClearSelectableSpaces();
         if (!AnyEnemyWasAffected)
         {
             LogicManager.Instance.PJFinishedMoving();
         }
         AudioManager.Instance.PlayAttackSound();
+        base.Confirm();
     }
 
     public override void Cancel()
     {
-        ClearAffectedSpaces();
-        ClearSelectableSpaces();
         base.Cancel();
-    }
-
-    protected override bool CanOwnerDoSpecialAbility()
-    {
-        return true;
     }
 
     void RefreshSelectableSpaces()

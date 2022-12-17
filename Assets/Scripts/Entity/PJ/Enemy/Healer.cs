@@ -85,6 +85,7 @@ public class Healer : Enemy
         {
             return false;
         }
+        if (space.ManhattanDistance2D(focusedAlly.GetGridSpace()) <= 1) return true;
         var goalSpace = BFS.GetGoalGridSpace(space, int.MaxValue, CanMoveThere, candidate =>
         {
             if (candidate.GetEntity() is null)
@@ -268,28 +269,31 @@ public class Healer : Enemy
                     {
                         var distance = candidate.ManhattanDistance2D(ally.GetGridSpace());
                         if (distance <= attackRange)
+                        {
+                            focusedAlly = ally;
                             return true;
+                        }
                     }
                 }
                 return false;
             });
+        //focusedAlly = 
+        //var goalNode = spaceWithAllyInRange?.node;
+        //if (goalNode is not null)
+        //{
+        //    var node = goalNode;
+        //    while ((node is not null) && (node.distance > movement || node.space.GetEntity() is PJ))
+        //    {
+        //        node = node.parent;
+        //    }
 
-        var goalNode = spaceWithAllyInRange?.node;
-        if (goalNode is not null)
-        {
-            var node = goalNode;
-            while ((node is not null) && (node.distance > movement || node.space.GetEntity() is PJ))
-            {
-                node = node.parent;
-            }
-
-            if (node is not null)
-            {
-                MoveTo(node.space);
-            }
-            else return false;
-        }
-        else return false;
+        //    if (node is not null)
+        //    {
+        //        MoveTo(node.space);
+        //    }
+        //    else return false;
+        //}
+        //else return false;
 
         return true;
     }

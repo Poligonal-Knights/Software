@@ -212,69 +212,6 @@ public class GridManager : MonoBehaviour
         return spacesAtRange;
     }
 
-    public void StopPJMovementPreview()
-    {
-        //foreach(var space in visitedSpaces)
-        //{
-        //    var b = space.neighbors["down"].GetEntity() as Block;
-        //    b.StopAnimation();
-        //}
-        ClearVisitedSpaces();
-    }
-
-    public void StopPJHabilityPreview()
-    {
-        //ClearAffectedSpaces();
-        foreach (var s in affectedSpaces)
-        {
-            if (s.neighbors["down"].HasBlock()) (s.neighbors["down"].GetEntity() as Block).StopAnimation();
-        }
-        ClearSelectableSpaces();
-    }
-
-    public void SetSelectedSpace(GridSpace g)
-    {
-        if (selectedSpace != null)
-        {
-            selectedSpace.SetSelected(false);
-        }
-        selectedSpace = g;
-    }
-
-    public GridSpace GetSelectedSpace()
-    {
-        return selectedSpace;
-    }
-
-    public void ClearVisitedSpaces()
-    {
-        foreach (var space in visitedSpaces)
-        {
-            space.SetVisited(false);
-        }
-        visitedSpaces.Clear();
-    }
-
-    public void ClearSelectableSpaces()
-    {
-        foreach (var space in selectableSpaces)
-        {
-            space.SetSelectable(false);
-            (space.neighbors["down"].GetEntity() as Block).StopAnimation();
-        }
-        selectableSpaces.Clear();
-    }
-
-    public void ClearAffectedSpaces()
-    {
-        foreach (var space in affectedSpaces)
-        {
-            space.SetAffected(false);
-            //(space.neighbors["down"].GetEntity() as Block).StopAnimation();
-        }
-        affectedSpaces.Clear();
-    }
-
     public Vector3 GetCenterofGrid()
     {
         Vector3Int minMax = maxBounds - minBounds;

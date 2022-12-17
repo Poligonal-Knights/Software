@@ -50,8 +50,15 @@ public class LogicManager : MonoBehaviour
 
     public void AbilityButton()
     {
-        UIManager.Instance.ShowHabilitiesCanvas();
-        SelectingAbility = true;
+        if (SelectedPJ is Ally ally && ally.getAttackPerformed() == false)
+        {
+            UIManager.Instance.ShowHabilitiesCanvas();
+            SelectingAbility = true;
+        }
+        else
+        {
+            Debug.LogWarning("Este aliado ya ha gastado su ataque en este turno");
+        }
     }
 
     public void ConfirmAction()
@@ -74,7 +81,6 @@ public class LogicManager : MonoBehaviour
         else if (currentAbility is not null)
         {
             currentAbility.Cancel();
-
         }
     }
 
@@ -104,14 +110,14 @@ public class LogicManager : MonoBehaviour
         if (SelectedPJ is Ally ally)
         {
             var newAbility = Ability.GetAbility(ally, i);
-            if(newAbility is null)
+            if (newAbility is null)
             {
                 Debug.LogError("ERROR AL OBTENER HABILIDAD");
                 return;
             }
             if (!newAbility.IsAbilityAvailable())
             {
-                Debug.LogWarning("ATAQUE ESPECIAL YA GASTADO ESTE TURNO");
+                Debug.LogWarning("ATAQUE YA GASTADO ESTE TURNO");
                 return;
             }
             if (!newAbility.EnougEnergy())

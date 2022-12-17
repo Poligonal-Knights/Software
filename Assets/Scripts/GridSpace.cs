@@ -208,17 +208,6 @@ public class GridSpace
         return selectable;
     }
 
-    public void SetSelected(bool s)
-    {
-        if (s) gridManager.SetSelectedSpace(this);
-        selected = s;
-    }
-
-    public bool IsSelected()
-    {
-        return selected;
-    }
-
     public void SetAffected(bool s)
     {
         affected = s;

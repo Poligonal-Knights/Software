@@ -16,7 +16,6 @@ public class Rogue_Ability_0 : Ability
     public override void Preview()
     {
         base.Preview();
-        Debug.Log("Hability Preview");
         var PJSpace = Owner.GetGridSpace();
         foreach (var move in PJSpace.moves)
         {
@@ -29,7 +28,6 @@ public class Rogue_Ability_0 : Ability
 
     public override void SelectTarget(GridSpace selected)
     {
-        Debug.Log("Selecting Target");
         ClearAffectedSpaces();
         RefreshSelectableSpaces();
         AddAffectedSpace(selected);
@@ -39,8 +37,6 @@ public class Rogue_Ability_0 : Ability
 
     public override void Confirm()
     {
-        base.Confirm();
-        Debug.Log("Confirming Hability");
         var rogue = Owner as Rogue;
         var pushDirection = SelectedSpace.gridPosition - rogue.GetGridSpace().gridPosition;
         var AnyEnemyWasAffected = false;
@@ -67,8 +63,6 @@ public class Rogue_Ability_0 : Ability
 
             }
         }
-        ClearAffectedSpaces();
-        ClearSelectableSpaces();
         if (!AnyEnemyWasAffected)
         {
             LogicManager.Instance.PJFinishedMoving();
@@ -77,6 +71,7 @@ public class Rogue_Ability_0 : Ability
         {
             rogue.StartCoroutine(spawnCaltrops(rogue.caltrops, spawn, enemyAffected));
         }
+        base.Confirm();
     }
 
     bool IsABackAttack(PJ attacker, PJ attacked)
@@ -116,16 +111,9 @@ public class Rogue_Ability_0 : Ability
         }
     }
 
-    protected override bool CanOwnerDoSpecialAbility()
-    {
-        return true;
-    }
-
     public override void Cancel()
     {
         base.Cancel();
-        ClearAffectedSpaces();
-        ClearSelectableSpaces();
     }
 
     void RefreshSelectableSpaces()

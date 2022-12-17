@@ -15,7 +15,6 @@ public class Rogue_Ability_1 : Ability
     public override void Preview()
     {
         base.Preview();
-        Debug.Log("Hability Preview");
         var PJSpace = Owner.GetGridSpace();
         foreach (var move in PJSpace.moves)
         {
@@ -28,7 +27,6 @@ public class Rogue_Ability_1 : Ability
 
     public override void SelectTarget(GridSpace selected)
     {
-        Debug.Log("Selecting Target");
         if (affSpace != null)
         {
             affSpace.SetAffected(false);
@@ -41,21 +39,16 @@ public class Rogue_Ability_1 : Ability
 
     public override void Confirm()
     {
-        base.Confirm();
-        Debug.Log("Confirming Hability");
         var rogue = Owner as Rogue;
         var c = Object.Instantiate(rogue.ropeTrap, affSpace.GetWorldPosition(), Quaternion.identity);
         c.GetComponent<RopeTrap>().Init();
-        ClearAffectedSpaces();
-        ClearSelectableSpaces();
         LogicManager.Instance.PJFinishedMoving();
+        base.Confirm();
     }
 
     public override void Cancel()
     {
         base.Cancel();
-        ClearAffectedSpaces();
-        ClearSelectableSpaces();
     }
 
     public override void ClickedEntity(Entity entityClicked)

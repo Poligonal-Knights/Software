@@ -36,23 +36,23 @@ public class Knight_Ability_4 : Ability
 
     public override void Confirm()
     {
-        base.Confirm();
         if(affSpace.GetEntity() is Enemy enemy)
         {
             var knight = Owner as Knight;
             LineDrawer.DrawLine(knight.GetGridSpace().GetWorldPosition(), affSpace.GetWorldPosition());
             enemy.DealDamage(knight.damage, knight);
         }
-        ClearSelectableSpaces();
         AudioManager.Instance.PlayAttackSound();
         LogicManager.Instance.PJFinishedMoving();
+        affSpace?.SetAffected(false);
+        affSpace?.SetSelectable(false);
+        base.Confirm();
 
     }
 
     public override void Cancel()
     {
-        ClearSelectableSpaces();
-        LogicManager.Instance.PJFinishedMoving();
+        base.Cancel();
     }
 
     public override void ClickedEntity(Entity entityClicked)
