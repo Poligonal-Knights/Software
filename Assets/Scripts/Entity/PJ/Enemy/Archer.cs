@@ -274,7 +274,7 @@ public class Archer : Enemy
         {
             focusedEnemy = bestEnemy;
         }
-        Debug.Log(focusedEnemy);
+        //Debug.Log(focusedEnemy);
         bool goalFinded = false;
         BFS_Node goalNode = null;
 
@@ -320,8 +320,6 @@ public class Archer : Enemy
             {
                 node = node.parent;
             }
-            Debug.Log(node);
-
             if (node is not null)
             {
                 bestSpace = node.space;

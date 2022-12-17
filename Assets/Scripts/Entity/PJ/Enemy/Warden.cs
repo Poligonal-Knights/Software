@@ -251,7 +251,7 @@ public class Warden : Enemy
             return false;
         });
 
-        var goalNode = goalSpace.node;
+        var goalNode = goalSpace?.node;
         if (goalNode is not null)
         {
             var node = goalNode;
@@ -265,7 +265,7 @@ public class Warden : Enemy
                 MoveTo(node.space);
             }
         }
-        return true;
+        return goalNode is null ? false : true;
     }
 
     [Task]
