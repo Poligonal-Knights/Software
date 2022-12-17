@@ -14,7 +14,6 @@ public class Rogue_Ability_2 : Ability
     public override void Preview()
     {
         base.Preview();
-        Debug.Log("Hability Preview");
         SelectedSpace = null;
         AffectedSpaces = GridManager.SpacesAtManhattanRange(Owner.GetGridSpace(), attackRange);
         foreach (var s in AffectedSpaces)
@@ -24,44 +23,32 @@ public class Rogue_Ability_2 : Ability
                 AddSelectableSpace(s);
             }
         }
-        foreach (var s in AffectedSpaces)
-            s.SetAffected(true);
     }
 
     public override void SelectTarget(GridSpace selected)
     {
-        Debug.Log("Selecting Target");
-        //ClearAffectedSpaces();
         RefreshSelectableSpaces();
         if (SelectedSpace != null)
         {
-            SelectedSpace.SetAffected(true);
+            SelectedSpace.SetSelectable(true);
         }
         SelectedSpace = selected;
-        SelectedSpace.SetSelectable(true);
+        SelectedSpace.SetAffected(true);
         readyToConfirm = true;
     }
 
     public override void Confirm()
     {
-        base.Confirm();
-        Debug.Log("Confirming Hability");
-        //var rogue = LogicManager.Instance.GetSelectedPJ() as Rogue;
         var enemyAffected = SelectedSpace.GetEntity() as Enemy;
         new Poison(enemyAffected);
-
-        ClearAffectedSpaces();
-        ClearSelectableSpaces();
         AudioManager.Instance.PlayAttackSound();
         LogicManager.Instance.PJFinishedMoving();
-
+        base.Confirm();
     }
 
     public override void Cancel()
     {
         base.Cancel();
-        ClearAffectedSpaces();
-        ClearSelectableSpaces();
     }
 
     void RefreshSelectableSpaces()

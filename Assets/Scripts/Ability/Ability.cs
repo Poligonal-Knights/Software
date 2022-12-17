@@ -36,9 +36,11 @@ public class Ability
     public virtual void SelectTarget(GridSpace selected) { }
     public virtual void Confirm()
     {
-        Debug.Log("Habilidad Confirmada");
-        if(SpecialAbility) Owner.setAttackPerformed(true);
-        Owner.ReduceEnergy(EnergyRequired);
+        Owner.setAttackPerformed(true);
+        if (SpecialAbility)
+            Owner.ReduceEnergy(EnergyRequired);
+        ClearAffectedSpaces();
+        ClearSelectableSpaces();
     }
 
     public bool EnougEnergy()
@@ -53,7 +55,8 @@ public class Ability
 
     public virtual void Cancel()
     {
-        Debug.Log("Cancelling Hability");
+        ClearAffectedSpaces();
+        ClearSelectableSpaces();
         LogicManager.Instance.currentAbility = null;
         LogicManager.Instance.PJFinishedMoving();
     }
@@ -89,8 +92,6 @@ public class Ability
     {
         foreach (var space in SelectableSpaces)
         {
-            var d = space.neighbors["down"];
-            //if (!d.IsEmpty()) d.GetEntity().OnClick.RemoveAllListeners();
             space.SetSelectable(false);
         }
         SelectableSpaces.Clear();
@@ -172,23 +173,10 @@ public class Ability
         return new Movement_Ability(ally);
     }
 
-    protected virtual bool CanOwnerDoSpecialAbility()
-    {
-        return !Owner.getAttackPerformed();
-    }
-    protected virtual bool IsSpecialAbility()
-    {
-        return true;
-    }
-
-
     public bool IsReadyToConfirm()
     {
         return readyToConfirm;
     }
 
-    public virtual void ClickedEntity(Entity clickedEntity)
-    {
-
-    }
+    public virtual void ClickedEntity(Entity clickedEntity) { }
 }

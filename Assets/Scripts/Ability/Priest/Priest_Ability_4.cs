@@ -57,9 +57,12 @@ public class Priest_Ability_4 : Ability
 
         firstTarget.SetAffected(false);
         secondTarget.SetAffected(false);
-        ClearSelectableSpaces();
         if (pj1 is Enemy enemy) enemy.weak = true;
         if (pj2 is Enemy enemy2) enemy2.weak = true;
+        firstTarget?.SetAffected(false);
+        firstTarget?.SetSelectable(false);
+        secondTarget?.SetAffected(false);
+        secondTarget?.SetSelectable(false);
         AudioManager.Instance.Play("Teletransporte");
         LogicManager.Instance.PJFinishedMoving();
     }
@@ -81,7 +84,10 @@ public class Priest_Ability_4 : Ability
         }
         else
         {
-            ClearSelectableSpaces();
+            firstTarget?.SetAffected(false);
+            firstTarget?.SetSelectable(false);
+            secondTarget?.SetAffected(false);
+            secondTarget?.SetSelectable(false);
             base.Cancel();
         }
     }

@@ -30,7 +30,6 @@ public class Priest_Ability_2 : Ability
 
     public override void Confirm()
     {
-        base.Confirm();
 
         foreach (var s in AffectedSpaces)
         {
@@ -39,15 +38,14 @@ public class Priest_Ability_2 : Ability
                 new Bless(ally);
             }
         }
-        ClearAffectedSpaces();
-        ClearSelectableSpaces();
+
+        base.Confirm();
     }
 
     public override void Cancel()
     {
         base.Cancel();
-        ClearAffectedSpaces();
-        ClearSelectableSpaces();
+
     }
 
     public override void ClickedEntity(Entity entityClicked)

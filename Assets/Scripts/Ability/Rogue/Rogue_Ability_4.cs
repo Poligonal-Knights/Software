@@ -13,7 +13,6 @@ public class Rogue_Ability_4 : Ability
     public override void Preview()
     {
         base.Preview();
-        Debug.Log("Hability Preview");
         var PJSpace = Owner.GetGridSpace();
         foreach (var move in PJSpace.moves)
         {
@@ -26,7 +25,6 @@ public class Rogue_Ability_4 : Ability
 
     public override void SelectTarget(GridSpace selected)
     {
-        Debug.Log("Selecting Target");
         ClearAffectedSpaces();
         RefreshSelectableSpaces();
 
@@ -42,19 +40,14 @@ public class Rogue_Ability_4 : Ability
 
     public override void Confirm()
     {
-        base.Confirm();
-        Debug.Log("Confirming Hability");
         //Cambiar opacidad del sprite del dummy
-        ClearAffectedSpaces();
-        ClearSelectableSpaces();
         LogicManager.Instance.PJFinishedMoving();
+        base.Confirm();
     }
 
     public override void Cancel()
     {
         base.Cancel();
-        ClearAffectedSpaces();
-        ClearSelectableSpaces();
     }
 
     void RefreshSelectableSpaces()
