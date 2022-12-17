@@ -643,7 +643,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4969056935043843876}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: ShowThisCanvas
         m_Mode: 2
@@ -2180,6 +2180,7 @@ RectTransform:
   - {fileID: 7766679121332440205}
   - {fileID: 4956122429207300182}
   - {fileID: 4817311924671524048}
+  - {fileID: 4251786451853406226}
   - {fileID: 2813550364667540524}
   m_Father: {fileID: 137362794737626288}
   m_RootOrder: 0
@@ -3865,7 +3866,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4969056935043843876}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: ShowThisCanvas
         m_Mode: 2
@@ -4966,15 +4967,15 @@ RectTransform:
   m_GameObject: {fileID: 762736101524426644}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7, y: 5.7, z: 1}
+  m_LocalScale: {x: 4.274999, y: 4.274999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2813550364667540524}
-  m_RootOrder: 1
+  m_Father: {fileID: 2229420764623798518}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -199, y: 1.7}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 180.5, y: 185.27501}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7492000017253423958
@@ -6758,15 +6759,15 @@ RectTransform:
   m_GameObject: {fileID: 1011754583229478786}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7, y: 5.7, z: 1}
+  m_LocalScale: {x: 4.274999, y: 4.274999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1825228005733095522}
-  m_RootOrder: 1
+  m_Father: {fileID: 5790145511273034487}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -199, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 180.5, y: 184.75}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5160355713260815224
@@ -6929,7 +6930,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4969056935043843876}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: ShowThisCanvas
         m_Mode: 2
@@ -8525,15 +8526,15 @@ RectTransform:
   m_GameObject: {fileID: 1332020105944776728}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7, y: 5.7, z: 1}
+  m_LocalScale: {x: 4.274999, y: 4.274999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2892005510498934435}
-  m_RootOrder: 1
+  m_Father: {fileID: 572102989349394043}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -199, y: -1.7967801}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 151.74997, y: 182.65244}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1477745855049237518
@@ -11520,7 +11521,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4969056935043843876}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: ShowThisCanvas
         m_Mode: 2
@@ -11654,7 +11655,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4969056935043843876}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: ShowThisCanvas
         m_Mode: 2
@@ -12270,7 +12271,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4969056935043843876}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: ShowThisCanvas
         m_Mode: 2
@@ -12404,7 +12405,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4969056935043843876}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: HideAllTutorials
         m_Mode: 1
@@ -12499,7 +12500,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &1600602870653316341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12600,7 +12601,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &4885993330611280151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12816,7 +12817,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4969056935043843876}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: HideAllTutorials
         m_Mode: 1
@@ -13822,18 +13823,18 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2283503012704390780}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6.1165767}
-  m_LocalScale: {x: 1.39125, y: 1.39125, z: 1.39125}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4454471000263961420}
-  m_Father: {fileID: 8666947901053726979}
+  m_Father: {fileID: 6891459709823243180}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 106.411674, y: 67.604454}
-  m_SizeDelta: {x: 800, y: 449.95508}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &9158056607192720902
 Canvas:
@@ -13878,7 +13879,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &8681306379655823159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14018,7 +14019,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4969056935043843876}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: HideAllTutorials
         m_Mode: 1
@@ -15979,7 +15980,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4969056935043843876}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: HideAllTutorials
         m_Mode: 1
@@ -19500,18 +19501,18 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3357839089500181761}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6.1165767}
-  m_LocalScale: {x: 1.39125, y: 1.39125, z: 1.39125}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 807941514977245597}
-  m_Father: {fileID: 8666947901053726979}
+  m_Father: {fileID: 6891459709823243180}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 106.411674, y: 67.604454}
-  m_SizeDelta: {x: 800, y: 449.95508}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6277689006519922523
 Canvas:
@@ -19556,7 +19557,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &7739371086656912063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23065,7 +23066,7 @@ RectTransform:
   - {fileID: 7639519398107303719}
   - {fileID: 3113143405457287696}
   - {fileID: 2456232132087211298}
-  - {fileID: 8666947901053726979}
+  - {fileID: 6891459709823243180}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23110,9 +23111,9 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_ReferenceResolution: {x: 800, y: 450}
+  m_ScreenMatchMode: 1
+  m_MatchWidthOrHeight: 0.27
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -25234,9 +25235,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6861910105733377101}
-  - {fileID: 5629940062204288345}
   m_Father: {fileID: 2723322834726649588}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -26570,7 +26570,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4969056935043843876}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: HideAllTutorials
         m_Mode: 1
@@ -26841,7 +26841,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4969056935043843876}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: HideAllTutorials
         m_Mode: 1
@@ -28121,7 +28121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4969056935043843876}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: ShowThisCanvas
         m_Mode: 2
@@ -28133,6 +28133,132 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &4588117113106147191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6891459709823243180}
+  - component: {fileID: 3368169158522114110}
+  - component: {fileID: 6472933082145370610}
+  - component: {fileID: 533563147278146281}
+  - component: {fileID: 3795179962128943858}
+  m_Layer: 5
+  m_Name: Tutoriales
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6891459709823243180
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4588117113106147191}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0.41666663}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8070420694362103528}
+  - {fileID: 6759488412151948458}
+  - {fileID: 1055998781074624821}
+  - {fileID: 573394319974411636}
+  - {fileID: 3008132264077066858}
+  - {fileID: 2002219786798648804}
+  m_Father: {fileID: 4070266573934801150}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &3368169158522114110
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4588117113106147191}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &6472933082145370610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4588117113106147191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!114 &533563147278146281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4588117113106147191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &3795179962128943858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4588117113106147191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b3b638e0c2fad844bfaf2313a39ef37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialCanvas: {fileID: 3588717965838492827}
+  welcomeCanvas: {fileID: 8526096361529638862}
+  turnosCanvas: {fileID: 1948570685889717155}
+  MovementCanvas: {fileID: 9158056607192720902}
+  AbilitiesCanvas: {fileID: 5403033312287095106}
+  ComboCanvas: {fileID: 2587435510524574390}
+  TerminarCanvas: {fileID: 6277689006519922523}
 --- !u!1 &4629934113711266876
 GameObject:
   m_ObjectHideFlags: 0
@@ -28371,18 +28497,18 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4678323211746403965}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6.1165767}
-  m_LocalScale: {x: 1.39125, y: 1.39125, z: 1.39125}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 2.4000003}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3466909957834709751}
-  m_Father: {fileID: 8666947901053726979}
+  m_Father: {fileID: 6891459709823243180}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 106.411674, y: 67.604454}
-  m_SizeDelta: {x: 800, y: 449.95508}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8526096361529638862
 Canvas:
@@ -28427,7 +28553,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &5073148283591733617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29630,7 +29756,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5386042582569131429
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29640,15 +29766,15 @@ RectTransform:
   m_GameObject: {fileID: 4962464224027618994}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.037218, y: 4.037218, z: 0.5220541}
+  m_LocalScale: {x: 3.0279136, y: 3.0279136, z: 0.522054}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5937221538608697920}
-  m_RootOrder: 1
+  m_Father: {fileID: 3250940949383255748}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -199, y: -1.7968}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 177.51772, y: 182.6524}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &753541246355642247
@@ -31495,15 +31621,15 @@ RectTransform:
   m_GameObject: {fileID: 5276301617279883136}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7, y: 5.7, z: 1}
+  m_LocalScale: {x: 4.274999, y: 4.274999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2254433410081942399}
-  m_RootOrder: 1
+  m_Father: {fileID: 2723322834726649588}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -199, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 180.5, y: 184.75}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7662368514044333068
@@ -31862,9 +31988,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5334460865058022358}
-  - {fileID: 2190517754010902281}
   m_Father: {fileID: 5790145511273034487}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -31936,18 +32061,18 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5416349389564866367}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6.1165767}
-  m_LocalScale: {x: 1.39125, y: 1.39125, z: 1.39125}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5968676713211445774}
-  m_Father: {fileID: 8666947901053726979}
+  m_Father: {fileID: 6891459709823243180}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 106.411674, y: 67.604454}
-  m_SizeDelta: {x: 800, y: 449.95508}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2587435510524574390
 Canvas:
@@ -32815,7 +32940,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4969056935043843876}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: HideAllTutorials
         m_Mode: 1
@@ -33386,7 +33511,7 @@ MonoBehaviour:
   m_margin: {x: -90.72562, y: -16.454346, z: -90.72565, w: -14.958496}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &5633190019117365907
@@ -34169,7 +34294,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4969056935043843876}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: ShowThisCanvas
         m_Mode: 2
@@ -34923,6 +35048,7 @@ RectTransform:
   - {fileID: 582595351034823228}
   - {fileID: 8124936893125239402}
   - {fileID: 2064767783331363310}
+  - {fileID: 4280262321955213431}
   - {fileID: 5234301081954935445}
   m_Father: {fileID: 3611749426122601246}
   m_RootOrder: 0
@@ -36550,63 +36676,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &6123352986355855232
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8666947901053726979}
-  - component: {fileID: 4969056935043843876}
-  m_Layer: 0
-  m_Name: Tutoriales
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8666947901053726979
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6123352986355855232}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -76.48638, y: -48.592606, z: 4.3964615}
-  m_LocalScale: {x: 0.7187781, y: 0.7187781, z: 0.7187781}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8070420694362103528}
-  - {fileID: 6759488412151948458}
-  - {fileID: 1055998781074624821}
-  - {fileID: 573394319974411636}
-  - {fileID: 3008132264077066858}
-  - {fileID: 2002219786798648804}
-  m_Father: {fileID: 4070266573934801150}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4969056935043843876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6123352986355855232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b3b638e0c2fad844bfaf2313a39ef37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialCanvas: {fileID: 3588717965838492827}
-  welcomeCanvas: {fileID: 8526096361529638862}
-  turnosCanvas: {fileID: 1948570685889717155}
-  MovementCanvas: {fileID: 9158056607192720902}
-  AbilitiesCanvas: {fileID: 5403033312287095106}
-  ComboCanvas: {fileID: 2587435510524574390}
-  TerminarCanvas: {fileID: 6277689006519922523}
 --- !u!1 &6135270900978383930
 GameObject:
   m_ObjectHideFlags: 0
@@ -37932,18 +38001,18 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6282866013172770128}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6.1165767}
-  m_LocalScale: {x: 1.39125, y: 1.39125, z: 1.39125}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3985333641893451380}
-  m_Father: {fileID: 8666947901053726979}
+  m_Father: {fileID: 6891459709823243180}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 106.411674, y: 67.604454}
-  m_SizeDelta: {x: 800, y: 449.95508}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1948570685889717155
 Canvas:
@@ -38556,6 +38625,7 @@ RectTransform:
   - {fileID: 3222046134497366891}
   - {fileID: 1407613328739521558}
   - {fileID: 4635633072343255773}
+  - {fileID: 1608673452582478397}
   - {fileID: 2892005510498934435}
   m_Father: {fileID: 6643397383234897815}
   m_RootOrder: 0
@@ -38973,7 +39043,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &1653728126105873391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39976,7 +40046,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4969056935043843876}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: HideAllTutorials
         m_Mode: 1
@@ -40615,6 +40685,7 @@ RectTransform:
   - {fileID: 5920789224754434219}
   - {fileID: 8009844902833741284}
   - {fileID: 214802094519470334}
+  - {fileID: 5629940062204288345}
   - {fileID: 2254433410081942399}
   m_Father: {fileID: 7412492456261064879}
   m_RootOrder: 0
@@ -42430,15 +42501,15 @@ RectTransform:
   m_GameObject: {fileID: 7109174181628286921}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.548056, y: 3.548056, z: 0.44031674}
+  m_LocalScale: {x: 2.6610417, y: 2.6610417, z: 0.33023754}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5234301081954935445}
-  m_RootOrder: 1
+  m_Father: {fileID: 3068516109939508225}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -199, y: -4.9}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 180.5, y: 180.32501}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5282594132085319392
@@ -43685,18 +43756,18 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7419490913760665128}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6.1165767}
-  m_LocalScale: {x: 1.39125, y: 1.39125, z: 1.39125}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9030412617700081524}
-  m_Father: {fileID: 8666947901053726979}
+  m_Father: {fileID: 6891459709823243180}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 106.411674, y: 67.604454}
-  m_SizeDelta: {x: 800, y: 449.95508}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5403033312287095106
 Canvas:
@@ -43881,7 +43952,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4969056935043843876}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: ShowThisCanvas
         m_Mode: 2
@@ -48572,9 +48643,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 475242244996071450}
-  - {fileID: 4280262321955213431}
   m_Father: {fileID: 3068516109939508225}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -49256,9 +49326,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 449326756869912461}
-  - {fileID: 4251786451853406226}
   m_Father: {fileID: 2229420764623798518}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -50116,6 +50185,7 @@ RectTransform:
   - {fileID: 9026143450635717653}
   - {fileID: 3532629729394983822}
   - {fileID: 1333609261346305596}
+  - {fileID: 5386042582569131429}
   - {fileID: 5937221538608697920}
   m_Father: {fileID: 1603808796606494381}
   m_RootOrder: 0
@@ -50285,7 +50355,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4969056935043843876}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialCanvasManager, Assembly-CSharp
         m_MethodName: ShowThisCanvas
         m_Mode: 2
@@ -51718,6 +51788,7 @@ RectTransform:
   - {fileID: 4264406934485218743}
   - {fileID: 4869686742072071517}
   - {fileID: 8815487457060378478}
+  - {fileID: 2190517754010902281}
   - {fileID: 1825228005733095522}
   m_Father: {fileID: 7535027415744529722}
   m_RootOrder: 0
@@ -52911,9 +52982,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 151278506908025398}
-  - {fileID: 5386042582569131429}
   m_Father: {fileID: 3250940949383255748}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -53336,9 +53406,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6020132802188895310}
-  - {fileID: 1608673452582478397}
   m_Father: {fileID: 572102989349394043}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
