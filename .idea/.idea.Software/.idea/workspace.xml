@@ -3,34 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d5face6c-2f1b-4931-a622-ab51a4d8a3bf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Software/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Software/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Kamikaze.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Kamikaze.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Rogue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Rogue.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Warden.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Warden.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Wizard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Wizard.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/bearTrap.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/bearTrap.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Dungeon 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Dungeon 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Dungeon 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Dungeon 2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Forest 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Forest 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Forest 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Forest 2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Mountain 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Mountain 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Mountain 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Mountain 2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Water 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Water 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Water 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Water 2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability/Knight/Knight_Ability_0.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Knight/Knight_Ability_0.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability/Knight/Knight_Ability_1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Knight/Knight_Ability_1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability/Knight/Knight_Ability_3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Knight/Knight_Ability_3.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability/Priest/Priest_Ability_0.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Priest/Priest_Ability_0.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability/Priest/Priest_Ability_1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Priest/Priest_Ability_1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability/Priest/Priest_Ability_3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Priest/Priest_Ability_3.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability/Priest/Priest_Ability_4.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Priest/Priest_Ability_4.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability/Rogue/Rogue_Ability_0.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Rogue/Rogue_Ability_0.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability/Rogue/Rogue_Ability_3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Rogue/Rogue_Ability_3.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability/Wizard/Wizard_Ability_0.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Wizard/Wizard_Ability_0.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability/Wizard/Wizard_Ability_1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Wizard/Wizard_Ability_1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability/Wizard/Wizard_Ability_2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Wizard/Wizard_Ability_2.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability/Wizard/Wizard_Ability_3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Wizard/Wizard_Ability_3.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Buff/Rush.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Buff/Rush.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/Kamikaze.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/Kamikaze.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/SettingsCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/SettingsCanvas.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +75,7 @@
       <workItem from="1670786040376" duration="17136000" />
       <workItem from="1670816967350" duration="3594000" />
       <workItem from="1671304251007" duration="4830000" />
-      <workItem from="1671382040063" duration="3634000" />
+      <workItem from="1671382040063" duration="3945000" />
     </task>
     <servers />
   </component>

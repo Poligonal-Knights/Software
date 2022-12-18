@@ -1265,7 +1265,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Kelsier lanza un torrente de aire que afecta a tres casillas en linea.
+  m_text: Kelsier lanza un torrente de aire que afecta a cuatro casillas en linea.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -8350,7 +8350,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Petra selecciona un \xFAnico enemigo y lo atrae hacia ella una casilla"
+  m_text: "Petra selecciona un \xFAnico enemigo y lo atrae hacia ella una casilla."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -8641,8 +8641,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Kelsier empuja a todos los enemigos en una l\xEDnea de 5 de tama\xF1o
-    en cualquier direcci\xF3n"
+  m_text: "Kelsier empuja a todos los enemigos en una l\xEDnea de 5 casillas en l\xEDnea
+    recta."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -9603,7 +9603,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &8607891267773125054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10991,7 +10991,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &9094320901339882284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11092,7 +11092,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &150716001222779646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13411,7 +13411,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Magnus lanza su escudo para emujar a un \xFAnico enemigo a distancia"
+  m_text: "Magnus lanza su escudo para emujar a un \xFAnico enemigo a distancia."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -15176,7 +15176,7 @@ MonoBehaviour:
   m_text: 'Busca lanzarse contra el grupo y detonar.
 
     Si se les mata explotan
-    hiriendo a aliados y enemigos'
+    hiriendo a aliados y enemigos.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -16058,9 +16058,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Mage
-
-'
+  m_text: Mago
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -17235,7 +17233,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &5869568907560563762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18630,7 +18628,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &7377846126011416609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21754,7 +21752,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Tienen poca vida y carecen de habilidades especiales, \npero son un gran
-    problema si se juntan demasiados"
+    problema si se juntan demasiados."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -22027,7 +22025,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Kelsier lanza una bomba de aire en una posici\xF3n que empuja a todos
-    los enemigos a su alcance"
+    los enemigos a su alcance."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -22433,7 +22431,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Los ataques y habilidades de Petra debilitan a los enemigos afectados,
-    aumentando el da\xF1o recibido en su siguiente golpe"
+    aumentando el da\xF1o recibido en su siguiente golpe."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -25057,8 +25055,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Petra lanza un encantamiento que aumenta las estad\xEDsticas de un aliado
-    enormemente"
+  m_text: "Petra lanza un encantamiento que aumenta todas las estad\xEDsticas de
+    un aliado durante dos turnos."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -29975,7 +29973,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &3959361136814314015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30951,7 +30949,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hehcizo de prisa
+  m_text: Hechizo de prisa
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -32278,7 +32276,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Buscan potenciar a sus aliados y debilitar al grupo. Pese a no ser una
-    amenaza directa, estos enemigos pueden ser los mas peligrosos a largo plazo
+    amenaza directa, estos enemigos pueden ser los mas peligrosos a largo plazo.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -32431,7 +32429,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &7850089986440125016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32515,9 +32513,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'TrashMob
-
-'
+  m_text: Esqueleto
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -34027,7 +34023,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Llena un \xE1rea de aceite, los enemigos empujados sobre este \xE1rea
-    se deslizar\xE1n a\xFAn m\xE1s lejos"
+    se deslizar\xE1n a\xFAn m\xE1s lejos."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -35871,7 +35867,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "El escudo cubre el frente de Magnus, protegiendole de ataques a distancia
-    y reduciendo el da\xF1o de ataques cuerpo a cuerpo"
+    y reduciendo el da\xF1o de ataques cuerpo a cuerpo."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -37001,7 +36997,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Magnus empuja las tres casillas en frente suyo
+  m_text: Magnus empuja las tres casillas en frente suyo.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -37136,7 +37132,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Cuando adel ataca, empuja a un enemigo y deja abrojos en el suelo
+  m_text: Cuando adel ataca, empuja a un enemigo y deja abrojos en el suelo.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -38494,7 +38490,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &6851726719480266253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41055,7 +41051,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tank
+  m_text: Protector
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -41829,7 +41825,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Petra intercambia las posiciones de dos personajes
+  m_text: 'Petra intercambia las posiciones de dos personajes cualesquiera.
 
 '
   m_isRightToLeft: 0
@@ -43660,7 +43656,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Archer
+  m_text: Arquero
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -44165,8 +44161,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: El poder de Kelsier sobre el viento le permite saltar cualquier altura
-    invirtiendo solo un movimiento
+  m_text: El poder de Kelsier sobre el viento le permite saltar cualquier altura.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -46742,8 +46737,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lanzan poderosos ataques de area  a distancia pero apenas resisten unos
-    pocos ataques
+  m_text: Lanzan poderosos ataques de area a distancia pero apenas resisten unos
+    pocos ataques.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -47562,7 +47557,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Petra lanza un potente hechizo que cura a sus aliados dentro de un \xE1rea"
+  m_text: "Petra lanza un potente hechizo que cura a sus aliados dentro de un \xE1rea."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -48271,7 +48266,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Support
+  m_text: 'Apoyo
 
 '
   m_isRightToLeft: 0
@@ -48408,7 +48403,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Magnus lanza un grito que provoca a los enemigos dentro de un \xE1rea"
+  m_text: "Magnus lanza un grito que fuerza a los enemigos a atacarle a \xE9l si
+    es posible."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -49975,8 +49971,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Kelsier potencia al grupo con el poder del viento, d\xE1ndoles m\xE1s
-    movimiento y potencia de empuje"
+  m_text: "Kelsier potencia a todo el grupo con el poder del viento, d\xE1ndoles
+    m\xE1s movimiento y potencia de empuje."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
@@ -53518,7 +53514,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Archer
+  m_text: Arquero
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
