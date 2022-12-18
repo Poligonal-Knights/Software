@@ -8,7 +8,7 @@ using UnityEngine;
 //Basico
 public class Rogue_Ability_0 : Ability
 {
-    public Rogue_Ability_0(Rogue owner, int energyRequired = 2) : base(owner, energyRequired, false) { }
+    public Rogue_Ability_0(Rogue owner, int energyRequired = 0) : base(owner, energyRequired, false) { }
 
     int pushIncrement = 1;
     int damageIncrement = 2;

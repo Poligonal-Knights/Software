@@ -64,10 +64,10 @@ public class Kamikaze : Enemy
     [Task]
     bool ChooseCloserEnemy()
     {
-        if (!focusedEnemy)
+        /*if (!focusedEnemy)
         {
             return false;
-        }
+        }*/
         //Elegir enemigo más cercano para ir moviendose si no hay nadie a rango de explotar
         GridSpace closerEnemySpace = BFS.GetGoalGridSpace(space, int.MaxValue, CanMoveThere, (GridSpace candidate) =>
         {
@@ -140,8 +140,9 @@ public class Kamikaze : Enemy
     bool Explosion()
     {
         //Implementar daño a los enemigos en rango de la explosión
-        foreach (var enemy in GameManager.Instance.allies)
+        foreach (var enemy in FindObjectsOfType<PJ>())
         {
+            Debug.Log("Esto no va lmao");
             if (space.gridPosition.y == enemy.GetGridSpace().gridPosition.y &&
                 space.ManhattanDistance2D(enemy.GetGridSpace()) <= attackRange)
             {

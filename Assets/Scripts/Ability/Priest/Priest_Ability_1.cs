@@ -5,12 +5,12 @@ using UnityEngine;
 //Curacion
 public class Priest_Ability_1 : Ability
 {
-    public Priest_Ability_1(Priest owner, int energyRequired = 2) : base(owner, energyRequired) { }
+    public Priest_Ability_1(Priest owner, int energyRequired = 3) : base(owner, energyRequired) { }
 
     int selectableRadius = 5;
     int areaRange = 5;
 
-    int healing = 5;
+    int healing = 4;
 
     public override void Preview()
     {

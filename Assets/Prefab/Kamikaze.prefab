@@ -115,8 +115,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frontSprite: {fileID: 21300000, guid: bfcbf11e2b1c0604282986e2ebf9a87a, type: 3}
   backSprite: {fileID: 21300000, guid: 39871663929e7e047a6bc37e5653427d, type: 3}
-  maxMovement: 3
-  movement: 3
+  maxMovement: 6
+  movement: 6
   maxHealth: 3
   health: 3
   damage: 5
@@ -124,10 +124,15 @@ MonoBehaviour:
   defaultSpeed: 3
   defense: 0
   IsMoving: 0
+  orientation: {x: 0, y: 0}
+  MovementEvent:
+    m_PersistentCalls:
+      m_Calls: []
   realizandoTurno: 0
   beingPushed: 0
   comboed: 0
   attackRange: 3
+  weak: 0
 --- !u!114 &6803428682119057556
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Rush : Buff
 {
-    const int deafaultDuration = 1;
+    const int deafaultDuration = 2;
 
-    int movementIncrement = 1;
+    int movementIncrement = 2;
     int pushStrengthIncrement = 1;
 
     //public Rush(PJ owner) : base(owner, turnsDuration) { }

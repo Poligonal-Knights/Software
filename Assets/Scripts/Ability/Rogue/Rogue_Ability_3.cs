@@ -7,7 +7,7 @@ using UnityEngine;
 //Bomba de aceite
 public class Rogue_Ability_3 : Ability
 {
-    public Rogue_Ability_3(Rogue owner, int energyRequired = 2) : base(owner, energyRequired) { }
+    public Rogue_Ability_3(Rogue owner, int energyRequired = 1) : base(owner, energyRequired) { }
 
     int attackRange = 4;
 

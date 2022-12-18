@@ -65,6 +65,7 @@ public class Priest_Ability_4 : Ability
         secondTarget?.SetSelectable(false);
         AudioManager.Instance.Play("Teletransporte");
         LogicManager.Instance.PJFinishedMoving();
+        base.Confirm();
     }
 
     public override void Cancel()
@@ -104,7 +105,7 @@ public class Priest_Ability_4 : Ability
             spaceToBeSelected = clickedEntity.GetGridSpace().neighbors["up"];
         }
         if (spaceToBeSelected is not null && spaceToBeSelected.IsSelectable())
-            if (firstTarget is not null)
+            if (firstTarget is not null && firstTarget != spaceToBeSelected)
                 SelectSecondTarget(spaceToBeSelected);
             else SelectTarget(spaceToBeSelected);
     }

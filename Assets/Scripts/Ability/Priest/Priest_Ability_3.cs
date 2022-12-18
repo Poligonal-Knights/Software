@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Priest_Ability_3 : Ability
 {
-    public Priest_Ability_3(Priest owner, int energyRequired = 2) : base(owner, energyRequired) { }
+    public Priest_Ability_3(Priest owner, int energyRequired = 1) : base(owner, energyRequired) { }
 
     public override void Preview()
     {

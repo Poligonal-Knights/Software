@@ -6,7 +6,7 @@ using UnityEngine;
 //Basico
 public class Wizard_Ability_0 : Ability
 {
-    public Wizard_Ability_0(Wizard owner, int energyRequired = 2) : base(owner, energyRequired, false) { }
+    public Wizard_Ability_0(Wizard owner, int energyRequired = 0) : base(owner, energyRequired, false) { }
 
     int range = 3;
     Vector3Int direction;

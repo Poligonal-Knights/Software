@@ -7,7 +7,7 @@ using UnityEngine;
 //Basico
 public class Knight_Ability_0 : Ability
 {
-    public Knight_Ability_0(Knight owner, int energyRequired = 2) : base(owner, energyRequired, false) { }
+    public Knight_Ability_0(Knight owner, int energyRequired = 0) : base(owner, energyRequired, false) { }
 
     public override void Preview()
     {

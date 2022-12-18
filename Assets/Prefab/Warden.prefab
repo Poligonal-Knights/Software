@@ -144,12 +144,17 @@ MonoBehaviour:
   damage: 4
   CanJump: 0
   defaultSpeed: 3
-  defense: 0
+  defense: 1
   IsMoving: 0
+  orientation: {x: 0, y: 0}
+  MovementEvent:
+    m_PersistentCalls:
+      m_Calls: []
   realizandoTurno: 0
   beingPushed: 0
   comboed: 0
   attackRange: 3
+  weak: 0
 --- !u!1 &9064554234426885698
 GameObject:
   m_ObjectHideFlags: 0

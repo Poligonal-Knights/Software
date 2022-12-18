@@ -5,7 +5,7 @@ using UnityEngine;
 //Prisa
 public class Wizard_Ability_2 : Ability
 {
-    public Wizard_Ability_2(Wizard owner, int energyRequired = 2) : base(owner, energyRequired) { }
+    public Wizard_Ability_2(Wizard owner, int energyRequired = 3) : base(owner, energyRequired) { }
 
     public override void Preview()
     {

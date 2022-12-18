@@ -7,7 +7,7 @@ using UnityEngine.Timeline;
 //Basico
 public class Priest_Ability_0 : Ability
 {
-    public Priest_Ability_0(Priest owner, int energyRequired = 2) : base(owner, energyRequired, false) { }
+    public Priest_Ability_0(Priest owner, int energyRequired = 0) : base(owner, energyRequired, false) { }
 
     int selectableRadius = 5;
 
