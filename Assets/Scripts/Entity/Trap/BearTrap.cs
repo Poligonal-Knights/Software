@@ -15,6 +15,7 @@ public class BearTrap : Activatable
         Activator.DealDamage(Damage);
         Activator.SetMovement(0);
         Activator.MovementsToDo.Clear();
+        Destroy(gameObject, 0.4f);
     }
 
     public override void Deactivate()

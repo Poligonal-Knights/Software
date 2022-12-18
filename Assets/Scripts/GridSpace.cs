@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO.MemoryMappedFiles;
+using System.Linq;
 using UnityEngine;
 
 public class GridSpace
@@ -64,6 +65,11 @@ public class GridSpace
     public void RemoveActivatable(Activatable add)
     {
         activatables.Remove(add);
+    }
+
+    public bool HasActivatable()
+    {
+        return activatables.Any();
     }
 
     public bool HasTrap()

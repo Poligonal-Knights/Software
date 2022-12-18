@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+using System;
+using UnityEditor.Presets;
 using UnityEngine;
 
 //Shield throw
@@ -38,9 +37,10 @@ public class Knight_Ability_4 : Ability
     {
         if(affSpace.GetEntity() is Enemy enemy)
         {
-            var knight = Owner as Knight;
-            LineDrawer.DrawLine(knight.GetGridSpace().GetWorldPosition(), affSpace.GetWorldPosition());
-            enemy.DealDamage(knight.damage, knight);
+            LineDrawer.DrawLine(Owner.GetGridSpace().GetWorldPosition(), affSpace.GetWorldPosition());
+            var direction = enemy.GetGridSpace().gridPosition - Owner.GetGridSpace().gridPosition;
+            direction.Set(Math.Sign(direction.x), 0, Math.Sign(direction.z));
+            enemy.BePushed(direction, Owner.pushStrength, Owner.damage, Owner);
         }
         AudioManager.Instance.PlayAttackSound();
         LogicManager.Instance.PJFinishedMoving();
