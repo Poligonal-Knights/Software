@@ -108,6 +108,7 @@ public class PJ : Entity
                 IsMoving = false;
                 if (!MovementsToDo.Any())
                 {
+                    destination = null;
                     LogicManager.Instance.PJFinishedMoving();
                     //UpdateGridSpace();
                     if (space.gridPosition.y == 0) Die();

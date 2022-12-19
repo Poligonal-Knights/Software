@@ -46,10 +46,9 @@ tree ("Buffing")
 
 //Tree ChooseProtectedAlly
 tree("ChooseProtectedAlly")
-	not
-		sequence
-			IsAnyoneAlive()
-			tree "PriorityAlly"
+	sequence
+		IsAnyoneAlive()
+		tree "PriorityAlly"
 
 tree ("PriorityAlly")
 	fallback

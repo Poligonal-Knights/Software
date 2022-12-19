@@ -110,14 +110,13 @@ public class TrashMob : Enemy
                 if ((enemy as Knight).UsingGritoDeBatalla())
                 {
                     focusedEnemy = enemy;
-                    ThisTask.Succeed();
+                    //ThisTask.Succeed();
                     worked = true;
                 }
             }
         }
 
-        if (worked == false) return false;
-        else return true;
+        return worked;
     }
 
     [Task]

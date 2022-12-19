@@ -55,7 +55,18 @@ public class EnemyManager : MonoBehaviour
         }
         else
         {
-            enemyTurn();
+            //enemyTurn();
+            StartCoroutine(NextEnemy());
         }
+    }
+
+    IEnumerator NextEnemy()
+    {
+        var currentEnemy = enemyList[actualEnemyTurn-1];
+        while (currentEnemy.MovementsToDo.Any() && currentEnemy.IsMoving)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+        enemyTurn();
     }
 }

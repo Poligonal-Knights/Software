@@ -76,15 +76,16 @@ public class Kamikaze : Enemy
             {
                 foreach (var move in candidate.moves)
                 {
-                    if (move.GetEntity() is Ally)
+                    if (move.GetEntity() is Ally enemy)
                     {
+                        focusedEnemy = enemy;
                         return true;
                     }
                 }
             }
             return false;
         });
-        focusedEnemy = closerEnemySpace.GetEntity() as PJ;
+        //focusedEnemy = closerEnemySpace.GetEntity() as PJ;
         optimalSpace = closerEnemySpace;
         return true;
     }

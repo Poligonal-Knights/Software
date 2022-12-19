@@ -32,6 +32,7 @@ tree("EnemyOOR")
 			IdentifyClosestEnemy()
 			IdentifySafeMove()
 			GetIntoSafeRange()
+			Wait 1.0
 			EndTurn()
 		EndTurn()
 	

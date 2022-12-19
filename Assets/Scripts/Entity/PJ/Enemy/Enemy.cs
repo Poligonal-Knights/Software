@@ -45,37 +45,10 @@ public class Enemy : PJ
 
     public virtual void EnemyAI()
     {
-        movementAI();
+        
         // gameManager.enemyManager.enemyTurnEnd();
     }
 
-    protected virtual void movementAI()
-    {
-        List<GridSpace> possibleMoves = new List<GridSpace>();
-        GridSpace chosenMove = space;
-        List<GridSpace> movimientosEnOrden = new List<GridSpace>();
-        for (int i = 0; i < maxMovement; i++)
-        {
-            var directions = new[] { "left", "right", "forward", "back" };
-
-            foreach (var direction in directions)
-            {
-                if (chosenMove.neighbors[direction].IsPassable() && chosenMove.neighbors[direction].GetEntity() is not Ally)
-                {
-                    possibleMoves.Add(chosenMove.neighbors[direction]);
-                }
-            }
-            if (possibleMoves.Any())
-            {
-                chosenMove = possibleMoves[Random.Range(0, possibleMoves.Count)];
-                // movimientosEnOrden.Add(chosenMove);
-                if (i != maxMovement - 1 || chosenMove.IsEmpty())
-                    MovementsToDo.Enqueue(chosenMove);
-                possibleMoves.Clear();
-            }
-        }
-        realizandoTurno = true;
-    }
 
     public virtual void BePushed(Vector3Int direction, int pushback, int extraDamage, Ally pushedBy)
     {

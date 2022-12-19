@@ -163,6 +163,7 @@ public class Archer : Enemy
         int maxDistance = -1;
         foreach (var cSpace in candidateSpaces)
         {
+            if (cSpace.GetEntity() is not null) continue;
             var sum = 0;
             foreach (var enemy in GameManager.Instance.allies)
             {
@@ -260,60 +261,23 @@ public class Archer : Enemy
     {
         //Encontrar enemigo más cercano
         //Marcar a dicho enemigo como focusedEnemy 
-        int minDistance = 5000;
-        PJ bestEnemy = null;
-        foreach (var enemy in GameManager.Instance.allies)
+        var goalSpace = BFS.GetGoalGridSpace(space, int.MaxValue, CanMoveThere, candidate =>
         {
-            var distance = GridSpace.ManhattanDistance2D(space, enemy.GetGridSpace());
-            if (distance < minDistance)
+            if (candidate.GetEntity() is null)
             {
-                minDistance = distance;
-                bestEnemy = enemy;
-            }
-        }
-        if (bestEnemy != null)
-        {
-            focusedEnemy = bestEnemy;
-        }
-        //Debug.Log(focusedEnemy);
-        bool goalFinded = false;
-        BFS_Node goalNode = null;
-
-        Queue<BFS_Node> nodes = new Queue<BFS_Node>();
-        HashSet<GridSpace> visitedSpaces = new HashSet<GridSpace>();
-        foreach (var move in GetGridSpace().moves)
-        {
-            if (move.GetEntity() is not null && move.GetEntity().Equals(focusedEnemy))
-            {
-                goalFinded = true;
-            }
-
-            else if (!visitedSpaces.Contains(move) && CanMoveThere(GetGridSpace(), move))
-            {
-                visitedSpaces.Add(move);
-                nodes.Enqueue(new BFS_Node(move, null, 1));
-            }
-        }
-        while (nodes.Any() && !goalFinded)
-        {
-            var currentNode = nodes.Dequeue();
-            foreach (var move in currentNode.space.moves)
-            {
-                if (move.GetEntity() is not null && move.GetEntity().Equals(focusedEnemy))
+                foreach (var enemy in GameManager.Instance.allies)
                 {
-                    goalFinded = true;
-                    goalNode = currentNode;
-                }
-                if (!visitedSpaces.Contains(move) && CanMoveThere(currentNode.space, move))
-                {
-                    if (!(currentNode.distance + 1 == movement && move.GetEntity() is PJ))
+                    var distance = candidate.ManhattanDistance2D(enemy.GetGridSpace());
+                    if (distance <= attackRange)
                     {
-                        visitedSpaces.Add(move);
-                        nodes.Enqueue(new BFS_Node(move, currentNode, currentNode.distance + 1));
+                        focusedEnemy = enemy;
+                        return true;
                     }
                 }
             }
-        }
+            return false;
+        });
+        var goalNode = goalSpace?.node;
         if (goalNode is not null)
         {
             var node = goalNode;
@@ -325,6 +289,10 @@ public class Archer : Enemy
             {
                 bestSpace = node.space;
             }
+        }
+        else
+        {
+            return false;
         }
 
         return true;

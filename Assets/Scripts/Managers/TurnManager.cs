@@ -34,6 +34,7 @@ public class TurnManager : MonoBehaviour
         {
             EnemyManager.Instance.enemyTurn();
         }
+        GridManager.Instance.clearNodes();
         ChangeTurnEvent.Invoke();
     }
 

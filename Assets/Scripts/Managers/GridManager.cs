@@ -12,8 +12,6 @@ public class GridManager : MonoBehaviour
     Vector3Int maxBounds;
 
     public List<GridSpace> visitedSpaces = new List<GridSpace>();
-    public HashSet<GridSpace> selectableSpaces = new HashSet<GridSpace>();
-    public HashSet<GridSpace> affectedSpaces = new HashSet<GridSpace>();
 
     GridSpace selectedSpace;
 
