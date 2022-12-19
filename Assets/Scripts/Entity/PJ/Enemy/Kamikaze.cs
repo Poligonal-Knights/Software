@@ -33,6 +33,7 @@ public class Kamikaze : Enemy
         realizandoTurno = false;
         EnemyManager.Instance.enemyTurnEnd();
         focusedEnemy = null;
+        enemiesInRangeList.Clear();
         return true;
     }
 

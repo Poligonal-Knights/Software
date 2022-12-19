@@ -173,7 +173,12 @@ public class TrashMob : Enemy
     [Task]
     bool GetCloser()
     {
-        if (!focusedEnemy) return false;
+        if (!focusedEnemy)
+        {
+            Debug.Log(this);
+            Debug.Log(focusedEnemy);
+            return false;
+        }
 
         var goalSpace = BFS.GetGoalGridSpace(space, int.MaxValue, CanMoveThere, candidate =>
         {
@@ -209,6 +214,7 @@ public class TrashMob : Enemy
         realizandoTurno = false;
         EnemyManager.Instance.enemyTurnEnd();
         focusedEnemy = null;
+        enemiesInRangeList.Clear();
         return true;
     }
 

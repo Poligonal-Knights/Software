@@ -242,6 +242,7 @@ public class Archer : Enemy
     [Task]
     bool EndTurn()
     {
+        enemiesInRangeList.Clear();
         realizandoTurno = false;
         EnemyManager.Instance.enemyTurnEnd();
         focusedEnemy = null;

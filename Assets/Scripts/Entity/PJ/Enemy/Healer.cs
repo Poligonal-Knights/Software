@@ -145,6 +145,8 @@ public class Healer : Enemy
     {
         realizandoTurno = false;
         EnemyManager.Instance.enemyTurnEnd();
+        enemiesInRange.Clear();
+        alliesInRange.Clear();
         focusedEnemy = null;
         focusedAlly = null;
         return true;

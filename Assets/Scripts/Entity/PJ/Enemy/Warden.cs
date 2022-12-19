@@ -36,6 +36,7 @@ public class Warden : Enemy
     {
         realizandoTurno = false;
         focusedEnemy = null;
+        enemiesInRangeList.Clear();
         //protectedAlly = null;
         EnemyManager.Instance.enemyTurnEnd();
         return true;
