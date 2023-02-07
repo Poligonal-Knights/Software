@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         Init();
         GridManager.Instance.Init();
         TurnManager.Instance.Init();
-        
+        currentScene = SceneManager.GetActiveScene().buildIndex;
     }
 
     void Init()

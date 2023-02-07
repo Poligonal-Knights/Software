@@ -7,6 +7,8 @@ using UnityEngine;
 public class SettingsInGameManager : MonoBehaviour
 {
     public Canvas initialCanvas;
+    public Canvas settingCanvas;
+    public Canvas glossaryCanvas;
     public Canvas alwaysActive;
     public Canvas turnButton;
     //ADEL
@@ -63,6 +65,8 @@ public class SettingsInGameManager : MonoBehaviour
     {
         allControlCanvas = new List<Canvas>();
         allControlCanvas.Add(initialCanvas);
+        allControlCanvas.Add(settingCanvas);
+        allControlCanvas.Add(glossaryCanvas);
         allControlCanvas.Add(controlCanvas);
         //A�adir canvas de Magnus
         allControlCanvas.Add(magnusCanvas);

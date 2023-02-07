@@ -200,7 +200,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 122d99b9ef408594eadbc051e7bdf439, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 91c06094876cc8d4d99aaef7e78034ca, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2263,7 +2263,7 @@ MonoBehaviour:
   alwaysActiveCanvas: {fileID: 8164596033972962402}
   enemyCanvas: {fileID: 4067501401523158497}
   abilityNonDefined: {fileID: 4756787256687608008}
-  SettingsCanvas: {fileID: 4651912085693889767}
+  SettingsCanvas: {fileID: 2439074445474276360}
   wizardPortrait: {fileID: 21300000, guid: 3e67231c9f86ab849bd071ec22f6903f, type: 3}
   knightPortrait: {fileID: 21300000, guid: deb5d089db9b0ac4f9b553d38357ab76, type: 3}
   priestPortrait: {fileID: 21300000, guid: 77c46d5448ba3774fb2b5dae13d660f1, type: 3}
@@ -6310,9 +6310,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7804487033561390042}
     m_Modifications:
+    - target: {fileID: 877873874362812496, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 877873874362812496, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShowThisCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 877873874362812496, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2439074445474276360}
+    - target: {fileID: 877873874362812496, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Canvas, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1996390870456296455, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697854781022430137, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3134741772533538105, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3459788098533710676, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
       propertyPath: m_text
@@ -6440,6 +6464,10 @@ PrefabInstance:
       propertyPath: alwaysActive
       value: 
       objectReference: {fileID: 8164596033972962402}
+    - target: {fileID: 4678323211746403965, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4915966646203543252, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
       propertyPath: m_sharedMaterial
       value: 
@@ -6527,9 +6555,9 @@ Canvas:
   m_CorrespondingSourceObject: {fileID: 8526096361529638862, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
   m_PrefabInstance: {fileID: 8161444588825663612}
   m_PrefabAsset: {fileID: 0}
---- !u!223 &4651912085693889767 stripped
+--- !u!223 &2439074445474276360 stripped
 Canvas:
-  m_CorrespondingSourceObject: {fileID: 3588717965838492827, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5807976478449007732, guid: 8f28c0a9be0e2ac47be9e332d7889a28, type: 3}
   m_PrefabInstance: {fileID: 8161444588825663612}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &5278002702842554498 stripped
