@@ -100,4 +100,21 @@ public class NuevoDialogo : MonoBehaviour
         var charIcon = Resources.Load<Sprite>("characterIcons/" + name);
         characterIcono.sprite = charIcon;
     }
+
+    public void saltarDialogo()
+    {
+        if (final == false)
+        {
+            UIManager.Instance.ShowTurnButton(true);
+            UIManager.Instance.ShowAlwaysCanvas(true);
+            gameObject.SetActive(false);
+            turnButton.gameObject.SetActive(true);
+            TurnManager.Instance.ChangeTurn();
+            //actionCanvas.gameObject.SetActive(true);
+        }
+        else
+        {
+            SceneManager.LoadScene("LvlSelect3D");
+        }
+    }
 }

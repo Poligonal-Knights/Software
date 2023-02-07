@@ -141,4 +141,10 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Botones
+    clip: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+    volume: 0.621
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   SceneMusic: 0
