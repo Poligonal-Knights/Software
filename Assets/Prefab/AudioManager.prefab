@@ -53,7 +53,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: TemaPeleaBosque
     clip: {fileID: 8300000, guid: e02fe2e50253f4a48bf2b6a1b70d9796, type: 3}
-    volume: 0.621
+    volume: 0.3
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -69,7 +69,7 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: "PulsarBot\xF3n"
+  - name: PulsarBoton
     clip: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
     volume: 0.621
     pitch: 1
@@ -95,19 +95,19 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: TemaPeleaAgua
     clip: {fileID: 8300000, guid: 031c2bc05b9a1614db4ee1f6b2d6febc, type: 3}
-    volume: 0.621
+    volume: 0.3
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: "TemaPeleaMonta\xF1a"
     clip: {fileID: 8300000, guid: 60cb7ae182a0c3a4281973b82961c271, type: 3}
-    volume: 0.621
+    volume: 0.3
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: TemaPeleaDungeon
     clip: {fileID: 8300000, guid: 78d987ad0fef88c48a355160cb6e5548, type: 3}
-    volume: 0.621
+    volume: 0.3
     pitch: 1
     loop: 1
     source: {fileID: 0}
