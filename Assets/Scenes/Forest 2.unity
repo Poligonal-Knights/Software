@@ -7343,6 +7343,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 836968147147086559, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1815311381088083118, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: SceneMusic
       value: 1
@@ -7366,6 +7370,14 @@ PrefabInstance:
     - target: {fileID: 4322426147168437721, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 177.5177
+      objectReference: {fileID: 0}
+    - target: {fileID: 5313655397014988902, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5313655398108104535, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 282.89996
       objectReference: {fileID: 0}
     - target: {fileID: 5350883135287896174, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_AnchoredPosition.y
