@@ -137,7 +137,9 @@ public class UIManager : MonoBehaviour
 
     public void ShowPreviewCanvas()
     {
+        PJ selectedAlly = LogicManager.Instance.GetSelectedPJ();
         ShowThisCanvas(previewCanvas);
+        UpdateBars(selectedAlly, previewCanvas);
         HideTurnButton();
     }
 
@@ -176,60 +178,11 @@ public class UIManager : MonoBehaviour
     {
         PJ selectedAlly = LogicManager.Instance.GetSelectedPJ();
         MovePointer(selectedAlly);
-        if (selectedAlly is Ally ally)
-        {
-            if (ally.maxHealth == 0)
-            {
-                actionCanvas.transform.Find("Portrait").Find("HealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = ally.health / 10.0f;
-            }
-            else
-            {
-                actionCanvas.transform.Find("Portrait").Find("HealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = (float)ally.health / ally.maxHealth;
-            }
-
-            actionCanvas.transform.Find("Portrait").Find("HealthBar").Find("Text").GetComponent<TextMeshProUGUI>().SetText(ally.health + "/" + ally.maxHealth);
-
-            if (ally.maxEnergy == 0)
-            {
-                actionCanvas.transform.Find("Portrait").Find("EnergyBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = ally.energy / 10.0f;
-            }
-            else
-            {
-                actionCanvas.transform.Find("Portrait").Find("EnergyBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = (float)ally.energy / ally.maxEnergy;
-            }
-            actionCanvas.transform.Find("Portrait").Find("EnergyBar").Find("Text").GetComponent<TextMeshProUGUI>().SetText(ally.energy + "/" + ally.maxEnergy);
-
-            if (ally.maxMovement == 0)
-            {
-                actionCanvas.transform.Find("Portrait").Find("MovBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = ally.energy / 10.0f;
-            }
-            else
-            {
-                actionCanvas.transform.Find("Portrait").Find("MovBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = (float)ally.movement / ally.maxMovement;
-            }
-            actionCanvas.transform.Find("Portrait").Find("MovBar").Find("Text").GetComponent<TextMeshProUGUI>().SetText(ally.movement + "/" + ally.maxMovement);
-
-
-        }
+        UpdateBars(selectedAlly, actionCanvas);
 
 
 
-        if (selectedAlly is Wizard)
-        {
-            actionCanvas.transform.Find("Portrait").GetComponent<UnityEngine.UI.Image>().sprite = wizardPortrait;
-        }
-        else if (selectedAlly is Knight)
-        {
-            actionCanvas.transform.Find("Portrait").GetComponent<UnityEngine.UI.Image>().sprite = knightPortrait;
-        }
-        else if (selectedAlly is Priest)
-        {
-            actionCanvas.transform.Find("Portrait").GetComponent<UnityEngine.UI.Image>().sprite = priestPortrait;
-        }
-        else if (selectedAlly is Rogue) 
-        {
-            actionCanvas.transform.Find("Portrait").GetComponent<UnityEngine.UI.Image>().sprite = roguePortrait;
-        }
+        
     }
 
     public void ShowSelectedEnemy()
@@ -284,6 +237,7 @@ public class UIManager : MonoBehaviour
             habilitiesCanvas.transform.GetChild(1).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Bomba de Aire");
             habilitiesCanvas.transform.GetChild(2).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Prisa");
             habilitiesCanvas.transform.GetChild(3).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Barrido Vendaval");
+            
 
         }
         else if (selectedAlly is Knight)
@@ -292,6 +246,7 @@ public class UIManager : MonoBehaviour
             habilitiesCanvas.transform.GetChild(1).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Provocación");
             habilitiesCanvas.transform.GetChild(2).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Cubrir Aliados");
             habilitiesCanvas.transform.GetChild(3).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Lanzar Escudo");
+            
         }
         else if (selectedAlly is Priest)
         {
@@ -299,6 +254,7 @@ public class UIManager : MonoBehaviour
             habilitiesCanvas.transform.GetChild(1).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Curación en área");
             habilitiesCanvas.transform.GetChild(2).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Bendición");
             habilitiesCanvas.transform.GetChild(3).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Transposición");
+            
         }
         else if (selectedAlly is Rogue) 
         {
@@ -306,8 +262,11 @@ public class UIManager : MonoBehaviour
             habilitiesCanvas.transform.GetChild(1).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Trampa de Cuerda");
             habilitiesCanvas.transform.GetChild(2).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Cerbatana");
             habilitiesCanvas.transform.GetChild(3).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Trampa de Aceite");
-            
+           
+
         }
+
+        UpdateBars(selectedAlly, habilitiesCanvas);
 
     }
 
@@ -352,6 +311,62 @@ public class UIManager : MonoBehaviour
         else
         {
             enemyPointer.SetPJ(pj);
+        }
+    }
+
+    public void UpdateBars(PJ selectedAlly, Canvas targetCanvas) 
+    {
+        if (selectedAlly is Ally ally)
+        {
+            if (ally.maxHealth == 0)
+            {
+                targetCanvas.transform.Find("Portrait").Find("HealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = ally.health / 10.0f;
+            }
+            else
+            {
+                targetCanvas.transform.Find("Portrait").Find("HealthBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = (float)ally.health / ally.maxHealth;
+            }
+
+            targetCanvas.transform.Find("Portrait").Find("HealthBar").Find("Text").GetComponent<TextMeshProUGUI>().SetText(ally.health + "/" + ally.maxHealth);
+
+            if (ally.maxEnergy == 0)
+            {
+                targetCanvas.transform.Find("Portrait").Find("EnergyBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = ally.energy / 10.0f;
+            }
+            else
+            {
+                targetCanvas.transform.Find("Portrait").Find("EnergyBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = (float)ally.energy / ally.maxEnergy;
+            }
+            targetCanvas.transform.Find("Portrait").Find("EnergyBar").Find("Text").GetComponent<TextMeshProUGUI>().SetText(ally.energy + "/" + ally.maxEnergy);
+
+            if (ally.maxMovement == 0)
+            {
+                targetCanvas.transform.Find("Portrait").Find("MovBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = ally.energy / 10.0f;
+            }
+            else
+            {
+                targetCanvas.transform.Find("Portrait").Find("MovBar").Find("fill").GetComponent<UnityEngine.UI.Image>().fillAmount = (float)ally.movement / ally.maxMovement;
+            }
+            targetCanvas.transform.Find("Portrait").Find("MovBar").Find("Text").GetComponent<TextMeshProUGUI>().SetText(ally.movement + "/" + ally.maxMovement);
+
+
+        }
+
+        if (selectedAlly is Wizard)
+        {
+            targetCanvas.transform.Find("Portrait").GetComponent<UnityEngine.UI.Image>().sprite = wizardPortrait;
+        }
+        else if (selectedAlly is Knight)
+        {
+            targetCanvas.transform.Find("Portrait").GetComponent<UnityEngine.UI.Image>().sprite = knightPortrait;
+        }
+        else if (selectedAlly is Priest)
+        {
+            targetCanvas.transform.Find("Portrait").GetComponent<UnityEngine.UI.Image>().sprite = priestPortrait;
+        }
+        else if (selectedAlly is Rogue)
+        {
+            targetCanvas.transform.Find("Portrait").GetComponent<UnityEngine.UI.Image>().sprite = roguePortrait;
         }
     }
 
