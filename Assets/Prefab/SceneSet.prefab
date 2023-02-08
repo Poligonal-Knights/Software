@@ -1243,7 +1243,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 32.3, y: 64}
+  m_AnchoredPosition: {x: 32.299988, y: 64}
   m_SizeDelta: {x: 207.66, y: 204.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &362343403407190447
@@ -2655,7 +2655,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 282.79993, y: 71.8}
+  m_AnchoredPosition: {x: 282.79993, y: 71.79999}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8164596033440133962
@@ -5589,7 +5589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 856985730436609690, guid: eae4b03031ea3674095889ea56b2fb57, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2575845412195093106, guid: eae4b03031ea3674095889ea56b2fb57, type: 3}
       propertyPath: m_Pivot.x
@@ -6047,6 +6047,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4902665384276304501, guid: dc659bf39305b9b4ca4dd4d4a2930aa0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 282.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902665384276304501, guid: dc659bf39305b9b4ca4dd4d4a2930aa0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 71
+      objectReference: {fileID: 0}
     - target: {fileID: 4902665384276304503, guid: dc659bf39305b9b4ca4dd4d4a2930aa0, type: 3}
       propertyPath: m_Color.b
       value: 0.18039216
@@ -6133,7 +6141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4902665385320172868, guid: dc659bf39305b9b4ca4dd4d4a2930aa0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4902665385320172872, guid: dc659bf39305b9b4ca4dd4d4a2930aa0, type: 3}
       propertyPath: m_Pivot.x
@@ -6381,7 +6389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4902665385819712042, guid: dc659bf39305b9b4ca4dd4d4a2930aa0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 32.3
+      value: 32.299988
       objectReference: {fileID: 0}
     - target: {fileID: 4902665385819712042, guid: dc659bf39305b9b4ca4dd4d4a2930aa0, type: 3}
       propertyPath: m_AnchoredPosition.y
