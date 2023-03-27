@@ -2923,6 +2923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26438e687d9875643819147338fa7ede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lvlBeat: 0
   selectedCanvas: {fileID: 1669810490}
   pointer: {fileID: 904328346}
   lvl1: {fileID: 356524503}

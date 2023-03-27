@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
 
     void Victory()
     {
+        MenuClicker.lvlBeat += 1;
         dialogoFinal.gameObject.SetActive(true);
     }
 

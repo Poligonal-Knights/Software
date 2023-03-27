@@ -9,7 +9,7 @@ public class MenuClicker : MonoBehaviour
 {
     public static MenuClicker Instance { get; private set; }
     private void Awake() => Instance = this;
-    
+    public static int lvlBeat = 0;
     public Canvas selectedCanvas;
     public GameObject pointer;
     public GameObject lvl1;
@@ -27,11 +27,13 @@ public class MenuClicker : MonoBehaviour
     void Start()
     {
         oldPos = pointer.transform.position;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetMouseButtonDown(0)) 
         {
             RaycastHit hit;
@@ -50,6 +52,7 @@ public class MenuClicker : MonoBehaviour
                         selectedCanvas.transform.Find("Fondo").GetChild(1).GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = a;
                         selectedCanvas.transform.Find("Fondo").GetChild(2).GetComponent<TextMeshProUGUI>().SetText("2");
                         selectedCanvas.transform.Find("Fondo").GetChild(3).GetComponent<TextMeshProUGUI>().SetText("7");
+                        IsPlayeable(0);
                         selectedCanvas.transform.Find("Fondo").Find("SiBt").GetComponent<Button>().onClick.AddListener(() => MenuManager.Instance.Lvl1());
                     }else if (GameObject.ReferenceEquals(hit.transform.gameObject, lvl2))
                     {
@@ -58,6 +61,7 @@ public class MenuClicker : MonoBehaviour
                         selectedCanvas.transform.Find("Fondo").GetChild(1).GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = a;
                         selectedCanvas.transform.Find("Fondo").GetChild(2).GetComponent<TextMeshProUGUI>().SetText("2");
                         selectedCanvas.transform.Find("Fondo").GetChild(3).GetComponent<TextMeshProUGUI>().SetText("5");
+                        IsPlayeable(1);
                         selectedCanvas.transform.Find("Fondo").Find("SiBt").GetComponent<Button>().onClick.AddListener(() => MenuManager.Instance.Lvl2());
                     }
                     else if (GameObject.ReferenceEquals(hit.transform.gameObject, lvl3))
@@ -67,6 +71,7 @@ public class MenuClicker : MonoBehaviour
                         selectedCanvas.transform.Find("Fondo").GetChild(1).GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = b;
                         selectedCanvas.transform.Find("Fondo").GetChild(2).GetComponent<TextMeshProUGUI>().SetText("4");
                         selectedCanvas.transform.Find("Fondo").GetChild(3).GetComponent<TextMeshProUGUI>().SetText("11");
+                        IsPlayeable(2);
                         selectedCanvas.transform.Find("Fondo").Find("SiBt").GetComponent<Button>().onClick.AddListener(() => MenuManager.Instance.Lvl3());
                     }
                     else if (GameObject.ReferenceEquals(hit.transform.gameObject, lvl4))
@@ -76,6 +81,7 @@ public class MenuClicker : MonoBehaviour
                         selectedCanvas.transform.Find("Fondo").GetChild(1).GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = b;
                         selectedCanvas.transform.Find("Fondo").GetChild(2).GetComponent<TextMeshProUGUI>().SetText("4");
                         selectedCanvas.transform.Find("Fondo").GetChild(3).GetComponent<TextMeshProUGUI>().SetText("11");
+                        IsPlayeable(3);
                         selectedCanvas.transform.Find("Fondo").Find("SiBt").GetComponent<Button>().onClick.AddListener(() => MenuManager.Instance.Lvl4());
                     }//
                     else if (GameObject.ReferenceEquals(hit.transform.gameObject, lvl5))
@@ -85,6 +91,7 @@ public class MenuClicker : MonoBehaviour
                         selectedCanvas.transform.Find("Fondo").GetChild(1).GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = c;
                         selectedCanvas.transform.Find("Fondo").GetChild(2).GetComponent<TextMeshProUGUI>().SetText("4");
                         selectedCanvas.transform.Find("Fondo").GetChild(3).GetComponent<TextMeshProUGUI>().SetText("12");
+                        IsPlayeable(4);
                         selectedCanvas.transform.Find("Fondo").Find("SiBt").GetComponent<Button>().onClick.AddListener(() => MenuManager.Instance.Lvl5());
                     }
                     else if (GameObject.ReferenceEquals(hit.transform.gameObject, lvl6))
@@ -94,6 +101,7 @@ public class MenuClicker : MonoBehaviour
                         selectedCanvas.transform.Find("Fondo").GetChild(1).GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = c;
                         selectedCanvas.transform.Find("Fondo").GetChild(2).GetComponent<TextMeshProUGUI>().SetText("4");
                         selectedCanvas.transform.Find("Fondo").GetChild(3).GetComponent<TextMeshProUGUI>().SetText("13");
+                        IsPlayeable(5);
                         selectedCanvas.transform.Find("Fondo").Find("SiBt").GetComponent<Button>().onClick.AddListener(() => MenuManager.Instance.Lvl6());
                     }
                     else if (GameObject.ReferenceEquals(hit.transform.gameObject, lvl7))
@@ -103,6 +111,7 @@ public class MenuClicker : MonoBehaviour
                         selectedCanvas.transform.Find("Fondo").GetChild(1).GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = d;
                         selectedCanvas.transform.Find("Fondo").GetChild(2).GetComponent<TextMeshProUGUI>().SetText("4");
                         selectedCanvas.transform.Find("Fondo").GetChild(3).GetComponent<TextMeshProUGUI>().SetText("13");
+                        IsPlayeable(6);
                         selectedCanvas.transform.Find("Fondo").Find("SiBt").GetComponent<Button>().onClick.AddListener(() => MenuManager.Instance.Lvl7());
                     }
                     else if (GameObject.ReferenceEquals(hit.transform.gameObject, lvl8))
@@ -112,12 +121,14 @@ public class MenuClicker : MonoBehaviour
                         selectedCanvas.transform.Find("Fondo").GetChild(1).GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = d; 
                         selectedCanvas.transform.Find("Fondo").GetChild(2).GetComponent<TextMeshProUGUI>().SetText("4");
                         selectedCanvas.transform.Find("Fondo").GetChild(3).GetComponent<TextMeshProUGUI>().SetText("13");
+                        IsPlayeable(7);
                         selectedCanvas.transform.Find("Fondo").Find("SiBt").GetComponent<Button>().onClick.AddListener(() => MenuManager.Instance.Lvl8());
                     }
 
 
 
                     selectedCanvas.gameObject.SetActive(true);
+
                 }
                 else 
                 {
@@ -128,4 +139,23 @@ public class MenuClicker : MonoBehaviour
         }
         
     }
+
+    public void IsPlayeable(int lvl) 
+    {
+        
+        if (lvl > lvlBeat)
+        {
+            selectedCanvas.transform.Find("Fondo").Find("SiBt").GetComponent<Button>().interactable = false;
+            
+        }
+        else 
+        {
+            selectedCanvas.transform.Find("Fondo").Find("SiBt").GetComponent<Button>().interactable = true;
+            
+        }
+    }
+
+    
+    
+
 }

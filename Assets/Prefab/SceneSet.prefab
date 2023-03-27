@@ -5152,6 +5152,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8389186433257112851, guid: c3846bd77876e0c4bac9dcf0973da170, type: 3}
+      propertyPath: mixer
+      value: 
+      objectReference: {fileID: 24300002, guid: 4725b6fc97baa6940848bacafe2472bd, type: 2}
+    - target: {fileID: 8389186433257112851, guid: c3846bd77876e0c4bac9dcf0973da170, type: 3}
       propertyPath: sounds.Array.data[4].name
       value: PulsarBoton
       objectReference: {fileID: 0}
