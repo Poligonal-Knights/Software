@@ -147,4 +147,5 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  mixer: {fileID: 24300002, guid: 4725b6fc97baa6940848bacafe2472bd, type: 2}
   SceneMusic: 0
