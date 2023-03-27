@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
     public Sprite wizardPortrait;
     public Sprite knightPortrait;
     public Sprite priestPortrait;
-    public Sprite roguePortrait;
+    public Sprite rogueP;
     public Sprite TrashPortrait;
     public Sprite ArcherPortrait;
     public Sprite MagePortrait;
@@ -366,7 +366,7 @@ public class UIManager : MonoBehaviour
         }
         else if (selectedAlly is Rogue)
         {
-            targetCanvas.transform.Find("Portrait").GetComponent<UnityEngine.UI.Image>().sprite = roguePortrait;
+            targetCanvas.transform.Find("Portrait").GetComponent<UnityEngine.UI.Image>().sprite = rogueP;
         }
     }
 
