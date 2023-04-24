@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
         GridManager.Instance.Init();
         TurnManager.Instance.Init();
         currentScene = SceneManager.GetActiveScene().buildIndex;
+        if(Camera.main.TryGetComponent(out CameraControls camera)) camera.Init();
     }
 
     void Init()

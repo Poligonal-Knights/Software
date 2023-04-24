@@ -11277,6 +11277,14 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4778984752277160979, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: duration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4778984752277160979, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5350883135287896174, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 185.27502
@@ -11465,6 +11473,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8164596032961275958, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1479146181}
+    - target: {fileID: 8164596032961275958, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CameraControls, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164596033238225246, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8164596033238225247, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.7
@@ -11476,6 +11496,14 @@ PrefabInstance:
     - target: {fileID: 8164596033238225247, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_LocalPosition.z
       value: -10.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164596034017955031, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1479146181}
+    - target: {fileID: 8164596034017955031, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CameraControls, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8164596034283307752, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -11507,6 +11535,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+--- !u!114 &1479146181 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4778984752277160979, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+  m_PrefabInstance: {fileID: 1479146180}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db3698c0818171c43a7f77258aa38b72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1483199883
 PrefabInstance:
   m_ObjectHideFlags: 0
