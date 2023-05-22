@@ -18,7 +18,8 @@ public class UIManager : MonoBehaviour
     public Canvas alwaysActiveCanvas;
     public Canvas enemyCanvas;
     public Canvas abilityNonDefined;
-    public Canvas SettingsCanvas; 
+    public Canvas SettingsCanvas;
+    
     
     public Sprite wizardPortrait;
     public Sprite knightPortrait;
@@ -83,7 +84,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    void ShowThisCanvas(Canvas canvasToShow)
+    public void ShowThisCanvas(Canvas canvasToShow)
     {
         foreach (Canvas c in allCanvas)
         {
@@ -233,6 +234,43 @@ public class UIManager : MonoBehaviour
 
         if (selectedAlly is Wizard)
         {
+            habilitiesCanvas.transform.Find("ScrollableMenu").Find("Container").GetChild(0).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Empujón de Viento");
+            habilitiesCanvas.transform.Find("ScrollableMenu").Find("Container").GetChild(1).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Bomba de Aire");
+            habilitiesCanvas.transform.Find("ScrollableMenu").Find("Container").GetChild(2).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Prisa");
+            habilitiesCanvas.transform.Find("ScrollableMenu").Find("Container").GetChild(3).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Barrido Vendaval");
+            
+
+        }
+        else if (selectedAlly is Knight)
+        {
+            habilitiesCanvas.transform.Find("ScrollableMenu").Find("Container").GetChild(0).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Escudazo");
+            habilitiesCanvas.transform.Find("ScrollableMenu").Find("Container").GetChild(1).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Provocación");
+            habilitiesCanvas.transform.Find("ScrollableMenu").Find("Container").GetChild(2).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Cubrir Aliados");
+            habilitiesCanvas.transform.Find("ScrollableMenu").Find("Container").GetChild(3).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Lanzar Escudo");
+            
+        }
+        else if (selectedAlly is Priest)
+        {
+            habilitiesCanvas.transform.Find("ScrollableMenu").Find("Container").GetChild(0).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Atracción");
+            habilitiesCanvas.transform.Find("ScrollableMenu").Find("Container").GetChild(1).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Curación en área");
+            habilitiesCanvas.transform.Find("ScrollableMenu").Find("Container").GetChild(2).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Bendición");
+            habilitiesCanvas.transform.Find("ScrollableMenu").Find("Container").GetChild(3).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Transposición");
+            
+        }
+        else if (selectedAlly is Rogue) 
+        {
+            habilitiesCanvas.transform.Find("ScrollableMenu").Find("Container").GetChild(0).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Abrojo");
+            habilitiesCanvas.transform.Find("ScrollableMenu").Find("Container").GetChild(1).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Trampa de Cuerda");
+            habilitiesCanvas.transform.Find("ScrollableMenu").Find("Container").GetChild(2).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Cerbatana");
+            habilitiesCanvas.transform.Find("ScrollableMenu").Find("Container").GetChild(3).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Trampa de Aceite");
+           
+
+        }
+
+        //Viejo//
+        /*
+        if (selectedAlly is Wizard)
+        {
             habilitiesCanvas.transform.GetChild(0).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Empujón de Viento");
             habilitiesCanvas.transform.GetChild(1).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Bomba de Aire");
             habilitiesCanvas.transform.GetChild(2).Find("Text (TMP)").GetComponent<TextMeshProUGUI>().SetText("Prisa");
@@ -265,6 +303,7 @@ public class UIManager : MonoBehaviour
            
 
         }
+         */
 
         UpdateBars(selectedAlly, habilitiesCanvas);
 
