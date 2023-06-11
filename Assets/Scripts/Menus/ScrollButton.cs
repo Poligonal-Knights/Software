@@ -78,19 +78,19 @@ public class ScrollButton : MonoBehaviour
 
         if (selectedAlly is Wizard)
         {
-            UIManager.ShowThisCanvas(MageSkills[HabInUse]);
+            UIManager.ShowScrollHabCanvas(MageSkills[HabInUse]);
         }
         else if (selectedAlly is Knight)
         {
-            UIManager.ShowThisCanvas(KnightSkills[HabInUse]);
+            UIManager.ShowScrollHabCanvas(KnightSkills[HabInUse]);
         }
         else if (selectedAlly is Priest)
         {
-            UIManager.ShowThisCanvas(PriestSkills[HabInUse]);
+            UIManager.ShowScrollHabCanvas(PriestSkills[HabInUse]);
         }
         else if (selectedAlly is Rogue)
         {
-            UIManager.ShowThisCanvas(RogueSkills[HabInUse]);
+            UIManager.ShowScrollHabCanvas(RogueSkills[HabInUse]);
         }
 
     }

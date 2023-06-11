@@ -51,7 +51,7 @@ public class UIManager : MonoBehaviour
         allCanvas.Add(enemyCanvas);
         allCanvas.Add(SettingsCanvas);
         //allCanvas.Add(MenuInGameCanvas);
-        //allCanvas.Add(turnCanvas);
+        allCanvas.Add(turnCanvas);
         currentCanvas = emptyCanvas;
     }
 
@@ -121,6 +121,13 @@ public class UIManager : MonoBehaviour
         alwaysActiveCanvas.gameObject.SetActive(false);
         turnCanvas.gameObject.SetActive(false);
         //ShowTurnButton();
+    }
+
+    public void ShowScrollHabCanvas(Canvas canvas)
+    {
+        ShowThisCanvas(canvas);
+        alwaysActiveCanvas.gameObject.SetActive(false);
+        turnCanvas.gameObject.SetActive(false);
     }
 
     public void ShowEnemyCanvas()
