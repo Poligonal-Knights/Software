@@ -186,11 +186,7 @@ public class UIManager : MonoBehaviour
     {
         PJ selectedAlly = LogicManager.Instance.GetSelectedPJ();
         MovePointer(selectedAlly);
-        UpdateBars(selectedAlly, actionCanvas);
-
-
-
-        
+        UpdateBars(selectedAlly, actionCanvas);   
     }
 
     public void ShowSelectedEnemy()

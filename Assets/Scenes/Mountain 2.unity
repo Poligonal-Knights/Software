@@ -7825,6 +7825,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneSet
       objectReference: {fileID: 0}
+    - target: {fileID: 2353054003269073418, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 67.72034
+      objectReference: {fileID: 0}
+    - target: {fileID: 2353054003269073418, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -36.60254
+      objectReference: {fileID: 0}
     - target: {fileID: 2472647415301645664, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 14.9999695
@@ -7871,7 +7879,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5313655398108104535, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 282.89996
+      value: -78
+      objectReference: {fileID: 0}
+    - target: {fileID: 5313655398108104535, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 39.583313
       objectReference: {fileID: 0}
     - target: {fileID: 5350883135287896174, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_AnchoredPosition.y
