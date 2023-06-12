@@ -73,13 +73,13 @@ public class UIManager : MonoBehaviour
         if (playerTurn)
         {
             Debug.Log("Turno aliado comienza");
-            alwaysActiveCanvas.transform.Find("TurnText").GetComponent<TextMeshProUGUI>().SetText("Tu turno");
+            //alwaysActiveCanvas.transform.Find("TurnText").GetComponent<TextMeshProUGUI>().SetText("Tu turno");
             turnCanvas.gameObject.SetActive(true);
         }
         else
         {
             Debug.Log("Turno enemigo comienza");
-            alwaysActiveCanvas.transform.Find("TurnText").GetComponent<TextMeshProUGUI>().SetText("Turno de la IA");
+            //alwaysActiveCanvas.transform.Find("TurnText").GetComponent<TextMeshProUGUI>().SetText("Turno de la IA");
             turnCanvas.gameObject.SetActive(false);
         }
     }
