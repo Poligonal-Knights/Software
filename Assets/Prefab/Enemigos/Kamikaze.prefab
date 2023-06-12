@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 339048269479041126}
   - component: {fileID: 4748820220316620626}
   - component: {fileID: 6803428682119057556}
+  - component: {fileID: 828853525400276165}
   m_Layer: 0
   m_Name: Kamikaze
   m_TagString: Untagged
@@ -155,6 +156,26 @@ MonoBehaviour:
     breakPointStatuses: 
     collapsedLines: 
     btScript: 
+--- !u!95 &828853525400276165
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3516867413982075483}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0cff1a9eb7aae0243a426ca29bfbec23, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7269074092783762198
 GameObject:
   m_ObjectHideFlags: 0
