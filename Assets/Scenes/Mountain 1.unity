@@ -11098,6 +11098,18 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 890163677209407141, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 890163677209407141, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 890163677209407141, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 942825928084241541, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -11245,6 +11257,18 @@ PrefabInstance:
     - target: {fileID: 4449503981170376802, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561934691351965095, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561934691351965095, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561934691351965095, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4680754749160877149, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_PresetInfoIsWorld

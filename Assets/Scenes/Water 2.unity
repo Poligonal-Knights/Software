@@ -9272,6 +9272,10 @@ PrefabInstance:
       propertyPath: SceneMusic
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1849362418929312962, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2307817674586481882, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_Name
       value: SceneSet
@@ -9388,6 +9392,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 122.32788
       objectReference: {fileID: 0}
+    - target: {fileID: 7980036843274389935, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8006194786793827882, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 232.51733
@@ -9416,9 +9424,21 @@ PrefabInstance:
       propertyPath: nextScene
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8164596034789594227, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 35.399994
+      objectReference: {fileID: 0}
     - target: {fileID: 8164596034869079022, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404027603350054355, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 32.30005
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404027603350054355, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 56.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
