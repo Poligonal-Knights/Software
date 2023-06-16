@@ -1701,22 +1701,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8164596033238225246}
-        m_TargetAssemblyTypeName: CameraRotation, Assembly-CSharp
-        m_MethodName: RotateCamera
-        m_Mode: 6
+      - m_Target: {fileID: 1815311381088083118}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: PulsarBoton
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1815311381088083118}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 5
+      - m_Target: {fileID: 4755312336937603157}
+        m_TargetAssemblyTypeName: CameraControls, Assembly-CSharp
+        m_MethodName: RotateCamera
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1983,10 +1983,10 @@ GameObject:
   - component: {fileID: 8164596033238225247}
   - component: {fileID: 8164596033238225240}
   - component: {fileID: 8164596033238225241}
-  - component: {fileID: 8164596033238225246}
   - component: {fileID: 5534975131018069102}
   - component: {fileID: 6143579308648698354}
   - component: {fileID: 1881578209389534988}
+  - component: {fileID: 4755312336937603157}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2060,19 +2060,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8164596033238225242}
   m_Enabled: 1
---- !u!114 &8164596033238225246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8164596033238225242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 006053ee84c9a8942aa2a66faf424145, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 0.5
 --- !u!114 &5534975131018069102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2114,6 +2101,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intensity: 2.24
   shift: 0.19
+--- !u!114 &4755312336937603157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8164596033238225242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a195aabbb44dd1745b31441886f3a203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomSpeed: 2
+  durationOfRotation: 0.5
 --- !u!1 &8164596033270069061
 GameObject:
   m_ObjectHideFlags: 0
@@ -2901,8 +2902,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8164596033238225246}
-        m_TargetAssemblyTypeName: CameraRotation, Assembly-CSharp
+      - m_Target: {fileID: 4755312336937603157}
+        m_TargetAssemblyTypeName: CameraControls, Assembly-CSharp
         m_MethodName: RotateCamera
         m_Mode: 6
         m_Arguments:
@@ -4979,6 +4980,14 @@ PrefabInstance:
     - target: {fileID: 606285985320955079, guid: cddb3a5be064f9b4a810ef3d803cc47a, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -32.916748
+      objectReference: {fileID: 0}
+    - target: {fileID: 866183237282208382, guid: cddb3a5be064f9b4a810ef3d803cc47a, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 984966331625253534, guid: cddb3a5be064f9b4a810ef3d803cc47a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 56.199997
       objectReference: {fileID: 0}
     - target: {fileID: 1784227845218372192, guid: cddb3a5be064f9b4a810ef3d803cc47a, type: 3}
       propertyPath: m_fontSize
