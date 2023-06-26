@@ -26817,8 +26817,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " Cada vez que el enemigo sea empujado o se mueva, recibir\xE1 da\xF1o
-    relativo a la cantidad de movimiento."
+  m_text: "Cada vez que el enemigo sea empujado o se mueva, recibir\xE1 da\xF1o relativo
+    a la cantidad de movimiento."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
