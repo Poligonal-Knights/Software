@@ -145,4 +145,9 @@ public class SettingsInGameManager : MonoBehaviour
             turnButton.gameObject.SetActive(true);
         //this.gameObject.SetActive(false);
     }
+
+    public void ChangeSpeed(float speed)
+    {
+        Time.timeScale = speed;
+    }
 }

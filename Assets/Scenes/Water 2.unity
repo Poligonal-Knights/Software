@@ -9268,6 +9268,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1612525808444903434, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612525808444903434, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612525808444903434, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1815311381088083118, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: SceneMusic
       value: 2
@@ -9300,6 +9312,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 177.5177
       objectReference: {fileID: 0}
+    - target: {fileID: 4757003675677672575, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103102843888433775, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5313655397014988902, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -9331,6 +9351,14 @@ PrefabInstance:
     - target: {fileID: 7285430675388759968, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 62.987305
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353254965283490978, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353254965283490978, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7426542883332389441, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_AnchoredPosition.x
