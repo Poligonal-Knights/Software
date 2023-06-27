@@ -3884,6 +3884,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrashMob
       objectReference: {fileID: 0}
+    - target: {fileID: 7086527525058498307, guid: c166f6598525cd1458a111949b7475b5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c166f6598525cd1458a111949b7475b5, type: 3}
 --- !u!1001 &572086428
@@ -4574,6 +4578,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7778243790979264397, guid: d4a01e625bda3134ea6a6f7323d6e2b3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5bd2fced392530d4491b40586aa568d2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4a01e625bda3134ea6a6f7323d6e2b3, type: 3}
 --- !u!1 &660879080
@@ -4789,6 +4797,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrashMob (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086527525058498307, guid: c166f6598525cd1458a111949b7475b5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c166f6598525cd1458a111949b7475b5, type: 3}
 --- !u!1 &712066510
@@ -5402,6 +5414,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1567482179}
     m_Modifications:
+    - target: {fileID: 552765873021624958, guid: 480ff3ff1c406504d84b8b9cac1da2bc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+    - target: {fileID: 765669413990291984, guid: 480ff3ff1c406504d84b8b9cac1da2bc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 1468960736262111311, guid: 480ff3ff1c406504d84b8b9cac1da2bc, type: 3}
       propertyPath: attackRange
       value: 5
@@ -5599,6 +5619,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 381208940578405056, guid: 61032f29a40e9e348ae570ae0ad882ab, type: 3}
   m_PrefabInstance: {fileID: 280458116}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &825788412 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8164596032921816754, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+  m_PrefabInstance: {fileID: 1479146180}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &825788414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825788412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1001 &838179291
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6041,6 +6086,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 325309385}
     m_Modifications:
+    - target: {fileID: 713479953623457320, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 1654740863837452044, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -8415,7 +8464,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -9715,6 +9765,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1567482179}
     m_Modifications:
+    - target: {fileID: 552765873021624958, guid: 480ff3ff1c406504d84b8b9cac1da2bc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+    - target: {fileID: 765669413990291984, guid: 480ff3ff1c406504d84b8b9cac1da2bc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 1468960736262111311, guid: 480ff3ff1c406504d84b8b9cac1da2bc, type: 3}
       propertyPath: attackRange
       value: 5
@@ -10024,6 +10082,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrashMob (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086527525058498307, guid: c166f6598525cd1458a111949b7475b5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c166f6598525cd1458a111949b7475b5, type: 3}
 --- !u!4 &1337687661 stripped
@@ -15288,6 +15350,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrashMob (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086527525058498307, guid: c166f6598525cd1458a111949b7475b5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c166f6598525cd1458a111949b7475b5, type: 3}
 --- !u!4 &2063388291 stripped
@@ -15458,6 +15524,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1567482179}
     m_Modifications:
+    - target: {fileID: 552765873021624958, guid: 480ff3ff1c406504d84b8b9cac1da2bc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+    - target: {fileID: 765669413990291984, guid: 480ff3ff1c406504d84b8b9cac1da2bc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 1468960736262111311, guid: 480ff3ff1c406504d84b8b9cac1da2bc, type: 3}
       propertyPath: attackRange
       value: 5
@@ -15642,7 +15716,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_sharedMaterial: {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: -3739362531964672651, guid: ed831e107d7d8d54b95c85a4d4ca1d36, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:

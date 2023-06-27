@@ -46,6 +46,8 @@ public class PJ : Entity
         IsDying = false;
         CanJump = false;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        spriteRenderer.receiveShadows = true;
+        spriteRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
     }
 
     protected override void Start()
