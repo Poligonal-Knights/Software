@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4889993266822280166}
   - component: {fileID: 5094586772189383093}
   - component: {fileID: 3588227058631200333}
+  - component: {fileID: 3099982087327438079}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -97,6 +98,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481723ea5e8deae4386d185b731e0aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &3099982087327438079
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2874692019561033248}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0cff1a9eb7aae0243a426ca29bfbec23, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4285428374086769396
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +132,6 @@ GameObject:
   - component: {fileID: 5854413424650027880}
   - component: {fileID: 6767995579640467844}
   - component: {fileID: 2637953934986261144}
-  - component: {fileID: 5842923466120102943}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Untagged
@@ -254,23 +274,3 @@ MonoBehaviour:
     breakPointStatuses: 
     collapsedLines: 
     btScript: 
---- !u!95 &5842923466120102943
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4285428374086769396}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0cff1a9eb7aae0243a426ca29bfbec23, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0

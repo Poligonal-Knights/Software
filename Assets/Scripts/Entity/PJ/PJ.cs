@@ -275,8 +275,9 @@ public class PJ : Entity
             if(!damageTo)
             {
                 Debug.Log("Debería hacerme daño; " + damage);
-                GetComponentInChildren<SpriteRenderer>().color = new Color(1, 0, 0);
-                StartCoroutine(GetColorBack());
+                // GetComponentInChildren<SpriteRenderer>().color = new Color(1, 0, 0);
+                // StartCoroutine(GetColorBack());
+                GetComponentInChildren<Animator>().SetTrigger("ReceiveDamage");
                 AudioManager.Instance.Play("RecibirDano");
                 health -= (damage - defense); 
                 if (health <= 0)

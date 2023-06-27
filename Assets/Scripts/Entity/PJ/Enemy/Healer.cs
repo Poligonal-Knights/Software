@@ -242,15 +242,24 @@ public class Healer : Enemy
     }
 
     [Task]
-    bool Attack()
+    protected override bool Attack()
     {
         if (!getAttackPerformed())
-            LineDrawer.DrawLine(this.GetGridSpace().GetWorldPosition(), focusedEnemy.GetGridSpace().GetWorldPosition());
+            StartCoroutine(createLineDelayed());
         //Activar Debuff de daño y defensa
         new Curse(focusedEnemy);
+        base.Attack();
         return true;
     }
 
+    IEnumerator createLineDelayed()
+    {
+        
+        var _focusedEnemy = focusedEnemy.GetGridSpace().GetWorldPosition();
+        var _gridSpace = this.GetGridSpace().GetWorldPosition();
+        yield return new WaitForSeconds(0.25f);
+        LineDrawer.DrawLine(_gridSpace, _focusedEnemy);
+    }
     [Task]
     bool CanIMove()
     {

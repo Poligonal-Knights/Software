@@ -49,6 +49,15 @@ public class Enemy : PJ
         // gameManager.enemyManager.enemyTurnEnd();
     }
 
+    protected virtual bool Attack()
+    {
+        Animator _animator = GetComponentInChildren<Animator>();
+        if (_animator)
+        {
+            _animator.SetTrigger("AbilityUsed");
+        }
+        return true;
+    }
 
     public virtual void BePushed(Vector3Int direction, int pushback, int extraDamage, Ally pushedBy)
     {

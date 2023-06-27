@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4837352154470818268}
   - component: {fileID: 4683485296739818024}
   - component: {fileID: 6760226094506445715}
-  - component: {fileID: 3438124564152027743}
   m_Layer: 0
   m_Name: Priest
   m_TagString: Untagged
@@ -132,26 +131,6 @@ CapsuleCollider:
   m_Height: 2.72
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &3438124564152027743
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4837352154470818258}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0cff1a9eb7aae0243a426ca29bfbec23, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5599554431943834306
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,6 +142,7 @@ GameObject:
   - component: {fileID: 1654740863837452044}
   - component: {fileID: 713479953623457320}
   - component: {fileID: 1310288712626330965}
+  - component: {fileID: 2023539722973110457}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -249,3 +229,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481723ea5e8deae4386d185b731e0aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2023539722973110457
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5599554431943834306}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0cff1a9eb7aae0243a426ca29bfbec23, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

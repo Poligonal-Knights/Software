@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4837352154470818268}
   - component: {fileID: 1830296689601221216}
   - component: {fileID: 4014313277025337400}
-  - component: {fileID: 3623880605049775224}
   m_Layer: 0
   m_Name: Rogue
   m_TagString: Untagged
@@ -135,26 +134,6 @@ MonoBehaviour:
   caltrops: {fileID: 4743694349413910261, guid: b0100539fd0d36741bc404f7a69ba513, type: 3}
   ropeTrap: {fileID: 922955631575823561, guid: 1eb50c4d79da9c14f8291116af82084e, type: 3}
   oil: {fileID: 7466606596737621828, guid: 566ba6d5f8e9d1a43947799acc02bd8a, type: 3}
---- !u!95 &3623880605049775224
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4837352154470818258}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0cff1a9eb7aae0243a426ca29bfbec23, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8833514900583522877
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,6 +145,7 @@ GameObject:
   - component: {fileID: 2265273854730581681}
   - component: {fileID: 7778243790979264397}
   - component: {fileID: 5505578552521478079}
+  - component: {fileID: 3739893125883321897}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -252,3 +232,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481723ea5e8deae4386d185b731e0aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &3739893125883321897
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8833514900583522877}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0cff1a9eb7aae0243a426ca29bfbec23, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

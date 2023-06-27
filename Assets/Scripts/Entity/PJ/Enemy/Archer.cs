@@ -220,16 +220,26 @@ public class Archer : Enemy
     }
 
     [Task]
-    bool Attack()
+    protected override bool Attack()
     {
+        
         Debug.Log(this + " ATTACK");
         if (!getAttackPerformed())
-            LineDrawer.DrawLine(this.GetGridSpace().GetWorldPosition(), focusedEnemy.GetGridSpace().GetWorldPosition());
+            StartCoroutine(createLineDelayed());
         //Correr animación de ataque mirando al enemigo
         Debug.Log("Atacando a " + focusedEnemy + " con " + focusedEnemy.health);
         focusedEnemy.DealDamage(damage, this);
         setAttackPerformed(true);
+        base.Attack();
         return true;
+    }
+
+    IEnumerator createLineDelayed()
+    {
+        var _focusedEnemy = focusedEnemy.GetGridSpace().GetWorldPosition();
+        var _gridSpace = this.GetGridSpace().GetWorldPosition();
+        yield return new WaitForSeconds(0.25f);
+        LineDrawer.DrawLine(_gridSpace, _focusedEnemy);
     }
 
     [Task]

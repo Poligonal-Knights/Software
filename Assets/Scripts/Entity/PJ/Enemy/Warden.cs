@@ -342,12 +342,21 @@ public class Warden : Enemy
     }
 
     [Task]
-    bool Attack()
+    protected override bool Attack()
     {
         if (!getAttackPerformed())
-            LineDrawer.DrawLine(this.GetGridSpace().GetWorldPosition(), focusedEnemy.GetGridSpace().GetWorldPosition());
+            StartCoroutine(createDelayedLine());
         focusedEnemy.DealDamage(this.damage, this);
+        base.Attack();
         return true;
+    }
+
+    IEnumerator createDelayedLine()
+    {
+        var _focusedEnemy = focusedEnemy.GetGridSpace().GetWorldPosition();
+        var _gridSpace = this.GetGridSpace().GetWorldPosition();
+        yield return new WaitForSeconds(0.25f);
+        LineDrawer.DrawLine(_gridSpace, _focusedEnemy);
     }
 
     [Task]

@@ -184,10 +184,10 @@ public class Mage : Enemy
         return optimalSpace != null && !getAttackPerformed();
     }
     [Task]
-    bool Attack()
+    protected override bool Attack()
     {
         if (!getAttackPerformed())
-            LineDrawer.DrawLine(this.GetGridSpace().GetWorldPosition(), optimalSpace.GetWorldPosition());
+            StartCoroutine(createLineDelayed());
         setAttackPerformed(true);
 
         //Realizar daño a los enemigos a rango de la explosión donde haya explotado que será en OptimalSpace
@@ -197,11 +197,18 @@ public class Mage : Enemy
             {
                 enemy.DealDamage(damage, this);
                 Debug.Log("MAGO TRUCO");
-
             }
+        base.Attack();
         return true;
     }
 
+    IEnumerator createLineDelayed()
+    {
+        var _focusedEnemy = focusedEnemy.GetGridSpace().GetWorldPosition();
+        var _gridSpace = this.GetGridSpace().GetWorldPosition();
+        yield return new WaitForSeconds(0.25f);
+        LineDrawer.DrawLine(_gridSpace, _focusedEnemy);
+    }
     [Task]
     bool SpaceInAttackRange()
     {
