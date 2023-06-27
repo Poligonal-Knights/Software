@@ -3,25 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d5face6c-2f1b-4931-a622-ab51a4d8a3bf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Software/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Software/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Characters/CharacterController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Characters/CharacterController.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Characters/characterAnimations.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Characters/characterAnimations.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Enemigos/Archer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Enemigos/Archer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Enemigos/Healer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Enemigos/Healer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Enemigos/Kamikaze.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Enemigos/Kamikaze.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Enemigos/Mage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Enemigos/Mage.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Enemigos/TrashMob.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Enemigos/TrashMob.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Enemigos/Warden.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Enemigos/Warden.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Personajes/Knight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Personajes/Knight.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Personajes/Priest.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Personajes/Priest.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Personajes/Rogue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Personajes/Rogue.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Personajes/Wizard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Personajes/Wizard.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Forest 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Forest 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/Archer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/Archer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/Healer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/Healer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/Mage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/Mage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/TrashMob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/TrashMob.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/Warden.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/Enemy/Warden.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/PJ.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/PJ/PJ.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +76,7 @@
       <workItem from="1670816967350" duration="3594000" />
       <workItem from="1671304251007" duration="4830000" />
       <workItem from="1671382040063" duration="4437000" />
-      <workItem from="1687883472786" duration="2703000" />
+      <workItem from="1687883472786" duration="3563000" />
     </task>
     <servers />
   </component>

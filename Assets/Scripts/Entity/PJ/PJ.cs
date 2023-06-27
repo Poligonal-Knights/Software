@@ -6,6 +6,7 @@ using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 using System;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class PJ : Entity
 {
@@ -63,6 +64,7 @@ public class PJ : Entity
         destination = space;
         orientation = Vector2.down;
         UpdateOrientation();
+        GetComponentInChildren<Animator>().Play("Idle", -1, Random.value );
     }
 
     protected override void Update()
