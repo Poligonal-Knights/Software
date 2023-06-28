@@ -1,10 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine.SceneManagement;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
-using System;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
@@ -17,7 +15,15 @@ public class PJ : Entity
     public int maxMovement;
     public int movement;
     public int maxHealth;
-    public int health;
+    public int health
+    {
+        get => _health;
+        set
+        {
+            _health = value;
+            HealthChanged?.Invoke();
+        }
+    }
     public int damage;
     public bool CanJump;
     private bool attackPerformed;
@@ -39,6 +45,9 @@ public class PJ : Entity
 
     public UnityEvent MovementEvent = new UnityEvent();
     bool InvokeMovementEvent = false;
+
+    int _health;
+    public Action HealthChanged;
 
     protected override void Awake()
     {
@@ -65,6 +74,8 @@ public class PJ : Entity
         orientation = Vector2.down;
         UpdateOrientation();
         GetComponentInChildren<Animator>().Play("Idle", -1, Random.value );
+
+        health = maxHealth;
     }
 
     protected override void Update()
