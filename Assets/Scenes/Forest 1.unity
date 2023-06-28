@@ -3884,6 +3884,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrashMob
       objectReference: {fileID: 0}
+    - target: {fileID: 5573850259766128616, guid: c166f6598525cd1458a111949b7475b5, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1372870594}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c166f6598525cd1458a111949b7475b5, type: 3}
 --- !u!1001 &572086428
@@ -4788,6 +4792,10 @@ PrefabInstance:
     - target: {fileID: 458121981773691621, guid: c166f6598525cd1458a111949b7475b5, type: 3}
       propertyPath: m_Name
       value: TrashMob (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573850259766128623, guid: c166f6598525cd1458a111949b7475b5, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c166f6598525cd1458a111949b7475b5, type: 3}
@@ -15295,6 +15303,10 @@ PrefabInstance:
     - target: {fileID: 458121981773691621, guid: c166f6598525cd1458a111949b7475b5, type: 3}
       propertyPath: m_Name
       value: TrashMob (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573850259766128623, guid: c166f6598525cd1458a111949b7475b5, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c166f6598525cd1458a111949b7475b5, type: 3}
