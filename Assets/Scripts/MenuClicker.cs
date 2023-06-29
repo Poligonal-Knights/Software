@@ -42,7 +42,7 @@ public class MenuClicker : MonoBehaviour
             {
                 if (hit.transform != null && hit.transform.gameObject.CompareTag("SelectorLvl")) 
                 {
-                    Vector3 pos = new Vector3(hit.transform.position.x, hit.transform.position.y + 0.65f, hit.transform.position.z);
+                    Vector3 pos = new Vector3(hit.transform.position.x, hit.transform.position.y + 1.00f, hit.transform.position.z);
                     pointer.transform.SetPositionAndRotation(pos, hit.transform.rotation);
 
                     if (GameObject.ReferenceEquals(hit.transform.gameObject,lvl1))
