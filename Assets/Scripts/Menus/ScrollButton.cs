@@ -30,6 +30,7 @@ public class ScrollButton : MonoBehaviour
     public LogicManager logicManager;
     public UIManager UIManager;
     public TextMeshProUGUI description;
+    public TextMeshProUGUI coste;
     public Button infoButton;
 
     // Start is called before the first frame update
@@ -186,7 +187,7 @@ public class ScrollButton : MonoBehaviour
         if (selectedAlly is Wizard)
         {
             index = 0;
-            desc = Descripciones[index + HabInUse];
+            desc = Descripciones[index + HabInUse];      
             description.text = desc;
         }
         else if (selectedAlly is Knight)
@@ -206,7 +207,11 @@ public class ScrollButton : MonoBehaviour
             index = 12;
             desc = Descripciones[index + HabInUse];
             description.text = desc;
+        }
 
+        if (selectedAlly is Ally ally)
+        {
+            coste.text = Ability.GetAbility(ally, HabInUse).EnergyRequired.ToString();
         }
     }
 
