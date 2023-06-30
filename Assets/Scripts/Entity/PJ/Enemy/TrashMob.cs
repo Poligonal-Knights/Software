@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using Panda;
 using System.Linq;
+using UnityEditor.Scripting;
 
 public class TrashMob : Enemy
 {
@@ -68,15 +69,18 @@ public class TrashMob : Enemy
     {
         var CloserEnemySpace = BFS.GetGoalGridSpace(space, int.MaxValue, CanMoveThere, candidate =>
         {
-            if (candidate.GetEntity() is not null) return false;
+            if (candidate.GetEntity() is null) return false;
             foreach (var move in candidate.moves)
             {
                 if (move.GetEntity() is Ally enemy)
+                {
+                    Debug.Log(candidate.ManhattanDistance(move));
                     if (candidate.ManhattanDistance(move) < 3)
                     {
                         focusedEnemy = enemy;
                         return true;
                     }
+                }
             }
             return false;
         });
@@ -122,6 +126,7 @@ public class TrashMob : Enemy
     [Task]
     bool CanIAttack()
     {
+        Debug.Log(focusedEnemy + "  "+ getAttackPerformed());
         if (focusedEnemy && !getAttackPerformed())
         {
             return true;

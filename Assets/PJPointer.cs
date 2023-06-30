@@ -20,7 +20,7 @@ public class PJPointer : MonoBehaviour
         if (pj != null)
         {
             var position = pj.gameObject.transform.position;
-            this.transform.position = position + new Vector3(0f, 0.75f, 0f);
+            this.transform.position = position + new Vector3(0f, 1.25f, 0f);
         }
     }
 
