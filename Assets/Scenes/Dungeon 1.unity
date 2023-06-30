@@ -59763,6 +59763,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrashMob (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5573850259766128623, guid: c166f6598525cd1458a111949b7475b5, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c166f6598525cd1458a111949b7475b5, type: 3}
 --- !u!4 &1662425781 stripped
