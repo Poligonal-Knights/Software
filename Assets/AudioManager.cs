@@ -1,6 +1,7 @@
 using UnityEngine.Audio;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class AudioManager : MonoBehaviour
     public int SceneMusic = 0;
     void Awake()
     {
+        if (SceneMusic == 0 && SceneManager.GetActiveScene().buildIndex > 1)
+        {
+            Destroy(gameObject);
+        }
         if(Instance == null)
         {
             Instance = this;
@@ -22,7 +27,7 @@ public class AudioManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-
+        
         foreach(Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();

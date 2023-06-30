@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using Panda;
 using System.Linq;
-using UnityEditor.Scripting;
 
 public class TrashMob : Enemy
 {
