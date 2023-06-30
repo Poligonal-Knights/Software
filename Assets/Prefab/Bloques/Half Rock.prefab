@@ -9,12 +9,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3291851373173321242, guid: c2be243b8826b544b893dabb0fc2306c, type: 3}
       propertyPath: m_Name
-      value: Half (1)
+      value: Half Rock
       objectReference: {fileID: 0}
     - target: {fileID: 5096735251565720061, guid: c2be243b8826b544b893dabb0fc2306c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c0d7879e053b54a43b871e933b3e522e, type: 2}
+      objectReference: {fileID: 2100000, guid: 344db981e3f434747b94ae0e1b4f048e, type: 2}
     - target: {fileID: 5608209558586036370, guid: c2be243b8826b544b893dabb0fc2306c, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -961,10 +961,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (35)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &68480667 stripped
@@ -1163,10 +1159,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &82142787 stripped
@@ -1291,10 +1283,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (16)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &93304543 stripped
@@ -1484,10 +1472,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (44)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &97105852 stripped
@@ -1555,10 +1539,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (28)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &106002909 stripped
@@ -1626,10 +1606,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (18)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &109116493 stripped
@@ -1692,10 +1668,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &115740582 stripped
@@ -1877,10 +1849,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &134774665 stripped
@@ -1943,10 +1911,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (19)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &141545653 stripped
@@ -2009,10 +1973,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (31)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &147326570 stripped
@@ -2075,10 +2035,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (17)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &149961622 stripped
@@ -2141,10 +2097,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &152322924 stripped
@@ -2507,10 +2459,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (67)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &195091754 stripped
@@ -2578,10 +2526,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (45)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &204728805 stripped
@@ -3083,10 +3027,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (42)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &277840320 stripped
@@ -3149,10 +3089,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (37)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &301066939 stripped
@@ -3215,10 +3151,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &313564578 stripped
@@ -3281,10 +3213,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (39)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &324822612 stripped
@@ -3409,10 +3337,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (61)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &349449996 stripped
@@ -3475,10 +3399,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (21)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &368188717 stripped
@@ -4142,10 +4062,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (49)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &452529948 stripped
@@ -4584,10 +4500,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (58)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &501704258 stripped
@@ -4724,6 +4636,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8443082039807834063, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae997f498e3ab3148975bdf4c4d0c879, type: 3}
 --- !u!4 &512078841 stripped
@@ -4843,10 +4759,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (29)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &523589155 stripped
@@ -4916,6 +4828,10 @@ PrefabInstance:
     - target: {fileID: 1513963401121390676, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577619452348385360, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -39.999878
       objectReference: {fileID: 0}
     - target: {fileID: 1612525808444903434, guid: ace76fee475b4984987d21ff56d8f521, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5733,10 +5649,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (25)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &552276140 stripped
@@ -5799,10 +5711,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (54)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &570052728 stripped
@@ -5989,10 +5897,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (12)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &588889268 stripped
@@ -6179,10 +6083,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (12)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &607921623 stripped
@@ -6383,10 +6283,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (64)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &632187169 stripped
@@ -6449,10 +6345,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (48)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &640442898 stripped
@@ -6520,10 +6412,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (28)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &650770729 stripped
@@ -6586,10 +6474,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (16)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &651563563 stripped
@@ -6662,10 +6546,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (10)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &654279379 stripped
@@ -6728,10 +6608,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (63)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &686465322 stripped
@@ -6794,10 +6670,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (57)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &687783554 stripped
@@ -7227,10 +7099,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (23)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &762905332 stripped
@@ -7484,10 +7352,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (8)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &790467798 stripped
@@ -7550,10 +7414,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (50)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &805769647 stripped
@@ -7616,10 +7476,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (9)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &808358758 stripped
@@ -7682,10 +7538,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (23)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &810002092 stripped
@@ -8249,10 +8101,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (8)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &872518265 stripped
@@ -8320,10 +8168,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (43)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &893637626 stripped
@@ -8505,10 +8349,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (26)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &925561667 stripped
@@ -8571,10 +8411,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (13)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &929720386 stripped
@@ -8642,10 +8478,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (40)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &950777509 stripped
@@ -8708,10 +8540,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (55)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &955375706 stripped
@@ -8836,10 +8664,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (30)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &960795422 stripped
@@ -9083,10 +8907,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (46)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1019422036 stripped
@@ -9211,10 +9031,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (66)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1021875847 stripped
@@ -9277,10 +9093,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1028140740 stripped
@@ -9400,10 +9212,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (69)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!1001 &1033253914
@@ -9704,10 +9512,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (56)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1062376845 stripped
@@ -9770,10 +9574,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (30)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1065928489 stripped
@@ -9836,10 +9636,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1069152287 stripped
@@ -9902,10 +9698,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (59)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1073459525 stripped
@@ -9968,10 +9760,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1075079169 stripped
@@ -10091,10 +9879,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (60)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1122345945 stripped
@@ -10214,10 +9998,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (51)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1124964433 stripped
@@ -11093,10 +10873,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1231480589 stripped
@@ -11283,10 +11059,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (26)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1248173945 stripped
@@ -11659,10 +11431,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (27)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1323490354 stripped
@@ -11725,10 +11493,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (11)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1323719011 stripped
@@ -11791,10 +11555,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (14)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1347062837 stripped
@@ -11857,10 +11617,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (62)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1347309077 stripped
@@ -12149,10 +11905,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (25)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1403775890 stripped
@@ -12401,10 +12153,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (24)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1436632720 stripped
@@ -12467,10 +12215,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (14)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1440281725 stripped
@@ -12595,10 +12339,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (32)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1453362873 stripped
@@ -12661,10 +12401,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (15)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1454866668 stripped
@@ -12732,10 +12468,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (21)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1463458500 stripped
@@ -12798,10 +12530,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1464561900 stripped
@@ -12864,10 +12592,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (27)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1470374635 stripped
@@ -13188,10 +12912,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (65)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1504947620 stripped
@@ -13507,10 +13227,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (22)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1530991962 stripped
@@ -13573,10 +13289,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (10)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1544499159 stripped
@@ -13639,10 +13351,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (13)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1551712706 stripped
@@ -13705,10 +13413,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1582732873 stripped
@@ -13781,6 +13485,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2762371186593407986, guid: c166f6598525cd1458a111949b7475b5, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573850259766128623, guid: c166f6598525cd1458a111949b7475b5, type: 3}
+      propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -13915,10 +13623,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1593771267 stripped
@@ -14105,10 +13809,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (53)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1604078883 stripped
@@ -14171,10 +13871,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (11)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1605238189 stripped
@@ -14237,10 +13933,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (15)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1610696592 stripped
@@ -14484,10 +14176,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (19)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1626878325 stripped
@@ -15325,10 +15013,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (68)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!1001 &1783242463
@@ -15386,10 +15070,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (9)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1783242464 stripped
@@ -15452,10 +15132,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (17)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1790284205 stripped
@@ -15704,10 +15380,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (29)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1829722928 stripped
@@ -15770,10 +15442,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (20)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1835280754 stripped
@@ -15836,10 +15504,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (47)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1846572040 stripped
@@ -16021,10 +15685,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (18)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1873541641 stripped
@@ -16087,10 +15747,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (34)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1873960090 stripped
@@ -16153,10 +15809,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (33)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1896402928 stripped
@@ -16219,10 +15871,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1913165315 stripped
@@ -16528,10 +16176,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1946565930 stripped
@@ -16594,10 +16238,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (36)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1946841271 stripped
@@ -16660,10 +16300,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (52)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1950961065 stripped
@@ -16726,10 +16362,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (24)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1969478345 stripped
@@ -16792,10 +16424,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (22)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &1973567546 stripped
@@ -17298,10 +16926,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &2025758761 stripped
@@ -17364,10 +16988,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &2026297075 stripped
@@ -17621,10 +17241,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (41)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &2110947302 stripped
@@ -17806,10 +17422,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (38)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &2142408703 stripped
@@ -17872,10 +17484,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcano rock Cold (20)
       objectReference: {fileID: 0}
-    - target: {fileID: 7603339211062984112, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2121697405d0be849816c0f2ba40c1f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e597e0bd2d8bbce41b9e2a921bf87501, type: 3}
 --- !u!4 &2144617553 stripped
