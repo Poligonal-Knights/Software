@@ -53,7 +53,6 @@ public class Warden : Enemy
     [Task]
     bool EnemiesInRange()
     {
-        //Comprobar los enemigos que hay a rango de explotar y devolver false si no hay ninguno
         var spacesInMovementRange = BFS.GetSpacesInRange(space, movement, CanMoveThere);
         foreach (var enemy in GameManager.Instance.allies)
         {
@@ -103,11 +102,13 @@ public class Warden : Enemy
                 if (distance <= attackRange)
                 {
                     alliesInRangeList.Add((ally));
-                    return true;
                 }
             }
         }
-        return false;
+        if(alliesInRangeList.Any()) 
+            return true;
+        else 
+            return false;
     }
 
     //COMPROBACIÓN NUEVO PROTEGIDO
@@ -116,9 +117,12 @@ public class Warden : Enemy
     [Task]
     bool IsThereAnyHealer()
     {
+        Debug.Log(alliesInRangeList);
         List<PJ> allies = new List<PJ>();
         foreach (var ally in alliesInRangeList)
+        {
             if (ally is Healer) allies.Add(ally);
+        }
 
         if (!allies.Any()) return false;
         protectedAlly = SelectCloser(allies);
