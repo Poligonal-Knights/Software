@@ -98,9 +98,7 @@ public class Warden : Enemy
         {
             foreach (var ally in GameManager.Instance.enemies)
             {
-                Debug.Log(ally);
                 var distance = GridSpace.ManhattanDistance2D(s, ally.GetGridSpace());
-                Debug.Log(distance);
                 if (distance <= attackRange)
                 {
                     alliesInRangeList.Add((ally));
