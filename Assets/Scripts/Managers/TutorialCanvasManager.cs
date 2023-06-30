@@ -47,7 +47,7 @@ public class TutorialCanvasManager : MonoBehaviour
         {
             c.gameObject.SetActive(false);
         }
-        //initialCanvas.gameObject.SetActive(true);
+        initialCanvas.gameObject.SetActive(true);
 
     }
 }
