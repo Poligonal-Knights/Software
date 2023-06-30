@@ -1305,7 +1305,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &831861833
 Canvas:
   m_ObjectHideFlags: 0
@@ -3342,6 +3342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 4725b6fc97baa6940848bacafe2472bd, type: 2}
+  slider: {fileID: 1936734833}
 --- !u!114 &1936734833
 MonoBehaviour:
   m_ObjectHideFlags: 0

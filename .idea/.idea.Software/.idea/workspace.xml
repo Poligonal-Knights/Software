@@ -2,7 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5face6c-2f1b-4931-a622-ab51a4d8a3bf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/menús/Turno.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/menús/Turno.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Software/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Software/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Canvases/SettingsCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Canvases/SettingsCanvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Imagenes HUD/HUD 2.0/Boton_atras.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Imagenes HUD/HUD 2.0/Boton_atras.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Imagenes HUD/HUD 2.0/Boton_atras_confirmar.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Imagenes HUD/HUD 2.0/Boton_atras_confirmar.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Imagenes HUD/HUD 2.0/Char_select Enemigos.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Imagenes HUD/HUD 2.0/Char_select Enemigos.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Imagenes HUD/HUD 2.0/Char_select.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Imagenes HUD/HUD 2.0/Char_select.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Imagenes HUD/HUD 2.0/Icon_health.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Imagenes HUD/HUD 2.0/Icon_health.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Imagenes HUD/HUD 2.0/Icon_move.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Imagenes HUD/HUD 2.0/Icon_move.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Imagenes HUD/HUD 2.0/Slider.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Imagenes HUD/HUD 2.0/Slider.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Imagenes HUD/HUD 2.0/Slider_barra.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Imagenes HUD/HUD 2.0/Slider_barra.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Imagenes HUD/HUD 2.0/Toggle_off.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Imagenes HUD/HUD 2.0/Toggle_off.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Imagenes HUD/HUD 2.0/Toggle_on.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Imagenes HUD/HUD 2.0/Toggle_on.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MenuP.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MenuP.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VolumeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/VolumeManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VolumeManagger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/VolumeManagger.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +91,7 @@
       <workItem from="1671304251007" duration="4830000" />
       <workItem from="1671382040063" duration="4437000" />
       <workItem from="1687883472786" duration="4079000" />
-      <workItem from="1688146031278" duration="6394000" />
+      <workItem from="1688146031278" duration="8219000" />
     </task>
     <servers />
   </component>
